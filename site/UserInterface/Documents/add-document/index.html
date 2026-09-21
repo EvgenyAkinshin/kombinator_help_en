@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../Interface/interface/">
+        <link rel="prev" href="../../../ReferenceGuide/Bitrix/template-automation/">
       
       
-        <link rel="next" href="../../Templates/creating-template/">
+        <link rel="next" href="../../Templates/fields/">
       
       
       <link rel="icon" href="../../../img/logo.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Создание документа - Руководство пользователя</title>
+        <title>Generating a document - Руководство пользователя</title>
       
     
     
@@ -50,6 +50,10 @@
     
       <link rel="stylesheet" href="../../../styles/view-toggle.css">
     
+      <link rel="stylesheet" href="../../../styles/header-fix.css">
+    
+      <link rel="stylesheet" href="../../../styles/bitrix-only.css">
+    
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -61,8 +65,6 @@
   
   
     
-    
-      
     
     
     
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#generating-a-document" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -111,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Создание документа
+              Generating a document
             
           </span>
         </div>
@@ -119,25 +121,7 @@
     </div>
     
       
-        <form class="md-header__option" data-md-component="palette">
-  
     
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
-    
-  
-</form>
-      
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -221,28 +205,20 @@
       
   
   
+    
   
   
-    
-    
-      
-        
-      
-        
-      
-        
-      
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
@@ -250,7 +226,7 @@
   
   
   <span class="md-ellipsis">
-    Работа в Битрикс24
+    Getting Started
     
   </span>
   
@@ -258,10 +234,10 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
-            Работа в Битрикс24
+            Getting Started
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -277,7 +253,30 @@
   
   
   <span class="md-ellipsis">
-    Установка приложения
+    App installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/Bitrix/setting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    App setup
     
   </span>
   
@@ -300,7 +299,7 @@
   
   
   <span class="md-ellipsis">
-    Работа в редакторе шаблона
+    Creating a template
     
   </span>
   
@@ -318,12 +317,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ReferenceGuide/Bitrix/creat-document/" class="md-nav__link">
+      <a href="../../../ReferenceGuide/Bitrix/template-automation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Создание документа
+    Template automation
     
   </span>
   
@@ -333,132 +332,6 @@
   
 
               
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Интерфейс пользователя
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            Интерфейс пользователя
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Interface/interface/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Организация интерфейса
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Документы
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_2">
-            <span class="md-nav__icon md-icon"></span>
-            Документы
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -481,7 +354,7 @@
   
   
   <span class="md-ellipsis">
-    Создание документа
+    Generating a document
     
   </span>
   
@@ -494,7 +367,7 @@
   
   
   <span class="md-ellipsis">
-    Создание документа
+    Generating a document
     
   </span>
   
@@ -517,9 +390,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#preparing-the-crm-item" class="md-nav__link">
     <span class="md-ellipsis">
-      Пошаговое создание документа
+      Preparing the CRM item
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generating-the-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generating the document
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checking-the-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checking the result
     </span>
   </a>
   
@@ -540,29 +431,14 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
   
   
     
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
     
     
     
@@ -571,17 +447,15 @@
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
-    Шаблоны
+    Application Interface
     
   </span>
   
@@ -589,35 +463,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Шаблоны
+            Application Interface
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Templates/creating-template/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Создание шаблона
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -631,30 +482,7 @@
   
   
   <span class="md-ellipsis">
-    Анкета
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Templates/tabs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Панель инструментов
+    Fields
     
   </span>
   
@@ -677,7 +505,53 @@
   
   
   <span class="md-ellipsis">
-    Область редактирования
+    Editing area
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/tabs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Toolbar
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/file-name-mask/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    File name mask
     
   </span>
   
@@ -700,7 +574,7 @@
   
   
   <span class="md-ellipsis">
-    Режим предпросмотра
+    Preview
     
   </span>
   
@@ -723,7 +597,7 @@
   
   
   <span class="md-ellipsis">
-    Горячие клавиши
+    Keyboard shortcuts
     
   </span>
   
@@ -740,29 +614,14 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
   
   
     
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
     
     
     
@@ -771,378 +630,7 @@
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Справочники
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4">
-            <span class="md-nav__icon md-icon"></span>
-            Справочники
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../References/add-reference/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Создание справочника
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../References/add-record/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Добавление записей
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../References/edit-reference/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Редактирование справочника
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../References/edit-record/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Редактирование записей
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../References/export/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Экспорт структуры и записей
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../References/import/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Импорт структуры и записей
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Панель администратора
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_5">
-            <span class="md-nav__icon md-icon"></span>
-            Панель администратора
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../AdminPanel/summary/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Основная информация
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../AdminPanel/users/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Пользователи
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../AdminPanel/roles/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Роли
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../AdminPanel/settingsDadata/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Настройки
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -1150,7 +638,7 @@
   
   
   <span class="md-ellipsis">
-    Поля
+    Fields
     
   </span>
   
@@ -1161,55 +649,9 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Поля
+            Fields
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ReferenceGuide/typesField/properties/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Свойства полей
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ReferenceGuide/typesField/create-and-add/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Работа с полями
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -1223,7 +665,7 @@
   
   
   <span class="md-ellipsis">
-    Текст
+    Text
     
   </span>
   
@@ -1246,7 +688,7 @@
   
   
   <span class="md-ellipsis">
-    Целое число
+    Integer
     
   </span>
   
@@ -1269,7 +711,7 @@
   
   
   <span class="md-ellipsis">
-    Десятичное число
+    Decimal
     
   </span>
   
@@ -1292,7 +734,7 @@
   
   
   <span class="md-ellipsis">
-    Да/Нет
+    Boolean
     
   </span>
   
@@ -1315,7 +757,7 @@
   
   
   <span class="md-ellipsis">
-    Дата/Время
+    Date/Time
     
   </span>
   
@@ -1338,7 +780,7 @@
   
   
   <span class="md-ellipsis">
-    Дата
+    Date
     
   </span>
   
@@ -1361,53 +803,7 @@
   
   
   <span class="md-ellipsis">
-    Время
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ReferenceGuide/typesField/enum/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Перечисление
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ReferenceGuide/typesField/list/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Список
+    Time
     
   </span>
   
@@ -1430,7 +826,53 @@
   
   
   <span class="md-ellipsis">
-    Составное поле
+    Struct
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/typesField/list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    List
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/typesField/picture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Picture
     
   </span>
   
@@ -1456,12 +898,6 @@
   
     
     
-      
-        
-      
-        
-      
-    
     
     
     
@@ -1469,9 +905,7 @@
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -1479,7 +913,7 @@
   
   
   <span class="md-ellipsis">
-    Интеграция
+    Function
     
   </span>
   
@@ -1490,340 +924,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Интеграция
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Integrations/DaData/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    ДаДата
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Integrations/Api/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    API
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Метки
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            Метки
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ReferenceGuide/directives/value/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Значение
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ReferenceGuide/directives/fragment/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Фрагмент
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ReferenceGuide/directives/if/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Условие
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ReferenceGuide/directives/switch/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Выбор
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ReferenceGuide/directives/for/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Цикл
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ReferenceGuide/directives/table/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Таблица
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ReferenceGuide/directives/document/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Отдельный документ
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Функции
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
-            <span class="md-nav__icon md-icon"></span>
-            Функции
+            Function
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1835,10 +936,6 @@
   
     
     
-      
-        
-      
-    
     
     
     
@@ -1846,17 +943,15 @@
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
         
           
-          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
-    Английские
+    Date and time
     
   </span>
   
@@ -1864,99 +959,10 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
             <span class="md-nav__icon md-icon"></span>
-            Английские
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ReferenceGuide/functions/English/integerToText/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    integerToText
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Дата и время
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_2">
-            <span class="md-nav__icon md-icon"></span>
-            Дата и время
+            Date and time
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1972,7 +978,7 @@
   
   
   <span class="md-ellipsis">
-    дата
+    date
     
   </span>
   
@@ -1995,7 +1001,7 @@
   
   
   <span class="md-ellipsis">
-    датамес
+    edate
     
   </span>
   
@@ -2018,7 +1024,7 @@
   
   
   <span class="md-ellipsis">
-    конмесяца
+    emonth
     
   </span>
   
@@ -2041,7 +1047,7 @@
   
   
   <span class="md-ellipsis">
-    начмесяца
+    bomonth
     
   </span>
   
@@ -2064,7 +1070,7 @@
   
   
   <span class="md-ellipsis">
-    разндат
+    datediff
     
   </span>
   
@@ -2087,7 +1093,7 @@
   
   
   <span class="md-ellipsis">
-    сегодня
+    Today
     
   </span>
   
@@ -2110,7 +1116,7 @@
   
   
   <span class="md-ellipsis">
-    смещдат
+    dateshift
     
   </span>
   
@@ -2133,7 +1139,237 @@
   
   
   <span class="md-ellipsis">
-    тдата
+    now
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/functions/Date/%D0%B2%D1%80%D0%B5%D0%BC%D1%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    time
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/functions/Date/%D0%B3%D0%BE%D0%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    year
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/functions/Date/%D0%B4%D0%B0%D1%82%D0%B0%D0%B2%D1%80%D0%B5%D0%BC%D1%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    datetime
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/functions/Date/%D0%BC%D0%B5%D1%81%D1%8F%D1%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    mounth
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/functions/Date/%D0%B4%D0%B5%D0%BD%D1%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    day
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/functions/Date/%D1%87%D0%B0%D1%81/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    hour
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/functions/Date/%D0%BC%D0%B8%D0%BD%D1%83%D1%82%D1%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    minute
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/functions/Date/%D1%81%D0%B5%D0%BA%D1%83%D0%BD%D0%B4%D1%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    second
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/functions/Date/%D0%B4%D0%B5%D0%BD%D1%8C%D0%BD%D0%B5%D0%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    weekday
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/functions/Date/%D0%BD%D0%BE%D0%BC%D0%BD%D0%B5%D0%B4%D0%B5%D0%BB%D0%B8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    weeknum
     
   </span>
   
@@ -2160,10 +1396,6 @@
   
     
     
-      
-        
-      
-    
     
     
     
@@ -2171,17 +1403,15 @@
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
-    Логические
+    Formatting
     
   </span>
   
@@ -2189,10 +1419,10 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
-            Логические
+            Formatting
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2203,93 +1433,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ReferenceGuide/functions/Logic/%D0%B5%D1%81%D0%BB%D0%B8/" class="md-nav__link">
+      <a href="../../../ReferenceGuide/functions/Morph/%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%94%D0%B0%D1%82%D1%8B%D0%9F%D0%BE%D0%9C%D0%B0%D1%81%D0%BA%D0%B5/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    если
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Математические
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_4">
-            <span class="md-nav__icon md-icon"></span>
-            Математические
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ReferenceGuide/functions/Math/%D0%BE%D0%BA%D1%80%D1%83%D0%B3%D0%BB%D0%B8%D1%82%D1%8C/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    округлить
+    formatDate
     
   </span>
   
@@ -2307,12 +1456,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ReferenceGuide/functions/Math/exp/" class="md-nav__link">
+      <a href="../../../ReferenceGuide/functions/Morph/%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%A7%D0%B8%D1%81%D0%BB%D0%B0/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    exp
+    formatNumber
     
   </span>
   
@@ -2330,12 +1479,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ReferenceGuide/functions/Math/ln/" class="md-nav__link">
+      <a href="../../../ReferenceGuide/functions/Morph/integerToText/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    ln
+    integerToText
     
   </span>
   
@@ -2345,97 +1494,6 @@
   
 
               
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ReferenceGuide/functions/Math/log10/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    log10
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Морфологические
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_5">
-            <span class="md-nav__icon md-icon"></span>
-            Морфологические
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -2582,29 +1640,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ReferenceGuide/functions/Morph/%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%A7%D0%B8%D1%81%D0%BB%D0%B0/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    форматЧисла
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../ReferenceGuide/functions/Morph/%D1%86%D0%B5%D0%BB%D0%BE%D0%B5%D0%A1%D0%A2%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%BC/" class="md-nav__link">
         
   
@@ -2660,20 +1695,6 @@
   
     
     
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
     
     
     
@@ -2681,17 +1702,15 @@
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
         
           
-          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
-    Работа со списками
+    Math
     
   </span>
   
@@ -2699,10 +1718,10 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
-            Работа со списками
+            Math
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2713,12 +1732,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ReferenceGuide/functions/Aggregation/%D0%BC%D0%B0%D0%BA%D1%81/" class="md-nav__link">
+      <a href="../../../ReferenceGuide/functions/Math/%D0%BE%D0%BA%D1%80%D1%83%D0%B3%D0%BB%D0%B8%D1%82%D1%8C/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    макс
+    round
     
   </span>
   
@@ -2736,12 +1755,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ReferenceGuide/functions/Aggregation/%D0%BC%D0%B8%D0%BD/" class="md-nav__link">
+      <a href="../../../ReferenceGuide/functions/Math/%D0%BE%D0%BA%D1%80%D1%83%D0%B3%D0%BB%D0%B8%D1%82%D1%8C%D0%B2%D0%B2%D0%B5%D1%80%D1%85/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    мин
+    roundup
     
   </span>
   
@@ -2759,12 +1778,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ReferenceGuide/functions/Aggregation/%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%BF%D0%BE%D0%B7/" class="md-nav__link">
+      <a href="../../../ReferenceGuide/functions/Math/%D0%BE%D0%BA%D1%80%D1%83%D0%B3%D0%BB%D0%B8%D1%82%D1%8C%D0%B2%D0%BD%D0%B8%D0%B7/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    поискпоз
+    rounddown
     
   </span>
   
@@ -2782,12 +1801,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ReferenceGuide/functions/Aggregation/%D1%81%D1%80%D0%B7%D0%BD%D0%B0%D1%87/" class="md-nav__link">
+      <a href="../../../ReferenceGuide/functions/Math/exp/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    срзнач
+    exp
     
   </span>
   
@@ -2805,12 +1824,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ReferenceGuide/functions/Aggregation/%D1%81%D1%83%D0%BC%D0%BC/" class="md-nav__link">
+      <a href="../../../ReferenceGuide/functions/Math/ln/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    сумм
+    ln
     
   </span>
   
@@ -2828,12 +1847,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ReferenceGuide/functions/Aggregation/%D1%81%D1%87%D0%B5%D1%82/" class="md-nav__link">
+      <a href="../../../ReferenceGuide/functions/Math/log10/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    счет
+    log10
     
   </span>
   
@@ -2860,22 +1879,6 @@
   
     
     
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
     
     
     
@@ -2883,17 +1886,15 @@
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
         
           
-          <label class="md-nav__link" for="__nav_6_7" id="__nav_6_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
-    Текстовые
+    Списки
     
   </span>
   
@@ -2901,10 +1902,10 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
             <span class="md-nav__icon md-icon"></span>
-            Текстовые
+            Списки
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2915,12 +1916,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ReferenceGuide/functions/Text/%D0%B4%D0%BB%D0%B8%D0%BD%D0%B0/" class="md-nav__link">
+      <a href="../../../ReferenceGuide/functions/Lists/%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%BF%D0%BE%D0%B7/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    длина
+    match
     
   </span>
   
@@ -2938,12 +1939,357 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ReferenceGuide/functions/Text/%D0%BB%D0%B8%D0%BD%D0%B8%D1%8F%D0%9F%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D0%B8/" class="md-nav__link">
+      <a href="../../../ReferenceGuide/functions/Lists/%D0%B8%D0%BD%D0%B4%D0%B5%D0%BA%D1%81/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    линияПодписи
+    index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/functions/Lists/%D1%81%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    sort
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/functions/Lists/%D1%81%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%D0%9F%D0%BE%D0%A3%D0%B1%D1%8B%D0%B2%D0%B0%D0%BD%D0%B8%D1%8E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    sortDescending
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/functions/Lists/%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    filter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/functions/Lists/%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    group
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/functions/Lists/%D1%81%D1%83%D0%BC%D0%BC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    sum
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/functions/Lists/%D0%BC%D0%B0%D0%BA%D1%81/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    max
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/functions/Lists/%D0%BC%D0%B8%D0%BD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    min
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/functions/Lists/%D1%81%D1%80%D0%B7%D0%BD%D0%B0%D1%87/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    avg
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/functions/Lists/%D1%81%D1%87%D0%B5%D1%82/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    count
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Logic
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Logic
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/functions/Logic/%D0%B5%D1%81%D0%BB%D0%B8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    if
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Text
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            Text
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/functions/Text/%D0%B4%D0%BB%D0%B8%D0%BD%D0%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    length
     
   </span>
   
@@ -2966,7 +2312,7 @@
   
   
   <span class="md-ellipsis">
-    обрезатьпробелы
+    trim
     
   </span>
   
@@ -2989,7 +2335,7 @@
   
   
   <span class="md-ellipsis">
-    прописн
+    upper
     
   </span>
   
@@ -3012,7 +2358,7 @@
   
   
   <span class="md-ellipsis">
-    пропнач
+    proper
     
   </span>
   
@@ -3035,7 +2381,7 @@
   
   
   <span class="md-ellipsis">
-    пстр
+    mid
     
   </span>
   
@@ -3058,7 +2404,76 @@
   
   
   <span class="md-ellipsis">
-    строчн
+    lower
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/functions/Text/%D0%BF%D0%BE%D0%B8%D1%81%D0%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    find
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/functions/Text/%D0%BF%D0%BE%D0%B4%D1%81%D1%82%D0%B0%D0%B2%D0%B8%D1%82%D1%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    substitute
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/functions/Text/%D0%BF%D0%BE%D0%B2%D1%82%D0%BE%D1%80/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    repeat
     
   </span>
   
@@ -3092,12 +2507,6 @@
   
     
     
-      
-        
-      
-        
-      
-    
     
     
     
@@ -3105,17 +2514,15 @@
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
-    Синтаксис
+    Sintax
     
   </span>
   
@@ -3123,10 +2530,10 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            Синтаксис
+            Sintax
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3142,7 +2549,7 @@
   
   
   <span class="md-ellipsis">
-    Основные правила
+    Basic rules
     
   </span>
   
@@ -3165,7 +2572,7 @@
   
   
   <span class="md-ellipsis">
-    Места использования
+    Where to use
     
   </span>
   
@@ -3179,6 +2586,256 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Directives
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Directives
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/directives/value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Expression
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/directives/fragment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    External
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/directives/if/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Condition expression
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/directives/switch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Switch
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/directives/for/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    For
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/directives/table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Table
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ReferenceGuide/directives/picture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Picture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Support
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -3210,9 +2867,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#preparing-the-crm-item" class="md-nav__link">
     <span class="md-ellipsis">
-      Пошаговое создание документа
+      Preparing the CRM item
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generating-the-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generating the document
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checking-the-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checking the result
     </span>
   </a>
   
@@ -3234,71 +2909,55 @@
 
 
 
-<h1 id="_1">Создание документа</h1>
-<p><strong>Создание документа на основе шаблона</strong> — это процесс, при котором в заранее подготовленный шаблон автоматически подставляются данные из анкеты. В результате вы получаете готовый документ (PDF, DOCX и др.).</p>
-<h2 id="_2">Пошаговое создание документа</h2>
+<h1 id="generating-a-document">Generating a document</h1>
+<p>Generate the final document from a Bitrix24 CRM item. This allows you to check how the template works with actual CRM data.</p>
+<h2 id="preparing-the-crm-item">Preparing the CRM item</h2>
 <ol>
 <li>
-<p>На вкладке <strong>«Документы»</strong> нажмите кнопку <strong>«Новый документ»</strong>.</p>
-<p><img alt="1" src="../../img/Document/1.png" /></p>
+<p>Open the CRM item for which the template has been configured, for example a <strong>deal</strong>.</p>
 </li>
 <li>
-<p>Выберите нужный шаблон из списка доступных.</p>
-<p><img alt="2" src="../../img/Document/2.png" /></p>
+<p>Check that the fields whose data should be added to the document are filled in.</p>
 </li>
 <li>
-<p>Заполните данные в анкете.</p>
-<p><img alt="3" src="../../img/Document/3.png" /></p>
-</li>
-<li>
-<p>Если шаблон очень объёмный, отключите автообновление — это ускорит ввод данных. После заполнения обязательно нажмите <strong>«Обновить»</strong>.</p>
-<p><img alt="4" src="../../img/Document/4.png" /></p>
-<p><img alt="5" src="../../img/Document/5.png" /></p>
-</li>
-<li>
-<p>Вы можете сохранить заполненный документ.</p>
-<p><img alt="6" src="../../img/Document/6.png" /></p>
-</li>
-<li>
-<p>Если нужно сформировать новый документ на основе того же шаблона, но с другими данными:</p>
-<ul>
-<li>очистите анкету,</li>
-<li>введите новые значения,</li>
-<li>
-<p>используйте кнопку <strong>«Сохранить как»</strong>.</p>
-<p><img alt="7" src="../../img/Document/7.png" /></p>
-</li>
-</ul>
-</li>
-<li>
-<p>Документ можно вывести на печать или экспортировать в формате <strong>DOCX</strong> или <strong>PDF</strong>.</p>
-<p><img alt="8" src="../../img/Document/8.png" />    </p>
+<p>If needed, add or correct the data in the CRM item.</p>
 </li>
 </ol>
-<p>⚠️ <strong>Примечание</strong></p>
-<p>Если некорректно склоняются ФИО: </p>
+<h2 id="generating-the-document">Generating the document</h2>
+<ol>
+<li>
+<p>In the action panel above the timeline, click <strong>«New document»</strong>.</p>
+<p>If the button is not displayed in the main panel, open <strong>«More»</strong>.</p>
+<p><img alt="11" src="../../img/Document/11.png" /></p>
+</li>
+<li>
+<p>Select <strong>«New document»</strong>.</p>
+</li>
+<li>
+<p>Select the prepared template.</p>
+</li>
+<li>
+<p>Wait for the data from the CRM item to load into the template.</p>
+</li>
+<li>
+<p>Click <strong>«Done»</strong> in the upper-right corner.</p>
+</li>
+<li>
+<p>Enter the document name and click <strong>«OK»</strong>.</p>
+</li>
+</ol>
+<p>The generated document will appear in the CRM item timeline.</p>
+<p><img alt="12" src="../../img/Document/12.png" /></p>
+<h2 id="checking-the-result">Checking the result</h2>
+<p>Open the generated document and check:</p>
 <ul>
-<li>
-<p>нажмите на значок <strong>шестерёнки</strong> напротив поля,</p>
-<p><img alt="9" src="../../img/Document/9.png" /></p>
-</li>
-<li>
-<p>в разделе <strong>«Грамматические исключения»</strong> в поле <strong>«Значение»</strong> укажите ФИО в правильной форме.  </p>
-<p><img alt="10" src="../../img/Document/10.png" /></p>
-</li>
+<li>whether the data from the CRM item was inserted correctly;</li>
+<li>whether conditions and selected options worked as expected;</li>
+<li>whether tables and calculations were generated correctly;</li>
+<li>whether the document formatting was preserved.</li>
 </ul>
-<p>Аналогично можно задать исключения для склонения любых других слов.  </p>
-<p>⚠️ <strong>Важно</strong> </p>
-<p>В режиме заполнения <strong>форматирование текста может отображаться некорректно</strong>:  </p>
-<ul>
-<li>
-<p>отступы и интервалы иногда «плывут»,</p>
-</li>
-<li>
-<p>шрифты и таблицы могут выглядеть иначе.  </p>
-</li>
-</ul>
-<p>Обращать внимание на оформление нужно только в <strong>готовом документе</strong> — то есть в том, который вы вывели на печать или экспортировали в <strong>DOCX / PDF</strong>.  </p>
+<p>If the issue is caused by the data, correct it in the CRM item and generate the document again.</p>
+<p>If the issue is related to the template logic or formatting, return to the template editor, make the required changes, and repeat the check.</p>
 
 
 
@@ -3353,12 +3012,16 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand", "navigation.indexes", "navigation.tracking", "navigation.top", "collapsible_navigation"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.top", "content.image-zoom"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
       
-        <script src="../../../javascripts/view-toggle.js"></script>
+        <script src="../../../javascripts/extra.js"></script>
+      
+        <script src="../../../assets/header.js"></script>
+      
+        <script src="../../../assets/nav-toggle.js"></script>
       
     
   </body>

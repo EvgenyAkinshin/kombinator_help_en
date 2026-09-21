@@ -1,0 +1,48 @@
+version: '3.4'
+
+services:
+  kombinator.server:
+    image: app.kombinator.pro:4998/kombinator-redist/server:latest
+    container_name: kombinator_server
+    environment:
+      - PG_DATABASE="kombinator"
+      - PG_HOST="postgres"
+      - PG_POST="5432"
+      - PG_USER_ID=${Postgres_User}
+      - PG_USER_PASSWORD=${Postgres_User_Password}
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=${PFX_File_Password}
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/etc/certs/${PFX_File_Name}
+      - KOMBINATOR_LOCATION=RU
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - kombinator
+    volumes:
+      - ${PFX_File_Path}:/etc/certs/
+      - licensing:/app/licensing
+    restart: unless-stopped
+
+  postgres:
+    container_name: postgres_kombinator
+    image: postgres:14
+    environment:
+      - POSTGRES_USER=${Postgres_User}
+      - POSTGRES_PASSWORD=${Postgres_User_Password}
+      - PGDATA=/var/lib/postgressql/data
+    volumes:
+       - ${Postgres_Data_Location}:/var/lib/postgressql/data/
+    ports:
+      - "5432:5432"
+    networks:
+      - kombinator
+    restart: unless-stopped
+
+networks:
+  kombinator:
+    driver: bridge
+
+volumes:
+  licensing:
+    driver: local

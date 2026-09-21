@@ -18,7 +18,7 @@ steps:
 - task: FtpUpload@2
   inputs:
     credentialsOption: 'inputs'
-    serverUrl: 'ftp://help.kombinator.ru'
+    serverUrl: 'ftp://help.kombinator.net'
     username: '$(FTP_LOGIN)'
     password: '$(FTP_PASSWORD)'
     rootDirectory: 'site'

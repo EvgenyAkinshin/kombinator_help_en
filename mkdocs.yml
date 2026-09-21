@@ -1,4 +1,4 @@
-site_name: Руководство пользователя
+site_name: Kombinator Help
 nav:
 - Getting Started:
   - App installation: ReferenceGuide/Bitrix/install.md
@@ -104,7 +104,7 @@ theme:
   name: material
   logo: img/logo2.png
   favicon: img/logo.png
-  language: ru
+  language: en
   font:
     text: Roboto
   features:

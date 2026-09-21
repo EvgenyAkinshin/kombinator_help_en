@@ -1,48 +1,609 @@
+/* =====================================================
+   ПЕРЕКЛЮЧАТЕЛЬ РЕЖИМОВ
+===================================================== */
+
 .view-toggle {
   display: flex;
   gap: .5rem;
   align-items: center;
-  margin-left: 2rem;     /* отодвигаем от поиска */
-  margin-right: 1.5rem;  /* расстояние до правого края */
+  margin-left: 2rem;
+  margin-right: 1.5rem;
 }
 
 .view-toggle .vt-btn {
-  border: none;
-  border-radius: 4px;
-  padding: .35rem .7rem;
+  width: 138px;
+  height: 32px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid transparent;
+  border-radius: 999px;
+  padding: 0;
+
   font-size: .8rem;
-  font-weight: 600;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+
   cursor: pointer;
-  transition: background .2s, color .2s;
+  box-sizing: border-box;
+  transition: background .25s ease, color .25s ease, border-color .25s ease;
 }
 
-/* Комбинатор */
+.view-toggle .vt-btn:hover {
+  box-shadow: none;
+}
+
+/* API */
+
 .view-toggle .vt-btn[data-view="standalone"] {
   background: #ffffff;
-  color: #7b4bcc;
-  border: 2px solid #7b4bcc;
+  color: #9a008f;
+  border-color: #9a008f;
 }
+
+.view-toggle .vt-btn[data-view="standalone"]:hover,
 .view-toggle .vt-btn[data-view="standalone"].is-active {
-  background: #e8e2f3;
-  color: #7b4bcc;
+  background: #9a008f !important;
+  color: #ffffff !important;
+  border-color: #9a008f !important;
 }
 
-/* Bitrix */
+/* Битрикс24 */
+
 .view-toggle .vt-btn[data-view="bitrix"] {
-  background: #1da7f3;
-  color: #ffffff;
-  border: 2px solid #1da7f3;
+  background: #ffffff;
+  color: #27a0f2;
+  border-color: rgba(39, 160, 242, .75);
 }
+
+.view-toggle .vt-btn[data-view="bitrix"]:hover,
 .view-toggle .vt-btn[data-view="bitrix"].is-active {
-  background: #0c85c8;
-  border-color: #0c85c8;
+  background: #27a0f2;
+  color: #ffffff;
+  border-color: #27a0f2;
 }
 
-/* ========== ДОБАВЛЯЕМ УПРАВЛЕНИЕ БЛОКАМИ ========== */
 
-/* По умолчанию спецовые блоки скрыты */
+/* =====================================================
+   УСЛОВНЫЕ БЛОКИ
+===================================================== */
+
 .only-standalone,
 .only-bitrix {
   display: block;
 }
 
+.view-standalone .only-standalone {
+  display: none;
+}
+
+.view-bitrix .only-bitrix {
+  display: none;
+}
+
+
+/* =====================================================
+   ШАПКА
+===================================================== */
+
+.md-header {
+  background: #f3f4f6 !important;
+  box-shadow: none !important;
+  padding: 14px 20px !important;
+  height: auto !important;
+}
+
+.md-header__inner {
+  background: #ffffff !important;
+  border-radius: 24px !important;
+  min-height: 64px !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 auto !important;
+  padding: 0 24px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, .06) !important;
+  box-sizing: border-box !important;
+}
+
+.md-header__topic,
+.md-header__ellipsis {
+  display: none !important;
+}
+
+/* Поиск: не меняем цвет при наведении */
+
+.md-header .md-search__form,
+.md-header .md-search__form:hover,
+.md-header .md-search__form:focus-within {
+  background: #b8b8b8 !important;
+  color: #ffffff !important;
+}
+
+.md-header .md-search__input,
+.md-header .md-search__input:hover,
+.md-header .md-search__input:focus {
+  background: #b8b8b8 !important;
+  color: #ffffff !important;
+}
+
+.md-header .md-search__input::placeholder {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+.md-header .md-search__icon {
+  color: #ffffff !important;
+}
+
+
+/* =====================================================
+   ГЛАВНАЯ СТРАНИЦА
+===================================================== */
+
+.home-main {
+  width: 100%;
+  max-width: 1850px;
+  margin: 0 auto;
+
+  padding:
+    clamp(24px, 4vh, 56px)
+    clamp(24px, 5vw, 80px)
+    clamp(24px, 4vh, 48px);
+
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 30px;
+
+  justify-items: center;
+}
+
+.home-main__title {
+  margin: 0 0 8px !important;
+
+  font-size: clamp(38px, 5vw, 82px) !important;
+  line-height: 1.05 !important;
+  font-weight: 500 !important;
+  letter-spacing: -1px;
+
+  color: #4a4a4a;
+  text-align: center;
+
+  white-space: normal;
+  text-wrap: balance;
+}
+
+.home-main__subtitle {
+  width: fit-content !important;
+  max-width: 1200px;
+
+  margin: 0 auto !important;
+
+  font-size: clamp(18px, 2vw, 32px);
+  line-height: 1.3;
+
+  color: #444;
+  text-align: center;
+  white-space: normal;
+}
+
+
+/* =====================================================
+   КАРТОЧКИ
+===================================================== */
+
+.home-products {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 24px;
+
+  width: 100%;
+  max-width: 1750px;
+  margin: 0 auto;
+}
+
+.home-product {
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+
+  min-width: 0;
+  width: 100%;
+  min-height: 390px;
+
+  padding: 38px 40px;
+
+  border-radius: 24px;
+  box-sizing: border-box;
+}
+
+.home-product--bitrix {
+  background: #edf6ff;
+}
+
+.home-product--amo {
+  background: #E8F7F8;
+}
+
+.home-product--api {
+  background: #ffeaf6;
+}
+
+.home-product__text {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  width: 100%;
+  min-width: 0;
+}
+
+
+/* Заголовок */
+
+.home-product__title {
+  margin: 0 0 18px;
+
+  font-size: 22px;
+  line-height: 1.15;
+  font-weight: 300;
+
+  white-space: nowrap;
+}
+
+.home-product__title strong {
+  display: inline;
+  margin-left: 6px;
+
+  font-size: 31px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+
+/* Описание */
+
+.home-product__description {
+  width: 56%;
+  max-width: none;
+
+  margin: 0;
+
+  font-size: 17px;
+  line-height: 1.55;
+
+  text-align: left !important;
+  word-spacing: normal !important;
+}
+
+
+/* GIF */
+
+.home-product__gif {
+  position: absolute;
+  z-index: 1;
+
+  top: 88px;
+  right: 16px;
+
+  width: 38%;
+  max-width: 210px;
+  height: auto;
+
+  transform: none;
+}
+
+
+/* Старый контейнер изображения больше не используется */
+
+.home-product__visual {
+  display: none !important;
+}
+
+
+/* =====================================================
+   КНОПКИ КАРТОЧЕК
+===================================================== */
+
+.home-product__buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 10px 12px;
+  width: 100%;
+
+  margin-top: auto;
+}
+
+.home-product__btn {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+
+  width: 205px !important;
+  min-width: 205px !important;
+  max-width: 205px !important;
+
+  height: 56px !important;
+  min-height: 56px !important;
+
+  flex: 0 0 auto !important;
+
+  padding: 0 20px !important;
+  margin: 0 !important;
+
+  border-radius: 999px !important;
+  box-sizing: border-box;
+
+  font-size: 18px;
+  white-space: nowrap;
+
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+  background-image: none !important;
+}
+
+.home-product__btn:link,
+.home-product__btn:visited,
+.home-product__btn:hover,
+.home-product__btn:focus,
+.home-product__btn:focus-visible,
+.home-product__btn:active {
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+  background-image: none !important;
+}
+
+
+/* Битрикс24 */
+
+.home-product--bitrix .home-product__btn:not(.home-product__btn--second) {
+  background: #4d7eb9 !important;
+  border: 2px solid #4d7eb9 !important;
+
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.home-product--bitrix .home-product__btn--second {
+  background: transparent !important;
+  border: 2px solid #4d7eb9 !important;
+
+  color: #4d7eb9 !important;
+  -webkit-text-fill-color: #4d7eb9 !important;
+}
+
+.home-product--bitrix .home-product__btn--second:hover,
+.home-product--bitrix .home-product__btn--second:focus-visible {
+  background: transparent !important;
+  color: #4d7eb9 !important;
+  -webkit-text-fill-color: #4d7eb9 !important;
+}
+
+
+/* amoCRM */
+
+.home-product--amo .home-product__btn:not(.home-product__btn--second):not(.home-product__btn--second-amo) {
+  background: #35B8C8 !important;
+  border: 2px solid #35B8C8 !important;
+
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.home-product--amo .home-product__btn--second,
+.home-product--amo .home-product__btn--second-amo {
+  background: transparent !important;
+  border: 2px solid #35B8C8 !important;
+
+  color: #35B8C8 !important;
+  -webkit-text-fill-color: #35B8C8 !important;
+}
+
+.home-product--amo .home-product__btn--second:hover,
+.home-product--amo .home-product__btn--second:focus-visible,
+.home-product--amo .home-product__btn--second-amo:hover,
+.home-product--amo .home-product__btn--second-amo:focus-visible {
+  background: transparent !important;
+  color: #35B8C8 !important;
+  -webkit-text-fill-color: #35B8C8 !important;
+}
+
+
+/* API */
+
+.home-product--api .home-product__btn {
+  background: #b04483 !important;
+  border: 2px solid #b04483 !important;
+
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.home-product--api .home-product__btn:hover,
+.home-product--api .home-product__btn:focus-visible {
+  background: #b04483 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+
+/* =====================================================
+   АДАПТИВНОСТЬ ГЛАВНОЙ
+===================================================== */
+
+/* Когда трём карточкам уже тесно — переходим в одну колонку */
+
+@media (max-width: 1450px) {
+  .home-main {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .home-products {
+    grid-template-columns: 1fr;
+    max-width: 720px;
+  }
+
+  .home-product {
+    min-height: 390px;
+  }
+
+  .home-product__description {
+    width: 56%;
+  }
+
+  .home-product__gif {
+    width: 38%;
+    max-width: 240px;
+  }
+}
+
+
+/* Телефоны */
+
+@media (max-width: 760px) {
+  .home-main {
+    padding: 28px 20px;
+    gap: 24px;
+  }
+
+  .home-main__title {
+    width: 100%;
+    font-size: clamp(28px, 8vw, 38px) !important;
+    line-height: 1.15 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .home-main__subtitle {
+    width: 100% !important;
+    max-width: 340px;
+
+    font-size: clamp(14px, 4vw, 18px);
+    line-height: 1.35;
+  }
+
+  .home-products {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    max-width: none;
+    gap: 20px;
+  }
+
+  .home-product {
+    width: 100%;
+    min-height: 0;
+
+    padding: 28px 24px;
+
+    border-radius: 20px;
+  }
+
+  .home-product__text {
+    width: 100%;
+  }
+
+  .home-product__title {
+    white-space: normal;
+  }
+
+  .home-product__description {
+    width: 100%;
+    max-width: none;
+
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .home-product__gif {
+    display: none !important;
+  }
+
+  .home-product__buttons {
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    gap: 10px;
+    width: 100%;
+
+    margin-top: 24px;
+  }
+
+  .home-product__buttons .home-product__btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    height: 46px !important;
+    min-height: 46px !important;
+
+    flex: 0 0 auto !important;
+
+    font-size: 15px;
+  }
+}
+
+
+/* Очень маленькие телефоны */
+
+@media (max-width: 390px) {
+  .home-main {
+    padding: 20px 14px;
+  }
+
+  .home-product {
+    padding: 24px 20px;
+  }
+
+  .home-product__title {
+    font-size: 20px;
+  }
+
+  .home-product__title strong {
+    margin-left: 4px;
+    font-size: 27px;
+  }
+}
+
+
+/* =====================================================
+   ЦВЕТ ТЕКСТОВЫХ ССЫЛОК В РУКОВОДСТВЕ
+===================================================== */
+
+/* API */
+
+html[data-view="standalone"] .md-content .md-typeset p a:not([class]),
+html[data-view="standalone"] .md-content .md-typeset li a:not([class]) {
+  color: #b04483 !important;
+  -webkit-text-fill-color: #b04483 !important;
+}
+
+/* Битрикс24 */
+
+html[data-view="bitrix"] .md-content .md-typeset p a:not([class]),
+html[data-view="bitrix"] .md-content .md-typeset li a:not([class]) {
+  color: #27A0F2 !important;
+  -webkit-text-fill-color: #27A0F2 !important;
+}
+
+/* amoCRM */
+
+html[data-view="amo"] .md-content .md-typeset p a:not([class]),
+html[data-view="amo"] .md-content .md-typeset li a:not([class]) {
+  color: #35B8C8 !important;
+  -webkit-text-fill-color: #35B8C8 !important;
+}
