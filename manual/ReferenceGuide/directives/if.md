@@ -1,171 +1,171 @@
-# Метка «Условие»
+# Condition expression
 
-Метка **«Условие»** используется для управления содержимым документа в зависимости от заданного условия.
+The **«Condition expression»** directive controls which content is included in the generated document depending on a specified condition.
 
 ![28](../img/directives/28.png)
 
-С её помощью можно определить, какая часть шаблона должна попасть в сформированный документ. Комбинатор проверяет указанное условие и в зависимости от результата выводит или исключает содержимое внутри метки.
+Kombinator evaluates the condition and either includes or excludes the content inside the directive.
 
-Например, можно:
+For example, you can:
 
-- добавить отдельный пункт договора только при определённом значении поля;
-- вывести дополнительный текст, если сумма превышает установленное значение;
-- показать один вариант содержимого при выполнении условия и другой — если оно не выполняется.
+- include a contract clause only when a field has a specific value;
+- display additional text when an amount exceeds a specified value;
+- display one version of the content when the condition is met and another when it is not.
 
-## Структура метки
+## Directive structure
 
-Метка состоит из открывающей и закрывающей частей.
+The directive consists of an opening and a closing part.
 
-В открывающей части задаётся условие:
-
-```text
-{если (условие)}
-
-Содержимое, которое должно быть выведено.
-
-{/если}
-```
-
-Комбинатор проверяет выражение, указанное в открывающей части.
-
-Если результат — `истина`, содержимое между `если` и `/если` добавляется в документ.
-
-Если результат — `ложь`, это содержимое не выводится.
-
-## Условие
-
-В качестве условия указывается выражение, результатом которого является логическое значение `истина` или `ложь`.
-
-Например, можно проверить значение числового поля:
+The condition is specified in the opening part:
 
 ```text
-сумма > 100000
+{if (condition)}
+
+Content to be included.
+
+{/if}
 ```
 
-Если поле `сумма` содержит значение больше `100000`, условие выполняется.
+Kombinator evaluates the expression specified in the opening part.
 
-Можно сравнивать значения полей:
+If the result is `true`, the content between `If` and `/Endif` is included in the document.
+
+If the result is `false`, the content is not included.
+
+## Condition
+
+The condition must be an expression that returns the Boolean value `true` or `false`.
+
+For example, you can check a numeric field:
 
 ```text
-количество > лимит
+amount > 100000
 ```
 
-проверять текстовые значения:
+If the `amount` field contains a value greater than `100000`, the condition is met.
+
+You can compare field values:
 
 ```text
-статус = "Согласовано"
+quantity > limit
 ```
 
-или проверять наличие значения:
+check text values:
 
 ```text
-номерДоговора != пусто
+status = "Approved"
 ```
 
-В условии также можно использовать логические операторы и функции по общим правилам выражений.
-
-Подробнее: [«Основные правила»](../syntax/syntax.md).
-
-## Поле «Да/Нет»
-
-Поле **«Да/Нет»** можно использовать в качестве условия напрямую.
-
-Например:
+or check whether a value is present:
 
 ```text
-доставка
+contractNumber != null
 ```
 
-Если поле **«Доставка»** имеет значение **«Да»**, результат условия — `истина`, и содержимое метки выводится.
+Logical operators and functions can also be used according to the general expression syntax.
 
-Если значение — **«Нет»**, результат — `ложь`, и содержимое не выводится.
+For more information, see [«Basic rules»](../syntax/syntax.md).
 
-Чтобы проверить противоположное значение, можно использовать оператор `не`:
+## Boolean field
+
+A **Boolean** field can be used directly as a condition.
+
+For example:
 
 ```text
-не доставка
+delivery
 ```
 
-В этом случае содержимое будет выведено, если поле **«Доставка»** имеет значение **«Нет»**.
+If the `delivery` field contains `true`, the condition is met and the content inside the directive is included in the document.
 
-## Несколько условий
+If the field contains `false`, the content is excluded.
 
-В одном выражении можно проверить сразу несколько условий.
-
-Оператор `и` используется, если должны выполняться оба условия:
+To check the opposite value, use the `not` operator:
 
 ```text
-сумма > 100000 и согласование
+not delivery
 ```
 
-Содержимое будет выведено только в том случае, если сумма больше `100000` **и** поле `согласование` имеет значение `истина`.
+In this case, the content will be included when the `delivery` field contains `false`.
 
-Оператор `или` используется, если достаточно выполнения хотя бы одного условия:
+## Multiple conditions
+
+A single expression can contain multiple conditions.
+
+Use the `and` operator when both conditions must be true:
 
 ```text
-срочныйЗаказ или важныйКлиент
+amount > 100000 and approval
 ```
 
-Содержимое будет выведено, если выполняется хотя бы одно из этих условий.
+The content will be included only if the amount is greater than `100000` and the `approval` field returns `true`.
 
-## Блок «Иначе»
-
-Блок **«Иначе»** используется, если необходимо задать два варианта содержимого: один — для выполненного условия, другой — для невыполненного.
-
-Структура выглядит так:
+Use the `or` operator when at least one condition must be true:
 
 ```text
-{если (условие)}
-
-Содержимое при выполнении условия.
-
-{иначе}
-
-Содержимое, если условие не выполнено.
-
-{/если}
+urgentOrder or importantClient
 ```
 
-Например:
+The content will be included if at least one of these conditions is met.
+
+## Else block
+
+Use the **Else** block when you need two content options: one for a true condition and another for a false condition.
+
+The structure is:
 
 ```text
-{если (сумма > 100000)}
+{if (condition)}
 
-Требуется дополнительное согласование.
+Content displayed when the condition is true.
 
-{иначе}
+{else}
 
-Дополнительное согласование не требуется.
+Content displayed when the condition is false.
 
-{/если}
+{/if}
 ```
 
-Если `сумма > 100000`, в документ попадёт первый вариант.
-
-Если условие не выполняется, будет выведено содержимое после блока **«Иначе»**.
-
-Блок **«Иначе»** необязателен. Если альтернативное содержимое не требуется, достаточно использовать `если` и `/если`.
-
-## Вложенные условия
-
-Одну метку **«Условие»** можно разместить внутри другой. Это позволяет последовательно проверять несколько зависимых условий.
-
-Например:
+For example:
 
 ```text
-{если (доставка)}
+{if (amount > 100000)}
 
-Условия доставки товара.
+Additional approval is required.
 
-    {если (срочнаяДоставка)}
+{else}
 
-    Срок доставки — в течение одного рабочего дня.
+Additional approval is not required.
 
-    {/если}
-
-{/если}
+{/if}
 ```
 
-Сначала проверяется поле `доставка`.
+If `amount > 100000`, the first content block is included in the document.
 
-Только если первое условие выполняется, проверяется вложенное условие `срочнаяДоставка`.
+If the condition is not met, the content after `Else` is included.
+
+The **Else** block is optional. If no alternative content is required, use only `If` and `/Endif`.
+
+## Nested conditions
+
+One **«Condition expression»** directive can be placed inside another. This allows you to check several dependent conditions step by step.
+
+For example:
+
+```text
+{if (delivery)}
+
+Delivery terms.
+
+    {if (urgentDelivery)}
+
+    Delivery within one business day.
+
+    {/if}
+
+{/if}
+```
+
+Kombinator first checks the `delivery` field.
+
+Only if this condition is met does it evaluate the nested `urgentDelivery` condition.

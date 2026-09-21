@@ -1,4 +1,4 @@
-# «External» directive
+# External
 
 The **«External»** directive is used to insert content from one template into another.
 

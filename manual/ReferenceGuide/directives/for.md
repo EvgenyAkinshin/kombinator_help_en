@@ -1,104 +1,111 @@
-# Метка «Цикл»
+# For
 
-Метка **«Цикл»** используется для повторения части документа для каждого элемента списка.
+The **«For»** directive is used to repeat part of a document for each item in a list.
 
-Например, с её помощью можно последовательно вывести товары, услуги, сотрудников или другие данные из поля типа **«Список»**.
+For example, it can be used to display products, services, employees, or other data from a **List** field.
 
-![Метка «Цикл»](../img/directives/30.png)
+![«For» directive](../img/directives/30.png)
 
-## Для чего используется цикл
+## What the For directive is used for
 
-Поле типа **«Список»** может содержать несколько элементов. Например:
+A **List** field can contain multiple items. For example:
 
 ```text
-Товар 1
-Наименование: Ноутбук
-Количество: 2
-Цена: 80 000
+Product 1
 
-Товар 2
-Наименование: Монитор
-Количество: 3
-Цена: 25 000
+Name: Laptop
+Quantity: 2
+Price: 80,000
 
-Товар 3
-Наименование: Клавиатура
-Количество: 5
-Цена: 4 000
+Product 2
+
+Name: Monitor
+Quantity: 3
+Price: 25,000
+
+Product 3
+
+Name: Keyboard
+Quantity: 5
+Price: 4,000
 ```
 
-Чтобы вывести эти данные в документ, не нужно создавать отдельный блок для каждого товара.
+You do not need to create a separate block for each product.
 
-Достаточно один раз настроить цикл, а Комбинатор последовательно подставит в него данные каждого элемента списка.
+Configure the **For** directive once, and Kombinator will process each item in the list and repeat the content for it.
 
-Количество повторений определяется количеством элементов в списке. Если в списке 10 товаров, цикл будет выполнен 10 раз. Если список пуст, содержимое цикла не выводится.
+The number of repetitions depends on the number of items in the list. If the list contains 10 products, the content inside the directive is repeated 10 times. If the list is empty, the content inside the directive is not included in the document.
 
-## Добавление и структура метки
+## Adding and structuring the directive
 
-1. Установите курсор в месте, где должен начинаться повторяющийся блок, и выберите **«Метки» → «Цикл» → «Цикл»**.
+1. Place the cursor where the repeating block should begin and select **«Directives» → «For» → «For»**.
 
-       В настройках метки укажите:
+       In the directive settings, specify:
 
-       - **Переменная ряда** — имя текущего элемента списка;
-       - **Список** — поле типа **«Список»**, элементы которого нужно перебрать;
-       - **Разделитель** — при необходимости текст или символ между результатами повторений.
+       - **Row variable** — the name used to reference the current list item;
+       - **Source** — the **List** field whose items should be processed;
+       - **Separator** — optional text or a character inserted between repeated blocks.
        
        ![Настройки метки «Цикл»](../img/directives/58.png)
        
-       После добавления метки формируется открывающая часть цикла:
+       After the directive is added, the opening part is inserted:
 
-       ```
-       {цикл(данныеТовара из списокТоваров)}
-       ```
+      ```text
+      {for(productData in productList)}
+      ```
 
-2. После открывающей части разместите текст и другие метки, которые должны повторяться для каждого элемента списка.
+2. After the opening part, add the text and other directives that should be repeated for each list item.
 
-3. Обязательно завершите цикл закрывающей меткой `{/цикл}`.
+3. Close the construction with `{/for}`.
 
-В результате конструкция может выглядеть так:
-
-```text
-{цикл(данныеТовара из списокТоваров)}
-
-Товар: данныеТовара.наименование
-Количество: данныеТовара.количество
-Цена за единицу: данныеТовара.цена
-
-{/цикл}
-```
-
-## Текущий элемент списка
-
-В цикле используется имя, через которое выполняется обращение к текущему элементу списка.
-
-По умолчанию в качестве этого имени указывается идентификатор составного поля, которое является элементом списка.
-
-Например, если составное поле имеет идентификатор `данныеТовара`, обращения к его вложенным полям будут выглядеть так:
+The complete construction may look like this:
 
 ```text
-данныеТовара.наименование
-данныеТовара.количество
-данныеТовара.цена
+{for(productData in productList)}
+
+Product: productData.name
+
+Quantity: productData.quantity
+
+Unit price: productData.price
+
+{/for}
 ```
 
-Имя текущего элемента можно изменить и указать другое допустимое имя. Например:
+## Current list item
+
+Inside the **For** directive, a variable is used to reference the current item in the list.
+
+By default, this name is the identifier of the composite field that represents a list item.
+
+For example, if the composite field identifier is `productData`, its nested fields can be referenced as:
 
 ```text
-{цикл(товар из списокТоваров)}
+productData.name
+productData.quantity
+productData.price
 ```
 
-Тогда обращения к вложенным полям также нужно записывать с новым именем:
+You can change the current item variable and use another valid name.
+
+For example:
 
 ```text
-товар.наименование
-товар.количество
-товар.цена
+{for(product in productList)}
 ```
 
-## «Цикл» и «Таблица»
+In this case, the nested fields must also be referenced using the new variable:
 
-Обе метки используются для работы с данными из поля типа **«Список»**, но предназначены для разных способов их вывода.
+```text
+product.name
+product.quantity
+product.price
+```
 
-**«Цикл»** используется, когда для каждого элемента нужно повторить произвольный фрагмент документа: текст, несколько строк, абзац или блок с другими метками.
+## «For» and «Table»
 
-Если элементы списка нужно вывести в виде строк таблицы, используется метка **«Таблица»**.
+Both directives are used to work with data from a **List** field, but they are intended for different output formats.
+
+Use **«For»** when you need to repeat any document fragment for each list item, such as text, several lines, a paragraph, or a block containing other directives.
+
+Use the **«Table»** directive when list items should be displayed as table rows.

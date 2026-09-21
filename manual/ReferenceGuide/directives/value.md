@@ -1,4 +1,4 @@
-# «Expression» directive
+# Expression
 
 The **«Expression»** directive is used to insert a field value or the result of an expression into the document. It can insert text, numbers, dates, calculation results, or function results.
 

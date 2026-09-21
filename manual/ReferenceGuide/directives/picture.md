@@ -1,75 +1,78 @@
-# Метка «Картинка»
+# «Picture» directive
 
-Метка **«Картинка»** используется для вставки изображения в документ.
+The **«Picture»** directive is used to insert an image into a document.
 
-С помощью метки можно указать поле, из которого Комбинатор должен получить изображение, задать его размер и выбрать способ подгонки с сохранением исходных пропорций.
+You can specify the field from which Kombinator should retrieve the image, set its size, and choose how the image should be resized while preserving its original proportions.
 
-![Картинка](../img/directives/99.png)
+![Picture](../img/directives/99.png)
 
-## Параметры метки
+## Directive parameters
 
-При добавлении метки **«Картинка»** задаются следующие параметры:
+When adding the **«Picture»** directive, specify the following parameters:
 
-- **Выражение** — поле типа [«Картинка»](../typesField/picture.md), из которого Комбинатор получает изображение;
-- **Высота изображения** — высота изображения в сантиметрах. По умолчанию — `3 см`;
-- **Ширина изображения** — ширина изображения в сантиметрах. По умолчанию — `3 см`;
-- **Подгонять размер** — определяет способ изменения размера изображения относительно заданных высоты и ширины.
+- **Expression** — a [Picture](../typesField/picture.md) field from which Kombinator retrieves the image;
 
-## Подгонка размера
+- **Image height** — the image height in centimeters. The default value is `3 cm`;
 
-При изменении размера пропорции исходного изображения сохраняются.
+- **Image width** — the image width in centimeters. The default value is `3 cm`;
 
-Доступны три способа подгонки.
+- **Resize mode** — determines how the image is resized relative to the specified height and width.
 
-### По высоте
+## Resize modes
 
-Высота изображения устанавливается равной значению, указанному в поле **«Высота изображения»**. Ширина рассчитывается автоматически с сохранением пропорций.
+When the image is resized, its original proportions are preserved.
 
-В этом режиме указанная ширина не ограничивает размер изображения.
+Three resize modes are available.
 
-Например, если заданы:
+### By height
 
-```text
-Высота — 3 см
-Ширина — 4 см
-```
+The image height is set to the value specified in **Image height**. The width is calculated automatically to preserve the original proportions.
 
-но при высоте `3 см` пропорциональная ширина изображения составляет `6 см`, итоговый размер будет `3 × 6 см`.
+In this mode, the specified width does not limit the image size.
 
-### По ширине
-
-Ширина изображения устанавливается равной значению, указанному в поле **«Ширина изображения»**. Высота рассчитывается автоматически с сохранением пропорций.
-
-В этом режиме указанная высота не ограничивает размер изображения.
-
-Например, если заданы:
+For example, if the following values are set:
 
 ```text
-Высота — 3 см
-Ширина — 4 см
+Height — 3 cm
+Width — 4 cm
 ```
 
-но при ширине `4 см` пропорциональная высота изображения составляет `5 см`, итоговый размер будет `5 × 4 см`.
+but the proportional width is `6 cm` when the image height is `3 cm`, the resulting image size will be `3 × 6 cm`.
 
-### По высоте и ширине
+### By width
 
-Размер изображения изменяется с сохранением пропорций так, чтобы ни его высота, ни ширина не превышали указанные значения.
+The image width is set to the value specified in **Image width**. The height is calculated automatically to preserve the original proportions.
 
-Например, если заданы:
+In this mode, the specified height does not limit the image size.
+
+For example, if the following values are set:
 
 ```text
-Высота — 3 см
-Ширина — 5 см
+Height — 3 cm
+Width — 4 cm
 ```
 
-изображение будет вписано в размеры `3 × 5 см`. В зависимости от исходных пропорций одна из сторон может быть меньше указанного значения.
+but the proportional height is `5 cm` when the image width is `4 cm`, the resulting image size will be `5 × 4 cm`.
 
-## Метка в шаблоне
+### By height and width
 
-После добавления метки в шаблоне отображается изображение-плейсхолдер. Оно показывает место и размер изображения, которое будет вставлено в сформированный документ.
+The image is resized proportionally so that neither its height nor its width exceeds the specified values.
 
-Размер плейсхолдера можно изменить непосредственно в редакторе. Изменённые значения высоты и ширины сохраняются и учитываются при формировании документа.
+For example, if the following values are set:
 
-Изображение располагается **в тексте**, поэтому его положение определяется местом размещения метки в шаблоне.
+```text
+Height — 3 cm
+Width — 5 cm
+```
 
-При формировании документа плейсхолдер заменяется изображением из поля, указанного в параметре **«Выражение»**.
+the image will be fitted within `3 × 5 cm`. Depending on its original proportions, one side may be smaller than the specified value.
+
+## Picture directive in the template
+
+After the directive is added, a placeholder image appears in the template. It shows the position and size of the image that will be inserted into the generated document.
+
+You can resize the placeholder directly in the editor. The updated height and width are saved and used when the document is generated.
+
+The image is placed **inline with text**, so its position depends on where the directive is located in the template.
+
+When the document is generated, the placeholder is replaced with the image from the field specified in **Expression**.
