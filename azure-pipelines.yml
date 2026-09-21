@@ -1,0 +1,31 @@
+
+
+trigger:
+  - master
+
+variables:
+  - group: ftp_help_kombinator_ru_credentials
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- bash: |
+    pip install mkdocs-material
+    pip install mkdocs-include-markdown-plugin
+    mkdocs build
+  displayName: 'Install mkdocs-material and build docs'
+- task: FtpUpload@2
+  inputs:
+    credentialsOption: 'inputs'
+    serverUrl: 'ftp://help.kombinator.ru'
+    username: '$(FTP_LOGIN)'
+    password: '$(FTP_PASSWORD)'
+    rootDirectory: 'site'
+    filePatterns: '**'
+    remoteDirectory: '/'
+    clean: false
+    cleanContents: true
+    preservePaths: true
+    trustSSL: true
+  displayName: 'FTP upload'

@@ -1,0 +1,157 @@
+/* Bitrix-only edition */
+.view-toggle { display: none !important; }
+
+.md-header__title,
+.md-header__topic,
+.md-header__ellipsis,
+.md-header__option { display: none !important; }
+
+header.md-header .md-header__inner.md-grid {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+}
+
+header.md-header .md-header__button.md-logo {
+  display: inline-flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  flex: 0 0 auto !important;
+  order: 1 !important;
+  margin: 0 !important;
+}
+
+header.md-header .md-search,
+header.md-header [data-md-component="search"] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  flex: 1 1 520px !important;
+  width: min(620px, 60vw) !important;
+  min-width: 220px !important;
+  max-width: 620px !important;
+  margin: 0 0 0 auto !important;
+  padding: 0 !important;
+  pointer-events: auto !important;
+  order: 2 !important;
+}
+
+:root {
+  --content-link-color: #27a0f2;
+  --content-link-hover: #168bd8;
+}
+
+.md-content .md-typeset p a:not([class]),
+.md-content .md-typeset li a:not([class]),
+.md-content .md-typeset a:not(.md-button):not(.headerlink):not(.support-button) {
+  color: var(--content-link-color) !important;
+  -webkit-text-fill-color: var(--content-link-color) !important;
+}
+
+.md-content .md-typeset a:not(.md-button):not(.headerlink):not(.support-button):hover {
+  color: var(--content-link-hover) !important;
+  -webkit-text-fill-color: var(--content-link-hover) !important;
+}
+
+.md-content .md-typeset a:not(.md-button):not(.headerlink):hover { color: #168bd8 !important; }
+
+@media (min-width: 1221px) {
+  header.md-header .md-header__button[for="__drawer"] { display: none !important; }
+}
+
+@media (max-width: 1220px) {
+  header.md-header .md-header__inner.md-grid {
+    gap: 10px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+  header.md-header .md-header__button[for="__drawer"] {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    order: 0 !important;
+    flex: 0 0 40px !important;
+    width: 40px !important;
+    height: 40px !important;
+    margin: 0 !important;
+  }
+  header.md-header .md-header__button.md-logo { order: 1 !important; }
+  header.md-header .md-search,
+  header.md-header [data-md-component="search"] {
+    display: block !important;
+    visibility: visible !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    flex: 1 1 auto !important;
+    margin-left: auto !important;
+    order: 2 !important;
+  }
+}
+
+@media (min-width: 1221px) {
+  header.md-header .md-header__inner.md-grid {
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  header.md-header .md-search,
+  header.md-header [data-md-component="search"] {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+
+    margin-left: auto !important;
+    margin-right: 0 !important;
+
+    width: 256px !important;
+    flex: 0 0 256px !important;
+
+    transition:
+      width 0.25s ease,
+      flex-basis 0.25s ease !important;
+  }
+
+  /* Расширение при нажатии на поиск */
+  header.md-header .md-search:focus-within,
+  header.md-header [data-md-component="search"]:focus-within {
+    width: 520px !important;
+    flex-basis: 520px !important;
+  }
+
+  header.md-header .md-search__inner,
+  header.md-header .md-search__form {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+}
+
+/* Выпадающий блок поиска */
+header.md-header .md-search__output {
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+header.md-header .md-search__scrollwrap,
+header.md-header .md-search-result,
+header.md-header .md-search-result__list {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+header.md-header .md-search-result__article,
+header.md-header .md-search-result__teaser {
+  max-width: none !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+}
+
+header.md-header .md-search-result pre,
+header.md-header .md-search-result code {
+  max-width: 100% !important;
+  white-space: pre-wrap !important;
+  overflow-wrap: anywhere !important;
+}

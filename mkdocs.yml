@@ -1,0 +1,136 @@
+site_name: Руководство пользователя
+nav:
+- Getting Started:
+  - App installation: ReferenceGuide/Bitrix/install.md
+  - App setup: ReferenceGuide/Bitrix/setting.md
+  - Creating a template: ReferenceGuide/Bitrix/creat.md
+  - Template automation: ReferenceGuide/Bitrix/template-automation.md
+  - Generating a document: UserInterface/Documents/add-document.md
+- Application Interface:
+  - Fields: UserInterface/Templates/fields.md
+  - Editing area: UserInterface/Templates/edit-area.md
+  - Toolbar: UserInterface/Templates/tabs.md
+  - File name mask: UserInterface/Templates/file-name-mask.md
+  - Preview: UserInterface/Templates/preview.md
+  - Keyboard shortcuts: UserInterface/Templates/keyboard-shortcuts.md
+- Fields:
+  - Text: ReferenceGuide/typesField/text.md
+  - Integer: ReferenceGuide/typesField/integer.md
+  - Decimal: ReferenceGuide/typesField/decimal.md
+  - Boolean: ReferenceGuide/typesField/boolean.md
+  - Date/Time: ReferenceGuide/typesField/datetime.md
+  - Date: ReferenceGuide/typesField/date.md
+  - Time: ReferenceGuide/typesField/time.md
+  - Struct: ReferenceGuide/typesField/composite.md
+  - List: ReferenceGuide/typesField/list.md
+  - Picture: ReferenceGuide/typesField/picture.md
+- Function:
+  - Date and time:
+    - date: ReferenceGuide/functions/Date/дата.md
+    - edate: ReferenceGuide/functions/Date/датамес.md
+    - emonth: ReferenceGuide/functions/Date/конмесяца.md
+    - bomonth: ReferenceGuide/functions/Date/начмесяца.md
+    - datediff: ReferenceGuide/functions/Date/разндат.md
+    - Today: ReferenceGuide/functions/Date/сегодня.md
+    - dateshift: ReferenceGuide/functions/Date/смещдат.md
+    - now: ReferenceGuide/functions/Date/тдата.md
+    - time: ReferenceGuide/functions/Date/время.md
+    - year: ReferenceGuide/functions/Date/год.md
+    - datetime: ReferenceGuide/functions/Date/датавремя.md
+    - mounth: ReferenceGuide/functions/Date/месяц.md
+    - day: ReferenceGuide/functions/Date/день.md
+    - hour: ReferenceGuide/functions/Date/час.md
+    - minute: ReferenceGuide/functions/Date/минуты.md
+    - second: ReferenceGuide/functions/Date/секунды.md
+    - weekday: ReferenceGuide/functions/Date/деньнед.md
+    - weeknum: ReferenceGuide/functions/Date/номнедели.md
+  - Formatting:
+    - formatDate: ReferenceGuide/functions/Morph/форматДатыПоМаске.md
+    - formatNumber: ReferenceGuide/functions/Morph/форматЧисла.md
+    - integerToText: ReferenceGuide/functions/Morph/integerToText.md
+    - инициалы: ReferenceGuide/functions/Morph/инициалы.md
+    - окончание: ReferenceGuide/functions/Morph/окончание.md
+    - склонение: ReferenceGuide/functions/Morph/склонение.md
+    - транслит: ReferenceGuide/functions/Morph/транслит.md
+    - форматВалюты: ReferenceGuide/functions/Morph/форматВалюты.md
+    - форматДаты: ReferenceGuide/functions/Morph/форматДаты.md    
+    - целоеСТекстом: ReferenceGuide/functions/Morph/целоеСТекстом.md
+    - числоСТекстом: ReferenceGuide/functions/Morph/числоСТекстом.md    
+  - Math:
+    - round: ReferenceGuide/functions/Math/округлить.md
+    - roundup: ReferenceGuide/functions/Math/округлитьвверх.md
+    - rounddown: ReferenceGuide/functions/Math/округлитьвниз.md
+    - exp: ReferenceGuide/functions/Math/exp.md
+    - ln: ReferenceGuide/functions/Math/ln.md
+    - log10: ReferenceGuide/functions/Math/log10.md
+  - Списки:
+    - match: ReferenceGuide/functions/Lists/поискпоз.md
+    - index: ReferenceGuide/functions/Lists/индекс.md
+    - sort: ReferenceGuide/functions/Lists/сортировать.md
+    - sortDescending: ReferenceGuide/functions/Lists/сортироватьПоУбыванию.md
+    - filter: ReferenceGuide/functions/Lists/фильтровать.md
+    - group: ReferenceGuide/functions/Lists/группировать.md
+    - sum: ReferenceGuide/functions/Lists/сумм.md
+    - max: ReferenceGuide/functions/Lists/макс.md
+    - min: ReferenceGuide/functions/Lists/мин.md
+    - avg: ReferenceGuide/functions/Lists/срзнач.md
+    - count: ReferenceGuide/functions/Lists/счет.md
+  - Logic:
+    - if: ReferenceGuide/functions/Logic/если.md
+  - Text:
+    - length: ReferenceGuide/functions/Text/длина.md
+    - trim: ReferenceGuide/functions/Text/обрезатьпробелы.md
+    - upper: ReferenceGuide/functions/Text/прописн.md
+    - proper: ReferenceGuide/functions/Text/пропнач.md
+    - mid: ReferenceGuide/functions/Text/пстр.md
+    - lower: ReferenceGuide/functions/Text/строчн.md
+    - find: ReferenceGuide/functions/Text/поиск.md
+    - substitute: ReferenceGuide/functions/Text/подставить.md
+    - repeat: ReferenceGuide/functions/Text/повтор.md
+- Sintax:
+  - Basic rules: ReferenceGuide/syntax/syntax.md
+  - Where to use: ReferenceGuide/syntax/syntax-usage.md
+- Directives:
+  - Expression: ReferenceGuide/directives/value.md
+  - External: ReferenceGuide/directives/fragment.md
+  - Condition expression: ReferenceGuide/directives/if.md
+  - Switch: ReferenceGuide/directives/switch.md
+  - For: ReferenceGuide/directives/for.md
+  - Table: ReferenceGuide/directives/table.md
+  - Picture: ReferenceGuide/directives/picture.md
+- FAQ: UserInterface/FAQ.md
+- Support: UserInterface/help.md
+theme:
+  name: material
+  logo: img/logo2.png
+  favicon: img/logo.png
+  language: ru
+  font:
+    text: Roboto
+  features:
+  - navigation.tracking
+  - navigation.top
+  - content.image-zoom
+  hide:
+  - header.title
+  palette:
+    scheme: default
+    primary: deep purple
+    accent: purple
+plugins:
+- blog
+- search
+- include-markdown
+markdown_extensions:
+- attr_list
+- md_in_html
+extra_javascript:
+- javascripts/extra.js
+- assets/header.js
+- assets/nav-toggle.js
+extra_css:
+- assets/extra.css
+- styles/view-toggle.css
+- styles/header-fix.css
+- styles/bitrix-only.css
+docs_dir: manual
