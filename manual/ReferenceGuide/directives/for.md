@@ -45,9 +45,7 @@ The number of repetitions depends on the number of items in the list. If the lis
        - **Row variable** — the name used to reference the current list item;
        - **Source** — the **List** field whose items should be processed;
        - **Separator** — optional text or a character inserted between repeated blocks.
-       
-       ![Настройки метки «Цикл»](../img/directives/58.png)
-       
+              
        After the directive is added, the opening part is inserted:
 
       ```text

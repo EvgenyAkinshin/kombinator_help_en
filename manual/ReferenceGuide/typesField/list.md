@@ -1,135 +1,121 @@
-# Поле «Список»
+# «List» field
 
-Поле **«Список»** используется для хранения нескольких элементов одинаковой структуры.
+The **«List»** field is used to store multiple items with the same structure.
 
-Каждый элемент списка может содержать одно значение или несколько связанных полей. Например, список можно использовать для хранения товаров, сотрудников, услуг или других повторяющихся данных.
+Each list item can contain a single value or several related fields. For example, a list can be used to store products, employees, services, or other repeating data.
 
-## Создание и добавление поля
+## Creating and adding a field
 
+For instructions on creating and adding fields, see [Creating a template](../Bitrix/creat.md).
 
+## List structure
 
+The structure of a single item determines which data is stored in each list item.
 
-
-Создание и добавление полей: [ИНСТРУКЦИЯ](../Bitrix/creat.md)
-
-
-
-
-
-## Структура списка
-
-Структура одного элемента определяет, какие данные будут храниться в каждом элементе списка.
-
-
-
-
-
-Например, поле **«Товары»** сделки может иметь следующую структуру:
+For example, the **«Products»** field in a deal may have the following structure:
 
 ```text
-сделки
-└── товары
-    └── товар
-        ├── название
-        ├── количество
-        └── цена
+deals
+
+└── products
+
+    └── product
+
+        ├── name
+
+        ├── quantity
+
+        └── price
 ```
 
-Здесь:
+Where:
 
-- `сделки` — составное поле, представляющее сущность сделки;
-- `товары` — поле **«Список»**;
-- `товар` — составное поле, описывающее один элемент списка;
-- `название`, `количество`, `цена` — поля одного товара.
+- `deals` — a **Struct** field representing the deal entity;
+- `products` — a **List** field;
+- `product` — a **Struct** field representing one list item;
+- `name`, `quantity`, and `price` — fields of a single product.
 
-Список может содержать несколько товаров с одинаковой структурой и собственными значениями.
+The list can contain multiple products with the same structure but different values.
 
+## Using the field through the «Directives» tab
 
+The [«For»](../directives/for.md) and [«Table»](../directives/table.md) directives are used to work with list items.
 
+### Using the «For» directive
 
+The **«For»** directive processes each item in the list and repeats the specified document content for every item.
 
-## Использование через вкладку «Метки»
+The current list item is assigned a variable name that can be used to reference its value or nested fields.
 
-Для работы с элементами списка используются метки [«Цикл»](../directives/for.md) и [«Таблица»](../directives/table.md).
-
-### Через метку «Цикл»
-
-Метка **«Цикл»** последовательно перебирает элементы списка и повторяет указанный фрагмент документа для каждого из них.
-
-В выражении метки **«Цикл»** текущему элементу задаётся имя, через которое можно обращаться к его значению или вложенным полям.
-
-
-
-
-
-Например, для списка товаров сделки:
+For example, for a deal product list:
 
 ```text
-{цикл(товар из сделки.товары)}
-{товар.название} — {товар.количество} — {товар.цена}
-{/цикл}
+{t_for(product из deals.products)}
+
+{product.name} — {product.quantity} — {product.price}
+
+{/t_for}
 ```
 
-Здесь:
+Where:
 
-- `сделки.товары` — поле **«Список»**;
-- `товар` — имя текущего элемента;
-- `товар.название`, `товар.количество`, `товар.цена` — поля текущего товара.
+- `deals.products` — the **List** field;
+- `product` — the current item variable;
+- `product.name`, `product.quantity`, and `product.price` — fields of the current product.
 
+For more information, see [«For»](../directives/for.md).
 
+### Using the «Table» directive
 
+The **«Table»** directive is used when list items need to be displayed as a dynamic table.
 
+For each item in the list, Kombinator repeats the table rows placed between the `t_for` and `/t_for` directives. The repeated block can contain one or multiple rows.
 
-Подробнее о настройке: [метка «Цикл»](../directives/for.md).
-
-### Через метку «Таблица»
-
-Метка **«Таблица»** используется, если элементы списка необходимо вывести в виде динамической таблицы.
-
-Для каждого элемента списка Комбинатор повторяет строки, расположенные внутри метки **«Таблица»**. Это может быть одна или несколько строк.
-
-Например, если для каждого товара в шаблоне предусмотрены две строки:
+For example, if the template contains two rows for each product:
 
 ```text
-Наименование: {товар.название}
-Количество: {товар.количество}    Цена: {товар.цена}
+Name: {product.name}
+
+Quantity: {product.quantity}    Price: {product.price}
 ```
 
-а список содержит два товара, в документе будут сформированы:
+and the list contains two products, the generated document may contain:
 
 ```text
-Наименование: Монитор
-Количество: 2    Цена: 15000
+Name: Monitor
 
-Наименование: Клавиатура
-Количество: 5    Цена: 3000
+Quantity: 2    Price: 15000
+
+Name: Keyboard
+
+Quantity: 5    Price: 3000
 ```
 
-Подробнее о настройке: [метка «Таблица»](../directives/table.md).
+For more information, see [«Table»](../directives/table.md).
 
-## Функции для работы со списком
+## Functions for working with the field
 
-Для поля **«Список»** доступны функции для поиска, отбора, сортировки, группировки и обработки его элементов.
+The **«List»** field supports functions for searching, filtering, sorting, grouping, and processing list items.
 
-### Поиск и обработка списка
+### Searching and processing a list
 
-- [индекс](../functions/Lists/индекс.md) — возвращает элемент списка по указанной позиции;
-- [поискпоз](../functions/Lists/поискпоз.md) — находит позицию элемента в списке;
-- [фильтровать](../functions/Lists/фильтровать.md) — отбирает элементы списка по заданному условию;
-- [сортировать](../functions/Lists/сортировать.md) — сортирует элементы по возрастанию;
-- [сортироватьПоУбыванию](../functions/Lists/сортироватьПоУбыванию.md) — сортирует элементы по убыванию;
-- [группировать](../functions/Lists/группировать.md) — объединяет элементы в группы по заданному признаку.
+- [index](../functions/Lists/index.md) — returns a list item at the specified position;
+- [match](../functions/Lists/match.md) — finds the position of an item in a list;
+- [filter](../functions/Lists/filter.md) — selects list items that match a specified condition;
+- [sort](../functions/Lists/sort.md) — sorts items in ascending order;
+- [sortDescending](../functions/Lists/sortDescending.md) — sorts items in descending order;
+- [group](../functions/Lists/group.md) — groups items by a specified value.
 
-Результат функций `фильтровать`, `сортировать`, `сортироватьПоУбыванию` и `группировать` используется вместо исходного списка в выражении метки **«Цикл»** или **«Таблица»**.
+The results of `filter`, `sort`, `sortDescending`, and `group` can be used instead of the original list in a **For** or **Table** directive.
 
-Фильтрация возвращает новый список с отобранными элементами, сортировка — новый список с изменённым порядком элементов, а группировка — список сформированных групп.
+`filter` returns a new list containing only the selected items, sorting functions return a new list with a different item order, and `group` returns a list of generated groups.
 
-### Расчёты по элементам списка
+### Calculations with list items
 
-Для списка и значений его элементов можно использовать следующие функции:
+The following functions can be used with a list and values of its items:
 
-- [счет](../functions/Lists/счет.md) — подсчитывает количество элементов;
-- [сумм](../functions/Lists/сумм.md) — вычисляет сумму числовых значений;
-- [срзнач](../functions/Lists/срзнач.md) — вычисляет среднее арифметическое;
-- [мин](../functions/Lists/мин.md) — возвращает минимальное значение;
-- [макс](../functions/Lists/макс.md) — возвращает максимальное значение.
+- [count](../functions/Lists/count.md) — returns the number of items;
+- [sum](../functions/Lists/sum.md) — calculates the sum of numeric values;
+- [avg](../functions/Lists/avg.md) — calculates the arithmetic mean;
+- [min](../functions/Lists/min.md) — returns the minimum value;
+- [max](../functions/Lists/max.md) — returns the maximum value.

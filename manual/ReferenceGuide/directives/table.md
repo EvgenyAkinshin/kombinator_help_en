@@ -17,7 +17,7 @@ It allows you to repeat rows for list items, display rows only when a condition 
 The opening directive has the following structure:
 
 ```text
-{t_for(employee из employeeList)}
+{t_for(employee in employeeList)}
 ```
 
 Где:
@@ -40,7 +40,7 @@ The current item variable can be changed.
 For example:
 
 ```text
-{t_for(data из employeeList)}
+{t_for(data in employeeList)}
 ```
 
 In this case, the nested fields must also be referenced using the new variable:
@@ -162,5 +162,3 @@ Delivery
 ```
 
 the cells containing `Installation` will be merged into one group, while the cells containing `Delivery` will be merged into another group.
-
-![V_Merge example](../img/directives/68.png)

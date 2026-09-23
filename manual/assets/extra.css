@@ -280,7 +280,7 @@ details {
 }
 
 .md-sidebar--secondary nav.md-nav--secondary::before {
-  content: "На этой странице";
+  content: "On this page";
   display: block;
   margin-bottom: 12px;
   font-weight: 600;

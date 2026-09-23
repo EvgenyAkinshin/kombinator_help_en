@@ -173,9 +173,9 @@ The tab contains Kombinator directives used to automatically populate and genera
 
 ![«Directives» tab](../img/Templates/88.png)
 
-1. **«Expression»** — inserts a field value or the result of an expression into the document. [Learn more](../../ReferenceGuide/directives/value.md)
+1. **«Expression»** — inserts a field value or the result of an expression into the document. [Learn more](../../ReferenceGuide/directives/expression.md)
 
-2. **«External»** — inserts content from another template located at the specified path. [Learn more](../../ReferenceGuide/directives/fragment.md)
+2. **«External»** — inserts content from another template located at the specified path. [Learn more](../../ReferenceGuide/directives/external.md)
 
 3. **«Picture»** — inserts an image from a Bitrix24 file field. [Learn more](../../ReferenceGuide/directives/picture.md)
 

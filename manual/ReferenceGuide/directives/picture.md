@@ -1,4 +1,4 @@
-# «Picture» directive
+# Picture
 
 The **«Picture»** directive is used to insert an image into a document.
 

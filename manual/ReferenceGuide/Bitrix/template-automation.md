@@ -34,8 +34,6 @@ The automation rule generates a document when a CRM item moves to the stage wher
 
 7. Click **«Add»**.
 
-      ![37](../img/bitrix/37.png)
-
 8. In the window that opens, configure the conditions, execution order, and execution time.
 
 9. In **«Robot settings»**, select the template that should be used to generate the document.

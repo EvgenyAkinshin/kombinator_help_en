@@ -58,7 +58,7 @@ To add new fields or remove fields you no longer need:
 
 1. Click the three-dot menu next to the main block.
 
-2. Select **«Edit Fields»**.
+2. Select **«Edit fields»**.
 
       ![44](../../ReferenceGuide/img/bitrix/44.png)
 

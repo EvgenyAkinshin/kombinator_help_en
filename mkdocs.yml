@@ -1,12 +1,12 @@
 site_name: Kombinator Help
 nav:
-- Getting Started:
+- Getting started:
   - App installation: ReferenceGuide/Bitrix/install.md
   - App setup: ReferenceGuide/Bitrix/setting.md
   - Creating a template: ReferenceGuide/Bitrix/creat.md
   - Template automation: ReferenceGuide/Bitrix/template-automation.md
   - Generating a document: UserInterface/Documents/add-document.md
-- Application Interface:
+- Application interface:
   - Fields: UserInterface/Templates/fields.md
   - Editing area: UserInterface/Templates/edit-area.md
   - Toolbar: UserInterface/Templates/tabs.md
@@ -21,32 +21,32 @@ nav:
   - Date/Time: ReferenceGuide/typesField/datetime.md
   - Date: ReferenceGuide/typesField/date.md
   - Time: ReferenceGuide/typesField/time.md
-  - Struct: ReferenceGuide/typesField/composite.md
+  - Struct: ReferenceGuide/typesField/struct.md
   - List: ReferenceGuide/typesField/list.md
   - Picture: ReferenceGuide/typesField/picture.md
 - Function:
   - Date and time:
-    - date: ReferenceGuide/functions/Date/дата.md
-    - edate: ReferenceGuide/functions/Date/датамес.md
-    - emonth: ReferenceGuide/functions/Date/конмесяца.md
-    - bomonth: ReferenceGuide/functions/Date/начмесяца.md
-    - datediff: ReferenceGuide/functions/Date/разндат.md
-    - Today: ReferenceGuide/functions/Date/сегодня.md
-    - dateshift: ReferenceGuide/functions/Date/смещдат.md
-    - now: ReferenceGuide/functions/Date/тдата.md
-    - time: ReferenceGuide/functions/Date/время.md
-    - year: ReferenceGuide/functions/Date/год.md
-    - datetime: ReferenceGuide/functions/Date/датавремя.md
-    - mounth: ReferenceGuide/functions/Date/месяц.md
-    - day: ReferenceGuide/functions/Date/день.md
-    - hour: ReferenceGuide/functions/Date/час.md
-    - minute: ReferenceGuide/functions/Date/минуты.md
-    - second: ReferenceGuide/functions/Date/секунды.md
-    - weekday: ReferenceGuide/functions/Date/деньнед.md
-    - weeknum: ReferenceGuide/functions/Date/номнедели.md
+    - date: ReferenceGuide/functions/Date/date.md
+    - edate: ReferenceGuide/functions/Date/edate.md
+    - eomonth: ReferenceGuide/functions/Date/eomonth.md
+    - bomonth: ReferenceGuide/functions/Date/bomonth.md
+    - datediff: ReferenceGuide/functions/Date/datediff.md
+    - Today: ReferenceGuide/functions/Date/Today.md
+    - dateshift: ReferenceGuide/functions/Date/dateshift.md
+    - now: ReferenceGuide/functions/Date/now.md
+    - time: ReferenceGuide/functions/Date/time.md
+    - year: ReferenceGuide/functions/Date/year.md
+    - datetime: ReferenceGuide/functions/Date/datetime.md
+    - month: ReferenceGuide/functions/Date/month.md
+    - day: ReferenceGuide/functions/Date/day.md
+    - hour: ReferenceGuide/functions/Date/hour.md
+    - minute: ReferenceGuide/functions/Date/minute.md
+    - second: ReferenceGuide/functions/Date/second.md
+    - weekday: ReferenceGuide/functions/Date/weekday.md
+    - weeknum: ReferenceGuide/functions/Date/weeknum.md
   - Formatting:
-    - formatDate: ReferenceGuide/functions/Morph/форматДатыПоМаске.md
-    - formatNumber: ReferenceGuide/functions/Morph/форматЧисла.md
+    - formatDate: ReferenceGuide/functions/Morph/formatDate.md
+    - formatNumber: ReferenceGuide/functions/Morph/formatNumber.md
     - integerToText: ReferenceGuide/functions/Morph/integerToText.md
     - инициалы: ReferenceGuide/functions/Morph/инициалы.md
     - окончание: ReferenceGuide/functions/Morph/окончание.md
@@ -57,42 +57,42 @@ nav:
     - целоеСТекстом: ReferenceGuide/functions/Morph/целоеСТекстом.md
     - числоСТекстом: ReferenceGuide/functions/Morph/числоСТекстом.md    
   - Math:
-    - round: ReferenceGuide/functions/Math/округлить.md
-    - roundup: ReferenceGuide/functions/Math/округлитьвверх.md
-    - rounddown: ReferenceGuide/functions/Math/округлитьвниз.md
+    - round: ReferenceGuide/functions/Math/round.md
+    - roundup: ReferenceGuide/functions/Math/roundup.md
+    - rounddown: ReferenceGuide/functions/Math/rounddown.md
     - exp: ReferenceGuide/functions/Math/exp.md
     - ln: ReferenceGuide/functions/Math/ln.md
     - log10: ReferenceGuide/functions/Math/log10.md
-  - Списки:
-    - match: ReferenceGuide/functions/Lists/поискпоз.md
-    - index: ReferenceGuide/functions/Lists/индекс.md
-    - sort: ReferenceGuide/functions/Lists/сортировать.md
-    - sortDescending: ReferenceGuide/functions/Lists/сортироватьПоУбыванию.md
-    - filter: ReferenceGuide/functions/Lists/фильтровать.md
-    - group: ReferenceGuide/functions/Lists/группировать.md
-    - sum: ReferenceGuide/functions/Lists/сумм.md
-    - max: ReferenceGuide/functions/Lists/макс.md
-    - min: ReferenceGuide/functions/Lists/мин.md
-    - avg: ReferenceGuide/functions/Lists/срзнач.md
-    - count: ReferenceGuide/functions/Lists/счет.md
+  - List:
+    - match: ReferenceGuide/functions/Lists/match.md
+    - index: ReferenceGuide/functions/Lists/index.md
+    - sort: ReferenceGuide/functions/Lists/sort.md
+    - sortDescending: ReferenceGuide/functions/Lists/sortDescending.md
+    - filter: ReferenceGuide/functions/Lists/filter.md
+    - group: ReferenceGuide/functions/Lists/group.md
+    - sum: ReferenceGuide/functions/Lists/sum.md
+    - max: ReferenceGuide/functions/Lists/max.md
+    - min: ReferenceGuide/functions/Lists/min.md
+    - avg: ReferenceGuide/functions/Lists/avg.md
+    - count: ReferenceGuide/functions/Lists/count.md
   - Logic:
-    - if: ReferenceGuide/functions/Logic/если.md
+    - if: ReferenceGuide/functions/Logic/if.md
   - Text:
-    - length: ReferenceGuide/functions/Text/длина.md
-    - trim: ReferenceGuide/functions/Text/обрезатьпробелы.md
-    - upper: ReferenceGuide/functions/Text/прописн.md
-    - proper: ReferenceGuide/functions/Text/пропнач.md
-    - mid: ReferenceGuide/functions/Text/пстр.md
-    - lower: ReferenceGuide/functions/Text/строчн.md
-    - find: ReferenceGuide/functions/Text/поиск.md
-    - substitute: ReferenceGuide/functions/Text/подставить.md
-    - repeat: ReferenceGuide/functions/Text/повтор.md
-- Sintax:
+    - length: ReferenceGuide/functions/Text/length.md
+    - trim: ReferenceGuide/functions/Text/trim.md
+    - upper: ReferenceGuide/functions/Text/upper.md
+    - proper: ReferenceGuide/functions/Text/proper.md
+    - mid: ReferenceGuide/functions/Text/mid.md
+    - lower: ReferenceGuide/functions/Text/lower.md
+    - find: ReferenceGuide/functions/Text/find.md
+    - substitute: ReferenceGuide/functions/Text/substitute.md
+    - repeat: ReferenceGuide/functions/Text/repeat.md
+- Syntax:
   - Basic rules: ReferenceGuide/syntax/syntax.md
   - Where to use: ReferenceGuide/syntax/syntax-usage.md
 - Directives:
-  - Expression: ReferenceGuide/directives/value.md
-  - External: ReferenceGuide/directives/fragment.md
+  - Expression: ReferenceGuide/directives/expression.md
+  - External: ReferenceGuide/directives/external.md
   - Condition expression: ReferenceGuide/directives/if.md
   - Switch: ReferenceGuide/directives/switch.md
   - For: ReferenceGuide/directives/for.md

@@ -1,82 +1,82 @@
 # ln
 
-Функция `ln` вычисляет натуральный логарифм указанного числа.
+The `ln` function calculates the natural logarithm of a specified number.
 
-## Синтаксис
+## Syntax
 
 ```text
-ln(число)
+ln(value)
 ```
 
-**Параметры:**
+**Parameters:**
 
-- `число` — значение, для которого необходимо вычислить натуральный логарифм. Обязательный параметр.
+- `value` — the value for which the natural logarithm should be calculated. Required.
 
-В качестве параметра можно использовать:
+You can use:
 
-- число;
-- значение числового поля;
-- текстовое значение, содержащее число;
-- результат другой функции;
-- выражение.
+- a number;
+- a numeric field value;
+- a text value containing a number;
+- the result of another function;
+- an expression.
 
-## Возвращаемое значение
+## Return value
 
-Функция возвращает натуральный логарифм указанного числа.
+The function returns the natural logarithm of the specified number.
 
-Например:
+For example:
 
 ```text
 ln(2)
 ```
 
-Результат:
+Result:
 
 ```text
-0,6931471805599453
+0.6931471805599453
 ```
 
-## Примеры
+## Examples
 
-**Использование текстового представления числа**
+**Using a text representation of a number**
 
 ```text
 ln("2")
 ```
 
-Результат:
+Result:
 
 ```text
-0,6931471805599453
+0.6931471805599453
 ```
 
-Текстовое значение должно содержать число, которое функция может использовать в вычислении.
+The text value must contain a number that the function can use in the calculation.
 
-## Ошибки
+## Errors
 
-Параметр `число` является обязательным.
+The `value` parameter is required.
 
-Например:
+For example:
 
 ```text
 ln()
 ```
 
-вернёт ошибку.
+returns an error.
 
-Ошибка также возникает, если в функцию передано поле без значения.
+An error also occurs if a field passed to the function is empty.
 
-## Связь с другими функциями
+## Related functions
 
-Функция `ln` является обратной по отношению к функции `exp`.
+The `ln` function is the inverse of `exp`.
 
-Например:
+For example:
 
 ```text
 ln(exp(2))
 ```
 
-Результат:
+Result:
 
 ```text
 2

@@ -12,7 +12,7 @@ Expressions are used in directive properties to retrieve data and control templa
 
 For example:
 
-- in the [«Expression»](../directives/value.md) directive — to specify which value or expression result should be inserted into the document;
+- in the [«Expression»](../directives/expression.md) directive — to specify which value or expression result should be inserted into the document;
 
 - in the [«Condition expression»](../directives/if.md) directive — to define a condition;
 

@@ -1,85 +1,80 @@
 # «Text» field
 
-Поле **«Текст»** используется для хранения текстовых значений: ФИО, должностей, адресов, номеров телефонов, реквизитов, номеров договоров и другой информации.
+The **«Text»** field is used to store text values such as full names, job titles, addresses, phone numbers, company details, contract numbers, and other information.
 
-В поле можно передавать буквы, цифры, пробелы, знаки препинания и другие символы.
+The field can contain letters, numbers, spaces, punctuation marks, and other characters.
 
-## Создание и добавление поля
+## Creating and adding a field
 
+For instructions on creating and adding fields, see [Creating a template](../Bitrix/creat.md).
 
+## Field value
 
+The field contains a text value.
 
-
-Создание и добавление полей: [ИНСТРУКЦИЯ](../Bitrix/creat.md)
-
-
-
-
-
-## Значение поля
-
-Поле содержит текстовое значение.
-
-Например:
+For example:
 
 ```text
-Иванов Иван Иванович
+John Smith
 ```
 
 ```text
-г. Москва, ул. Тверская, д. 10
+10 Main Street, New York, NY
 ```
 
 ```text
-Договор № 125/2026
+Contract No. 125/2026
 ```
 
-Поле также подходит для значений, состоящих из цифр, если они не используются в математических расчётах. Например:
+The field can also be used for values consisting of numbers if they are not intended for mathematical calculations.
 
-- ИНН;
-- БИК;
-- ОГРН;
-- расчётный счёт;
-- номер телефона;
-- номер договора;
-- серийный номер.
+For example:
 
+- tax identification number;
+- bank identification code;
+- registration number;
+- bank account number;
+- phone number;
+- contract number;
+- serial number.
 
+## Inserting a field through the «Directives» tab
 
-## Вставка поля через вкладку «Метки»
+A text field value can be inserted into the template using the [«Expression»](../directives/expression.md) directive.
 
-Значение текстового поля можно вставить в шаблон через метку [«Значение»](../directives/value.md).
+1. Place the cursor at the required position in the template.
 
-1. Установите курсор в нужное место шаблона.
-2. Перейдите на вкладку **«Метки»** и выберите **«Значение»**.
-3. В поле **«Выражение»** укажите идентификатор текстового поля.
-4. Нажмите **«ОК»**.
+2. Open the **«Directives»** tab and select **«Expression»**.
 
-> При формировании документа метка будет заменена значением указанного поля.
+3. In the **«Expression»** field, enter the identifier of the text field.
 
-## Функции для работы с полем
+4. Click **«OK»**.
 
-Значение текстового поля можно использовать в функциях для изменения, поиска и обработки текста.
+> When the document is generated, the directive is replaced with the value of the specified field.
 
-### Текстовые функции
+## Functions for working with the field
 
-- [длина](../functions/Text/длина.md) — возвращает количество символов в строке;
-- [обрезатьпробелы](../functions/Text/обрезатьпробелы.md) — удаляет пробелы в начале и конце строки;
-- [прописн](../functions/Text/прописн.md) — переводит текст в верхний регистр;
-- [строчн](../functions/Text/строчн.md) — переводит текст в нижний регистр;
-- [пропнач](../functions/Text/пропнач.md) — делает первую букву каждого слова заглавной;
-- [пстр](../functions/Text/пстр.md) — возвращает часть строки;
-- [поиск](../functions/Text/поиск.md) — находит указанный фрагмент в строке;
-- [подставить](../functions/Text/подставить.md) — заменяет указанный текст или символы;
-- [повтор](../functions/Text/повтор.md) — повторяет строку заданное количество раз.
+A text field value can be used in functions to modify, search, and process text.
 
-### Морфологические функции
+### Text functions
 
-Для некоторых текстовых значений можно использовать морфологические функции:
+- [length](../functions/Text/length.md) — returns the number of characters in a string;
+- [trim](../functions/Text/trim.md) — removes spaces at the beginning and end of a string;
+- [upper](../functions/Text/upper.md) — converts text to uppercase;
+- [lower](../functions/Text/lower.md) — converts text to lowercase;
+- [proper](../functions/Text/proper.md) — capitalizes the first letter of each word;
+- [mid](../functions/Text/mid.md) — returns part of a string;
+- [find](../functions/Text/find.md) — finds a specified fragment in a string;
+- [substitute](../functions/Text/substitute.md) — replaces specified text or characters;
+- [repeat](../functions/Text/repeat.md) — repeats a string a specified number of times.
 
-- [инициалы](../functions/Morph/инициалы.md) — изменяет формат ФИО и его падеж;
-- [окончание](../functions/Morph/окончание.md) — подставляет окончание в зависимости от рода и числа;
-- [склонение](../functions/Morph/склонение.md) — изменяет форму слова или фразы по падежу и числу;
-- [транслит](../functions/Morph/транслит.md) — преобразует текст с кириллицы в латиницу.
+### Formatting functions
 
-> Некоторые морфологические функции предназначены для определённого содержимого поля. Например, функция `инициалы` используется для текста, содержащего ФИО.
+Some text values can also be processed using formatting functions:
+
+- [инициалы](../functions/Morph/инициалы.md) — changes the format and grammatical case of a full name;
+- [окончание](../functions/Morph/окончание.md) — selects an ending depending on gender and number;
+- [склонение](../functions/Morph/склонение.md) — changes the grammatical form of a word or phrase by case and number;
+- [транслит](../functions/Morph/транслит.md) — converts Cyrillic text to Latin characters.
+
+> Some formatting functions are intended for specific types of text. For example, `инициалы` is used for text containing a person's full name.

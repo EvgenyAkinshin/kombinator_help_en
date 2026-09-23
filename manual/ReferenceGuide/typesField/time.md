@@ -1,86 +1,54 @@
-# Поле «Время»
+# «Time» field
 
-Поле **«Время»** используется для хранения времени. Значение поля можно выводить в разных форматах и обрабатывать с помощью функций.
+The **«Time»** field is used to store time values. The field value can be displayed in different formats and processed using functions.
 
-Подходит, например, для времени встречи, начала или окончания мероприятия, отправки документа или выполнения другого действия.
+It is suitable, for example, for meeting times, event start or end times, document sending times, and other scheduled actions.
 
-## Создание и добавление поля
+## Creating and adding a field
 
+For instructions on creating and adding fields, see [Creating a template](../Bitrix/creat.md).
 
+## Field value
 
+The field contains a time value without a calendar date.
 
+When adding the field to the template through **Fields**, you can select the format in which its value should be displayed in the generated document. The same field value can therefore be displayed in different formats.
 
-Создание и добавление полей: [ИНСТРУКЦИЯ](../Bitrix/creat.md)
+If needed, you can extract individual parts of the value using the corresponding functions: [hour](../functions/Date/hour.md), [minute](../functions/Date/minute.md), or [second](../functions/Date/second.md).
 
+## Inserting a field through the «Directives» tab
 
+The **«Time»** field value can be inserted into the template using the [«Expression»](../directives/expression.md) directive.
 
+In the **«Expression»** field, specify the field whose value should be inserted.
 
-
-## Значение поля
-
-Поле содержит время без календарной даты.
-
-При добавлении поля в шаблон через анкету можно выбрать формат, в котором его значение должно отображаться в сформированном документе. Поэтому одно и то же значение поля может быть выведено в разных форматах.
-
-При необходимости из значения можно отдельно получить [часы](../functions/Date/час.md), [минуты](../functions/Date/минуты.md) или [секунды](../functions/Date/секунды.md) с помощью соответствующих функций.
-
-
-
-## Вставка поля через вкладку «Метки»
-
-Значение поля **«Время»** можно вставить в шаблон через метку [«Значение»](../directives/value.md).
-
-В свойстве **«Выражение»** указывается поле, значение которого необходимо вывести.
-
-
-
-
-
-Например:
+For example:
 
 ```text
-сделки.времяВстречи
+deals.meetingTime
 ```
 
-Здесь:
+Where:
 
-- `сделки` — сущность Битрикс24, из которой берутся данные;
-- `времяВстречи` — поле, содержащее время.
+- `deals` — the Bitrix24 entity from which the data is retrieved;
+- `meetingTime` — the field containing the time.
 
-При формировании документа метка будет заменена значением этого поля.
+When the document is generated, the directive is replaced with the value of this field.
 
+You can also use functions in the **«Expression»** directive to process or format the time.
 
+For example, the [formatDate](../functions/Morph/formatDate.md) function can be used to display the time in the required format.
 
+## Functions for working with the field
 
+The **«Time»** field supports functions for extracting individual parts of the value and changing how it is displayed.
 
-В метке **«Значение»** можно использовать функции для обработки и форматирования времени.
+### Extracting time parts
 
+- [hour](../functions/Date/hour.md) — returns the hour;
+- [minute](../functions/Date/minute.md) — returns the minutes;
+- [second](../functions/Date/second.md) — returns the seconds.
 
+### Formatting functions
 
-
-
-Например:
-
-```text
-форматДаты(сделки.времяВстречи, ФорматДаты.ВремяКратко)
-```
-
-
-
-
-
-В этом случае время будет выведено в формате, заданном функцией.
-
-## Функции для работы с полем
-
-Для поля **«Время»** доступны функции для получения отдельных частей значения и изменения формата его отображения.
-
-### Получение частей времени
-
-- [час](../functions/Date/час.md) — возвращает часы;
-- [минуты](../functions/Date/минуты.md) — возвращает минуты;
-- [секунды](../functions/Date/секунды.md) — возвращает секунды.
-
-### Форматирование
-
-- [форматДаты](../functions/Morph/форматДаты.md) — изменяет формат отображения времени.
+- [formatDate](../functions/Morph/formatDate.md) — changes how the time is displayed.

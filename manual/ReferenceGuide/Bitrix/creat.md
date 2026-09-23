@@ -16,11 +16,7 @@ A template is created from the Bitrix24 entity where it will be used. For exampl
 
       If the item is not displayed in the main menu, open **«More»**.
 
-      ![25](../img/bitrix/25.png)
-
       To pin the item to the main menu, click **«Configure menu»**, click and hold **«Kombinator Templates»**, and drag it to the required position. Then finish editing the menu.
-
-      ![26](../img/bitrix/26.png)
 
       If **«Kombinator Templates»** is not available in either the main menu or the **«More»** section, go to [app setup](setting.md#integration) and make sure the required entity is enabled.
 
@@ -108,9 +104,8 @@ Field nesting is indicated by indentation. The farther a field is shifted to the
 
 | Insertion method | How it works | Applicable field types |
 |---|---|---|
-| **Insert «Expression»** | Inserts the field value or the result of an expression into the document | [Text](../typesField/text.md), [number](../typesField/decimal.md), [date](../typesField/date.md), [struct](../typesField/enum.md) |
+| **Insert «Expression»** | Inserts the field value or the result of an expression into the document | [Text](../typesField/text.md), [number](../typesField/decimal.md), [date](../typesField/date.md) |
 | **Insert «Condition expression»** | Controls whether a document fragment is displayed. The fragment is included only when the specified condition is met | [Boolean](../typesField/boolean.md) |
-| **Insert «Switch»** | Allows you to define different content for each field option | [Struct](../typesField/enum.md) |
 | **Insert «For»** | Creates a repeating section. Text and fields from list items can be placed inside it, and the content is repeated for each item | [List](../typesField/list.md) |
 | **Insert «Table»** | Repeats table rows for list items. Fields from each list item can be inserted into the cells of the repeated rows | [List](../typesField/list.md) |
 
@@ -142,5 +137,5 @@ In this case:
 
 After creating the template:
 
-- if the document should be generated automatically using Bitrix24 automation rules or business processes, proceed to [template automation](creat-document.md);
+- if the document should be generated automatically using Bitrix24 automation rules or business processes, proceed to [template automation](../../UserInterface/Documents/template-automation.md);
 - if automation is not required, proceed to [generating a document](../../UserInterface/Documents/add-document.md).

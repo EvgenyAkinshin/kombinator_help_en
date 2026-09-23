@@ -16,8 +16,6 @@ Generate the final document from a Bitrix24 CRM item. This allows you to check h
 
       If the button is not displayed in the main panel, open **«More»**.
 
-      ![11](../img/Document/11.png)
-
 2. Select **«New document»**.
 
 3. Select the prepared template.
@@ -29,8 +27,6 @@ Generate the final document from a Bitrix24 CRM item. This allows you to check h
 6. Enter the document name and click **«OK»**.
 
 The generated document will appear in the CRM item timeline.
-
-![12](../img/Document/12.png)
 
 ## Checking the result
 
