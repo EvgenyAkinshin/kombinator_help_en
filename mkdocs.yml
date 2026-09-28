@@ -1,4 +1,5 @@
 site_name: Kombinator Help
+site_dir: docs
 nav:
 - Getting started:
   - App installation: ReferenceGuide/Bitrix/install.md
