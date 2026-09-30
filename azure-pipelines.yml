@@ -19,7 +19,7 @@ steps:
     serverUrl: 'ftp://help.kombinator.net'
     username: '$(FTP_LOGIN)'
     password: '$(FTP_PASSWORD)'
-    rootDirectory: 'site'
+    rootDirectory: 'docs'
     filePatterns: '**'
     remoteDirectory: '/'
     clean: false
