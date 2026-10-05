@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#count" class="md-skip">
           Skip to content
         </a>
       
@@ -2129,20 +2129,62 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#syntax" class="md-nav__link">
     <span class="md-ellipsis">
-      Синтаксис
+      Syntax
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#return-value" class="md-nav__link">
     <span class="md-ellipsis">
-      Принцип работы:
+      Return value
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#counting-list-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      Counting list items
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#counting-items-that-match-a-condition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Counting items that match a condition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-the-last-item-in-a-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting the last item in a list
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2269,6 +2311,29 @@
             Text
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Text/capFirst/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    capFirst
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -2860,20 +2925,62 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#syntax" class="md-nav__link">
     <span class="md-ellipsis">
-      Синтаксис
+      Syntax
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#return-value" class="md-nav__link">
     <span class="md-ellipsis">
-      Принцип работы:
+      Return value
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#counting-list-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      Counting list items
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#counting-items-that-match-a-condition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Counting items that match a condition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-the-last-item-in-a-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting the last item in a list
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2893,66 +3000,156 @@
 
 
 
-<h1 id="_1"><strong>счет</strong></h1>
-<p>Функция <code>счет</code> используется для подсчёта количества элементов в списке.</p>
-<h2 id="_2"><strong>Синтаксис</strong></h2>
-<p><strong>Общий синтаксис:</strong></p>
-<pre><code>счет(элемент из список)
+<h1 id="count">count</h1>
+<p>The <code>count</code> function determines the number of items in a list.</p>
+<h2 id="syntax">Syntax</h2>
+<pre><code class="language-text">count(item in list)
 </code></pre>
+<p><strong>Parameters:</strong></p>
 <ul>
-<li>
-<p><code>элемент</code> — имя текущей записи списка (можете назвать как угодно: <code>элемент1</code>, <code>_2</code>, <code>_элемент</code> и т. п.).</p>
-</li>
-<li>
-<p><code>список</code> — поле-список, по которому идёт обход.</p>
-</li>
+<li><code>item</code> — the name of the current list item. It is defined directly in the function;</li>
+<li><code>list</code> — the identifier of the list field whose items should be counted.</li>
 </ul>
-<p><strong>Элемент списка может быть двух видов:</strong></p>
-<ol>
-<li>
-<p><strong>СОСТАВНОЕ ПОЛЕ:</strong></p>
-<p>В качестве <strong>названия элемента списка</strong> передаётся временное имя текущего элемента списка (чаще всего — идентификатор самого составного поля).</p>
-<p><img alt="48" src="../../../img/functions/list/48.png" /></p>
-<p><img alt="49" src="../../../img/functions/list/49.png" /></p>
+<p>For example:</p>
+<pre><code class="language-text">count(product in products)
+</code></pre>
+<p>Here:</p>
 <ul>
-<li>
-<p><strong>Название элемента списка</strong> — это имя, через которое происходит обращение к каждому элементу. Вместо него можно использовать любое <a href="../../../syntax/syntax/">допустимое</a> имя, например: <code>элемент1</code>, <code>_2</code>, <code>_элемент</code> и т.п.</p>
-<p>Соответственно, к полям, находящимся внутри составного поля, нужно обращаться с указанием этого имени. Например, если заменить <code>элемент</code> на <code>_2</code>, то обращение к полю будет выглядеть так:</p>
-<p><code>_2.поле</code></p>
-</li>
-<li>
-<p><strong>Список</strong> — передается идентификатор списка, в котором находятся данные.</p>
-</li>
+<li><code>products</code> — the list field identifier in the template;</li>
+<li><code>product</code> — the name of the list item defined directly in the function.</li>
 </ul>
-</li>
-<li>
-<p><strong>НЕ СОСТАВНОЕ ПОЛЕ</strong></p>
-<p>Когда элемент <strong>несоставной</strong> (десятичное или целое число, текст и т.д.), у него <strong>нет внутренних полей</strong>. Поэтому в <strong>название элемента списка</strong> программе нужен <strong>конкретный идентификатор поля</strong>.</p>
-<p><img alt="50" src="../../../img/functions/list/50.png" /></p>
-<p><img alt="49" src="../../../img/functions/list/49.png" /></p>
+<p>You can choose the item name yourself. It is used only inside the function expression.</p>
+<h2 id="return-value">Return value</h2>
+<p>The function returns an integer — the number of items in the list.</p>
+<h2 id="examples">Examples</h2>
+<h3 id="counting-list-items">Counting list items</h3>
+<p>Suppose the template contains a list field with the following identifier:</p>
+<pre><code class="language-text">products
+</code></pre>
+<p>The list contains:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Position</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>Monitor</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>Keyboard</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>Printer</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>Mouse</td>
+</tr>
+</tbody>
+</table>
+<p>Expression:</p>
+<pre><code class="language-text">count(product in products)
+</code></pre>
+<p>returns:</p>
+<pre><code class="language-text">4
+</code></pre>
+<p>Here:</p>
 <ul>
-<li>
-<p><strong>Список</strong> — передается идентификатор списка, в котором находятся данные.</p>
-</li>
-<li>
-<p><strong>Название элемента списка</strong> — передается идентификатор поля, которое вы выбрали в качестве элемента списка. Всегда передаётся точный идентификатор.</p>
-</li>
+<li><code>products</code> — the list field identifier;</li>
+<li><code>product</code> — the name of the list item defined inside the <code>count</code> function.</li>
 </ul>
-</li>
-</ol>
-<h2 id="_3"><strong>Принцип работы:</strong></h2>
-<ol>
-<li>
-<p>Функция перебирает все элементы в заданном списке.</p>
-</li>
-<li>
-<p>На каждом шаге увеличивает счётчик на 1.</p>
-</li>
-<li>
-<p>Возвращает общее количество строк, независимо от содержимого полей.</p>
-</li>
-</ol>
-<p>📌 Если список пуст — функция вернёт 0.</p>
+<h3 id="counting-items-that-match-a-condition">Counting items that match a condition</h3>
+<p>The <code>count</code> function can be applied to a list returned by <code>filter</code>.</p>
+<p>Suppose the <code>products</code> list contains:</p>
+<table>
+<thead>
+<tr>
+<th><code>name</code></th>
+<th style="text-align: right;"><code>price</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Monitor</td>
+<td style="text-align: right;">15000</td>
+</tr>
+<tr>
+<td>Keyboard</td>
+<td style="text-align: right;">800</td>
+</tr>
+<tr>
+<td>Printer</td>
+<td style="text-align: right;">12000</td>
+</tr>
+<tr>
+<td>Mouse</td>
+<td style="text-align: right;">600</td>
+</tr>
+</tbody>
+</table>
+<p>You need to determine how many products have a price greater than <code>5000</code>.</p>
+<p>Expression:</p>
+<pre><code class="language-text">count(
+    product in filter(
+        item in products,
+        item.price &gt; 5000
+    )
+)
+</code></pre>
+<p>Here:</p>
+<ul>
+<li><code>products</code> — the identifier of the source list field;</li>
+<li><code>item</code> — the name of the current item inside the <code>filter</code> function;</li>
+<li><code>item.price &gt; 5000</code> — the filtering condition;</li>
+<li><code>filter(...)</code> — returns a new list containing only matching products;</li>
+<li><code>product</code> — the name of an item in the filtered list inside the <code>count</code> function.</li>
+</ul>
+<p>After filtering, the list contains:</p>
+<pre><code class="language-text">Monitor — 15000
+Printer — 12000
+</code></pre>
+<p>Therefore, <code>count</code> returns:</p>
+<pre><code class="language-text">2
+</code></pre>
+<h3 id="getting-the-last-item-in-a-list">Getting the last item in a list</h3>
+<p>The result of <code>count</code> can be used as an item position in the <code>index</code> function.</p>
+<p>Suppose the template contains a list field:</p>
+<pre><code class="language-text">payments
+</code></pre>
+<p>Each list item contains the following field:</p>
+<pre><code class="language-text">balance
+</code></pre>
+<p>You need to get the <code>balance</code> value from the last item in the list, while the number of items is not known in advance.</p>
+<p>Expression:</p>
+<pre><code class="language-text">index(
+    payments,
+    count(payment in payments)
+).balance
+</code></pre>
+<p>Here:</p>
+<ul>
+<li><code>payments</code> — the list field identifier;</li>
+<li><code>payment</code> — the name of the list item inside the <code>count</code> function;</li>
+<li><code>count(...)</code> — returns the number of items in the list;</li>
+<li>the returned number is used by <code>index</code> as the position of the last item;</li>
+<li><code>balance</code> — the nested field identifier whose value should be returned.</li>
+</ul>
+<p>For example, if the list contains four items:</p>
+<pre><code class="language-text">count(payment in payments)
+</code></pre>
+<p>returns:</p>
+<pre><code class="language-text">4
+</code></pre>
+<p>The expression then effectively becomes:</p>
+<pre><code class="language-text">index(payments, 4).balance
+</code></pre>
+<p>and returns the <code>balance</code> value from the last item in the list.</p>
 
 
 

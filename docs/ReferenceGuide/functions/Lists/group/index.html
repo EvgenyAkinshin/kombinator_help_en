@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#group" class="md-skip">
           Skip to content
         </a>
       
@@ -2014,37 +2014,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#syntax" class="md-nav__link">
     <span class="md-ellipsis">
-      Синтаксис
+      Syntax
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#return-value" class="md-nav__link">
     <span class="md-ellipsis">
-      Как работать с группами
+      Return value
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#example" class="md-nav__link">
     <span class="md-ellipsis">
-      Пример
+      Example
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Пример">
+    <nav class="md-nav" aria-label="Example">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#grouping-products-and-calculating-a-subtotal-for-each-group" class="md-nav__link">
     <span class="md-ellipsis">
-      Какие имена используются в выражении
+      Grouping products and calculating a subtotal for each group
     </span>
   </a>
   
@@ -2293,6 +2293,29 @@
             Text
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Text/capFirst/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    capFirst
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -2884,37 +2907,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#syntax" class="md-nav__link">
     <span class="md-ellipsis">
-      Синтаксис
+      Syntax
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#return-value" class="md-nav__link">
     <span class="md-ellipsis">
-      Как работать с группами
+      Return value
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#example" class="md-nav__link">
     <span class="md-ellipsis">
-      Пример
+      Example
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Пример">
+    <nav class="md-nav" aria-label="Example">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#grouping-products-and-calculating-a-subtotal-for-each-group" class="md-nav__link">
     <span class="md-ellipsis">
-      Какие имена используются в выражении
+      Grouping products and calculating a subtotal for each group
     </span>
   </a>
   
@@ -2941,91 +2964,138 @@
 
 
 
-<h1 id="_1">Функция «группировать»</h1>
-<p>Функция <code>группировать</code> объединяет элементы списка в группы по одинаковому значению выбранного поля.</p>
-<p>Например, список позиций можно сгруппировать по категории. Все позиции категории «Техника» попадут в одну группу, а позиции категории «Мебель» — в другую.</p>
-<h2 id="_2">Синтаксис</h2>
-<pre><code class="language-text">группировать(элемент из список, элемент.поле)
+<h1 id="group">group</h1>
+<p>The <code>group</code> function combines list items into groups based on the same value of a specified property or expression.</p>
+<h2 id="syntax">Syntax</h2>
+<pre><code class="language-text">group(item in list, expression)
 </code></pre>
+<p><strong>Parameters:</strong></p>
 <ul>
-<li><code>элемент</code> — имя текущего элемента списка;</li>
-<li><code>список</code> — список, который необходимо сгруппировать;</li>
-<li><code>элемент.поле</code> — поле, по значению которого выполняется группировка.</li>
+<li><code>item</code> — the name of the current list item. In the function settings, this parameter is <strong>Item list name</strong>;</li>
+<li><code>list</code> — the identifier of the list field. In the function settings, this parameter is <strong>List</strong>;</li>
+<li><code>expression</code> — the property or expression used to group the items. In the function settings, this parameter is <strong>Grouping property</strong>.</li>
 </ul>
-<p>Например:</p>
-<pre><code class="language-text">группировать(позиция из списокПозиций, позиция.категория)
+<p>The item name can be chosen freely and is used only inside the function.</p>
+<p>For example:</p>
+<pre><code class="language-text">group(product in products, product.category)
 </code></pre>
-<p>В этом случае элементы с одинаковым значением поля <code>категория</code> будут объединены в одну группу.</p>
-<h2 id="_3">Как работать с группами</h2>
-<p>Функция <code>группировать</code> возвращает список групп. Для каждой созданной группы Комбинатор автоматически предоставляет два свойства:</p>
+<p>Here:</p>
 <ul>
-<li><code>.Признак</code> — значение, по которому сформирована группа;</li>
-<li><code>.Список</code> — элементы исходного списка, которые вошли в эту группу.</li>
+<li><code>product</code> — the current item name specified in <strong>Item list name</strong>;</li>
+<li><code>products</code> — the list field identifier specified in <strong>List</strong>;</li>
+<li><code>category</code> — the nested field identifier;</li>
+<li><code>product.category</code> — the value specified in <strong>Grouping property</strong>.</li>
 </ul>
-<p>Например, если текущая группа называется <code>группа</code>, используются:</p>
-<pre><code class="language-text">{группа.Признак}
-{группа.Список}
-</code></pre>
-<p>Имя <code>группа</code> можно задать самостоятельно, а <code>.Признак</code> и <code>.Список</code> всегда указываются именно в таком виде.</p>
-<blockquote>
-<p><code>.Признак</code> и <code>.Список</code> — это не поля анкеты. Они создаются функцией <code>группировать</code>, поэтому их названия нельзя заменять своими.</p>
-</blockquote>
-<h2 id="_4">Пример</h2>
-<p>Предположим, в анкете создан список <code>списокПозиций</code> с полями:</p>
+<p>Items with the same <code>category</code> value are placed in the same group.</p>
+<h2 id="return-value">Return value</h2>
+<p>The function returns a list of groups.</p>
+<p>Each group automatically provides two properties:</p>
 <ul>
-<li><code>название</code>;</li>
-<li><code>категория</code>;</li>
-<li><code>цена</code>.</li>
+<li><code>.Key</code> — the value used to create the group;</li>
+<li><code>.List</code> — the list of source items included in the group.</li>
 </ul>
-<p>Список содержит:</p>
-<pre><code class="language-text">Монитор — Техника — 15000
-Принтер — Техника — 12000
-Стол — Мебель — 20000
-Стул — Мебель — 5000
+<p>For example, if the current group is named <code>groupItem</code>:</p>
+<pre><code class="language-text">groupItem.Key
+groupItem.List
 </code></pre>
-<p>Нужно сгруппировать позиции по категории, вывести название каждой категории, а под ним — относящиеся к ней позиции.</p>
-<p>Для этого используются два <a href="/ReferenceGuide/directives/for/">цикла</a>:</p>
-<pre><code class="language-text">{цикл(группа из группировать(позиция из списокПозиций, позиция.категория))}
-{группа.Признак}
+<p>You can choose the name <code>groupItem</code> yourself.</p>
+<p>The <code>.Key</code> and <code>.List</code> properties are created by the <code>group</code> function and must be specified exactly as shown. They are not field identifiers from the form.</p>
+<p>The resulting <code>groupItem.List</code> can be used like any other list. For example, you can iterate through it in a <code>for</code> block or pass it to <code>sum</code>, <code>count</code>, <code>avg</code>, <code>min</code>, or <code>max</code>.</p>
+<h2 id="example">Example</h2>
+<h3 id="grouping-products-and-calculating-a-subtotal-for-each-group">Grouping products and calculating a subtotal for each group</h3>
+<p>Suppose the template contains a list field with the following identifier:</p>
+<pre><code class="language-text">products
+</code></pre>
+<p>Each list item contains:</p>
+<ul>
+<li><code>name</code> — product name;</li>
+<li><code>category</code> — product category;</li>
+<li><code>price</code> — unit price;</li>
+<li><code>quantity</code> — product quantity.</li>
+</ul>
+<p>Source list:</p>
+<table>
+<thead>
+<tr>
+<th><code>name</code></th>
+<th><code>category</code></th>
+<th style="text-align: right;"><code>price</code></th>
+<th style="text-align: right;"><code>quantity</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Monitor</td>
+<td>Electronics</td>
+<td style="text-align: right;">15000</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>Printer</td>
+<td>Electronics</td>
+<td style="text-align: right;">12000</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Desk</td>
+<td>Furniture</td>
+<td style="text-align: right;">20000</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Chair</td>
+<td>Furniture</td>
+<td style="text-align: right;">5000</td>
+<td style="text-align: right;">4</td>
+</tr>
+</tbody>
+</table>
+<p>The products need to be grouped by category. For each category, the products should be displayed and their total cost calculated.</p>
+<p>Use an outer <code>for</code> block to iterate through the result of <code>group</code> and an inner <code>for</code> block to iterate through the items in each group:</p>
+<pre><code class="language-text">{for(groupItem in group(product in products, product.category))}
+{groupItem.Key}
 
-{цикл(позицияГруппы из группа.Список)}
-{позицияГруппы.название} — {позицияГруппы.цена}
-{/цикл}
+{for(item in groupItem.List)}
+{item.name} — {item.quantity} × {item.price}
+{/for}
 
-{/цикл}
+Total: {sum(totalItem in groupItem.List, totalItem.price * totalItem.quantity)}
+
+{/for}
 </code></pre>
-<h3 id="_5">Какие имена используются в выражении</h3>
-<p><strong>Из анкеты берутся:</strong></p>
+<p>Here:</p>
 <ul>
-<li><code>списокПозиций</code> — идентификатор исходного списка;</li>
-<li><code>категория</code> — идентификатор поля, по которому выполняется группировка;</li>
-<li><code>название</code> — идентификатор поля с названием позиции;</li>
-<li><code>цена</code> — идентификатор поля с ценой позиции.</li>
+<li><code>products</code> — the identifier of the source list field;</li>
+<li><code>product</code> — the current item name specified in <strong>Item list name</strong>;</li>
+<li><code>product.category</code> — the value specified in <strong>Grouping property</strong>;</li>
+<li><code>groupItem</code> — the name of the current group in the outer <code>for</code> block;</li>
+<li><code>groupItem.Key</code> — the current category;</li>
+<li><code>groupItem.List</code> — the products included in the current category;</li>
+<li><code>item</code> — the name of the current product in the inner <code>for</code> block;</li>
+<li><code>totalItem</code> — the name of the current product inside the <code>sum</code> function;</li>
+<li><code>totalItem.price * totalItem.quantity</code> — the product line total used to calculate the subtotal.</li>
 </ul>
-<p>Эти идентификаторы необходимо заменить на идентификаторы соответствующих полей из своей анкеты.</p>
-<p><strong>Самостоятельно задаются:</strong></p>
-<ul>
-<li><code>позиция</code> — имя текущего элемента исходного списка внутри функции <code>группировать</code>;</li>
-<li><code>группа</code> — имя текущей группы во внешнем цикле;</li>
-<li><code>позицияГруппы</code> — имя текущего элемента внутри группы.</li>
-</ul>
-<p>Эти имена можно выбрать самостоятельно. Они используются только для обращения к соответствующим элементам внутри выражения.</p>
-<p><strong>Комбинатор задаёт автоматически:</strong></p>
-<ul>
-<li><code>.Признак</code> — значение, по которому сформирована текущая группа;</li>
-<li><code>.Список</code> — список элементов, вошедших в текущую группу.</li>
-</ul>
-<p>Названия <code>.Признак</code> и <code>.Список</code> являются фиксированными — заменять их своими названиями нельзя.</p>
-<p>Внешний цикл перебирает группы, созданные функцией <code>группировать</code>. <code>{группа.Признак}</code> выводит значение текущей группы, например <code>Техника</code>.</p>
-<p>Внутренний цикл перебирает элементы из <code>группа.Список</code>. В его теле можно обращаться к обычным полям исходного списка, например <code>название</code> и <code>цена</code>.</p>
-<p>В результате данные будут выведены по группам:</p>
-<pre><code class="language-text">Техника
-Монитор — 15000
-Принтер — 12000
+<p>For the <code>Electronics</code> group, <code>sum</code> calculates:</p>
+<pre><code class="language-text">15000 × 2 + 12000 × 1 = 42000
+</code></pre>
+<p>For the <code>Furniture</code> group:</p>
+<pre><code class="language-text">20000 × 1 + 5000 × 4 = 40000
+</code></pre>
+<p>The result is:</p>
+<pre><code class="language-text">Electronics
 
-Мебель
-Стол — 20000
-Стул — 5000
+Monitor — 2 × 15000
+Printer — 1 × 12000
+
+Total: 42000
+
+
+Furniture
+
+Desk — 1 × 20000
+Chair — 4 × 5000
+
+Total: 40000
 </code></pre>
 
 

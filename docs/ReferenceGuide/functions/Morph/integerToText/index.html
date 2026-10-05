@@ -1462,29 +1462,80 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#syntax" class="md-nav__link">
     <span class="md-ellipsis">
-      Синтаксис
+      Syntax
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#return-value" class="md-nav__link">
     <span class="md-ellipsis">
-      Принцип работы:
+      Return value
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#features" class="md-nav__link">
     <span class="md-ellipsis">
-      Пример использования
+      Features
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cardinal-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cardinal number
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ordinal-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ordinal number
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decimal-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decimal number
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amount-in-us-dollars-and-cents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amount in US dollars and cents
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2286,6 +2337,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Text/capFirst/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    capFirst
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Text/length/" class="md-nav__link">
         
   
@@ -2869,29 +2943,80 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#syntax" class="md-nav__link">
     <span class="md-ellipsis">
-      Синтаксис
+      Syntax
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#return-value" class="md-nav__link">
     <span class="md-ellipsis">
-      Принцип работы:
+      Return value
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#features" class="md-nav__link">
     <span class="md-ellipsis">
-      Пример использования
+      Features
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cardinal-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cardinal number
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ordinal-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ordinal number
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decimal-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decimal number
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amount-in-us-dollars-and-cents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amount in US dollars and cents
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2912,81 +3037,128 @@
 
 
 <h1 id="integertotext">integerToText</h1>
-<p>Функция <code>integerToText</code> преобразует целое число в его текстовое представление на <strong>английском языке</strong>.</p>
-<h2 id="_1"><strong>Синтаксис</strong></h2>
-<pre><code>integerToText(число, типЧислительного)
+<p>The <code>integerToText</code> function converts a number to its text representation.</p>
+<p>The function supports both cardinal and ordinal numbers.</p>
+<h2 id="syntax">Syntax</h2>
+<pre><code class="language-text">integerToText(expression, format)
 </code></pre>
+<p><strong>Parameters:</strong></p>
 <ul>
-<li>
-<p><code>число</code> — целое значение или поле. Если передано десятичное число, дробная часть <strong>отбрасывается</strong>.</p>
-</li>
-<li>
-<p><code>типЧислительного</code> — тип числительного:</p>
+<li><code>expression</code> — a numeric value or expression to convert to text;</li>
+<li><code>format</code> — determines whether the number is converted to a cardinal or ordinal form.</li>
+</ul>
+<p>The following values are available for <code>format</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Number type</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NumberType.Cardinal</code></td>
+<td>Cardinal</td>
+<td><code>twenty-one</code></td>
+</tr>
+<tr>
+<td><code>NumberType.Ordinal</code></td>
+<td>Ordinal</td>
+<td><code>twenty-first</code></td>
+</tr>
+</tbody>
+</table>
+<p>In the function settings:</p>
 <ul>
-<li>
-<p><code>NumberType.Cardinal</code> — количественное (по умолчанию),</p>
-</li>
-<li>
-<p><code>NumberType.Ordinal</code> — порядковое.</p>
-</li>
+<li><strong>Expression</strong> — specifies the number, field reference, or expression to convert;</li>
+<li><strong>Format</strong> — selects <code>Cardinal</code> or <code>Ordinal</code>.</li>
 </ul>
-</li>
-</ul>
-<h2 id="_2"><strong>Принцип работы:</strong></h2>
-<ol>
-<li>
-<p>Получает целое число и тип числительного;</p>
-</li>
-<li>
-<p>Преобразует его в текст — на английском языке;</p>
-</li>
-<li>
-<p>Возвращает результат в виде строки.</p>
-</li>
-</ol>
-<h2 id="_3"><strong>Пример использования</strong></h2>
-<p><strong>Задача:</strong> вывести сумму в долларах и центах прописью (например <code>One thousand two hundred thirty-four US dollars fifty-six cents</code>).</p>
-<p><strong>Шаги:</strong></p>
-<ol>
-<li>
-<p>Вставьте в шаблон <strong>метку "Значение"</strong>.</p>
-</li>
-<li>
-<p>В открывшемся окне введите следующее выражение:</p>
-</li>
-</ol>
-<pre><code>integerToText(сумма, NumberType.Cardinal) &amp; &quot; &quot; &amp; 
-если(сумма = 1, &quot;US dollar&quot;, &quot;US dollars&quot;) &amp; &quot; &quot; &amp; 
-integerToText(округлить(сумма остаток - 1 * 100, 0), NumberType.Cardinal) 
-&amp; &quot; &quot; &amp; если(округлить(сумма остаток - 1 * 100, 0) = 1, &quot;cent&quot;, &quot;cents&quot;)
+<p>If a decimal number is passed to the function, only its integer part is used. The fractional part is discarded without rounding.</p>
+<h2 id="return-value">Return value</h2>
+<p>The function returns the text representation of the number.</p>
+<p>For example:</p>
+<pre><code class="language-text">integerToText(
+    21,
+    NumberType.Cardinal
+)
 </code></pre>
-<p><strong>Пояснение:</strong></p>
+<p>returns:</p>
+<pre><code class="language-text">twenty-one
+</code></pre>
+<h2 id="features">Features</h2>
+<p>The function converts only the numeric value. It does not add units of measurement, currency names, or other text.</p>
+<p>If a decimal value needs to be converted in full, its integer and fractional parts should be processed separately.</p>
+<h2 id="examples">Examples</h2>
+<h3 id="cardinal-number">Cardinal number</h3>
+<p>Expression:</p>
+<pre><code class="language-text">integerToText(
+    1234,
+    NumberType.Cardinal
+)
+</code></pre>
+<p>returns:</p>
+<pre><code class="language-text">one thousand two hundred thirty-four
+</code></pre>
+<h3 id="ordinal-number">Ordinal number</h3>
+<p>Expression:</p>
+<pre><code class="language-text">integerToText(
+    21,
+    NumberType.Ordinal
+)
+</code></pre>
+<p>returns:</p>
+<pre><code class="language-text">twenty-first
+</code></pre>
+<h3 id="decimal-number">Decimal number</h3>
+<p>Suppose the <code>amount</code> field contains:</p>
+<pre><code class="language-text">1234.56
+</code></pre>
+<p>Expression:</p>
+<pre><code class="language-text">integerToText(
+    amount,
+    NumberType.Cardinal
+)
+</code></pre>
+<p>returns:</p>
+<pre><code class="language-text">one thousand two hundred thirty-four
+</code></pre>
+<p>The fractional part <code>.56</code> is not included in the result.</p>
+<h3 id="amount-in-us-dollars-and-cents">Amount in US dollars and cents</h3>
+<p>Suppose the <code>amount</code> field contains:</p>
+<pre><code class="language-text">1234.56
+</code></pre>
+<p>To display the integer and fractional parts separately as US dollars and cents, use:</p>
+<pre><code class="language-text">integerToText(
+    amount,
+    NumberType.Cardinal
+) &amp; &quot; &quot; &amp;
+if(
+    amount - (amount mod 1) = 1,
+    &quot;US dollar&quot;,
+    &quot;US dollars&quot;
+) &amp; &quot; &quot; &amp;
+integerToText(
+    round((amount mod 1) * 100, 0),
+    NumberType.Cardinal
+) &amp; &quot; &quot; &amp;
+if(
+    round((amount mod 1) * 100, 0) = 1,
+    &quot;cent&quot;,
+    &quot;cents&quot;
+)
+</code></pre>
+<p>Result:</p>
+<pre><code class="language-text">one thousand two hundred thirty-four US dollars fifty-six cents
+</code></pre>
+<p>Here:</p>
 <ul>
-<li>
-<p><code>integerToText(сумма, NumberType.Cardinal)</code> —  переводит целую часть суммы в слова.</p>
-</li>
-<li>
-<p><code>если(сумма = 1, "US dollar", "US dollars")</code> — задает правильное окончание для доллара.</p>
-</li>
-<li>
-<p><code>сумма остаток - 1 * 100</code> — получение дробной части.</p>
-</li>
-<li>
-<p><code>округлить(..., 0)</code> — округление центов до целого числа.</p>
-</li>
-<li>
-<p><code>если(сумма остаток * 100 = 1, "cent", "cents")</code> — окончание для центов.</p>
-</li>
-<li>
-<p><code>&amp;</code> — объединение фрагментов.</p>
-</li>
-<li>
-<p><code>сумма</code> — поле из анкеты.</p>
-</li>
+<li><code>amount mod 1</code> — returns the fractional part of the number;</li>
+<li><code>(amount mod 1) * 100</code> — converts the fractional part to cents;</li>
+<li><code>round(..., 0)</code> — rounds the number of cents to an integer;</li>
+<li><code>amount - (amount mod 1)</code> — returns the integer part used to select <code>US dollar</code> or <code>US dollars</code>;</li>
+<li><code>if(...)</code> — selects the singular or plural currency name.</li>
 </ul>
-<p><strong>Пример:</strong></p>
-<p>Если поле <strong>Сумма</strong> содержит значение <code>1234,56</code>, на выходе получится строка:</p>
-<p><img alt="" src="../../img/functions/7.png" /></p>
 
 
 

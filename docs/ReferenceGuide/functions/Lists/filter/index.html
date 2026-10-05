@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#filter" class="md-skip">
           Skip to content
         </a>
       
@@ -1991,38 +1991,53 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#syntax" class="md-nav__link">
     <span class="md-ellipsis">
-      Синтаксис
+      Syntax
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#return-value" class="md-nav__link">
     <span class="md-ellipsis">
-      Пример
+      Return value
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
-      Использование в табличном цикле
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#outputting-only-matching-list-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outputting only matching list items
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#calculating-a-sum-for-a-filtered-list" class="md-nav__link">
     <span class="md-ellipsis">
-      Ошибки
+      Calculating a sum for a filtered list
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2287,6 +2302,29 @@
             Text
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Text/capFirst/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    capFirst
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -2878,38 +2916,53 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#syntax" class="md-nav__link">
     <span class="md-ellipsis">
-      Синтаксис
+      Syntax
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#return-value" class="md-nav__link">
     <span class="md-ellipsis">
-      Пример
+      Return value
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
-      Использование в табличном цикле
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#outputting-only-matching-list-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outputting only matching list items
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#calculating-a-sum-for-a-filtered-list" class="md-nav__link">
     <span class="md-ellipsis">
-      Ошибки
+      Calculating a sum for a filtered list
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2929,66 +2982,178 @@
 
 
 
-<h1 id="_1">Функция «фильтровать»</h1>
-<p>Функция <code>фильтровать</code> отбирает из списка только те элементы, которые соответствуют заданному условию.</p>
-<p>Исходный список в анкете при этом не изменяется. Функция создаёт его отфильтрованную копию, которую можно передать в <strong>цикл</strong> или <strong>табличный цикл</strong> вместо исходного списка.</p>
-<p>Например, из списка позиций можно отобрать только позиции с ценой больше <code>1000</code> и вывести их в документ.</p>
-<h2 id="_2">Синтаксис</h2>
-<pre><code class="language-text">фильтровать(элемент из список, условие)
+<h1 id="filter">filter</h1>
+<p>The <code>filter</code> function selects list items that match a specified condition.</p>
+<h2 id="syntax">Syntax</h2>
+<pre><code class="language-text">filter(item in list, condition)
 </code></pre>
+<p><strong>Parameters:</strong></p>
 <ul>
-<li><code>элемент</code> — имя текущего элемента списка, которое используется в условии;</li>
-<li><code>список</code> — исходный список;</li>
-<li><code>условие</code> — правило отбора элементов. Условие должно возвращать <code>да</code> или <code>нет</code>.</li>
+<li><code>item</code> — the name of the current list item. It is defined directly in the function and used in the condition;</li>
+<li><code>list</code> — the identifier of the list field;</li>
+<li><code>condition</code> — a Boolean expression that determines whether the current item should be included in the result.</li>
 </ul>
-<p>Функция используется в выражении метки <a href="/ReferenceGuide/directives/for/">«Цикл»</a> вместо исходного списка:</p>
-<pre><code class="language-text">{цикл(элементЦикла из фильтровать(элемент из список, условие))}
+<p>You can choose the name of the current item yourself. It is used only inside the function.</p>
+<p>For example:</p>
+<pre><code class="language-text">filter(product in products, product.price &gt; 5000)
 </code></pre>
-<blockquote>
-<p>Функция <code>фильтровать</code> возвращает список, а не текстовое значение. Поэтому её не нужно выводить в документ отдельной меткой. Чтобы получить значения из отфильтрованного списка, его передают в цикл или табличный цикл, а нужные поля выводят уже в теле цикла.</p>
-</blockquote>
-<h2 id="_3">Пример</h2>
-<p>Предположим, <code>список1</code> содержит следующие позиции:</p>
-<pre><code class="language-text">Клавиатура — 800
-Монитор — 15000
-Мышь — 600
-Принтер — 12000
-</code></pre>
-<p>Нужно вывести только позиции с ценой больше <code>1000</code>.</p>
-<p>Для этого в выражении метки <a href="/ReferenceGuide/directives/for/">«Цикл»</a> вместо исходного списка используется функция <code>фильтровать</code>:</p>
-<pre><code class="language-text">{цикл(отобраннаяПозиция из фильтровать(позиция из список1, позиция.цена &gt; 1000))}
-{отобраннаяПозиция.название} — {отобраннаяПозиция.цена}
-{/цикл}
-</code></pre>
-<p>Здесь:</p>
+<p>Here:</p>
 <ul>
-<li><code>цикл</code> — открывающая метка цикла;</li>
-<li><code>отобраннаяПозиция</code> — имя текущего элемента отфильтрованного списка. Оно используется в теле цикла для обращения к его полям;</li>
-<li><code>фильтровать(...)</code> — функция, которая создаёт отфильтрованную копию <code>список1</code>;</li>
-<li><code>позиция</code> — имя текущего элемента исходного списка, которое используется внутри функции <code>фильтровать</code>;</li>
-<li><code>список1</code> — исходный список;</li>
-<li><code>позиция.цена &gt; 1000</code> — условие фильтрации. В отфильтрованную копию попадут только элементы, для которых это условие выполняется;</li>
-<li><code>{отобраннаяПозиция.название}</code> — выводит название текущей отобранной позиции;</li>
-<li><code>{отобраннаяПозиция.цена}</code> — выводит цену текущей отобранной позиции;</li>
-<li><code>{/цикл}</code> — закрывающая метка цикла.</li>
+<li><code>products</code> — the list field identifier;</li>
+<li><code>product</code> — the name of the current item defined inside the function;</li>
+<li><code>price</code> — the nested field identifier;</li>
+<li><code>product.price &gt; 5000</code> — the filtering condition.</li>
 </ul>
-<p>В результате в документ будут выведены только позиции, цена которых больше <code>1000</code>:</p>
-<pre><code class="language-text">Монитор — 15000
-Принтер — 12000
-</code></pre>
-<p>Исходный <code>список1</code> при этом не изменяется.</p>
-<h2 id="_4">Использование в табличном цикле</h2>
-<p>В табличном цикле функция применяется по тому же принципу — <code>фильтровать(...)</code> указывается вместо исходного списка.</p>
-<p>Например:</p>
-<pre><code class="language-text">{т_цикл(элТабл из фильтровать(...))}
-</code></pre>
-<h2 id="_5">Ошибки</h2>
-<p>Функция вернёт ошибку, если:</p>
+<p>Only products with a price greater than <code>5000</code> are included in the result.</p>
+<h2 id="return-value">Return value</h2>
+<p>The function returns a new list containing only the items for which the condition returns <code>true</code>.</p>
+<p>The original list is not changed.</p>
+<p>The result of <code>filter(...)</code> can be used instead of the original list:</p>
 <ul>
-<li>вместо списка передано значение другого типа;</li>
-<li>условие записано некорректно;</li>
-<li>условие не возвращает результат <code>да</code> или <code>нет</code>.</li>
+<li>in a <code>for</code> or <code>t_for</code> block;</li>
+<li>in other list functions;</li>
+<li>in aggregate functions such as <code>count</code>, <code>sum</code>, <code>avg</code>, <code>min</code>, and <code>max</code>.</li>
 </ul>
+<p>This allows you to filter the required items first and then perform calculations only on those items.</p>
+<h2 id="examples">Examples</h2>
+<h3 id="outputting-only-matching-list-items">Outputting only matching list items</h3>
+<p>Suppose the template contains a list field:</p>
+<pre><code class="language-text">products
+</code></pre>
+<p>Each item contains:</p>
+<ul>
+<li><code>name</code> — product name;</li>
+<li><code>price</code> — product price.</li>
+</ul>
+<p>Source list:</p>
+<table>
+<thead>
+<tr>
+<th><code>name</code></th>
+<th style="text-align: right;"><code>price</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Monitor</td>
+<td style="text-align: right;">15000</td>
+</tr>
+<tr>
+<td>Keyboard</td>
+<td style="text-align: right;">800</td>
+</tr>
+<tr>
+<td>Printer</td>
+<td style="text-align: right;">12000</td>
+</tr>
+<tr>
+<td>Mouse</td>
+<td style="text-align: right;">600</td>
+</tr>
+</tbody>
+</table>
+<p>You need to output only products with a price greater than <code>5000</code>.</p>
+<pre><code class="language-text">{for(item in filter(product in products, product.price &gt; 5000))}
+{item.name} — {item.price}
+{/for}
+</code></pre>
+<p>Here:</p>
+<ul>
+<li><code>products</code> — the identifier of the source list field;</li>
+<li><code>product</code> — the name of the current item inside the <code>filter</code> function;</li>
+<li><code>product.price &gt; 5000</code> — the filtering condition;</li>
+<li><code>filter(...)</code> — returns a new list containing only matching products;</li>
+<li><code>item</code> — the name of the current item in the filtered list inside the <code>for</code> block.</li>
+</ul>
+<p>Result:</p>
+<pre><code class="language-text">Monitor — 15000
+Printer — 12000
+</code></pre>
+<p>The original <code>products</code> list remains unchanged.</p>
+<h3 id="calculating-a-sum-for-a-filtered-list">Calculating a sum for a filtered list</h3>
+<p>The result of <code>filter</code> can be passed directly to an aggregate function.</p>
+<p>Suppose the <code>products</code> list contains:</p>
+<table>
+<thead>
+<tr>
+<th><code>name</code></th>
+<th style="text-align: right;"><code>price</code></th>
+<th style="text-align: right;"><code>quantity</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Monitor</td>
+<td style="text-align: right;">15000</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>Keyboard</td>
+<td style="text-align: right;">800</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr>
+<td>Printer</td>
+<td style="text-align: right;">12000</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Mouse</td>
+<td style="text-align: right;">600</td>
+<td style="text-align: right;">10</td>
+</tr>
+</tbody>
+</table>
+<p>You need to calculate the total cost only for products whose unit price is greater than <code>5000</code>.</p>
+<p>First, <code>filter</code> selects the matching items:</p>
+<pre><code class="language-text">filter(product in products, product.price &gt; 5000)
+</code></pre>
+<p>The resulting list contains:</p>
+<table>
+<thead>
+<tr>
+<th><code>name</code></th>
+<th style="text-align: right;"><code>price</code></th>
+<th style="text-align: right;"><code>quantity</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Monitor</td>
+<td style="text-align: right;">15000</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>Printer</td>
+<td style="text-align: right;">12000</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+<p>The filtered list can then be passed directly to <code>sum</code>:</p>
+<pre><code class="language-text">sum(
+    item in filter(
+        product in products,
+        product.price &gt; 5000
+    ),
+    item.price * item.quantity
+)
+</code></pre>
+<p>Here:</p>
+<ul>
+<li><code>product</code> — the name of the source list item inside <code>filter</code>;</li>
+<li><code>filter(...)</code> — returns a list of products with a price greater than <code>5000</code>;</li>
+<li><code>item</code> — the name of the filtered list item inside <code>sum</code>;</li>
+<li><code>item.price * item.quantity</code> — the value calculated for each item and included in the sum.</li>
+</ul>
+<p>The calculation uses:</p>
+<pre><code class="language-text">15000 × 2 = 30000
+12000 × 1 = 12000
+</code></pre>
+<p>The function returns:</p>
+<pre><code class="language-text">42000
+</code></pre>
+<p>In the same way, a filtered list can be passed to <code>count</code>, <code>avg</code>, <code>min</code>, or <code>max</code> when a calculation needs to be performed only for items that match a specified condition.</p>
 
 
 

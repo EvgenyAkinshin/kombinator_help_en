@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#formatnumber" class="md-skip">
           Skip to content
         </a>
       
@@ -1439,29 +1439,86 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#syntax" class="md-nav__link">
     <span class="md-ellipsis">
-      Синтаксис
+      Syntax
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom format
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#return-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return value
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#features" class="md-nav__link">
     <span class="md-ellipsis">
-      Принцип работы:
+      Features
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
-      Пример:
+      Examples
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#displaying-two-decimal-places" class="md-nav__link">
+    <span class="md-ellipsis">
+      Displaying two decimal places
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-thousands-separator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding a thousands separator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#displaying-only-significant-decimal-digits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Displaying only significant decimal digits
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2286,6 +2343,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Text/capFirst/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    capFirst
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Text/length/" class="md-nav__link">
         
   
@@ -2869,29 +2949,86 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#syntax" class="md-nav__link">
     <span class="md-ellipsis">
-      Синтаксис
+      Syntax
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom format
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#return-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return value
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#features" class="md-nav__link">
     <span class="md-ellipsis">
-      Принцип работы:
+      Features
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
-      Пример:
+      Examples
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#displaying-two-decimal-places" class="md-nav__link">
+    <span class="md-ellipsis">
+      Displaying two decimal places
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-thousands-separator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding a thousands separator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#displaying-only-significant-decimal-digits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Displaying only significant decimal digits
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2911,69 +3048,118 @@
 
 
 
-<h1 id="_1"><strong>форматЧисла</strong></h1>
-<p>Функция <code>форматЧисла</code> используется для преобразования числового значения в строку по заданным правилам форматирования. Она позволяет настраивать внешний вид чисел — добавлять разделители тысяч, управлять количеством знаков после запятой и формировать единый стиль отображения значений.</p>
-<p>📌 <strong>Функция не изменяет само значение</strong> — только визуально форматирует его в шаблоне.</p>
-<p><img alt="8" src="../../../img/functions/morfolog/8.png" /></p>
-<h2 id="_2"><strong>Синтаксис</strong></h2>
-<pre><code>форматЧисла(число, &quot;формат&quot;, &quot;разделительДробнойЧасти&quot;, &quot;разделительТысяч&quot;)
+<h1 id="formatnumber">formatNumber</h1>
+<p>The <code>formatNumber</code> function changes how a numeric value is displayed.</p>
+<p>It allows you to specify the number of decimal places, the decimal separator, and, if necessary, the thousands separator.</p>
+<h2 id="syntax">Syntax</h2>
+<pre><code class="language-text">formatNumber(number, &quot;format&quot;, &quot;decimalSeparator&quot;)
+</code></pre>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>number</code> — the numeric value to format;</li>
+<li><code>format</code> — defines how the number is displayed;</li>
+<li><code>decimalSeparator</code> — the character used to separate the fractional part from the integer part.</li>
+</ul>
+<p>If necessary, you can also specify a thousands separator:</p>
+<pre><code class="language-text">formatNumber(number, &quot;format&quot;, &quot;decimalSeparator&quot;, &quot;thousandsSeparator&quot;)
 </code></pre>
 <ul>
-<li>
-<p><code>число</code> — значение, которое нужно отформатировать (обычно поле типа «Десятичное число»).</p>
-</li>
-<li>
-<p><code>формат</code> — строка формата, определяющая структуру вывода. Допустимые символы:</p>
-<p><strong><code>#</code></strong> — отображает только значимые цифры.</p>
-<p><strong><code>0</code></strong> — добавляет ведущие или завершающие нули при необходимости.</p>
-<p><strong><code>.</code></strong> — разделитель дробной части (может быть заменён на указанный в следующем параметре).</p>
-<p><strong><code>,</code></strong> — разделитель тысяч (также может быть переопределён).</p>
-</li>
-<li>
-<p><code>разделительДробнойЧасти</code> — символ, который будет использоваться для отделения дробной части (например: <code>,</code>).</p>
-</li>
-<li>
-<p><code>разделительТысяч</code> — символ для разделения тысяч (например: пробел, точка, запятая).</p>
-</li>
+<li><code>thousandsSeparator</code> — an optional parameter that defines the character used to separate groups of digits in the integer part.</li>
 </ul>
-<h2 id="_3"><strong>Принцип работы:</strong></h2>
-<ol>
-<li>
-<p>Функция получает числовое значение, переданное напрямую или через поле шаблона.</p>
-</li>
-<li>
-<p>Преобразует его в строку, учитывая заданный шаблон:</p>
+<p>In the function settings, the number format can be configured in two ways:</p>
 <ul>
-<li>округляет до нужного количества знаков;</li>
-<li>подставляет нули или скрывает лишние разряды;</li>
-<li>вставляет нужные разделители (дробной части и тысяч).</li>
+<li>if <strong>Custom format</strong> is disabled — specify the number of <strong>Decimal places</strong>;</li>
+<li>if <strong>Custom format</strong> is enabled — define the format string manually.</li>
 </ul>
-</li>
-<li>
-<p>Возвращает итоговую строку, оформленную в заданном формате. Значение используется только для отображения и не влияет на вычисления.</p>
-</li>
-</ol>
-<h2 id="_4"><strong>Пример:</strong></h2>
-<p><strong>Задача:</strong> Отобразить число <code>1234567,865464</code> в виде <code>1 234 567,87</code>.</p>
-<p><strong>Шаги:</strong></p>
-<ol>
-<li>
-<p>Вставьте поле в шаблон.</p>
-</li>
-<li>
-<p>Дважды щёлкните по вставленному полю.</p>
-</li>
-<li>
-<p>Нажмите <code>f(x)</code> и выберите: <strong>Морфологические</strong> → <strong>форматЧисла</strong>.</p>
-</li>
-<li>
-<p>Заполните параметры:</p>
-<p><img alt="9" src="../../../img/functions/morfolog/9.png" /></p>
-</li>
-</ol>
-<p><strong>Результат</strong></p>
-<p>Функция возвращает строку, представляющую собой отформатированное число по заданным правилам:</p>
-<p><img alt="8" src="../../../img/functions/morfolog/8.png" /></p>
+<p>You can also specify:</p>
+<ul>
+<li><strong>Decimal separator</strong> — the character used to separate the fractional part from the integer part;</li>
+<li><strong>Thousands separator</strong> — the character used to separate groups of digits in the integer part. If no separator is required, select <code>Empty</code>.</li>
+</ul>
+<h3 id="custom-format">Custom format</h3>
+<p>When <strong>Custom format</strong> is enabled, the format string is created using special characters:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Symbol</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>#</code></td>
+<td style="text-align: left;">Digit placeholder. Displays only significant digits.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;">Digit placeholder with zero padding. If there is no digit in this position, <code>0</code> is displayed.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>.</code></td>
+<td style="text-align: left;">Position of the decimal separator. Can appear only once in the format string.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>,</code></td>
+<td style="text-align: left;">Position of the thousands separator.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="return-value">Return value</h2>
+<p>The function returns the formatted numeric value as text.</p>
+<h2 id="features">Features</h2>
+<p>The <code>.</code> and <code>,</code> characters in the format string define the positions of the separators. The actual characters displayed in the result are specified by <strong>Decimal separator</strong> and <strong>Thousands separator</strong>.</p>
+<p>If the format contains fewer decimal places than the source value, the displayed value is rounded.</p>
+<p>Because the function returns text, calculations with the number should be performed before applying <code>formatNumber</code>.</p>
+<h2 id="examples">Examples</h2>
+<h3 id="displaying-two-decimal-places">Displaying two decimal places</h3>
+<p>Suppose the <code>amount</code> field contains:</p>
+<pre><code class="language-text">125.6
+</code></pre>
+<p>Expression:</p>
+<pre><code class="language-text">formatNumber(
+    amount,
+    &quot;0.00&quot;,
+    &quot;.&quot;
+)
+</code></pre>
+<p>returns:</p>
+<pre><code class="language-text">125.60
+</code></pre>
+<h3 id="adding-a-thousands-separator">Adding a thousands separator</h3>
+<p>Suppose the <code>amount</code> field contains:</p>
+<pre><code class="language-text">1234567.865464
+</code></pre>
+<p>Expression:</p>
+<pre><code class="language-text">formatNumber(
+    amount,
+    &quot;#,##0.00&quot;,
+    &quot;.&quot;,
+    &quot;,&quot;
+)
+</code></pre>
+<p>returns:</p>
+<pre><code class="language-text">1,234,567.87
+</code></pre>
+<h3 id="displaying-only-significant-decimal-digits">Displaying only significant decimal digits</h3>
+<p>Suppose the <code>amount</code> field contains:</p>
+<pre><code class="language-text">125.5
+</code></pre>
+<p>Expression:</p>
+<pre><code class="language-text">formatNumber(
+    amount,
+    &quot;0.##&quot;,
+    &quot;.&quot;
+)
+</code></pre>
+<p>returns:</p>
+<pre><code class="language-text">125.5
+</code></pre>
+<p>If the <code>amount</code> field contains:</p>
+<pre><code class="language-text">125
+</code></pre>
+<p>the same expression returns:</p>
+<pre><code class="language-text">125
+</code></pre>
 
 
 

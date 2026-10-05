@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#max" class="md-skip">
           Skip to content
         </a>
       
@@ -2060,20 +2060,77 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#syntax" class="md-nav__link">
     <span class="md-ellipsis">
-      Синтаксис
+      Syntax
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-with-simple-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      List with simple items
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-with-struct-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      List with Struct items
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#return-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return value
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
-      Принцип работы:
+      Examples
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finding-the-maximum-product-price" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding the maximum product price
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finding-the-maximum-result-of-an-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding the maximum result of an expression
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2269,6 +2326,29 @@
             Text
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Text/capFirst/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    capFirst
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -2860,20 +2940,77 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#syntax" class="md-nav__link">
     <span class="md-ellipsis">
-      Синтаксис
+      Syntax
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-with-simple-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      List with simple items
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-with-struct-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      List with Struct items
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#return-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return value
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
-      Принцип работы:
+      Examples
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finding-the-maximum-product-price" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding the maximum product price
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finding-the-maximum-result-of-an-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding the maximum result of an expression
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2893,80 +3030,160 @@
 
 
 
-<h1 id="_1"><strong>макс</strong></h1>
-<p>Функция <code>макс</code> используется для определения <strong>наибольшего числового значения</strong> среди всех элементов списка.</p>
-<p>📌 Подходит, если нужно найти самую высокую цену, максимальное количество или наибольший балл.</p>
-<h2 id="_2"><strong>Синтаксис</strong></h2>
-<p><strong>Общий синтаксис:</strong></p>
-<p><code>макс(элемент из список, любое_выражение)</code></p>
-<p>Что это значит:</p>
+<h1 id="max">max</h1>
+<p>The <code>max</code> function determines the maximum numeric value in a list.</p>
+<h2 id="syntax">Syntax</h2>
+<pre><code class="language-text">max(item in list, expression)
+</code></pre>
+<p><strong>Parameters:</strong></p>
 <ul>
-<li>
-<p><code>элемент</code> — имя текущей записи списка (можете назвать как угодно: <code>элемент</code>, <code>x</code>, <code>_1</code> и т. п.).</p>
-</li>
-<li>
-<p><code>список</code> — поле-список, по которому идёт обход.</p>
-</li>
-<li>
-<p><code>любое_выражение</code> — произвольная формула, которая выполняется для каждого элемента и должна возвращать максимальное значение.</p>
-</li>
+<li><code>item</code> — the name of the current list item. It is defined directly in the function and used in the expression;</li>
+<li><code>list</code> — the identifier of the list field;</li>
+<li><code>expression</code> — a numeric value or expression whose maximum result should be determined.</li>
 </ul>
-<p><strong>Элемент списка может быть двух видов:</strong></p>
-<ol>
-<li>
-<p><strong>СОСТАВНОЕ ПОЛЕ:</strong></p>
-<p>В качестве <strong>названия элемента списка</strong> передаётся временное имя текущего элемента списка (чаще всего — идентификатор самого составного поля).</p>
-<p><img alt="30" src="../../../img/functions/list/30.png" /></p>
-<p><img alt="31" src="../../../img/functions/list/31.png" /></p>
+<p>You can choose the name of the current item yourself. It is used only inside the function.</p>
+<h3 id="list-with-simple-items">List with simple items</h3>
+<p>If the list contains numeric values, use the current item in the expression.</p>
+<p>For example:</p>
+<pre><code class="language-text">max(number in numberList, number)
+</code></pre>
+<p>Here:</p>
 <ul>
-<li>
-<p><strong>Название элемента списка</strong> — это имя, через которое происходит обращение к каждому элементу. Вместо него можно использовать любое <a href="../../../syntax/syntax/">допустимое</a> имя, например: <code>элемент1</code>, <code>_2</code>, <code>_элемент</code> и т.п.</p>
-<p>Соответственно, к полям, находящимся внутри составного поля, нужно обращаться с указанием этого имени. Например, если заменить <code>элемент</code> на <code>_2</code>, то обращение к полю будет выглядеть так:</p>
-<p><code>_2.поле</code></p>
-</li>
-<li>
-<p><strong>Список</strong> — передается идентификатор списка, в котором находятся данные.</p>
-</li>
-<li>
-<p><strong>Выражение</strong> — произвольное выражение, которое будет выполнено для каждого элемента списка. Чаще всего передаётся просто идентификатор поля <code>элемент.поле</code>, по которому ищется максимальное значение из списка, но если у вас сложный расчёт, то можно использовать различные формулы и логику, например: <code>если(элемент.поле &gt; 5000, элемент.поле + 500, элемент.поле)</code></p>
-<p><img alt="32" src="../../../img/functions/list/32.png" /></p>
-</li>
+<li><code>numberList</code> — the list field identifier;</li>
+<li><code>number</code> — the name of the current list item;</li>
+<li>the second <code>number</code> — the value used to determine the maximum.</li>
 </ul>
-</li>
-<li>
-<p><strong>НЕ СОСТАВНОЕ ПОЛЕ</strong></p>
-<p>Когда элемент <strong>несоставной</strong> (десятичное или целое число), у него <strong>нет внутренних полей</strong>. Поэтому в <strong>название элемента списка</strong> программе нужен <strong>конкретный идентификатор поля</strong>.</p>
-<p><img alt="33" src="../../../img/functions/list/33.png" /></p>
-<p><img alt="34" src="../../../img/functions/list/34.png" /></p>
+<h3 id="list-with-struct-items">List with Struct items</h3>
+<p>If the list contains Struct items, specify the required numeric field in the expression.</p>
+<p>For example:</p>
+<pre><code class="language-text">max(product in products, product.price)
+</code></pre>
+<p>Here:</p>
 <ul>
-<li>
-<p><strong>Список</strong> — передается идентификатор списка, в котором находятся данные.</p>
-</li>
-<li>
-<p><strong>Название элемента списка</strong> — передается идентификатор поля, которое вы выбрали в качестве элемента списка. Всегда передаётся точный идентификатор.</p>
-</li>
-<li>
-<p><strong>Выражение</strong> — произвольное выражение, которое будет выполнено для каждого элемента списка. Чаще всего передаётся просто идентификатор элемента списка <code>элемент</code>, по которому  ищется максимальное значение из списка, но если у вас сложный расчёт, можно использовать различные формулы и логику, например: <code>если(элемент != 1000, элемент, элемент * элемент)</code></p>
-<p><img alt="35" src="../../../img/functions/list/35.png" /></p>
-</li>
+<li><code>products</code> — the list field identifier;</li>
+<li><code>product</code> — the name of the current item;</li>
+<li><code>price</code> — the nested numeric field identifier;</li>
+<li><code>product.price</code> — the value used to determine the maximum.</li>
 </ul>
-</li>
-</ol>
-<h2 id="_3"><strong>Принцип работы:</strong></h2>
-<ol>
-<li>
-<p>Функция перебирает все элементы списка.</p>
-</li>
-<li>
-<p>Из каждого элемента извлекает числовое значение.</p>
-</li>
-<li>
-<p>Сравнивает все полученные значения.</p>
-</li>
-<li>
-<p>Возвращает наибольшее из них.</p>
-</li>
-</ol>
+<h2 id="return-value">Return value</h2>
+<p>The function returns the maximum result of the expression across all items in the list.</p>
+<h2 id="examples">Examples</h2>
+<h3 id="finding-the-maximum-product-price">Finding the maximum product price</h3>
+<p>Suppose the template contains a list field:</p>
+<pre><code class="language-text">products
+</code></pre>
+<p>Each item is a Struct field containing:</p>
+<ul>
+<li><code>name</code> — product name;</li>
+<li><code>price</code> — product price.</li>
+</ul>
+<p>Source data:</p>
+<table>
+<thead>
+<tr>
+<th><code>name</code></th>
+<th style="text-align: right;"><code>price</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Monitor</td>
+<td style="text-align: right;">15000</td>
+</tr>
+<tr>
+<td>Keyboard</td>
+<td style="text-align: right;">800</td>
+</tr>
+<tr>
+<td>Printer</td>
+<td style="text-align: right;">12000</td>
+</tr>
+<tr>
+<td>Mouse</td>
+<td style="text-align: right;">600</td>
+</tr>
+</tbody>
+</table>
+<p>Expression:</p>
+<pre><code class="language-text">max(product in products, product.price)
+</code></pre>
+<p>Here:</p>
+<ul>
+<li><code>products</code> — the list field identifier;</li>
+<li><code>product</code> — the name of the current item inside the <code>max</code> function;</li>
+<li><code>price</code> — the nested field identifier;</li>
+<li><code>product.price</code> — the value used in the comparison.</li>
+</ul>
+<p>The function returns:</p>
+<pre><code class="language-text">15000
+</code></pre>
+<p>The function returns the maximum price value, not the <code>Monitor</code> list item itself.</p>
+<h3 id="finding-the-maximum-result-of-an-expression">Finding the maximum result of an expression</h3>
+<p>The second parameter can also contain an expression.</p>
+<p>Suppose the <code>products</code> list also contains the following field:</p>
+<pre><code class="language-text">quantity
+</code></pre>
+<p>Source data:</p>
+<table>
+<thead>
+<tr>
+<th><code>name</code></th>
+<th style="text-align: right;"><code>price</code></th>
+<th style="text-align: right;"><code>quantity</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chair</td>
+<td style="text-align: right;">3500</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td>Desk</td>
+<td style="text-align: right;">7500</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Cabinet</td>
+<td style="text-align: right;">12000</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
+<p>You need to determine the maximum total cost of a product line based on its quantity.</p>
+<p>Expression:</p>
+<pre><code class="language-text">max(product in products, product.price * product.quantity)
+</code></pre>
+<p>For each item, the function calculates:</p>
+<table>
+<thead>
+<tr>
+<th><code>name</code></th>
+<th>Calculation</th>
+<th style="text-align: right;">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chair</td>
+<td><code>3500 × 4</code></td>
+<td style="text-align: right;">14000</td>
+</tr>
+<tr>
+<td>Desk</td>
+<td><code>7500 × 1</code></td>
+<td style="text-align: right;">7500</td>
+</tr>
+<tr>
+<td>Cabinet</td>
+<td><code>12000 × 2</code></td>
+<td style="text-align: right;">24000</td>
+</tr>
+</tbody>
+</table>
+<p>The function returns:</p>
+<pre><code class="language-text">24000
+</code></pre>
 
 
 
