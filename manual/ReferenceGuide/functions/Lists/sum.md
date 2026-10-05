@@ -1,70 +1,149 @@
-# **сумм**
+# sum
 
-Функция `сумм` используется для вычисления общей суммы числового поля среди всех элементов списка.
+The `sum` function calculates the sum of numeric values from list items.
 
-## **Синтаксис**
+## Syntax
 
-**Общий синтаксис:**
+```text
+sum(item in list, expression)
+```
 
-`сумм(элемент из список, любое_выражение)`
+**Parameters:**
 
-Что это значит:
+- `item` — the name of the current list item. It is defined directly in the function and used in the expression;
+- `list` — the identifier of the list field;
+- `expression` — a numeric value or expression whose results should be added together.
 
-* `элемент` — имя текущей записи списка (можете назвать как угодно: `элемент`, `x` и т. п.).
+You can choose the name of the current item yourself. It is used only inside the function.
 
-* `список` — поле-список, по которому идёт обход.
+### List with simple items
 
-* `любое_выражение` — произвольная формула, которая выполняется для каждого элемента и должна возвращать число  (то, что суммируем).
+If the list contains numeric values, use the current item in the expression.
 
-📌 Поле должно быть числовым: **целое число** или **десятичное число**.
+For example:
 
-**Элемент списка может быть двух видов:**
+```text
+sum(number in numberList, number)
+```
 
-1. **СОСТАВНОЕ ПОЛЕ:**
+Here:
 
-       В качестве **названия элемента списка** передаётся временное имя текущего элемента списка (чаще всего — идентификатор самого составного поля).
+- `numberList` — the list field identifier;
+- `number` — the name of the current list item;
+- the second `number` — the value included in the sum.
 
-       ![42](../../img/functions/list/42.png)
+### List with Struct items
 
-       ![43](../../img/functions/list/43.png)
+If the list contains Struct items, specify the required numeric field in the expression.
 
-       * **Название элемента списка** — это имя, через которое происходит обращение к каждому элементу. Вместо него можно использовать любое [допустимое](../../syntax/syntax.md) имя, например: `элемент1`, `_2`, `_элемент` и т.п.
+For example:
 
-          Соответственно, к полям, находящимся внутри составного поля, нужно обращаться с указанием этого имени. Например, если заменить `элемент` на `_2`, то обращение к полю будет выглядеть так:
+```text
+sum(product in products, product.quantity)
+```
 
-          `_2.поле`
+Here:
 
-       * **Список** — передается идентификатор списка, в котором находятся данные.
+- `products` — the list field identifier;
+- `product` — the name of the current item;
+- `quantity` — the nested numeric field identifier;
+- `product.quantity` — the value included in the sum.
 
-       * **Выражение** — произвольное выражение, которое будет выполнено для каждого элемента списка. Чаще всего передаётся просто идентификатор поля `элемент.поле`, по которому суммируется каждое значение из списка, но если у вас сложный расчёт, то можно использовать различные формулы и логику, например: `если(элемент.поле >= 200000, элемент.поле / 2, элемент.поле * 0.25)`
-  
-         ![44](../../img/functions/list/44.png)
+## Return value
 
-2. **НЕ СОСТАВНОЕ ПОЛЕ**
+The function returns the sum of the expression results for all items in the list.
 
-      Когда элемент **несоставной** (десятичное или целое число), у него **нет внутренних полей**. Поэтому в **название элемента списка** программе нужен **конкретный идентификатор поля**.
+## Examples
 
-       ![45](../../img/functions/list/45.png)
+### Calculating the total quantity of products
 
-       ![46](../../img/functions/list/46.png)
+Suppose the template contains a list field:
 
-       * **Список** — передается идентификатор списка, в котором находятся данные.
-    
-       * **Название элемента списка** — передается идентификатор поля, которое вы выбрали в качестве элемента списка. Всегда передаётся точный идентификатор.
-  
-       * **Выражение** — произвольное выражение, которое будет выполнено для каждого элемента списка. Чаще всего передаётся просто идентификатор элемента списка `элемент`, по которому суммируется каждое значение из списка, но если у вас сложный расчёт, можно использовать различные формулы и логику, например: `если(элемент != 1000, элемент, элемент * элемент)`
+```text
+products
+```
 
-          ![47](../../img/functions/list/47.png)
+Each item is a Struct field containing:
 
-## **Принцип работы:**
+- `name` — product name;
+- `quantity` — product quantity.
 
-1. Список содержит несколько элементов, каждый из которых включает числовое поле (например, `стоимость`).
+Source data:
 
-2. Функция перебирает все элементы этого списка.
+| `name` | `quantity` |
+| --- | ---: |
+| Monitor | 2 |
+| Keyboard | 5 |
+| Printer | 1 |
+| Mouse | 10 |
 
-3. Из каждого элемента извлекается значение указанного числового поля.
+To calculate the total quantity of products, use:
 
-4. Все значения складываются.
+```text
+sum(product in products, product.quantity)
+```
 
-5. Результатом становится итоговая сумма.
+Here:
 
+- `products` — the list field identifier;
+- `product` — the name of the current item inside the `sum` function;
+- `quantity` — the nested field identifier;
+- `product.quantity` — the value added to the total.
+
+The function adds:
+
+```text
+2 + 5 + 1 + 10
+```
+
+and returns:
+
+```text
+18
+```
+
+### Calculating the total cost of products
+
+The second parameter can also contain an expression.
+
+Suppose the `products` list contains:
+
+- `name` — product name;
+- `price` — unit price;
+- `quantity` — product quantity.
+
+Source data:
+
+| `name` | `price` | `quantity` |
+| --- | ---: | ---: |
+| Monitor | 15000 | 2 |
+| Keyboard | 800 | 5 |
+| Printer | 12000 | 1 |
+| Mouse | 600 | 10 |
+
+To calculate the total cost of all products:
+
+```text
+sum(product in products, product.price * product.quantity)
+```
+
+For each item, the function first calculates the line total:
+
+| `name` | Calculation | Result |
+| --- | --- | ---: |
+| Monitor | `15000 × 2` | 30000 |
+| Keyboard | `800 × 5` | 4000 |
+| Printer | `12000 × 1` | 12000 |
+| Mouse | `600 × 10` | 6000 |
+
+The function then adds the calculated values:
+
+```text
+30000 + 4000 + 12000 + 6000
+```
+
+Result:
+
+```text
+52000
+```

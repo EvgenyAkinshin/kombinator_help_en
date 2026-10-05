@@ -1,89 +1,198 @@
-# Функция «сортировать»
+# sort
 
-Функция `сортировать` располагает элементы списка **по возрастанию** в зависимости от значения выбранного поля или выражения.
+The `sort` function returns a copy of a list with its items arranged in ascending order.
 
-Например, список позиций можно отсортировать по цене — от меньшей к большей — и в таком порядке вывести позиции в документ.
-
-Результатом функции является отсортированный список, который можно передать в **цикл** или **табличный цикл** вместо исходного списка.
-
-## Синтаксис
+## Syntax
 
 ```text
-сортировать(элемент из список, выражение)
+sort(item in list, expression)
 ```
 
-- `элемент` — имя текущего элемента списка, которое используется в выражении сортировки;
-- `список` — список, элементы которого необходимо отсортировать;
-- `выражение` — значение, по которому определяется порядок элементов.
+**Parameters:**
 
-Например, чтобы отсортировать `список1` по полю `цена`, используется выражение:
+- `item` — the name of the current list item. It is defined directly in the function and used in the sorting expression;
+- `list` — the identifier of the list field whose items should be sorted;
+- `expression` — the value used to determine the order of the items.
+
+You can choose the name of the current item yourself. It is used only inside the function.
+
+### List with simple items
+
+If the list contains simple values, sorting can be performed by the value of the current item.
+
+For example:
 
 ```text
-сортировать(позиция из список1, позиция.цена)
+sort(number in numberList, number)
 ```
 
-Функция располагает элементы по возрастанию значения `позиция.цена`.
+Here:
 
-Поскольку результат функции является списком, `сортировать` можно указать в выражении метки [«Цикл»](/ReferenceGuide/directives/for/) вместо исходного списка:
+- `numberList` — the list field identifier;
+- `number` — the name of the current list item;
+- the second `number` — the value used for sorting.
+
+### List with Struct items
+
+If the list contains Struct items, specify the nested field to sort by.
+
+For example:
 
 ```text
-{цикл(отсортированнаяПозиция из сортировать(позиция из список1, позиция.цена))}
+sort(product in products, product.price)
 ```
-## Пример
 
-Предположим, `список1` содержит следующие позиции:
+Here:
+
+- `products` — the list field identifier;
+- `product` — the name of the current list item;
+- `price` — the nested field identifier;
+- `product.price` — the value used for sorting.
+
+## Return value
+
+The function returns a sorted copy of the original list.
+
+The original list is not changed.
+
+To output the sorted items in a document, use the result of `sort` inside a `for` block.
+
+## Examples
+
+### Sorting a list of numbers
+
+Suppose the template contains a list field with the following identifier:
 
 ```text
-Монитор — 15000
-Клавиатура — 800
-Принтер — 12000
-Мышь — 600
+numberList
 ```
 
-Нужно вывести позиции в порядке увеличения цены.
+It contains:
 
-Для этого в выражении метки [«Цикл»](/ReferenceGuide/directives/for/) вместо исходного списка используется функция `сортировать`:
+| Position | Value |
+| ---: | ---: |
+| 1 | 8 |
+| 2 | 3 |
+| 3 | 12 |
+| 4 | 5 |
+
+To output the values in ascending order, use `sort` inside a `for` block:
 
 ```text
-{цикл(отсортированнаяПозиция из сортировать(позиция из список1, позиция.цена))}
-{отсортированнаяПозиция.название} — {отсортированнаяПозиция.цена}
-{/цикл}
+{for(number in sort(item in numberList, item))}
+{number}
+{/for}
 ```
 
-Здесь:
+Here:
 
-- `цикл` — открывающая метка цикла;
-- `отсортированнаяПозиция` — имя текущего элемента отсортированного списка. Оно используется в теле цикла для обращения к его полям;
-- `сортировать(...)` — функция, которая сортирует `список1` по возрастанию;
-- `позиция` — имя текущего элемента исходного списка, которое используется внутри функции `сортировать`;
-- `список1` — исходный список;
-- `позиция.цена` — поле, по значению которого выполняется сортировка;
-- `{отсортированнаяПозиция.название}` — выводит название текущей позиции;
-- `{отсортированнаяПозиция.цена}` — выводит цену текущей позиции;
-- `{/цикл}` — закрывающая метка цикла.
+- `numberList` — the identifier of the source list field;
+- `item` — the name of the current item inside the `sort` function;
+- the second `item` — the value used for sorting;
+- `sort(...)` — returns a sorted copy of the list;
+- `number` — the name of the current item in the sorted list inside the `for` block.
 
-В результате позиции будут выведены в порядке увеличения цены:
+Result:
 
 ```text
-Мышь — 600
-Клавиатура — 800
-Принтер — 12000
-Монитор — 15000
+3
+5
+8
+12
 ```
 
-## Использование в табличном цикле
+The original `numberList` remains unchanged.
 
-В табличном цикле функция применяется по тому же принципу — `сортировать(...)` указывается вместо исходного списка.
+### Sorting products by price
 
-Например:
+Suppose the template contains a list field with the following identifier:
 
 ```text
-{т_цикл(элТабл из сортировать(...))}
+products
 ```
 
-## Ошибки
+Each item is a Struct field containing:
 
-Функция вернёт ошибку, если:
+- `name` — the product name field identifier;
+- `price` — the product price field identifier.
 
-- вместо списка передано значение другого типа;
-- выражение сортировки записано некорректно или возвращает значение, которое нельзя использовать для сортировки.
+Source list:
+
+| Position | `name` | `price` |
+| ---: | --- | ---: |
+| 1 | Monitor | 15000 |
+| 2 | Keyboard | 800 |
+| 3 | Printer | 12000 |
+| 4 | Mouse | 600 |
+
+To output the products in ascending order by price:
+
+```text
+{for(item in sort(product in products, product.price))}
+{item.name} — {item.price}
+{/for}
+```
+
+Here:
+
+- `products` — the identifier of the source list field;
+- `product` — the name of the current item inside the `sort` function;
+- `product.price` — the value used for sorting;
+- `sort(...)` — returns a copy of `products` with the items in a different order;
+- `item` — the name of the current item in the sorted list inside the `for` block;
+- `item.name` and `item.price` — the fields of the current item.
+
+Result:
+
+```text
+Mouse — 600
+Keyboard — 800
+Printer — 12000
+Monitor — 15000
+```
+
+### Sorting by the result of an expression
+
+An expression can also be used as the sorting criterion.
+
+Suppose the `products` list also contains the following field:
+
+```text
+quantity
+```
+
+Source data:
+
+| `name` | `price` | `quantity` |
+| --- | ---: | ---: |
+| Chair | 3500 | 4 |
+| Desk | 7500 | 1 |
+| Cabinet | 12000 | 2 |
+
+The products need to be sorted by the total cost of each line — `price × quantity`.
+
+Expression:
+
+```text
+{for(item in sort(product in products, product.price * product.quantity))}
+{item.name}
+{/for}
+```
+
+For each item, the function calculates the expression value:
+
+| `name` | Calculation | Sorting value |
+| --- | --- | ---: |
+| Chair | `3500 × 4` | 14000 |
+| Desk | `7500 × 1` | 7500 |
+| Cabinet | `12000 × 2` | 24000 |
+
+Result:
+
+```text
+Desk
+Chair
+Cabinet
+```
+
+The calculated value is used only to determine the item order and is not added to the original list.

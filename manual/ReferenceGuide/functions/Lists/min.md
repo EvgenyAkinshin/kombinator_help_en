@@ -1,66 +1,148 @@
-# **мин**
+# min
 
-Функция `мин` используется для определения **наименьшего числового значения** среди элементов списка.
+The `min` function determines the minimum numeric value in a list.
 
-## **Синтаксис**
+## Syntax
 
-**Общий синтаксис:**
+```text
+min(item in list, expression)
+```
 
-`мин(элемент из список, любое_выражение)`
+**Parameters:**
 
-Что это значит:
+- `item` — the name of the current list item. It is defined directly in the function and used in the expression;
+- `list` — the identifier of the list field;
+- `expression` — a numeric value or expression whose minimum result should be determined.
 
-* `элемент` — имя текущей записи списка (можете назвать как угодно: `элемент`, `x` и т. п.).
+You can choose the name of the current item yourself. It is used only inside the function.
 
-* `список` — поле-список, по которому идёт обход.
+### List with simple items
 
-* `любое_выражение` — произвольная формула, которая выполняется для каждого элемента и должна возвращать минимальное значение.
+If the list contains numeric values, use the current item in the expression.
 
-**Элемент списка может быть двух видов:**
+For example:
 
-1. **СОСТАВНОЕ ПОЛЕ:**
+```text
+min(number in numberList, number)
+```
 
-     В качестве **названия элемента списка** передаётся временное имя текущего элемента списка (чаще всего — идентификатор самого составного поля).
+Here:
 
-      ![36](../../img/functions/list/36.png)
+- `numberList` — the list field identifier;
+- `number` — the name of the current list item;
+- the second `number` — the value used to determine the minimum.
 
-      ![37](../../img/functions/list/37.png)
+### List with Struct items
 
-     * **Название элемента списка** — это имя, через которое происходит обращение к каждому элементу. Вместо него можно использовать любое [допустимое](../../syntax/syntax.md) имя, например: `элемент1`, `_2`, `_элемент` и т.п.
+If the list contains Struct items, specify the required numeric field in the expression.
 
-          Соответственно, к полям, находящимся внутри составного поля, нужно обращаться с указанием этого имени. Например, если заменить `элемент` на `_2`, то обращение к полю будет выглядеть так:
+For example:
 
-           `_2.поле`
+```text
+min(product in products, product.price)
+```
 
-     * **Список** — передается идентификатор списка, в котором находятся данные.
+Here:
 
-     * **Выражение** — произвольное выражение, которое будет выполнено для каждого элемента списка. Чаще всего передаётся просто идентификатор поля `элемент.поле`, по которому ищется минимальное значение из списка, но если у вас сложный расчёт, то можно использовать различные формулы и логику, например: `если(элемент.поле > 5000, элемент.поле - 500, элемент.поле)`
-  
-       ![38](../../img/functions/list/38.png)
+- `products` — the list field identifier;
+- `product` — the name of the current item;
+- `price` — the nested numeric field identifier;
+- `product.price` — the value used to determine the minimum.
 
-2. **НЕ СОСТАВНОЕ ПОЛЕ**
+## Return value
 
-     Когда элемент **несоставной** (десятичное или целое число), у него **нет внутренних полей**. Поэтому в **название элемента списка** программе нужен **конкретный идентификатор поля**.
+The function returns the minimum result of the expression across all items in the list.
 
-      ![39](../../img/functions/list/39.png)
+## Examples
 
-      ![40](../../img/functions/list/40.png)
+### Finding the minimum product price
 
-     * **Список** — передается идентификатор списка, в котором находятся данные.
-    
-     * **Название элемента списка** — передается идентификатор поля, которое вы выбрали в качестве элемента списка. Всегда передаётся точный идентификатор.
-  
-     * **Выражение** — произвольное выражение, которое будет выполнено для каждого элемента списка. Чаще всего передаётся просто идентификатор элемента списка `элемент`, по которому  ищется минимальное значение из списка, но если у вас сложный расчёт, можно использовать различные формулы и логику, например: `если(элемент != 1000, элемент, элемент * элемент)`
+Suppose the template contains a list field:
 
-        ![41](../../img/functions/list/41.png)
+```text
+products
+```
 
-## **Принцип работы:**
+Each item is a Struct field containing:
 
-1. Функция перебирает все элементы указанного списка.
+- `name` — product name;
+- `price` — product price.
 
-2. Из каждого элемента извлекается нужное числовое значение.
+Source data:
 
-3. Значения сравниваются между собой.
+| `name` | `price` |
+| --- | ---: |
+| Monitor | 15000 |
+| Keyboard | 800 |
+| Printer | 12000 |
+| Mouse | 600 |
 
-4. Возвращается наименьшее из них.
+Expression:
 
+```text
+min(product in products, product.price)
+```
+
+Here:
+
+- `products` — the list field identifier;
+- `product` — the name of the current item inside the `min` function;
+- `price` — the nested field identifier;
+- `product.price` — the value used in the comparison.
+
+The function compares:
+
+```text
+15000
+800
+12000
+600
+```
+
+and returns:
+
+```text
+600
+```
+
+The function returns the minimum price value, not the `Mouse` list item itself.
+
+### Finding the minimum result of an expression
+
+The second parameter can also contain an expression.
+
+Suppose the `products` list also contains the following field:
+
+```text
+quantity
+```
+
+Source data:
+
+| `name` | `price` | `quantity` |
+| --- | ---: | ---: |
+| Chair | 3500 | 4 |
+| Desk | 7500 | 1 |
+| Cabinet | 12000 | 2 |
+
+You need to determine the minimum total cost of a product line based on its quantity.
+
+Expression:
+
+```text
+min(product in products, product.price * product.quantity)
+```
+
+For each item, the function first calculates:
+
+| `name` | Calculation | Result |
+| --- | --- | ---: |
+| Chair | `3500 × 4` | 14000 |
+| Desk | `7500 × 1` | 7500 |
+| Cabinet | `12000 × 2` | 24000 |
+
+The function returns:
+
+```text
+7500
+```

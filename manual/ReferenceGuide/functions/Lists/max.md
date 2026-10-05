@@ -1,68 +1,139 @@
-# **макс**
+# max
 
-Функция `макс` используется для определения **наибольшего числового значения** среди всех элементов списка.
+The `max` function determines the maximum numeric value in a list.
 
-📌 Подходит, если нужно найти самую высокую цену, максимальное количество или наибольший балл.
+## Syntax
 
-## **Синтаксис**
+```text
+max(item in list, expression)
+```
 
-**Общий синтаксис:**
+**Parameters:**
 
-`макс(элемент из список, любое_выражение)`
+- `item` — the name of the current list item. It is defined directly in the function and used in the expression;
+- `list` — the identifier of the list field;
+- `expression` — a numeric value or expression whose maximum result should be determined.
 
-Что это значит:
+You can choose the name of the current item yourself. It is used only inside the function.
 
-* `элемент` — имя текущей записи списка (можете назвать как угодно: `элемент`, `x`, `_1` и т. п.).
+### List with simple items
 
-* `список` — поле-список, по которому идёт обход.
+If the list contains numeric values, use the current item in the expression.
 
-* `любое_выражение` — произвольная формула, которая выполняется для каждого элемента и должна возвращать максимальное значение.
+For example:
 
-**Элемент списка может быть двух видов:**
+```text
+max(number in numberList, number)
+```
 
-1. **СОСТАВНОЕ ПОЛЕ:**
+Here:
 
-      В качестве **названия элемента списка** передаётся временное имя текущего элемента списка (чаще всего — идентификатор самого составного поля).
+- `numberList` — the list field identifier;
+- `number` — the name of the current list item;
+- the second `number` — the value used to determine the maximum.
 
-      ![30](../../img/functions/list/30.png)
+### List with Struct items
 
-      ![31](../../img/functions/list/31.png)
+If the list contains Struct items, specify the required numeric field in the expression.
 
-      * **Название элемента списка** — это имя, через которое происходит обращение к каждому элементу. Вместо него можно использовать любое [допустимое](../../syntax/syntax.md) имя, например: `элемент1`, `_2`, `_элемент` и т.п.
+For example:
 
-        Соответственно, к полям, находящимся внутри составного поля, нужно обращаться с указанием этого имени. Например, если заменить `элемент` на `_2`, то обращение к полю будет выглядеть так:
+```text
+max(product in products, product.price)
+```
 
-         `_2.поле`
+Here:
 
-    * **Список** — передается идентификатор списка, в котором находятся данные.
+- `products` — the list field identifier;
+- `product` — the name of the current item;
+- `price` — the nested numeric field identifier;
+- `product.price` — the value used to determine the maximum.
 
-    * **Выражение** — произвольное выражение, которое будет выполнено для каждого элемента списка. Чаще всего передаётся просто идентификатор поля `элемент.поле`, по которому ищется максимальное значение из списка, но если у вас сложный расчёт, то можно использовать различные формулы и логику, например: `если(элемент.поле > 5000, элемент.поле + 500, элемент.поле)`
-  
-         ![32](../../img/functions/list/32.png)
+## Return value
 
-2. **НЕ СОСТАВНОЕ ПОЛЕ**
+The function returns the maximum result of the expression across all items in the list.
 
-     Когда элемент **несоставной** (десятичное или целое число), у него **нет внутренних полей**. Поэтому в **название элемента списка** программе нужен **конкретный идентификатор поля**.
+## Examples
 
-       ![33](../../img/functions/list/33.png)
+### Finding the maximum product price
 
-       ![34](../../img/functions/list/34.png)
+Suppose the template contains a list field:
 
-     * **Список** — передается идентификатор списка, в котором находятся данные.
-    
-     * **Название элемента списка** — передается идентификатор поля, которое вы выбрали в качестве элемента списка. Всегда передаётся точный идентификатор.
-  
-     * **Выражение** — произвольное выражение, которое будет выполнено для каждого элемента списка. Чаще всего передаётся просто идентификатор элемента списка `элемент`, по которому  ищется максимальное значение из списка, но если у вас сложный расчёт, можно использовать различные формулы и логику, например: `если(элемент != 1000, элемент, элемент * элемент)`
+```text
+products
+```
 
-         ![35](../../img/functions/list/35.png)
-      
-## **Принцип работы:**
+Each item is a Struct field containing:
 
-1. Функция перебирает все элементы списка.
+- `name` — product name;
+- `price` — product price.
 
-2. Из каждого элемента извлекает числовое значение.
+Source data:
 
-3. Сравнивает все полученные значения.
+| `name` | `price` |
+| --- | ---: |
+| Monitor | 15000 |
+| Keyboard | 800 |
+| Printer | 12000 |
+| Mouse | 600 |
 
-4. Возвращает наибольшее из них.
+Expression:
 
+```text
+max(product in products, product.price)
+```
+
+Here:
+
+- `products` — the list field identifier;
+- `product` — the name of the current item inside the `max` function;
+- `price` — the nested field identifier;
+- `product.price` — the value used in the comparison.
+
+The function returns:
+
+```text
+15000
+```
+
+The function returns the maximum price value, not the `Monitor` list item itself.
+
+### Finding the maximum result of an expression
+
+The second parameter can also contain an expression.
+
+Suppose the `products` list also contains the following field:
+
+```text
+quantity
+```
+
+Source data:
+
+| `name` | `price` | `quantity` |
+| --- | ---: | ---: |
+| Chair | 3500 | 4 |
+| Desk | 7500 | 1 |
+| Cabinet | 12000 | 2 |
+
+You need to determine the maximum total cost of a product line based on its quantity.
+
+Expression:
+
+```text
+max(product in products, product.price * product.quantity)
+```
+
+For each item, the function calculates:
+
+| `name` | Calculation | Result |
+| --- | --- | ---: |
+| Chair | `3500 × 4` | 14000 |
+| Desk | `7500 × 1` | 7500 |
+| Cabinet | `12000 × 2` | 24000 |
+
+The function returns:
+
+```text
+24000
+```

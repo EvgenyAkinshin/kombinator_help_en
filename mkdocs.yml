@@ -79,6 +79,7 @@ nav:
   - Logic:
     - if: ReferenceGuide/functions/Logic/if.md
   - Text:
+    - capFirst: ReferenceGuide/functions/Text/capFirst.md
     - length: ReferenceGuide/functions/Text/length.md
     - trim: ReferenceGuide/functions/Text/trim.md
     - upper: ReferenceGuide/functions/Text/upper.md

@@ -1,97 +1,197 @@
-Функция **индекс** позволяет получить значение конкретного (одного) элемента списка по его позиции (индексу).
+# index
 
-> Есть список — это как колонка в таблице.
->
-> У каждого элемента есть номер: 1-й, 2-й, 3-й и т.д.
->
-> Функция индекс говорит: «Дай мне элемент под номером N».
+The `index` function returns a list item by its position.
 
-Если элемент простой — сразу получаем значение.
+List positions start at `1`: the first item has position `1`, the second has position `2`, and so on.
 
-Если элемент составной — сначала берём строку списка, а потом нужное поле внутри неё.
+## Syntax
 
-***
+For a list with simple items:
 
-## Синтаксис
+```text
+index(list, position)
+```
 
-Всегда есть **два параметра**:
+**Parameters:**
 
-1. **из какого списка берём** — `идентификаторСписка`;
+- `list` — the identifier of the list field from which the item should be retrieved;
+- `position` — the position of the item. You can specify a number or an expression that returns a position.
 
-2. **какой по счёту элемент нужен** — `индекс`;
+For example:
 
-3. (для составного элемента) **из какого поля взять значение** — `названиеПоляВСписке`,  
-   пишется **после функции через точку**.
+```text
+index(stages, 2)
+```
 
-Нумерация **с единицы**: первый элемент — это `1`, второй — `2` и т.д.
+returns the second item from the `stages` list.
 
-<div style="display:flex; gap:20px;">
+### List with Struct items
 
-  <div style="background:#f5f5f5; padding:10px; border-radius:12px; width:50%; text-align: center;">
-    <h3>ПРОСТОЙ ЭЛЕМЕНТ</h3>
-    <hr class="func-sep">
-    <br>
-    <br>
-    <img src="../../../img/functions/list/51.png" alt="51">
-    <p>Если в списке в качестве элемента выбрали обычное поле: текст, целое или десятичное число, дата, время, да/нет, перечисление и т.д.</p>
-    <hr class="func-sep">
-    <p><b>Синтаксис:</b></p>
-    <p class="func-formula">индекс(идентификаторСписка, индекс)</p><br>
-  </div>
+If the list contains Struct items, specify the identifier of the required nested field after the function using dot notation:
 
-  <div style="background:#f5f5f5; padding:10px; border-radius:12px; width:50%; text-align: center;">
-    <h3 >СОСТАВНОЙ ЭЛЕМЕНТ</h3>
-    <hr class="func-sep">
-    <img src="../../../img/functions/list/52.png" alt="52">
-    <p>Если в списке лежит составное поле (у элемента есть несколько полей внутри: наименование, вид, цена…)</p>
-    <hr class="func-sep">
-    <p><b>Синтаксис:</b></p>
-    <p class="func-formula">индекс(идентификаторСписка, индекс).названиеПоляВСписке</p>
-  </div>
+```text
+index(list, position).field
+```
 
-</div>
+For example:
 
-***
+```text
+index(products, 2).name
+```
 
-## Примеры
+Here:
 
-**Пример 1. Последний платёж: кредит погашен или нет**
+- `products` — the list field identifier;
+- `2` — the item position;
+- `name` — the nested field identifier.
 
-**Задача:** Проверить, погашен ли кредит полностью, и, если нет, вывести остаток по кредиту.
+## Examples
 
-**Поля в анкете:**
+### Getting an item by position
 
-![53](../../img/functions/list/53.png)
+Suppose the template contains a list field with the following identifier:
 
-**Итоговый синтаксис:**
+```text
+stages
+```
 
-![54](../../img/functions/list/54.png)
+The list contains:
 
-**Шаги для реализации:**
+| Position | Value |
+| ---: | --- |
+| 1 | Preparation |
+| 2 | Approval |
+| 3 | Signing |
 
-1. Поставьте курсор в то место шаблона, где нужно вывести стадию кредита.
-2. Перейдите на вкладку **«Метки»** → **«Условие»** → **«Если»**.
-3. В открывшемся окне вставьте условие:
+The expression:
 
-      ```
-      индекс(платежиПоКредиту, счет(данныеПоКредиту из платежиПоКредиту)).остаток = 0
-      ```
-      где:
+```text
+index(stages, 2)
+```
 
-      - `платежиПоКредиту` — идентификатор списка;
-      - `счет(данныеПоКредиту из платежиПоКредиту)` — функция, которая считает количество элементов в списке и возвращает число (позицию последнего элемента);
-      - `.остаток` — вложенное поле, по которому выполняется проверка.
-Если в этом поле получилось 0, условие считается истинным.
+returns:
 
-4. После вставленной метки `{если(...)}` в тексте шаблона пропишите сообщение, которое должно выводиться, если условие **срабатывает**. В нашем примере это: `Кредит погашен`
+```text
+Approval
+```
 
-5. Затем добавьте метку **«Условие → Иначе»** и внутри нее опишите, что должно происходить, если условие **не выполнено**.
-В примере мы вставляем метку «Значение» с функцией индекс, чтобы показать последний рассчитанный остаток:
+Here:
 
-      ```
-      индекс(платежиПоКредиту, счет(данныеПоКредиту из платежиПоКредиту)).остаток
-      ```
+- `stages` — the list field identifier;
+- `2` — the item position in the list.
 
-     Эта метка будет отображать значение поля остаток для последнего платежа в списке.
+### Getting a field from the first item that matches a condition
 
-6. Закройте конструкцию **«Условие → /Если»**.
+Suppose the template contains a list field:
+
+```text
+products
+```
+
+Each list item is a Struct field containing:
+
+- `name` — the identifier of the product name field;
+- `price` — the identifier of the product price field.
+
+The list contains:
+
+| Position | `name` | `price` |
+| ---: | --- | ---: |
+| 1 | Chair | 3500 |
+| 2 | Desk | 7500 |
+| 3 | Cabinet | 12000 |
+
+You need to get the name of the first product with a price greater than `5000`.
+
+Expression:
+
+```text
+index(
+    products,
+    match(
+        product in products,
+        product.price > 5000
+    )
+).name
+```
+
+Here:
+
+- `products` — the list field identifier in the template;
+- `product` — the name of the current item defined inside the `match` function;
+- `price` — the nested field identifier;
+- `match(...)` — returns the position of the first matching item;
+- `index(...)` — returns the item at that position;
+- `name` — the field of the matching item whose value should be returned.
+
+The `match` function checks the items in order:
+
+```text
+3500 > 5000 → false
+7500 > 5000 → true
+```
+
+The second item is the first one that matches the condition, so the expression effectively becomes:
+
+```text
+index(products, 2).name
+```
+
+Result:
+
+```text
+Desk
+```
+
+### Getting a value from the last item in a list
+
+Suppose the template contains a list field:
+
+```text
+payments
+```
+
+Each list item is a Struct field containing:
+
+```text
+balance
+```
+
+You need to get the `balance` value from the last item in the list, while the number of items is not known in advance.
+
+Expression:
+
+```text
+index(
+    payments,
+    count(payment in payments)
+).balance
+```
+
+Here:
+
+- `payments` — the list field identifier;
+- `payment` — the name of the current item defined inside the `count` function;
+- `count(...)` — returns the number of items in the list;
+- the returned value is used as the position of the last item;
+- `balance` — the nested field identifier whose value should be returned.
+
+If the list contains four items:
+
+```text
+count(payment in payments)
+```
+
+returns:
+
+```text
+4
+```
+
+The expression then effectively becomes:
+
+```text
+index(payments, 4).balance
+```
+
+and returns the `balance` value from the last item in the list.

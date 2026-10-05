@@ -1,68 +1,145 @@
-# **форматЧисла**
+# formatNumber
 
-Функция `форматЧисла` используется для преобразования числового значения в строку по заданным правилам форматирования. Она позволяет настраивать внешний вид чисел — добавлять разделители тысяч, управлять количеством знаков после запятой и формировать единый стиль отображения значений.
+The `formatNumber` function changes how a numeric value is displayed.
 
-📌 **Функция не изменяет само значение** — только визуально форматирует его в шаблоне.
+It allows you to specify the number of decimal places, the decimal separator, and, if necessary, the thousands separator.
 
-![8](../../img/functions/morfolog/8.png)
+## Syntax
 
-## **Синтаксис**
-
-```
-форматЧисла(число, "формат", "разделительДробнойЧасти", "разделительТысяч")
+```text
+formatNumber(number, "format", "decimalSeparator")
 ```
 
-* `число` — значение, которое нужно отформатировать (обычно поле типа «Десятичное число»).
+**Parameters:**
 
-* `формат` — строка формата, определяющая структуру вывода. Допустимые символы:
+- `number` — the numeric value to format;
+- `format` — defines how the number is displayed;
+- `decimalSeparator` — the character used to separate the fractional part from the integer part.
 
-    **`#`** — отображает только значимые цифры.
+If necessary, you can also specify a thousands separator:
 
-    **`0`** — добавляет ведущие или завершающие нули при необходимости.
-    
-    **`.`** — разделитель дробной части (может быть заменён на указанный в следующем параметре).
-   
-    **`,`** — разделитель тысяч (также может быть переопределён).
+```text
+formatNumber(number, "format", "decimalSeparator", "thousandsSeparator")
+```
 
-* `разделительДробнойЧасти` — символ, который будет использоваться для отделения дробной части (например: `,`).
+- `thousandsSeparator` — an optional parameter that defines the character used to separate groups of digits in the integer part.
 
-* `разделительТысяч` — символ для разделения тысяч (например: пробел, точка, запятая).
+In the function settings, the number format can be configured in two ways:
 
-## **Принцип работы:**
+- if **Custom format** is disabled — specify the number of **Decimal places**;
+- if **Custom format** is enabled — define the format string manually.
 
-1. Функция получает числовое значение, переданное напрямую или через поле шаблона.
+You can also specify:
 
-2. Преобразует его в строку, учитывая заданный шаблон:
+- **Decimal separator** — the character used to separate the fractional part from the integer part;
+- **Thousands separator** — the character used to separate groups of digits in the integer part. If no separator is required, select `Empty`.
 
-    * округляет до нужного количества знаков;
-    * подставляет нули или скрывает лишние разряды;
-    * вставляет нужные разделители (дробной части и тысяч).
+### Custom format
 
-3. Возвращает итоговую строку, оформленную в заданном формате. Значение используется только для отображения и не влияет на вычисления.
+When **Custom format** is enabled, the format string is created using special characters:
 
-## **Пример:**
+| Symbol | Description |
+| :--- | :--- |
+| `#` | Digit placeholder. Displays only significant digits. |
+| `0` | Digit placeholder with zero padding. If there is no digit in this position, `0` is displayed. |
+| `.` | Position of the decimal separator. Can appear only once in the format string. |
+| `,` | Position of the thousands separator. |
 
-**Задача:** Отобразить число `1234567,865464` в виде `1 234 567,87`.
+## Return value
 
-**Шаги:**
+The function returns the formatted numeric value as text.
 
+## Features
 
+The `.` and `,` characters in the format string define the positions of the separators. The actual characters displayed in the result are specified by **Decimal separator** and **Thousands separator**.
 
+If the format contains fewer decimal places than the source value, the displayed value is rounded.
 
+Because the function returns text, calculations with the number should be performed before applying `formatNumber`.
 
-2. Вставьте поле в шаблон.
+## Examples
 
-3. Дважды щёлкните по вставленному полю.
+### Displaying two decimal places
 
-4. Нажмите `f(x)` и выберите: **Морфологические** → **форматЧисла**.
+Suppose the `amount` field contains:
 
-5. Заполните параметры:
+```text
+125.6
+```
 
-     ![9](../../img/functions/morfolog/9.png)
+Expression:
 
-**Результат**
+```text
+formatNumber(
+    amount,
+    "0.00",
+    "."
+)
+```
 
-Функция возвращает строку, представляющую собой отформатированное число по заданным правилам:
+returns:
 
-![8](../../img/functions/morfolog/8.png)
+```text
+125.60
+```
 
+### Adding a thousands separator
+
+Suppose the `amount` field contains:
+
+```text
+1234567.865464
+```
+
+Expression:
+
+```text
+formatNumber(
+    amount,
+    "#,##0.00",
+    ".",
+    ","
+)
+```
+
+returns:
+
+```text
+1,234,567.87
+```
+
+### Displaying only significant decimal digits
+
+Suppose the `amount` field contains:
+
+```text
+125.5
+```
+
+Expression:
+
+```text
+formatNumber(
+    amount,
+    "0.##",
+    "."
+)
+```
+
+returns:
+
+```text
+125.5
+```
+
+If the `amount` field contains:
+
+```text
+125
+```
+
+the same expression returns:
+
+```text
+125
+```

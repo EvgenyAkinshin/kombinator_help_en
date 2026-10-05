@@ -1,56 +1,169 @@
-# **счет**
+# count
 
-Функция `счет` используется для подсчёта количества элементов в списке.
+The `count` function determines the number of items in a list.
 
-## **Синтаксис**
+## Syntax
 
-**Общий синтаксис:**
-
-```
-счет(элемент из список)
+```text
+count(item in list)
 ```
 
-* `элемент` — имя текущей записи списка (можете назвать как угодно: `элемент1`, `_2`, `_элемент` и т. п.).
+**Parameters:**
 
-* `список` — поле-список, по которому идёт обход.
+- `item` — the name of the current list item. It is defined directly in the function;
+- `list` — the identifier of the list field whose items should be counted.
 
-**Элемент списка может быть двух видов:**
+For example:
 
-1. **СОСТАВНОЕ ПОЛЕ:**
+```text
+count(product in products)
+```
 
-      В качестве **названия элемента списка** передаётся временное имя текущего элемента списка (чаще всего — идентификатор самого составного поля).
+Here:
 
-      ![48](../../img/functions/list/48.png)
+- `products` — the list field identifier in the template;
+- `product` — the name of the list item defined directly in the function.
 
-      ![49](../../img/functions/list/49.png)
+You can choose the item name yourself. It is used only inside the function expression.
 
-      * **Название элемента списка** — это имя, через которое происходит обращение к каждому элементу. Вместо него можно использовать любое [допустимое](../../syntax/syntax.md) имя, например: `элемент1`, `_2`, `_элемент` и т.п.
+## Return value
 
-          Соответственно, к полям, находящимся внутри составного поля, нужно обращаться с указанием этого имени. Например, если заменить `элемент` на `_2`, то обращение к полю будет выглядеть так:
+The function returns an integer — the number of items in the list.
 
-           `_2.поле`
+## Examples
 
-      * **Список** — передается идентификатор списка, в котором находятся данные.
+### Counting list items
 
-2. **НЕ СОСТАВНОЕ ПОЛЕ**
+Suppose the template contains a list field with the following identifier:
 
-     Когда элемент **несоставной** (десятичное или целое число, текст и т.д.), у него **нет внутренних полей**. Поэтому в **название элемента списка** программе нужен **конкретный идентификатор поля**.
+```text
+products
+```
 
-     ![50](../../img/functions/list/50.png)
+The list contains:
 
-     ![49](../../img/functions/list/49.png)
+| Position | Name |
+| ---: | --- |
+| 1 | Monitor |
+| 2 | Keyboard |
+| 3 | Printer |
+| 4 | Mouse |
 
-      * **Список** — передается идентификатор списка, в котором находятся данные.
-    
-      * **Название элемента списка** — передается идентификатор поля, которое вы выбрали в качестве элемента списка. Всегда передаётся точный идентификатор.
+Expression:
 
-## **Принцип работы:**
+```text
+count(product in products)
+```
 
-1. Функция перебирает все элементы в заданном списке.
+returns:
 
-2. На каждом шаге увеличивает счётчик на 1.
+```text
+4
+```
 
-3. Возвращает общее количество строк, независимо от содержимого полей.
+Here:
 
-📌 Если список пуст — функция вернёт 0.
+- `products` — the list field identifier;
+- `product` — the name of the list item defined inside the `count` function.
 
+### Counting items that match a condition
+
+The `count` function can be applied to a list returned by `filter`.
+
+Suppose the `products` list contains:
+
+| `name` | `price` |
+| --- | ---: |
+| Monitor | 15000 |
+| Keyboard | 800 |
+| Printer | 12000 |
+| Mouse | 600 |
+
+You need to determine how many products have a price greater than `5000`.
+
+Expression:
+
+```text
+count(
+    product in filter(
+        item in products,
+        item.price > 5000
+    )
+)
+```
+
+Here:
+
+- `products` — the identifier of the source list field;
+- `item` — the name of the current item inside the `filter` function;
+- `item.price > 5000` — the filtering condition;
+- `filter(...)` — returns a new list containing only matching products;
+- `product` — the name of an item in the filtered list inside the `count` function.
+
+After filtering, the list contains:
+
+```text
+Monitor — 15000
+Printer — 12000
+```
+
+Therefore, `count` returns:
+
+```text
+2
+```
+
+### Getting the last item in a list
+
+The result of `count` can be used as an item position in the `index` function.
+
+Suppose the template contains a list field:
+
+```text
+payments
+```
+
+Each list item contains the following field:
+
+```text
+balance
+```
+
+You need to get the `balance` value from the last item in the list, while the number of items is not known in advance.
+
+Expression:
+
+```text
+index(
+    payments,
+    count(payment in payments)
+).balance
+```
+
+Here:
+
+- `payments` — the list field identifier;
+- `payment` — the name of the list item inside the `count` function;
+- `count(...)` — returns the number of items in the list;
+- the returned number is used by `index` as the position of the last item;
+- `balance` — the nested field identifier whose value should be returned.
+
+For example, if the list contains four items:
+
+```text
+count(payment in payments)
+```
+
+returns:
+
+```text
+4
+```
+
+The expression then effectively becomes:
+
+```text
+index(payments, 4).balance
+```
+
+and returns the `balance` value from the last item in the list.

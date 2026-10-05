@@ -1,67 +1,161 @@
 # integerToText
 
-Функция `integerToText` преобразует целое число в его текстовое представление на **английском языке**.
+The `integerToText` function converts a number to its text representation.
 
-## **Синтаксис**
+The function supports both cardinal and ordinal numbers.
 
+## Syntax
+
+```text
+integerToText(expression, format)
 ```
-integerToText(число, типЧислительного)
+
+**Parameters:**
+
+- `expression` — a numeric value or expression to convert to text;
+- `format` — determines whether the number is converted to a cardinal or ordinal form.
+
+The following values are available for `format`:
+
+| Value | Number type | Example |
+| --- | --- | --- |
+| `NumberType.Cardinal` | Cardinal | `twenty-one` |
+| `NumberType.Ordinal` | Ordinal | `twenty-first` |
+
+In the function settings:
+
+- **Expression** — specifies the number, field reference, or expression to convert;
+- **Format** — selects `Cardinal` or `Ordinal`.
+
+If a decimal number is passed to the function, only its integer part is used. The fractional part is discarded without rounding.
+
+## Return value
+
+The function returns the text representation of the number.
+
+For example:
+
+```text
+integerToText(
+    21,
+    NumberType.Cardinal
+)
 ```
-* `число` — целое значение или поле. Если передано десятичное число, дробная часть **отбрасывается**.
 
-* `типЧислительного` — тип числительного:
+returns:
 
-    * `NumberType.Cardinal` — количественное (по умолчанию),
-
-    * `NumberType.Ordinal` — порядковое.
-
-## **Принцип работы:**
-
-1. Получает целое число и тип числительного;
-
-2. Преобразует его в текст — на английском языке;
-
-3. Возвращает результат в виде строки.
-
-## **Пример использования**
-
-**Задача:** вывести сумму в долларах и центах прописью (например `One thousand two hundred thirty-four US dollars fifty-six cents`).
-
-**Шаги:**
-
-
-
-
-
-2. Вставьте в шаблон **метку "Значение"**.
-
-3. В открывшемся окне введите следующее выражение:
-
+```text
+twenty-one
 ```
-integerToText(сумма, NumberType.Cardinal) & " " & 
-если(сумма = 1, "US dollar", "US dollars") & " " & 
-integerToText(округлить(сумма остаток - 1 * 100, 0), NumberType.Cardinal) 
-& " " & если(округлить(сумма остаток - 1 * 100, 0) = 1, "cent", "cents")
+
+## Features
+
+The function converts only the numeric value. It does not add units of measurement, currency names, or other text.
+
+If a decimal value needs to be converted in full, its integer and fractional parts should be processed separately.
+
+## Examples
+
+### Cardinal number
+
+Expression:
+
+```text
+integerToText(
+    1234,
+    NumberType.Cardinal
+)
 ```
-**Пояснение:**
 
-* `integerToText(сумма, NumberType.Cardinal)` —  переводит целую часть суммы в слова.
+returns:
 
-* `если(сумма = 1, "US dollar", "US dollars")` — задает правильное окончание для доллара.
+```text
+one thousand two hundred thirty-four
+```
 
-* `сумма остаток - 1 * 100` — получение дробной части.
+### Ordinal number
 
-* `округлить(..., 0)` — округление центов до целого числа.
+Expression:
 
-* `если(сумма остаток * 100 = 1, "cent", "cents")` — окончание для центов.
+```text
+integerToText(
+    21,
+    NumberType.Ordinal
+)
+```
 
-* `&` — объединение фрагментов.
+returns:
 
-* `сумма` — поле из анкеты.
+```text
+twenty-first
+```
 
-**Пример:**
+### Decimal number
 
-Если поле **Сумма** содержит значение `1234,56`, на выходе получится строка:
+Suppose the `amount` field contains:
 
-![](../../img/functions/7.png)
+```text
+1234.56
+```
 
+Expression:
+
+```text
+integerToText(
+    amount,
+    NumberType.Cardinal
+)
+```
+
+returns:
+
+```text
+one thousand two hundred thirty-four
+```
+
+The fractional part `.56` is not included in the result.
+
+### Amount in US dollars and cents
+
+Suppose the `amount` field contains:
+
+```text
+1234.56
+```
+
+To display the integer and fractional parts separately as US dollars and cents, use:
+
+```text
+integerToText(
+    amount,
+    NumberType.Cardinal
+) & " " &
+if(
+    amount - (amount mod 1) = 1,
+    "US dollar",
+    "US dollars"
+) & " " &
+integerToText(
+    round((amount mod 1) * 100, 0),
+    NumberType.Cardinal
+) & " " &
+if(
+    round((amount mod 1) * 100, 0) = 1,
+    "cent",
+    "cents"
+)
+```
+
+Result:
+
+```text
+one thousand two hundred thirty-four US dollars fifty-six cents
+```
+
+Here:
+
+- `amount mod 1` — returns the fractional part of the number;
+- `(amount mod 1) * 100` — converts the fractional part to cents;
+- `round(..., 0)` — rounds the number of cents to an integer;
+- `amount - (amount mod 1)` — returns the integer part used to select `US dollar` or `US dollars`;
+- `if(...)` — selects the singular or plural currency name.
