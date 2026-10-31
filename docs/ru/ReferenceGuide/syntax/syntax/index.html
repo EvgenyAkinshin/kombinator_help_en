@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#basic-rules" class="md-skip">
+        <a href="#_1" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -626,7 +626,7 @@
   
   
   <span class="md-ellipsis">
-    Текстовые
+    Текст
     
   </span>
   
@@ -2580,45 +2580,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#writing-expressions" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Writing expressions
+      Как записываются выражения
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#values-in-expressions" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Values in expressions
+      Значения в выражениях
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#referencing-fields" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      Referencing fields
+      Обращение к полям
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#functions" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      Functions
+      Функции
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#operators" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      Operators
+      Операторы
     </span>
   </a>
   
@@ -2940,45 +2940,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#writing-expressions" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Writing expressions
+      Как записываются выражения
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#values-in-expressions" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Values in expressions
+      Значения в выражениях
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#referencing-fields" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      Referencing fields
+      Обращение к полям
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#functions" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      Functions
+      Функции
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#operators" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      Operators
+      Операторы
     </span>
   </a>
   
@@ -3000,128 +3000,120 @@
 
 
 
-<h1 id="basic-rules">Basic rules</h1>
-<p>Kombinator uses <strong>expressions</strong> to work with data. Expressions allow you to retrieve field values, perform calculations, compare data, use functions, and define conditions.</p>
-<p>The same expression syntax is used wherever expressions are supported. For more information, see <a href="../syntax-usage/">«Where to use»</a>.</p>
-<h2 id="writing-expressions">Writing expressions</h2>
-<p>An expression can consist of a single element:</p>
+<h1 id="_1">Основные правила</h1>
+<p>В Комбинаторе для работы с данными используются <strong>выражения</strong>. Они позволяют получать значения полей, выполнять расчёты, сравнивать данные, использовать функции и задавать условия.</p>
+<p>Правила записи выражений одинаковы независимо от места их использования. Подробнее: <a href="../syntax-usage/">«Места использования»</a>.</p>
+<h2 id="_2">Как записываются выражения</h2>
+<p>Выражение может состоять из одного элемента:</p>
 <ul>
-<li>
-<p>a field — <code>amount</code>;</p>
-</li>
-<li>
-<p>a value — <code>"Contract"</code>;</p>
-</li>
-<li>
-<p>a function — <code>length(name)</code>.</p>
-</li>
+<li>поле — <code>сумма</code>;</li>
+<li>значение — <code>"Договор"</code>;</li>
+<li>функция — <code>длина(название)</code>.</li>
 </ul>
-<p>Elements can be combined using operators:</p>
+<p>Элементы можно объединять с помощью операторов:</p>
 <ul>
-<li>
-<p><code>quantity * price</code>;</p>
-</li>
-<li>
-<p><code>amount &gt; 100000</code>.</p>
-</li>
+<li><code>количество * цена</code>;</li>
+<li><code>сумма &gt; 100000</code>.</li>
 </ul>
-<p>A single expression can combine values, fields, functions, and operators:</p>
-<pre><code class="language-text">if(amount &gt; 100000, &quot;Approval required&quot;, &quot;Approval not required&quot;)
+<p>В одном выражении можно сочетать значения, поля, функции и операторы:</p>
+<pre><code class="language-text">если(сумма &gt; 100000, &quot;Требуется согласование&quot;, &quot;Согласование не требуется&quot;)
 </code></pre>
-<h2 id="values-in-expressions">Values in expressions</h2>
-<p><strong>Integers</strong> are written without quotation marks:</p>
+<h2 id="_3">Значения в выражениях</h2>
+<p><strong>Целые числа</strong> указываются без кавычек:</p>
 <ul>
 <li><code>10</code></li>
 <li><code>-5</code></li>
 <li><code>0</code></li>
 </ul>
-<p><strong>Decimal numbers</strong> are also written without quotation marks. Use a period as the decimal separator:</p>
+<p><strong>Десятичные числа</strong> также указываются без кавычек. Для отделения дробной части используется точка:</p>
 <ul>
 <li><code>10.1</code></li>
 <li><code>3.14</code></li>
 <li><code>0.01</code></li>
 </ul>
-<p><strong>Text</strong> is enclosed in single or double quotation marks:</p>
+<p><strong>Текст</strong> заключается в одинарные или двойные кавычки:</p>
 <ul>
-<li><code>"Contract"</code></li>
-<li><code>'Contract'</code></li>
+<li><code>"Договор"</code></li>
+<li><code>'Договор'</code></li>
 </ul>
-<p><strong>Boolean values</strong>:</p>
+<p><strong>Логические значения</strong>:</p>
 <ul>
-<li><code>true</code></li>
-<li><code>false</code></li>
+<li><code>истина</code></li>
+<li><code>ложь</code></li>
 </ul>
-<p>Use <code>null</code> to represent an empty value.</p>
-<h2 id="referencing-fields">Referencing fields</h2>
-<p>To retrieve a field value in an expression, enter its identifier:</p>
-<pre><code class="language-text">amount
+<p>Для обозначения отсутствующего значения используется <code>пусто</code>.</p>
+<h2 id="_4">Обращение к полям</h2>
+<p>Чтобы получить значение поля в выражении, укажите его идентификатор:</p>
+<pre><code class="language-text">сумма
 </code></pre>
-<p>To reference a field inside a composite field, specify the path using a period (<code>.</code>):</p>
-<pre><code class="language-text">counterparty.taxId
+<p>Если нужно обратиться к полю внутри составного поля, указывается путь через точку (<code>.</code>):</p>
+<pre><code class="language-text">контрагент.инн
 </code></pre>
-<p>Here, <code>counterparty</code> is a composite field and <code>taxId</code> is a field inside it.</p>
-<p>If a field has multiple nesting levels, specify the full path:</p>
-<pre><code class="language-text">deals.counterparty.taxId
+<p>Здесь <code>контрагент</code> — составное поле, а <code>инн</code> — поле внутри него.</p>
+<p>Если поле имеет несколько уровней вложенности, указывается полный путь:</p>
+<pre><code class="language-text">сделки.контрагент.инн
 </code></pre>
-<h2 id="functions">Functions</h2>
-<p>Functions process the data passed to them and return a result.</p>
-<p><strong>Function syntax</strong></p>
-<p>Enter the function name followed by parentheses containing its arguments:</p>
-<pre><code class="language-text">function(argument1, argument2)
+<h2 id="_5">Функции</h2>
+<p>Функции обрабатывают переданные им данные и возвращают результат.</p>
+<p><strong>Запись функции</strong></p>
+<p>Название функции указывается перед круглыми скобками, внутри которых перечисляются аргументы:</p>
+<pre><code class="language-text">функция(аргумент1, аргумент2)
 </code></pre>
-<p>Arguments are separated by commas. The number and order of arguments depend on the specific function.</p>
-<p>An argument can be a value, a field, or another expression.</p>
-<p>For example:</p>
-<pre><code class="language-text">length(name)
+<p>Аргументы разделяются запятыми. Их количество и порядок зависят от конкретной функции.</p>
+<p>В качестве аргумента можно передать значение, поле или другое выражение.</p>
+<p>Например:</p>
+<pre><code class="language-text">длина(название)
 </code></pre>
 <ul>
 <li>
-<p><code>length</code> — the function;</p>
+<p><code>длина</code> — функция</p>
 </li>
 <li>
-<p><code>name</code> — the field whose value is passed to the function.</p>
+<p><code>название</code> — поле, значение которого передаётся в функцию.</p>
 </li>
 </ul>
-<p><strong>Nested functions</strong></p>
-<p>The result of one function can be passed to another function:</p>
-<pre><code class="language-text">upper(mid(text, 1, 1))
+<p><strong>Вложенные функции</strong></p>
+<p>Результат одной функции можно передать в другую функцию:</p>
+<pre><code class="language-text">прописн(пстр(текст, 1, 1))
 </code></pre>
-<p>First, <code>mid</code> is evaluated. Its result is then passed to <code>upper</code>.</p>
-<h2 id="operators">Operators</h2>
-<p>Operators perform actions on values within an expression.</p>
-<p><strong>Mathematical operators</strong></p>
+<p>Сначала выполняется <code>пстр</code>, затем её результат передаётся в <code>прописн</code>.</p>
+<h2 id="_6">Операторы</h2>
+<p>Операторы используются для выполнения действий над значениями внутри выражения.</p>
+<p><strong>Математические операторы</strong></p>
 <ul>
-<li><code>+</code> — addition;</li>
-<li><code>-</code> — subtraction;</li>
-<li><code>*</code> — multiplication;</li>
-<li><code>/</code> — division;</li>
-<li><code>mod</code> — remainder after division;</li>
-<li><code>^</code> — exponentiation.</li>
+<li><code>+</code> — сложение;</li>
+<li><code>-</code> — вычитание;</li>
+<li><code>*</code> — умножение;</li>
+<li><code>/</code> — деление;</li>
+<li><code>остаток</code> — остаток от деления;</li>
+<li><code>^</code> — возведение в степень.</li>
 </ul>
-<p><strong>Comparison operators</strong></p>
+<p><strong>Операторы сравнения</strong></p>
 <ul>
-<li><code>&lt;</code> — less than;</li>
-<li><code>&lt;=</code> — less than or equal to;</li>
-<li><code>&gt;</code> — greater than;</li>
-<li><code>&gt;=</code> — greater than or equal to;</li>
-<li><code>=</code> — equal to;</li>
-<li><code>!=</code> — not equal to.</li>
+<li><code>&lt;</code> — меньше;</li>
+<li><code>&lt;=</code> — меньше или равно;</li>
+<li><code>&gt;</code> — больше;</li>
+<li><code>&gt;=</code> — больше или равно;</li>
+<li><code>=</code> — равно;</li>
+<li><code>!=</code> — не равно.</li>
 </ul>
-<p><strong>Logical operators</strong></p>
+<p><strong>Логические операторы</strong></p>
 <ul>
-<li><code>and</code> — returns true when both conditions are true;</li>
-<li><code>or</code> — returns true when at least one condition is true;</li>
-<li><code>not</code> — reverses the Boolean value.</li>
+<li><code>и</code> — выражение истинно, если истинны оба условия;</li>
+<li><code>или</code> — выражение истинно, если истинно хотя бы одно условие;</li>
+<li><code>не</code> — меняет логическое значение на противоположное.</li>
 </ul>
-<p><strong>Combining values</strong></p>
-<p>The <code>&amp;</code> operator combines multiple values into a single string:</p>
-<pre><code class="language-text">&quot;Contract № &quot; &amp; contractNumber
+<p><strong>Объединение значений</strong></p>
+<ul>
+<li><code>&amp;</code> объединяет несколько значений в одну строку.</li>
+</ul>
+<pre><code class="language-text">&quot;Договор № &quot; &amp; номерДоговора
 </code></pre>
-<p>If the <code>contractNumber</code> field contains <code>125</code>, the result will be:</p>
-<pre><code class="language-text">Contract № 125
+<p>Если поле <code>номерДоговора</code> содержит <code>125</code>, результатом будет:</p>
+<pre><code class="language-text">Договор № 125
 </code></pre>
-<p>You can combine text, field values, and function results:</p>
-<pre><code class="language-text">&quot;Contract № &quot; &amp; contractNumber &amp; &quot; dated &quot; &amp; formatDate(contractDate,&quot;dd.MM.yyyy&quot;)
+<p>Объединять можно не только текст, но и значения полей и результаты функций:</p>
+<pre><code class="language-text">&quot;Договор № &quot; &amp; номерДоговора &amp; &quot; от &quot; &amp; форматДаты(датаДоговора, ФорматДаты.ДатаКратко)
 </code></pre>
 
 

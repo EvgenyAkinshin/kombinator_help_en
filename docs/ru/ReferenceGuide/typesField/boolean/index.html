@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#boolean-field" class="md-skip">
+        <a href="#_1" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -628,7 +628,7 @@
   
   
   <span class="md-ellipsis">
-    Текстовые
+    Текст
     
   </span>
   
@@ -742,36 +742,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#creating-and-adding-a-field" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Creating and adding a field
+      Создание и добавление поля
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#field-value" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Field value
+      Значение поля
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#inserting-a-field-through-the-directives-tab" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      Inserting a field through the «Directives» tab
+      Вставка поля через вкладку «Метки»
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#functions-and-logical-operations" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      Functions and logical operations
+      Функции и логические операции
     </span>
   </a>
   
@@ -2931,36 +2931,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#creating-and-adding-a-field" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Creating and adding a field
+      Создание и добавление поля
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#field-value" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Field value
+      Значение поля
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#inserting-a-field-through-the-directives-tab" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      Inserting a field through the «Directives» tab
+      Вставка поля через вкладку «Метки»
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#functions-and-logical-operations" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      Functions and logical operations
+      Функции и логические операции
     </span>
   </a>
   
@@ -2982,43 +2982,38 @@
 
 
 
-<h1 id="boolean-field">«Boolean» field</h1>
-<p>The <strong>«Boolean»</strong> field is used to store a logical value: <code>true</code> or <code>false</code>.</p>
-<p>This field is useful for controlling document content depending on whether a condition is true or false.</p>
-<h2 id="creating-and-adding-a-field">Creating and adding a field</h2>
-<p>For instructions on creating and adding fields, see <a href="../../Bitrix/creat/">Creating a template</a>.</p>
-<h2 id="field-value">Field value</h2>
-<p>The field can contain one of two values:</p>
+<h1 id="_1">Поле «Да/Нет»</h1>
+<p>Поле <strong>«Да/Нет»</strong> используется для хранения логического значения: <strong>«Да»</strong> или <strong>«Нет»</strong>.</p>
+<p>Такое поле удобно использовать для управления содержимым документа в зависимости от выбранного значения.</p>
+<h2 id="_2">Создание и добавление поля</h2>
+<p>Создание и добавление полей: <a href="../../Bitrix/creat/">ИНСТРУКЦИЯ</a></p>
+<h2 id="_3">Значение поля</h2>
+<p>Поле может принимать два значения:</p>
 <ul>
-<li><code>true</code>;</li>
-<li><code>false</code>.</li>
+<li><strong>Да</strong> — <code>истина</code>;</li>
+<li><strong>Нет</strong> — <code>ложь</code>.</li>
 </ul>
-<p>The field value can be used in logical expressions, for example to show or hide specific parts of a document.</p>
-<h2 id="inserting-a-field-through-the-directives-tab">Inserting a field through the «Directives» tab</h2>
-<p>The <strong>«Boolean»</strong> field is most commonly used with the <a href="../../directives/if/">«Condition expression»</a> directive. It allows you to include or exclude part of the document depending on the field value.</p>
-<p>Specify the <strong>Boolean</strong> field whose value should be checked as the condition.</p>
-<p>The field can also be used with the <a href="../../directives/expression/">«Expression»</a> directive. In this case, inserting only the field itself is not correct — use the <code>if(...)</code> function:</p>
-<pre><code class="language-text">if(fieldValue, expression_if_true, expression_if_false)
+<p>Значение поля можно использовать в логических выражениях, например для отображения или скрытия отдельных фрагментов документа.</p>
+<h2 id="_4">Вставка поля через вкладку «Метки»</h2>
+<p>Поле <strong>«Да/Нет»</strong> чаще всего используется с меткой <a href="../../directives/if/">«Условие»</a>. Она позволяет добавлять или исключать часть документа в зависимости от значения поля.</p>
+<p>В качестве условия указывается поле <strong>«Да/Нет»</strong>, значение которого необходимо проверить.</p>
+<p>Поле также можно использовать в метке <a href="../directives/value.md">«Значение»</a>. При этом передавать только само поле некорректно — необходимо использовать функцию <code>если(...)</code>:</p>
+<pre><code class="language-text">если(значениеПоля, выражение_если_истина, выражение_если_ложь)
 </code></pre>
-<p>All three arguments are required:</p>
+<p>Все три аргумента функции обязательны:</p>
 <ul>
-<li><code>fieldValue</code> — the <strong>Boolean</strong> field whose value is checked;</li>
-<li><code>expression_if_true</code> — the value returned if the field contains <code>true</code>;</li>
-<li><code>expression_if_false</code> — the value returned if the field contains <code>false</code>.</li>
+<li><code>значениеПоля</code> — поле <strong>«Да/Нет»</strong>, значение которого проверяется;</li>
+<li><code>выражение_если_истина</code> — значение, которое будет выведено, если поле содержит <strong>«Да»</strong>;</li>
+<li><code>выражение_если_ложь</code> — значение, которое будет выведено, если поле содержит <strong>«Нет»</strong>.</li>
 </ul>
-<p>The returned expressions can contain text, field values, or nested functions.</p>
-<p>For example:</p>
-<pre><code class="language-text">if(delivery, &quot;Delivery required&quot;, &quot;Delivery not required&quot;)
+<p>В качестве выражений можно использовать текст, значения полей или вложенные функции.</p>
+<p>Например:</p>
+<pre><code class="language-text">если(доставка, &quot;Доставка требуется&quot;, &quot;Доставка не требуется&quot;)
 </code></pre>
-<p>If the field contains <code>true</code>, the result will be:</p>
-<pre><code class="language-text">Delivery required
-</code></pre>
-<p>If the field contains <code>false</code>, the result will be:</p>
-<pre><code class="language-text">Delivery not required
-</code></pre>
-<p>This method is used less often than the <strong>«Condition expression»</strong> directive.</p>
-<h2 id="functions-and-logical-operations">Functions and logical operations</h2>
-<p>The <strong>«Boolean»</strong> field does not have dedicated functions. Its value can be used directly in logical expressions.</p>
+<p>Если значение поля — <strong>«Да»</strong>, будет выведено <code>Доставка требуется</code>, если <strong>«Нет»</strong> — <code>Доставка не требуется</code>.</p>
+<p>Такой способ использования поля применяется реже, чем работа через метку <strong>«Условие»</strong>.</p>
+<h2 id="_5">Функции и логические операции</h2>
+<p>Для поля <strong>«Да/Нет»</strong> отдельных функций нет. Его значение можно использовать непосредственно в логических выражениях.</p>
 
 
 

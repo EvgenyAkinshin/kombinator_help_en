@@ -1,96 +1,106 @@
-# «Picture» field
+# Поле «Картинка»
 
-The **«Picture»** field is used to pass an image from Bitrix24 to a template and insert it into the generated document.
+Поле **«Картинка»** используется для передачи изображения из Битрикс24 в шаблон и его вставки в сформированный документ.
 
-## Creating and adding a field
+## Создание и добавление поля
 
-For instructions on creating and adding fields, see [Creating a template](../Bitrix/creat.md).
+Создание и добавление полей: [ИНСТРУКЦИЯ](../Bitrix/creat.md)
 
-## Adding an image to the template
+## Добавление изображения в шаблон
 
-The **«Picture»** field can be added to the template from **Fields** or through the **«Directives»** tab.
+Поле **«Картинка»** можно добавить в шаблон из анкеты или через вкладку **«Метки»**.
 
-### From Fields
+### Из анкеты
 
-When inserting a **«Picture»** field from **Fields** using **«Insert expression»**, a window with image settings opens.
+При вставке поля **«Картинка»** из анкеты через команду **«Вставить "Значение"»** открывается окно с настройками изображения.
 
-After confirming the settings, an image placeholder with the specified dimensions appears in the template.
+После подтверждения в шаблоне появляется плейсхолдер изображения с заданными размерами.
 
-### Through the «Directives» tab
+### Через вкладку «Метки»
 
-An image can also be inserted using the [«Picture»](../directives/picture.md) directive.
+Изображение также можно вставить через метку [«Картинка»](../directives/picture.md).
 
-In the **«Expression»** field, specify the **Picture** field from which the image should be retrieved.
+В свойстве **«Выражение»** указывается поле типа **«Картинка»**, из которого необходимо получить изображение.
 
-For example:
-
-```text
-deals.logo
-```
-
-Only a **Picture** field can be used in **«Expression»**.
-
-### By height
-
-The image height is set to the specified value, while the width is calculated proportionally.
-
-For example, if the following values are set:
+Например:
 
 ```text
-Height: 3 cm
-Width: 4 cm
+сделки.логотип
 ```
 
-but the proportional width is `6 cm`, the resulting image size will be:
+В свойстве **«Выражение»** можно использовать только поле типа **«Картинка»**.
+
+## Настройки изображения
+
+При вставке изображения доступны следующие настройки:
+
+- **Высота изображения** — высота в сантиметрах. По умолчанию — `3 см`;
+- **Ширина изображения** — ширина в сантиметрах. По умолчанию — `3 см`;
+- **Подгонять размер** — определяет, как будет рассчитан итоговый размер изображения.
+
+При изменении размера пропорции изображения сохраняются.
+
+### По высоте
+
+Высота изображения будет равна указанной высоте, а ширина рассчитается пропорционально.
+
+Например, если указаны:
 
 ```text
-3 × 6 cm
+Высота: 3 см
+Ширина: 4 см
 ```
 
-In this mode, the specified width does not limit the image size.
-
-### By width
-
-The image width is set to the specified value, while the height is calculated proportionally.
-
-For example, if the following values are set:
+а при сохранении пропорций ширина изображения составляет `6 см`, итоговый размер будет:
 
 ```text
-Height: 3 cm
-Width: 4 cm
+3 × 6 см
 ```
 
-but the proportional height is `5 cm`, the resulting image size will be:
+В этом режиме указанная ширина не ограничивает размер изображения.
+
+### По ширине
+
+Ширина изображения будет равна указанной ширине, а высота рассчитается пропорционально.
+
+Например, если указаны:
 
 ```text
-5 × 4 cm
+Высота: 3 см
+Ширина: 4 см
 ```
 
-In this mode, the specified height does not limit the image size.
-
-### By height and width
-
-The image is resized proportionally so that it does not exceed either the specified height or width.
-
-For example, if the following values are set:
+а при сохранении пропорций высота изображения составляет `5 см`, итоговый размер будет:
 
 ```text
-Height: 3 cm
-Width: 5 cm
+5 × 4 см
 ```
 
-the image will be fitted within `3 × 5 cm`. One of the sides may be smaller than the specified value.
+В этом режиме указанная высота не ограничивает размер изображения.
 
-## Picture in the template
+### По высоте и ширине
 
-After the image is inserted, a placeholder appears in the template showing its position and size.
+Изображение изменяется с сохранением пропорций так, чтобы не превышать ни указанную высоту, ни указанную ширину.
 
-You can resize the placeholder manually in the editor. The updated width and height are saved and used when the document is generated.
+Например, если указаны:
 
-The image is placed **inline with text**, so its position depends on where it is inserted.
+```text
+Высота: 3 см
+Ширина: 5 см
+```
 
-When the document is generated, the placeholder is replaced with the image retrieved from the selected **Picture** field.
+изображение будет вписано в область `3 × 5 см`. Одна из сторон при этом может быть меньше указанного значения.
 
-## Functions for working with the field
+## Картинка в шаблоне
 
-The **«Picture»** field does not have dedicated functions.
+После вставки изображения в шаблоне отображается плейсхолдер, который показывает его расположение и размер.
+
+Размер плейсхолдера можно изменить вручную в редакторе. Изменённые ширина и высота сохраняются и используются при формировании документа.
+
+Изображение располагается **в тексте**, поэтому его положение определяется местом вставки.
+
+При формировании документа плейсхолдер заменяется изображением, полученным из выбранного поля **«Картинка»**.
+
+## Функции для работы с полем
+
+Для поля **«Картинка»** отдельных функций нет.

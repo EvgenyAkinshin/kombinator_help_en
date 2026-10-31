@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#struct-field" class="md-skip">
+        <a href="#_1" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -628,7 +628,7 @@
   
   
   <span class="md-ellipsis">
-    Текстовые
+    Текст
     
   </span>
   
@@ -834,54 +834,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#creating-and-adding-a-field" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Creating and adding a field
+      Создание и добавление поля
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#field-value" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Field value
+      Значение поля
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#working-with-nested-fields" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      Working with nested fields
+      Работа с вложенными полями
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#inserting-fields-through-the-directives-tab" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      Inserting fields through the «Directives» tab
+      Вставка поля через вкладку «Метки»
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#functions-for-working-with-the-field" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      Functions for working with the field
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    <span class="md-ellipsis">
-      Features
+      Функции для работы с полем
     </span>
   </a>
   
@@ -2949,54 +2940,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#creating-and-adding-a-field" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Creating and adding a field
+      Создание и добавление поля
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#field-value" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Field value
+      Значение поля
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#working-with-nested-fields" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      Working with nested fields
+      Работа с вложенными полями
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#inserting-fields-through-the-directives-tab" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      Inserting fields through the «Directives» tab
+      Вставка поля через вкладку «Метки»
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#functions-for-working-with-the-field" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      Functions for working with the field
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    <span class="md-ellipsis">
-      Features
+      Функции для работы с полем
     </span>
   </a>
   
@@ -3018,80 +3000,70 @@
 
 
 
-<h1 id="struct-field">«Struct» field</h1>
-<p>The <strong>«Struct»</strong> field contains other fields and is used to store a set of related data about a single object.</p>
-<p>For example, a <strong>«Counterparty»</strong> Struct field may contain the <strong>name</strong>, <strong>tax ID</strong>, <strong>registration code</strong>, and <strong>address</strong>.</p>
-<h2 id="creating-and-adding-a-field">Creating and adding a field</h2>
-<p>For instructions on creating and adding fields, see <a href="../../Bitrix/creat/">Creating a template</a>.</p>
-<h2 id="field-value">Field value</h2>
-<p>When working with a Struct field, you use the values of its nested fields.</p>
-<p>In Bitrix24, a Struct field can contain fields of the entity from which the document is generated.</p>
-<p>For example, when working with a deal, the structure may look like this:</p>
-<pre><code class="language-text">deals
-
-├── name
-
+<h1 id="_1">Поле «Составное поле»</h1>
+<p><strong>Составное поле</strong> содержит внутри себя другие поля и используется для хранения набора связанных данных об одном объекте.</p>
+<p>Например, в составном поле <strong>«Контрагент»</strong> могут храниться <strong>наименование</strong>, <strong>ИНН</strong>, <strong>КПП</strong> и <strong>адрес</strong>.</p>
+<h2 id="_2">Создание и добавление поля</h2>
+<p>Создание и добавление полей: <a href="../../Bitrix/creat/">ИНСТРУКЦИЯ</a></p>
+<h2 id="_3">Значение поля</h2>
+<p>При работе с составным полем используются значения его вложенных полей.</p>
+<p>В Битрикс24 составное поле может содержать поля сущности, из которой формируется документ.</p>
+<p>Например, при работе со сделкой структура может выглядеть так:</p>
+<pre><code class="language-text">сделки
+├── название
 └── id
 </code></pre>
-<p>Here, <code>deals</code> is a Struct field containing the deal fields.</p>
-<p>Struct fields can also be nested inside other field types. For example, a <strong>List</strong> field may contain a Struct field that represents each item in the list:</p>
-<pre><code class="language-text">deals
-
-└── products
-
-    └── product
-
-        ├── name
-
-        ├── quantity
-
-        └── price
+<p>Здесь <code>сделки</code> — составное поле, внутри которого находятся поля сделки.</p>
+<p>Составные поля могут находиться и внутри других типов полей. Например, <strong>«Список»</strong> может содержать составное поле с набором полей каждого элемента:</p>
+<pre><code class="language-text">сделки
+└── товары
+    └── товар
+        ├── название
+        ├── количество
+        └── цена
 </code></pre>
-<p>Where:</p>
+<p>Где:</p>
 <ul>
-<li><code>deals</code> — the Struct field representing the deal entity;</li>
-<li><code>products</code> — a <strong>List</strong> field containing multiple products;</li>
-<li><code>product</code> — a Struct field representing one item in the list;</li>
-<li><code>name</code>, <code>quantity</code>, and <code>price</code> — the fields that make up each product.</li>
+<li><code>сделки</code> — составное поле, представляющее сущность сделки;</li>
+<li><code>товары</code> — поле <strong>«Список»</strong>, содержащее несколько товаров;</li>
+<li><code>товар</code> — составное поле, которое описывает один элемент списка;</li>
+<li><code>название</code>, <code>количество</code>, <code>цена</code> — поля, из которых состоит каждый товар.</li>
 </ul>
-<h2 id="working-with-nested-fields">Working with nested fields</h2>
-<p>To reference a nested field, specify its full path using a period (<code>.</code>).</p>
-<p>For example:</p>
-<pre><code class="language-text">deals.name
+<h2 id="_4">Работа с вложенными полями</h2>
+<p>Для обращения к вложенному полю необходимо указать путь до него через точку.</p>
+<p>Например:</p>
+<pre><code class="language-text">сделки.название
 </code></pre>
-<p>Where:</p>
+<p>Здесь:</p>
 <ul>
-<li><code>deals</code> — the Struct field containing the deal fields;</li>
-<li><code>name</code> — the nested field.</li>
+<li><code>сделки</code> — составное поле, содержащее поля сделки;</li>
+<li><code>название</code> — вложенное поле.</li>
 </ul>
-<p>If a field is located deeper in the structure, specify the full path to it in the expression.</p>
-<p>Nested fields can be used in the same way as regular fields of the corresponding type:</p>
+<p>Если поле находится глубже в структуре, в выражении указывается полный путь до него.</p>
+<p>Вложенные поля можно использовать так же, как обычные поля соответствующего типа:</p>
 <ul>
-<li>insert their values into the document;</li>
-<li>use them in conditions;</li>
-<li>pass them to functions;</li>
-<li>use them in expressions.</li>
+<li>выводить их значения в документ;</li>
+<li>использовать в условиях;</li>
+<li>передавать в функции;</li>
+<li>использовать в выражениях.</li>
 </ul>
-<h2 id="inserting-fields-through-the-directives-tab">Inserting fields through the «Directives» tab</h2>
-<p>A Struct field itself is not inserted into the document as a separate value. Instead, you use the fields nested inside it.</p>
-<p>The directive you use depends on the nested field type and how the field should be used in the template.</p>
-<p>For example:</p>
+<h2 id="_5">Вставка поля через вкладку «Метки»</h2>
+<p>Само составное поле не вставляется в документ как отдельное значение. Через вкладку <strong>«Метки»</strong> используются поля, которые находятся внутри него.</p>
+<p>Выбор метки зависит от типа вложенного поля и от того, как его необходимо использовать в шаблоне.</p>
+<p>Например:</p>
 <ul>
-<li>a <strong>Text</strong>, <strong>Integer</strong>, <strong>Decimal Number</strong>, or <strong>Date</strong> field can be inserted using the <a href="../../directives/expression/">«Expression»</a> directive;</li>
-<li>a <strong>Boolean</strong> field can be used with the <a href="../../directives/if/">«Condition expression»</a> directive;</li>
-<li>a <strong>List</strong> field can be used with the <a href="../../directives/for/">«For»</a> or <a href="../../directives/table/">«Table»</a> directive.</li>
+<li>текстовое, числовое поле или дату можно вывести через метку <a href="../directives/value.md">«Значение»</a>;</li>
+<li>поле <strong>«Да/Нет»</strong> можно использовать с меткой <a href="../../directives/if/">«Условие»</a>;</li>
+<li>поле <strong>«Список»</strong> можно использовать с метками <a href="../../directives/for/">«Цикл»</a> или <a href="../../directives/table/">«Таблица»</a>.</li>
 </ul>
-<h2 id="functions-for-working-with-the-field">Functions for working with the field</h2>
-<p>The <strong>«Struct»</strong> field itself does not have dedicated functions.</p>
-<p>Functions are applied to its nested fields depending on their type.</p>
-<p>For example:</p>
+<h2 id="_6">Функции для работы с полем</h2>
+<p>Для самого составного поля отдельных функций нет.</p>
+<p>Функции применяются к вложенным полям в зависимости от их типа. Например:</p>
 <ul>
-<li><strong>Text</strong> fields support text functions;</li>
-<li><strong>Integer</strong> and <strong>Decimal Number</strong> fields support mathematical functions;</li>
-<li><strong>Date</strong> fields support date functions.</li>
+<li>к полю <strong>«Текст»</strong> применяются функции для работы с текстом;</li>
+<li>к полям <strong>«Целое число»</strong> и <strong>«Десятичное число»</strong> — математические функции;</li>
+<li>к полю <strong>«Дата»</strong> — функции для работы с датами.</li>
 </ul>
-<h2 id="features">Features</h2>
-<p>A Struct field can contain multiple levels of nesting. To reference a specific value, specify the full path to the corresponding field.</p>
 
 
 

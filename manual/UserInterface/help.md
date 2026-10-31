@@ -26,7 +26,7 @@ hide:
 
         <a
           class="support-button support-button--request"
-          href="#"
+          href="http://kombinator.net/"
           target="_blank"
           rel="noopener"
         >

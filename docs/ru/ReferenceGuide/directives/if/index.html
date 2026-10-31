@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#condition-expression" class="md-skip">
+        <a href="#_1" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -626,7 +626,7 @@
   
   
   <span class="md-ellipsis">
-    Текстовые
+    Текст
     
   </span>
   
@@ -2717,54 +2717,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#directive-structure" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Directive structure
+      Структура метки
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#condition" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Condition
+      Условие
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#boolean-field" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      Boolean field
+      Поле «Да/Нет»
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#multiple-conditions" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      Multiple conditions
+      Несколько условий
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#else-block" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      Else block
+      Блок «Иначе»
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#nested-conditions" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
-      Nested conditions
+      Вложенные условия
     </span>
   </a>
   
@@ -2949,54 +2949,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#directive-structure" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Directive structure
+      Структура метки
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#condition" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Condition
+      Условие
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#boolean-field" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      Boolean field
+      Поле «Да/Нет»
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#multiple-conditions" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      Multiple conditions
+      Несколько условий
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#else-block" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      Else block
+      Блок «Иначе»
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#nested-conditions" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
-      Nested conditions
+      Вложенные условия
     </span>
   </a>
   
@@ -3018,110 +3018,110 @@
 
 
 
-<h1 id="condition-expression">Condition expression</h1>
-<p>The <strong>«Condition expression»</strong> directive controls which content is included in the generated document depending on a specified condition.</p>
-<p><img alt="28" src="../img/directives/28.png" /></p>
-<p>Kombinator evaluates the condition and either includes or excludes the content inside the directive.</p>
-<p>For example, you can:</p>
+<h1 id="_1">Метка «Условие»</h1>
+<p>Метка <strong>«Условие»</strong> используется для управления содержимым документа в зависимости от заданного условия.</p>
+<p><img alt="28" src="../../img/directives/28.png" /></p>
+<p>С её помощью можно определить, какая часть шаблона должна попасть в сформированный документ. Комбинатор проверяет указанное условие и в зависимости от результата выводит или исключает содержимое внутри метки.</p>
+<p>Например, можно:</p>
 <ul>
-<li>include a contract clause only when a field has a specific value;</li>
-<li>display additional text when an amount exceeds a specified value;</li>
-<li>display one version of the content when the condition is met and another when it is not.</li>
+<li>добавить отдельный пункт договора только при определённом значении поля;</li>
+<li>вывести дополнительный текст, если сумма превышает установленное значение;</li>
+<li>показать один вариант содержимого при выполнении условия и другой — если оно не выполняется.</li>
 </ul>
-<h2 id="directive-structure">Directive structure</h2>
-<p>The directive consists of an opening and a closing part.</p>
-<p>The condition is specified in the opening part:</p>
-<pre><code class="language-text">{if (condition)}
+<h2 id="_2">Структура метки</h2>
+<p>Метка состоит из открывающей и закрывающей частей.</p>
+<p>В открывающей части задаётся условие:</p>
+<pre><code class="language-text">{если (условие)}
 
-Content to be included.
+Содержимое, которое должно быть выведено.
 
-{/if}
+{/если}
 </code></pre>
-<p>Kombinator evaluates the expression specified in the opening part.</p>
-<p>If the result is <code>true</code>, the content between <code>If</code> and <code>/Endif</code> is included in the document.</p>
-<p>If the result is <code>false</code>, the content is not included.</p>
-<h2 id="condition">Condition</h2>
-<p>The condition must be an expression that returns the Boolean value <code>true</code> or <code>false</code>.</p>
-<p>For example, you can check a numeric field:</p>
-<pre><code class="language-text">amount &gt; 100000
+<p>Комбинатор проверяет выражение, указанное в открывающей части.</p>
+<p>Если результат — <code>истина</code>, содержимое между <code>если</code> и <code>/если</code> добавляется в документ.</p>
+<p>Если результат — <code>ложь</code>, это содержимое не выводится.</p>
+<h2 id="_3">Условие</h2>
+<p>В качестве условия указывается выражение, результатом которого является логическое значение <code>истина</code> или <code>ложь</code>.</p>
+<p>Например, можно проверить значение числового поля:</p>
+<pre><code class="language-text">сумма &gt; 100000
 </code></pre>
-<p>If the <code>amount</code> field contains a value greater than <code>100000</code>, the condition is met.</p>
-<p>You can compare field values:</p>
-<pre><code class="language-text">quantity &gt; limit
+<p>Если поле <code>сумма</code> содержит значение больше <code>100000</code>, условие выполняется.</p>
+<p>Можно сравнивать значения полей:</p>
+<pre><code class="language-text">количество &gt; лимит
 </code></pre>
-<p>check text values:</p>
-<pre><code class="language-text">status = &quot;Approved&quot;
+<p>проверять текстовые значения:</p>
+<pre><code class="language-text">статус = &quot;Согласовано&quot;
 </code></pre>
-<p>or check whether a value is present:</p>
-<pre><code class="language-text">contractNumber != null
+<p>или проверять наличие значения:</p>
+<pre><code class="language-text">номерДоговора != пусто
 </code></pre>
-<p>Logical operators and functions can also be used according to the general expression syntax.</p>
-<p>For more information, see <a href="../../syntax/syntax/">«Basic rules»</a>.</p>
-<h2 id="boolean-field">Boolean field</h2>
-<p>A <strong>Boolean</strong> field can be used directly as a condition.</p>
-<p>For example:</p>
-<pre><code class="language-text">delivery
+<p>В условии также можно использовать логические операторы и функции по общим правилам выражений.</p>
+<p>Подробнее: <a href="../../syntax/syntax/">«Основные правила»</a>.</p>
+<h2 id="_4">Поле «Да/Нет»</h2>
+<p>Поле <strong>«Да/Нет»</strong> можно использовать в качестве условия напрямую.</p>
+<p>Например:</p>
+<pre><code class="language-text">доставка
 </code></pre>
-<p>If the <code>delivery</code> field contains <code>true</code>, the condition is met and the content inside the directive is included in the document.</p>
-<p>If the field contains <code>false</code>, the content is excluded.</p>
-<p>To check the opposite value, use the <code>not</code> operator:</p>
-<pre><code class="language-text">not delivery
+<p>Если поле <strong>«Доставка»</strong> имеет значение <strong>«Да»</strong>, результат условия — <code>истина</code>, и содержимое метки выводится.</p>
+<p>Если значение — <strong>«Нет»</strong>, результат — <code>ложь</code>, и содержимое не выводится.</p>
+<p>Чтобы проверить противоположное значение, можно использовать оператор <code>не</code>:</p>
+<pre><code class="language-text">не доставка
 </code></pre>
-<p>In this case, the content will be included when the <code>delivery</code> field contains <code>false</code>.</p>
-<h2 id="multiple-conditions">Multiple conditions</h2>
-<p>A single expression can contain multiple conditions.</p>
-<p>Use the <code>and</code> operator when both conditions must be true:</p>
-<pre><code class="language-text">amount &gt; 100000 and approval
+<p>В этом случае содержимое будет выведено, если поле <strong>«Доставка»</strong> имеет значение <strong>«Нет»</strong>.</p>
+<h2 id="_5">Несколько условий</h2>
+<p>В одном выражении можно проверить сразу несколько условий.</p>
+<p>Оператор <code>и</code> используется, если должны выполняться оба условия:</p>
+<pre><code class="language-text">сумма &gt; 100000 и согласование
 </code></pre>
-<p>The content will be included only if the amount is greater than <code>100000</code> and the <code>approval</code> field returns <code>true</code>.</p>
-<p>Use the <code>or</code> operator when at least one condition must be true:</p>
-<pre><code class="language-text">urgentOrder or importantClient
+<p>Содержимое будет выведено только в том случае, если сумма больше <code>100000</code> <strong>и</strong> поле <code>согласование</code> имеет значение <code>истина</code>.</p>
+<p>Оператор <code>или</code> используется, если достаточно выполнения хотя бы одного условия:</p>
+<pre><code class="language-text">срочныйЗаказ или важныйКлиент
 </code></pre>
-<p>The content will be included if at least one of these conditions is met.</p>
-<h2 id="else-block">Else block</h2>
-<p>Use the <strong>Else</strong> block when you need two content options: one for a true condition and another for a false condition.</p>
-<p>The structure is:</p>
-<pre><code class="language-text">{if (condition)}
+<p>Содержимое будет выведено, если выполняется хотя бы одно из этих условий.</p>
+<h2 id="_6">Блок «Иначе»</h2>
+<p>Блок <strong>«Иначе»</strong> используется, если необходимо задать два варианта содержимого: один — для выполненного условия, другой — для невыполненного.</p>
+<p>Структура выглядит так:</p>
+<pre><code class="language-text">{если (условие)}
 
-Content displayed when the condition is true.
+Содержимое при выполнении условия.
 
-{else}
+{иначе}
 
-Content displayed when the condition is false.
+Содержимое, если условие не выполнено.
 
-{/if}
+{/если}
 </code></pre>
-<p>For example:</p>
-<pre><code class="language-text">{if (amount &gt; 100000)}
+<p>Например:</p>
+<pre><code class="language-text">{если (сумма &gt; 100000)}
 
-Additional approval is required.
+Требуется дополнительное согласование.
 
-{else}
+{иначе}
 
-Additional approval is not required.
+Дополнительное согласование не требуется.
 
-{/if}
+{/если}
 </code></pre>
-<p>If <code>amount &gt; 100000</code>, the first content block is included in the document.</p>
-<p>If the condition is not met, the content after <code>Else</code> is included.</p>
-<p>The <strong>Else</strong> block is optional. If no alternative content is required, use only <code>If</code> and <code>/Endif</code>.</p>
-<h2 id="nested-conditions">Nested conditions</h2>
-<p>One <strong>«Condition expression»</strong> directive can be placed inside another. This allows you to check several dependent conditions step by step.</p>
-<p>For example:</p>
-<pre><code class="language-text">{if (delivery)}
+<p>Если <code>сумма &gt; 100000</code>, в документ попадёт первый вариант.</p>
+<p>Если условие не выполняется, будет выведено содержимое после блока <strong>«Иначе»</strong>.</p>
+<p>Блок <strong>«Иначе»</strong> необязателен. Если альтернативное содержимое не требуется, достаточно использовать <code>если</code> и <code>/если</code>.</p>
+<h2 id="_7">Вложенные условия</h2>
+<p>Одну метку <strong>«Условие»</strong> можно разместить внутри другой. Это позволяет последовательно проверять несколько зависимых условий.</p>
+<p>Например:</p>
+<pre><code class="language-text">{если (доставка)}
 
-Delivery terms.
+Условия доставки товара.
 
-    {if (urgentDelivery)}
+    {если (срочнаяДоставка)}
 
-    Delivery within one business day.
+    Срок доставки — в течение одного рабочего дня.
 
-    {/if}
+    {/если}
 
-{/if}
+{/если}
 </code></pre>
-<p>Kombinator first checks the <code>delivery</code> field.</p>
-<p>Only if this condition is met does it evaluate the nested <code>urgentDelivery</code> condition.</p>
+<p>Сначала проверяется поле <code>доставка</code>.</p>
+<p>Только если первое условие выполняется, проверяется вложенное условие <code>срочнаяДоставка</code>.</p>
 
 
 

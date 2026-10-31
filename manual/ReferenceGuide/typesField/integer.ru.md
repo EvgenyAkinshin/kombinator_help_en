@@ -1,82 +1,80 @@
-# «Integer» field
+# Поле «Целое число»
 
-The **«Integer»** field is used to store numeric values without a fractional part and perform calculations with them.
+Поле **«Целое число»** используется для хранения числовых значений без дробной части и выполнения расчётов с ними.
 
-It is suitable for quantities, numbers of days, numbers of employees, and other whole-number values.
+Подходит, например, для количества товаров, числа дней, количества сотрудников и других целых числовых значений.
 
-## Creating and adding a field
+## Создание и добавление поля
 
-For instructions on creating and adding fields, see [Creating a template](../Bitrix/creat.md).
+Создание и добавление полей: [ИНСТРУКЦИЯ](../Bitrix/creat.md)
 
-## Field value
+## Значение поля
 
-The field contains an integer without a fractional part.
+Поле содержит целое число без дробной части.
 
-For example:
+Например:
 
 - `5`
+
 - `120`
+
 - `15000`
 
-## Inserting a field through the «Directives» tab
+## Вставка поля через вкладку «Метки»
 
-The field value can be inserted into the template using the [«Expression»](../directives/expression.md) directive.
+Значение поля можно вставить в шаблон через метку [«Значение»](../directives/value.md).
 
-1. Place the cursor at the required position in the template.
+1. Установите курсор в нужное место шаблона.
+2. Перейдите на вкладку **«Метки»** и выберите **«Значение»**.
+3. В поле **«Выражение»** укажите поле, значение которого необходимо вывести.
+4. Нажмите **«ОК»**.
 
-2. Open the **«Directives»** tab and select **«Expression»**.
-
-3. In the **«Expression»** field, specify the field whose value should be inserted.
-
-4. Click **«OK»**.
-
-For example, if the field identifier is:
+Например, если идентификатор поля:
 
 ```text
-deals.numberOfStudents
+сделки.количествоУчеников
 ```
 
-where:
+Здесь:
 
-- `deals` — the Bitrix24 entity from which the data is retrieved;
-- `numberOfStudents` — the field within that entity.
+- `сделки` — сущность Битрикс24, из которой берутся данные;
+- `количествоУчеников` — поле этой сущности.
 
-If the **«Number of students»** field contains `25`, the generated document will display:
+Если в поле **«Количество учеников»** сделки указано значение `25`, при формировании документа вместо метки будет выведено:
 
 ```text
 25
 ```
 
-## Functions and operations for working with the field
+## Функции и операции для работы с полем
 
-### Mathematical operations
+### Математические операции
 
-You can perform arithmetic operations with integer values:
+С целыми числами можно выполнять арифметические действия:
 
-- `+` — addition: `10 + 5` → `15`;
-- `-` — subtraction: `10 - 5` → `5`;
-- `*` — multiplication: `10 * 5` → `50`;
-- `/` — division: `10 / 5` → `2`;
-- `^` — exponentiation: `2 ^ 3` → `8`.
+- `+` — сложение: `10 + 5` → `15`;
+- `-` — вычитание: `10 - 5` → `5`;
+- `*` — умножение: `10 * 5` → `50`;
+- `/` — деление: `10 / 5` → `2`;
+- `^` — возведение в степень: `2 ^ 3` → `8`.
 
-### Mathematical functions
+### Математические функции
 
-The following functions can be used with numeric values:
+Для числовых значений можно использовать:
 
-- [round](../functions/Math/round.md) — rounds a number to the specified number of digits;
-- [roundup](../functions/Math/roundup.md) — rounds a number away from zero;
-- [rounddown](../functions/Math/rounddown.md) — rounds a number toward zero;
-- [exp](../functions/Math/exp.md) — calculates the exponential function;
-- [ln](../functions/Math/ln.md) — calculates the natural logarithm;
-- [log10](../functions/Math/log10.md) — calculates the base-10 logarithm.
+- [округлить](../functions/Math/округлить.md) — округляет число до указанного разряда;
+- [округлитьвверх](../functions/Math/округлитьвверх.md) — округляет число в сторону большего значения по модулю;
+- [округлитьвниз](../functions/Math/округлитьвниз.md) — округляет число в сторону меньшего значения по модулю;
+- [exp](../functions/Math/exp.md) — вычисляет экспоненту;
+- [ln](../functions/Math/ln.md) — вычисляет натуральный логарифм;
+- [log10](../functions/Math/log10.md) — вычисляет десятичный логарифм.
 
-### Formatting functions
+### Форматирование числа
 
-- [formatNumber](../functions/Morph/formatNumber.md) — formats a number, for example by adding thousands separators;
-- [форматВалюты](../functions/Morph/форматВалюты.md) — formats a numeric value as a monetary amount.
+- [форматЧисла](../functions/Morph/форматЧисла.md) — изменяет отображение числа, например добавляет разделители тысяч;
+- [форматВалюты](../functions/Morph/форматВалюты.md) — отображает числовое значение как денежную сумму.
 
-### Number-to-text functions
+### Преобразование числа в текст
 
-- [целоеСТекстом](../functions/Morph/целоеСТекстом.md) — displays an integer as digits or words and can use the appropriate word form;
-- [числоСТекстом](../functions/Morph/числоСТекстом.md) — displays a number together with a matching word form in the specified format.
-
+- [целоеСТекстом](../functions/Morph/целоеСТекстом.md) — позволяет вывести целое число цифрами, прописью и с подходящей формой слова;
+- [числоСТекстом](../functions/Morph/числоСТекстом.md) — выводит число вместе с согласованным с ним словом в заданном формате.

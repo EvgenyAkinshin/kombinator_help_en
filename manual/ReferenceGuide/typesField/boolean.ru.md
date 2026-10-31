@@ -1,62 +1,52 @@
-# «Boolean» field
+# Поле «Да/Нет»
 
-The **«Boolean»** field is used to store a logical value: `true` or `false`.
+Поле **«Да/Нет»** используется для хранения логического значения: **«Да»** или **«Нет»**.
 
-This field is useful for controlling document content depending on whether a condition is true or false.
+Такое поле удобно использовать для управления содержимым документа в зависимости от выбранного значения.
 
-## Creating and adding a field
+## Создание и добавление поля
 
-For instructions on creating and adding fields, see [Creating a template](../Bitrix/creat.md).
+Создание и добавление полей: [ИНСТРУКЦИЯ](../Bitrix/creat.md)
 
-## Field value
+## Значение поля
 
-The field can contain one of two values:
+Поле может принимать два значения:
 
-- `true`;
-- `false`.
+- **Да** — `истина`;
+- **Нет** — `ложь`.
 
-The field value can be used in logical expressions, for example to show or hide specific parts of a document.
+Значение поля можно использовать в логических выражениях, например для отображения или скрытия отдельных фрагментов документа.
 
-## Inserting a field through the «Directives» tab
+## Вставка поля через вкладку «Метки»
 
-The **«Boolean»** field is most commonly used with the [«Condition expression»](../directives/if.md) directive. It allows you to include or exclude part of the document depending on the field value.
+Поле **«Да/Нет»** чаще всего используется с меткой [«Условие»](../directives/if.md). Она позволяет добавлять или исключать часть документа в зависимости от значения поля.
 
-Specify the **Boolean** field whose value should be checked as the condition.
+В качестве условия указывается поле **«Да/Нет»**, значение которого необходимо проверить.
 
-The field can also be used with the [«Expression»](../directives/expression.md) directive. In this case, inserting only the field itself is not correct — use the `if(...)` function:
-
-```text
-if(fieldValue, expression_if_true, expression_if_false)
-```
-
-All three arguments are required:
-
-- `fieldValue` — the **Boolean** field whose value is checked;
-- `expression_if_true` — the value returned if the field contains `true`;
-- `expression_if_false` — the value returned if the field contains `false`.
-
-The returned expressions can contain text, field values, or nested functions.
-
-For example:
+Поле также можно использовать в метке [«Значение»](../directives/value.md). При этом передавать только само поле некорректно — необходимо использовать функцию `если(...)`:
 
 ```text
-if(delivery, "Delivery required", "Delivery not required")
+если(значениеПоля, выражение_если_истина, выражение_если_ложь)
 ```
 
-If the field contains `true`, the result will be:
+Все три аргумента функции обязательны:
+
+- `значениеПоля` — поле **«Да/Нет»**, значение которого проверяется;
+- `выражение_если_истина` — значение, которое будет выведено, если поле содержит **«Да»**;
+- `выражение_если_ложь` — значение, которое будет выведено, если поле содержит **«Нет»**.
+
+В качестве выражений можно использовать текст, значения полей или вложенные функции.
+
+Например:
 
 ```text
-Delivery required
+если(доставка, "Доставка требуется", "Доставка не требуется")
 ```
 
-If the field contains `false`, the result will be:
+Если значение поля — **«Да»**, будет выведено `Доставка требуется`, если **«Нет»** — `Доставка не требуется`.
 
-```text
-Delivery not required
-```
+Такой способ использования поля применяется реже, чем работа через метку **«Условие»**.
 
-This method is used less often than the **«Condition expression»** directive.
+## Функции и логические операции
 
-## Functions and logical operations
-
-The **«Boolean»** field does not have dedicated functions. Its value can be used directly in logical expressions.
+Для поля **«Да/Нет»** отдельных функций нет. Его значение можно использовать непосредственно в логических выражениях.

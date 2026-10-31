@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#where-to-use" class="md-skip">
+        <a href="#_1" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -626,7 +626,7 @@
   
   
   <span class="md-ellipsis">
-    Текстовые
+    Текст
     
   </span>
   
@@ -2603,18 +2603,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#directives" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Directives
+      Метки
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#file-name-mask" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      File name mask
+      Маска имени файла
     </span>
   </a>
   
@@ -2913,18 +2913,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#directives" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Directives
+      Метки
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#file-name-mask" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      File name mask
+      Маска имени файла
     </span>
   </a>
   
@@ -2946,29 +2946,23 @@
 
 
 
-<h1 id="where-to-use">Where to use</h1>
-<p>Expressions are used in different parts of Kombinator, but the syntax is the same everywhere.</p>
-<p>Whether an expression is used in field properties, a directive, a file name mask, or another part of the application, you can use the same fields, functions, operators, and values.</p>
-<p>Expression syntax is described in <a href="../syntax/">«Basic rules»</a>.</p>
-<h2 id="directives">Directives</h2>
-<p>Expressions are used in directive properties to retrieve data and control template content.</p>
-<p>For example:</p>
+<h1 id="_1">Места использования</h1>
+<p>Выражения используются в разных частях Комбинатора, но правила их записи везде одинаковые.</p>
+<p>Независимо от того, используется выражение в свойствах поля, метке, маске имени файла или другом месте, синтаксис остаётся тем же: можно обращаться к полям, использовать функции, операторы и значения.</p>
+<p>Правила записи выражений описаны в разделе <a href="../syntax/">«Основные правила»</a>.</p>
+<h2 id="_2">Метки</h2>
+<p>Выражения используются в свойствах меток для получения данных и управления содержимым шаблона.</p>
+<p>Например:</p>
 <ul>
-<li>
-<p>in the <a href="../../directives/expression/">«Expression»</a> directive — to specify which value or expression result should be inserted into the document;</p>
-</li>
-<li>
-<p>in the <a href="../../directives/if/">«Condition expression»</a> directive — to define a condition;</p>
-</li>
-<li>
-<p>in the <a href="../../directives/for/">«For»</a> and <a href="../../directives/table/">«Table»</a> directives — to work with lists.</p>
-</li>
+<li>в метке <a href="../directives/value.md">«Значение»</a> — чтобы определить, какое значение или результат выражения вывести;</li>
+<li>в метке <a href="../../directives/if/">«Условие»</a> — чтобы задать условие;</li>
+<li>в метках <a href="../../directives/for/">«Цикл»</a> и <a href="../../directives/table/">«Таблица»</a> — для работы со списками.</li>
 </ul>
-<p>Other directives can also use expressions depending on their purpose.</p>
-<h2 id="file-name-mask">File name mask</h2>
-<p>Expressions are used in the <a href="../../../UserInterface/Templates/file-name-mask/">file name mask</a> to generate the name of the final document from text, field values, and function results.</p>
-<p>For example:</p>
-<pre><code class="language-text">&quot;Contract № &quot; &amp; contractNumber
+<p>Другие метки также могут содержать выражения в зависимости от их назначения.</p>
+<h2 id="_3">Маска имени файла</h2>
+<p>Выражения используются в <a href="../../../UserInterface/Templates/file-name-mask/">маске имени файла</a>, чтобы формировать название готового документа из текста, значений полей и результатов функций.</p>
+<p>Например:</p>
+<pre><code class="language-text">&quot;Договор № &quot; &amp; номерДоговора
 </code></pre>
 
 

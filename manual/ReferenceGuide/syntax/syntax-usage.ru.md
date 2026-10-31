@@ -1,31 +1,29 @@
-# Where to use
+# Места использования
 
-Expressions are used in different parts of Kombinator, but the syntax is the same everywhere.
+Выражения используются в разных частях Комбинатора, но правила их записи везде одинаковые.
 
-Whether an expression is used in field properties, a directive, a file name mask, or another part of the application, you can use the same fields, functions, operators, and values.
+Независимо от того, используется выражение в свойствах поля, метке, маске имени файла или другом месте, синтаксис остаётся тем же: можно обращаться к полям, использовать функции, операторы и значения.
 
-Expression syntax is described in [«Basic rules»](syntax.md).
+Правила записи выражений описаны в разделе [«Основные правила»](syntax.md).
 
-## Directives
+## Метки
 
-Expressions are used in directive properties to retrieve data and control template content.
+Выражения используются в свойствах меток для получения данных и управления содержимым шаблона.
 
-For example:
+Например:
 
-- in the [«Expression»](../directives/expression.md) directive — to specify which value or expression result should be inserted into the document;
+- в метке [«Значение»](../directives/value.md) — чтобы определить, какое значение или результат выражения вывести;
+- в метке [«Условие»](../directives/if.md) — чтобы задать условие;
+- в метках [«Цикл»](../directives/for.md) и [«Таблица»](../directives/table.md) — для работы со списками.
 
-- in the [«Condition expression»](../directives/if.md) directive — to define a condition;
+Другие метки также могут содержать выражения в зависимости от их назначения.
 
-- in the [«For»](../directives/for.md) and [«Table»](../directives/table.md) directives — to work with lists.
+## Маска имени файла
 
-Other directives can also use expressions depending on their purpose.
+Выражения используются в [маске имени файла](../../UserInterface/Templates/file-name-mask.md), чтобы формировать название готового документа из текста, значений полей и результатов функций.
 
-## File name mask
-
-Expressions are used in the [file name mask](../../UserInterface/Templates/file-name-mask.md) to generate the name of the final document from text, field values, and function results.
-
-For example:
+Например:
 
 ```text
-"Contract № " & contractNumber
+"Договор № " & номерДоговора
 ```

@@ -1,164 +1,158 @@
-# Table
+# Метка «Таблица»
 
-The **«Table»** directive is used to control table rows when generating a document.
+Метка **«Таблица»** используется для управления строками таблицы при формировании документа.
 
-It allows you to repeat rows for list items, display rows only when a condition is met, and vertically merge adjacent cells.
+С её помощью можно повторять строки для элементов списка, выводить строки только при выполнении условия и объединять соседние ячейки по вертикали.
 
-![«Table» directive](../img/directives/31.png)
+![Метка «Таблица»](../img/directives/31.png)
 
-## Table for
+## Табличный цикл
 
-**«Table for»** is used to display data from a **List** field in a table.
+Табличный цикл `т_цикл` используется для вывода данных из поля типа **«Список»** в таблицу.
 
-![Table for](../img/directives/66.png)
+![Табличный цикл](../img/directives/66.png)
 
-### Table for structure
+### Структура табличного цикла
 
-The opening directive has the following structure:
+Открывающая часть табличного цикла имеет вид:
 
 ```text
-{t_for(employee in employeeList)}
+{т_цикл(сотрудник из списокСотрудников)}
 ```
 
 Где:
 
-Where:
+- `списокСотрудников` — поле типа **«Список»**, элементы которого нужно перебрать;
+- `сотрудник` — имя текущего элемента списка, через которое внутри цикла доступны его данные.
 
-- `employeeList` — the **List** field whose items should be processed;
-- `employee` — the name used to reference the current list item.
-
-If a list item is a composite field, its nested fields are referenced using a period (`.`):
+Если элемент списка является составным полем, к его вложенным полям обращаются через точку:
 
 ```text
-employee.fullName
-employee.position
-employee.workExperience
+сотрудник.фио
+сотрудник.должность
+сотрудник.стажРаботы
 ```
 
-The current item variable can be changed.
-
-For example:
+Имя текущего элемента можно изменить. Например:
 
 ```text
-{t_for(data in employeeList)}
+{т_цикл(данные из списокСотрудников)}
 ```
 
-In this case, the nested fields must also be referenced using the new variable:
+Тогда обращения к вложенным полям также нужно записывать с новым именем:
 
 ```text
-data.fullName
-data.position
-data.workExperience
+данные.фио
+данные.должность
+данные.стажРаботы
 ```
 
-The **Table for** block must be closed with:
+Табличный цикл обязательно завершается закрывающей меткой:
 
 ```text
-{/t_for}
+{/т_цикл}
 ```
 
-The opening `t_for` and closing `/t_for` directives must each be placed in a separate table row.
+Открывающая и закрывающая метки табличного цикла должны занимать отдельные строки таблицы.
 
-Do not add text, values, or other directives to the rows containing `t_for` and `/t_for`. These rows are used only to define the beginning and end of the repeating table block.
+В строках с `{т_цикл(...)}` и `{/т_цикл}` не нужно размещать текст, значения или другие метки. Эти строки используются только для обозначения начала и конца табличного цикла.
 
-### Which rows are repeated
+### Какие строки повторяются
 
-**Table for** repeats the entire table block located between `t_for` and `/t_for`.
+`т_цикл` повторяет весь табличный блок, расположенный между открывающей и закрывающей частями.
 
-For one list item, the repeating block may contain a single row:
+Для одного элемента списка это может быть одна строка:
 
-![One row inside Table for](../img/directives/88.png)
+![Одна строка внутри табличного цикла](../img/directives/88.png)
 
-or multiple rows:
+или несколько строк:
 
-![Multiple rows inside Table for](../img/directives/89.png)
+![Несколько строк внутри табличного цикла](../img/directives/89.png)
 
-The repeating block can also contain other directives and additional logic:
+Внутри повторяющегося блока также могут использоваться другие метки и дополнительная логика:
 
-![Additional logic inside Table for](../img/directives/90.png)
+![Дополнительная логика внутри табличного цикла](../img/directives/90.png)
 
-For example, if the block contains three rows, all three rows will be generated for each item in the list.
+Например, если для одного элемента списка внутри цикла расположены три строки, эти три строки будут сформированы для каждого элемента списка.
 
-Therefore, the number of rows in the generated table depends not only on the number of list items but also on the structure placed inside **Table for**.
+Поэтому количество строк в готовой таблице зависит не только от количества элементов списка, но и от структуры, размещённой внутри цикла.
 
-## Table if
+## Табличное условие
 
-**«Table if»** controls whether specific table rows are included in the generated document.
+Табличное условие `т_если` используется для управления отображением строк таблицы.
 
-Rows placed between `t_if` and `/t_if` are included only when the specified condition is met.
+Строки, расположенные между открывающей и закрывающей частями метки, выводятся только при выполнении указанного условия.
 
-![Table if](../img/directives/59.png)
+![Табличное условие](../img/directives/59.png)
 
-### Table if structure
+### Структура табличного условия
 
-**Table if** consists of an opening `t_if` directive containing a condition and a closing `/t_if` directive.
+Табличное условие состоит из открывающей части с условием и закрывающей части.
 
-For example:
+Например:
 
 ```text
-{t_if(data.workExperience > 3)}
+{т_если(данные.стажРаботы > 3)}
 
 ...
 
-{/t_if}
+{/т_если}
 ```
 
-If the expression `data.workExperience > 3` returns `истина`, the rows inside the block are included in the document.
+Если выражение `данные.стажРаботы > 3` возвращает `истина`, строки внутри конструкции выводятся в документ. Если возвращает `ложь` — не выводятся.
 
-If it returns `ложь`, the rows are not included.
+В качестве условия можно использовать поле типа **«Да/Нет»** или логическое выражение.
 
-A **Boolean** field or a logical expression can be used as the condition.
+Открывающая и закрывающая метки табличного условия должны занимать отдельные строки таблицы.
 
-The opening `t_if` and closing `/t_if` directives must each be placed in a separate table row.
+В строках с `{т_если(...)}` и `{/т_если}` не нужно размещать текст, значения или другие метки. Эти строки используются только для обозначения начала и конца условного блока.
 
-Do not add text, values, or other directives to the rows containing `t_if` and `/t_if`. These rows are used only to define the beginning and end of the conditional block.
+### Табличное условие внутри цикла
 
-### Table if inside Table for
+`т_если` можно использовать внутри `т_цикл`, чтобы проверять условие отдельно для каждого элемента списка.
 
-**Table if** can be placed inside **Table for** to evaluate a condition separately for each list item.
+Структура в этом случае выглядит так:
 
-The structure may look like this:
+![Табличный цикл с условием](../img/directives/22.png)
 
-![Table for with Table if](../img/directives/22.png)
+Табличный цикл переберёт всех сотрудников, а условие будет проверяться для каждого из них. Строки с данными сформируются только для сотрудников, у которых выполняется условие `данные.стажРаботы > 3`.
 
-**Table for** processes all employees in the list, while **Table if** checks the condition for each employee individually.
+## Вертикальное слияние
 
-Rows containing employee data will be generated only for employees for whom the condition `data.workExperience > 3` is met.
+Метка `в_слияние` используется для объединения соседних ячеек таблицы по вертикали.
 
-## V_Merge
+Она размещается внутри ячейки того столбца, в котором нужно выполнить объединение.
 
-**«V_Merge»** is used to merge adjacent table cells vertically.
+![Вертикальное слияние](../img/directives/70.png)
 
-Place the directive inside a cell in the column where the cells should be merged.
+### Как работает слияние
 
-![V_Merge](../img/directives/70.png)
-
-### How V_Merge works
-
-The directive contains an expression:
+В метке указывается выражение:
 
 ```text
-v_merge(expression)
+в_слияние(выражение)
 ```
 
-When the document is generated, Kombinator compares the result of this expression in adjacent rows.
+При формировании документа Комбинатор сравнивает результат этого выражения в соседних строках.
 
-If the results are the same, the corresponding cells are merged vertically. When the result changes, a new group begins.
+Если результаты совпадают, соответствующие ячейки объединяются по вертикали. Когда результат изменяется, начинается новая группа.
 
-For example:
+Например:
 
 ```text
-v_merge(data.type)
+в_слияние(данные.тип)
 ```
 
-If `data.type` contains the following values:
+Если поле `данные.тип` последовательно содержит:
 
 ```text
-Installation
-Installation
-Installation
-Delivery
-Delivery
+Монтаж
+Монтаж
+Монтаж
+Доставка
+Доставка
 ```
 
-the cells containing `Installation` will be merged into one group, while the cells containing `Delivery` will be merged into another group.
+ячейки со значением `Монтаж` будут объединены в одну группу, а следующие ячейки со значением `Доставка` — в другую.
+
+![Пример вертикального слияния](../img/directives/68.png)

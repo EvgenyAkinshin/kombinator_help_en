@@ -1,36 +1,36 @@
-# Expression
+# Метка «Значение»
 
-The **«Expression»** directive is used to insert a field value or the result of an expression into the document. It can insert text, numbers, dates, calculation results, or function results.
+Метка **«Значение»** используется для вывода в документ значения поля или результата выражения: текста, числа, даты, результата вычисления или функции.
 
 ![27](../img/directives/27.png)
 
-## Expression
+## Выражение
 
-When adding the directive, specify the expression whose result should be inserted into the document.
+При добавлении метки указывается выражение, результат которого необходимо вывести в документ.
 
-For a regular field, enter its identifier:
-
-```text
-customerName
-```
-
-For a nested field, specify the full path using a period (`.`):
+Для обычного поля указывается его идентификатор:
 
 ```text
-deals.fullName
+имяКлиента
 ```
 
-You can also use more complex expressions, for example:
+Для вложенного поля указывается полный путь через точку (`.`):
 
-- a calculation — `quantity * price`;
-- a function — `formatDate(contractDate, "dd.MM.yyyy")`;
-- concatenation — `"Contract № " & contractNumber`;
-- a conditional function — `if(...)`.
+```text
+сделки.фио
+```
 
-Expression syntax is described in [«Basic rules»](../syntax/syntax.md).
+В метке также можно использовать более сложные выражения, например:
 
-## Limitations
+- вычисление — `количество * цена`;
+- функцию — `форматДаты(датаДоговора, ФорматДаты.ДатаКратко)`;
+- объединение значений — `"Договор № " & номерДоговора`;
+- условную функцию — `если(...)`.
 
-The **«Expression»** directive is not intended for repeating list items. Use the [«For»](for.md) or [«Table»](table.md) directive for lists.
+Правила записи выражений описаны в разделе [«Основные правила»](../syntax/syntax.md).
 
-To show or hide part of the document depending on a condition, use the [«Condition expression»](if.md) directive.
+## Ограничения
+
+Метка **«Значение»** не предназначена для повторяющегося вывода элементов списка. Для этого используются метки [«Цикл»](for.md) и [«Таблица»](table.md).
+
+Чтобы показывать или скрывать часть документа в зависимости от условия, используйте метку [«Условие»](if.md).

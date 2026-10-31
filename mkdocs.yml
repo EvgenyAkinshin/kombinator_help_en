@@ -78,7 +78,7 @@ nav:
     - count: ReferenceGuide/functions/Lists/count.md
   - Logic:
     - if: ReferenceGuide/functions/Logic/if.md
-  - Text:
+  - Text functions:
     - capFirst: ReferenceGuide/functions/Text/capFirst.md
     - length: ReferenceGuide/functions/Text/length.md
     - trim: ReferenceGuide/functions/Text/trim.md
@@ -150,7 +150,8 @@ plugins:
             File name mask: Маска имени
             Preview: Режим предпросмотра
             Keyboard shortcuts: Горячие клавиши
-            Text: Текстовые
+            Text: Текст
+            Text functions: Текстовые
             Integer: Целое число
             Decimal: Десятичное число
             Boolean: Да/Нет

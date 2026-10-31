@@ -1,150 +1,148 @@
-# Switch
+# Метка «Выбор»
 
-The **«Switch»** directive is used when the document should display one of several content options depending on a field value.
+Метка **«Выбор»** используется, когда в документе нужно вывести один из нескольких вариантов содержимого в зависимости от значения поля.
 
 ![29](../img/directives/29.png)
 
-Kombinator retrieves the specified field value, compares it with the configured **Case** values, and inserts the content of the matching block.
+Комбинатор получает значение указанного поля, сравнивает его с заданными вариантами и выводит содержимое того варианта, с которым найдено совпадение.
 
-For example, depending on the `counterpartyType` field, you can display different text for an LLC, a sole proprietor, or an individual.
+Например, в зависимости от значения поля `типКонтрагента` можно выводить разные формулировки для ООО, ИП и физического лица.
 
-## Directive structure
+## Структура метки
 
-The directive consists of:
+Конструкция состоит из:
 
-- an opening **«Switch»** directive — specifies the field or expression whose value should be checked;
-- one or more **«Case»** blocks — define content for specific values;
-- an optional **«Default»** block — defines content to use when no Case value matches;
-- a closing **«/Switch»** directive.
+- открывающей метки **«Выбор»** — в ней указывается поле, значение которого необходимо проверить;
+- одного или нескольких блоков **«Вариант»** — для каждого возможного значения;
+- необязательного блока **«Прочее»** — для случая, когда совпадений нет;
+- закрывающей метки **«/Выбор»**.
 
 Общая структура:
 
 ```text
-{switch(field)}
+{выбор (поле)}
 
-{case("Value 1")}
+{вариант ("Значение 1")}
 
-Content for the first value.
+Содержимое первого варианта.
 
-{case("Value 2")}
+{вариант ("Значение 2")}
 
-Content for the second value.
+Содержимое второго варианта.
 
-{default}
+{прочее}
 
-Content displayed if no value matches.
+Содержимое, если совпадений нет.
 
-{/switch}
+{/выбор}
 ```
 
-## Value to check
+## Поле для проверки
 
-In the opening **«Switch»** directive, specify the field whose value Kombinator should compare with the **Case** values.
+В открывающей метке **«Выбор»** указывается поле, значение которого Комбинатор будет сравнивать с вариантами.
 
-For example:
+Например:
 
 ```text
-counterpartyType
+типКонтрагента
 ```
 
-To reference a nested field, specify the full path using a period (`.`):
+Если нужно обратиться к вложенному полю, указывается полный путь через точку (`.`):
 
 ```text
-counterparty.type
+контрагент.тип
 ```
 
-Field reference rules are described in [«Basic rules»](../syntax/syntax.md).
+Правила обращения к полям описаны в разделе [«Основные правила»](../syntax/syntax.md).
 
-## «Case» block
+## Блок «Вариант»
 
-dd a separate **«Case»** block for each value that should display its own content.
+Для каждого значения, которое необходимо обработать, добавляется отдельный блок **«Вариант»**.
 
-For example:
+Например:
 
 ```text
-{switch(counterpartyType)}
+{выбор (типКонтрагента)}
 
-{case("LLC")}
+{вариант ("ООО")}
 
-Text for a legal entity.
+Текст для юридического лица.
 
-{case("Sole proprietor")}
+{вариант ("ИП")}
 
-Text for a sole proprietor.
+Текст для индивидуального предпринимателя.
 
-{case("Individual")}
+{вариант ("Физическое лицо")}
 
-Text for an individual.
+Текст для физического лица.
 
-{/switch}
+{/выбор}
 ```
 
-If the `counterpartyType` field contains `"Sole proprietor"`, only the content of the corresponding **Case** block will be included in the document:
+Если поле `типКонтрагента` содержит значение `"ИП"`, в документ попадёт только содержимое соответствующего блока:
 
 ```text
-Text for a sole proprietor.
+Текст для индивидуального предпринимателя.
 ```
 
-The value specified in **«Case»** must exactly match the value of the field being checked.
+Значение, указанное в блоке **«Вариант»**, должно точно соответствовать значению проверяемого поля. Для текстовых значений учитывается регистр: `"ИП"` и `"ип"` считаются разными значениями.
 
-For text values, letter case is taken into account. For example, `"LLC"` and `"llc"` are treated as different values.
+## Блок «Прочее»
 
-## «Default» block
+Блок **«Прочее»** используется, если необходимо вывести содержимое для значения, которому не соответствует ни один из заданных вариантов.
 
-Use **«Default»** when you need to display content if none of the **Case** values match the field value.
-
-For example:
+Например:
 
 ```text
-{switch(counterpartyType)}
+{выбор (типКонтрагента)}
 
-{case("LLC")}
+{вариант ("ООО")}
 
-Legal entity.
+Юридическое лицо.
 
-{case("Sole proprietor")}
+{вариант ("ИП")}
 
-Sole proprietor.
+Индивидуальный предприниматель.
 
-{default}
+{прочее}
 
-Other counterparty type.
+Другой тип контрагента.
 
-{/switch}
+{/выбор}
 ```
 
-If the field value does not match either `"LLC"` or `"Sole proprietor"`, the document will contain:
+Если значение поля не совпадает ни с `"ООО"`, ни с `"ИП"`, в документ будет выведено:
 
 ```text
-Other counterparty type.
+Другой тип контрагента.
 ```
 
-The **«Default»** block is optional. If it is not added and no matching **Case** is found, nothing is inserted at the position of the directive.
+Блок **«Прочее»** необязателен. Если он не добавлен и подходящий вариант не найден, на месте метки ничего не выводится.
 
-## «Switch» and «Condition expression»
+## Особенности метки
 
-The **«Switch»** and [«Condition expression»](if.md) directives both control which content is included in the document, but they are used for different tasks.
+Метки **«Выбор»** и [«Условие»](if.md) используются для управления содержимым документа, но решают разные задачи.
 
-Use **«Switch»** when one field can contain several possible values and each value should display different content.
+**«Выбор»** удобен, когда есть одно поле и несколько возможных значений, для каждого из которых нужно определить своё содержимое.
 
-For example:
+Например:
 
 ```text
-LLC
-Sole proprietor
-Individual
+ООО
+ИП
+Физическое лицо
 ```
 
-Use **«Condition expression»** when you need to evaluate a logical expression:
+**«Условие»** используется, когда необходимо проверить логическое выражение:
 
 ```text
-amount > 100000
+сумма > 100000
 ```
 
-or combine several conditions:
+или несколько условий:
 
 ```text
-amount > 100000 и approval
+сумма > 100000 и согласование
 ```
 
-If you need to select one of several content options based on the value of a single field, use **«Switch»**.
+Если нужно выбрать один из нескольких вариантов по значению одного поля, удобнее использовать метку **«Выбор»**.

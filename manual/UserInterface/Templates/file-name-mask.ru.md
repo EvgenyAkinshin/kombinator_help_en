@@ -1,137 +1,133 @@
-# File name mask
+# Маска имени файла
 
-A **file name mask** is an expression that Kombinator uses to generate the name of the final file.
+**Маска имени** — это выражение, по которому Комбинатор формирует имя готового файла.
 
-The mask allows you to define in advance which parts will be included in the file name. For example, you can combine the document type, contract number, date, and company name.
+С помощью маски можно заранее задать, из каких частей будет состоять имя файла. Например, объединить название документа, номер договора, дату и наименование организации.
 
-As a result, the generated file may have a name such as:
+В результате файл может получить следующее имя: `Договор №125 от 28.07.2026`
 
-```text
-Contract № 125 dated 28.07.2026
-```
+При формировании документа номер и дата будут автоматически подставлены из соответствующих полей.
 
-When the document is generated, the number and date are automatically taken from the corresponding fields.
+## Как перейти к настройке маски имени
 
-## Opening the file name mask settings
+Настройка маски имени выполняется в режиме редактирования шаблона.
 
-The file name mask is configured while editing the template.
-
-> In Bitrix24, you can also specify the file name mask directly in the [automation rule settings](../../ReferenceGuide/Bitrix/template-automation.md#setting-up-the-file-name-mask). The same syntax rules apply to a mask configured in the automation rule and a mask configured in the template.
+> В Битрикс24 маску имени также можно указать непосредственно в [настройках робота](/ReferenceGuide/Bitrix/template-automation/#_3) Комбинатора. Для маски, заданной в роботе, действуют те же правила записи, что и для маски в шаблоне.
 >
-> If a mask is already saved in the template, enable **«Use the name mask from the template»** in the automation rule settings. You do not need to create the expression again.
+> Если маска уже сохранена в шаблоне, в настройках робота можно выбрать **«Использовать маску имени из шаблона»** — повторно составлять выражение не потребуется.
 
-To open the file name mask settings in the template:
+Чтобы открыть настройки маски в шаблоне:
 
-1. Open the **«File»** tab at the top of the editor.
+1. В верхней части редактора перейдите на вкладку **«Файл»**.
 
-2. Click **«Metadata»**.
+2. Нажмите кнопку **«Доп. свойства»**.
 
       ![87](../img/Templates/87.png)
 
-3. In the **«Name mask»** field, enter the expression that should be used to generate the file name.
+3. В поле **«Маска имени»** укажите выражение, по которому будет формироваться имя файла.
 
-4. Click **«OK»** to save the mask.
+4. Нажмите **«ОК»**, чтобы сохранить маску.
 
-## What you can use in a file name mask
+## Что можно использовать в маске имени
 
-A file name mask can contain:
+В маске имени можно использовать:
 
-- static text;
-- field references;
-- operators;
-- functions;
-- other syntax constructions supported by Kombinator.
+- статичный текст;
+- метки полей;
+- операторы;
+- функции;
+- другие синтаксические конструкции, поддерживаемые Комбинатором.
 
-The file name mask follows the same expression rules as expressions used elsewhere in Kombinator.
+Маска имени обрабатывается по тем же правилам, что и выражения внутри шаблона.
 
-### Static text
+### Статичный текст
 
-Static text is the part of the file name that remains the same every time a document is generated.
+Статичный текст — это часть имени, которая остаётся одинаковой при каждом формировании документа.
 
-Enclose static text in double quotation marks:
+Его необходимо заключать в двойные кавычки:
 
-```text
-"Contract"
+```
+"Договор"
 ```
 
-or:
+или:
 
-```text
-"Contract № "
+```
+"Договор № "
 ```
 
-The text inside the quotation marks is added to the file name without changes.
+Текст внутри кавычек будет добавлен в имя файла без изменений.
 
-### Field directives
+### Метки полей
 
-Field directives allow you to add field values to the file name.
+Метки позволяют добавлять в имя файла значения полей.
 
-When the document is generated, the directive is replaced with the actual value of the corresponding field.
+При формировании документа метка заменяется фактическим значением соответствующего поля.
 
-For example, the `contractNumber` directive can provide the contract number, while the `contractDate` directive can provide the contract date.
+Например, метка `номерДоговора` может передавать номер договора, а метка `датаДоговора` — дату его заключения.
 
-The available directives depend on the fields added to the template.
+Названия и доступность меток зависят от полей, добавленных в шаблон.
 
-### Functions and other expressions
+### Функции и другие конструкции
 
-You can use functions and other Kombinator syntax constructions in a file name mask.
+В маске имени можно использовать функции и другие конструкции синтаксиса Комбинатора.
 
-For example, functions can be used to format a date, modify text, or process a value before adding it to the file name.
+Например, функции можно применять для форматирования даты, изменения текста или обработки значений перед их добавлением в имя файла.
 
-### Concatenation operator
+### Оператор объединения
 
-Use the `&` operator to combine the parts of the mask.
+Все части маски необходимо соединять оператором объединения `&`.
 
-The `&` operator combines static text, directive values, and expression results into a single file name.
+Оператор `&` объединяет статичный текст, значения меток и результаты других выражений в одно имя файла.
 
-For example:
+Например:
 
-```text
-"Contract № " & deals.id
+```
+"Договор № " & сделки.id
 ```
 
-If the `id` directive contains the value `125`, the generated file name will be:
+Если поле `id` содержит значение `125`, будет сформировано имя:
 
-```text
-Contract № 125
+```
+Договор № 125
 ```
 
-To add multiple values, place `&` between each part of the mask:
+Чтобы добавить несколько значений, оператор `&` необходимо указывать между каждой частью маски:
 
-```text
-"Contract № " & deals.id & " dated " & formatDate(deals.contractDate, "dd.MM.yyyy")
+```
+"Договор № " & сделки.id & " от " & форматДаты(сделки.датаДоговора,ФорматДаты.ДатаКратко)
 ```
 
-The resulting file name may be:
+В результате может быть сформировано имя:
 
-```text
-Contract № 125 dated 28.07.2026
+```
+Договор № 125 от 28.07.2026
 ```
 
-This mask consists of the following parts:
+Таким образом, маска состоит из следующих частей:
 
-1. `"Contract № "` — static text.
-2. `&` — concatenation operator.
-3. `deals.id` — field directive.
-4. `" dated "` — static text.
-5. `formatDate(deals.contractDate, "dd.MM.yyyy")` — a directive processed by a function.
+1. `"Договор № "` — статичный текст.
+2. `&` — оператор объединения.
+3. `сделки.id` — метка поля.
+4. `" от "` — статичный текст.
+5. `форматДаты(сделки.датаДоговора,ФорматДаты.ДатаКратко)` — метка обернутая в функцию.
 
-The `&` operator is placed only between the values being combined. Do not add it before the first or after the last part of the mask.
+Оператор `&` ставится только между объединяемыми значениями. Его не нужно добавлять перед первой или после последней части маски.
 
-## Using the «/» character
+## Использование символа «/»
 
-The `/` character cannot be used as part of a file name because Kombinator treats it as a path separator.
+Символ `/` нельзя использовать как часть имени файла, поскольку Комбинатор воспринимает его как разделитель пути.
 
-Do not use `/` to separate parts of a document number, date, or other value.
+Не используйте `/` для разделения частей номера документа, даты или других значений.
 
-For example, instead of:
+Например, вместо:
 
-```text
-"Contract 125/2026"
+```
+"Договор 125/2026"
 ```
 
-use:
+используйте:
 
-```text
-"Contract 125-2026"
+```
+"Договор 125-2026"
 ```

@@ -1,58 +1,61 @@
-# External
+# Метка «Фрагмент»
 
-The **«External»** directive is used to insert content from one template into another.
+Метка **«Фрагмент»** вставляет в формируемый документ содержимое другого шаблона.
 
-This allows you to reuse the same document sections without copying them. If the external template is updated, the changes will be applied wherever that template is used.
+В качестве фрагмента можно использовать любой шаблон. Например, в шаблон договора можно вставить шаблон акта, счёта или другого документа.
 
-![«External» directive](../img/directives/76.png)
+![Метка «Фрагмент»](../img/directives/76.png)
 
-## Adding an external template
+## Добавление метки
 
-To add content from another template:
+1. Установите курсор в место шаблона, куда необходимо вставить содержимое другого шаблона.
+2. На вкладке **«Метки»** выберите **«Фрагмент»**.
+3. Укажите путь к фрагменту и при необходимости добавьте параметры.
 
-1. Place the cursor where you want to insert the content.
+## Передача значений
 
-2. On the **«Directives»** tab, select **«External»**.
+Поля выбранного шаблона заполняются данными из основного шаблона.
 
-3. Select the template whose content you want to insert.
+### Поля с одинаковыми идентификаторами
 
-When the document is generated, the content of the selected template will be inserted at the position of the directive.
+Если в основном и выбранном шаблонах используются поля с одинаковыми идентификаторами, добавлять параметры при настройке метки не нужно.
 
-## Passing values to an external template
-
-If the main template and the external template use fields with the same identifiers, no additional configuration is required.
-
-For example, if both templates use the field:
+Например, если в обоих шаблонах есть поле:
 
 ```text
-counterparty
+контрагент
 ```
 
-the field value will also be available in the external template.
+поле `контрагент` в выбранном шаблоне будет заполнено значением из основного шаблона.
 
-If the field identifiers are different, configure a parameter to pass the required value.
+### Поля с разными идентификаторами
 
-For example:
+Если нужные поля в основном и выбранном шаблонах имеют разные идентификаторы, настройте передачу значения через параметр.
 
-- the field in the external template has the identifier `contractor`;
-- the required value in the main template is stored in the `counterparty` field.
+Например:
 
-In this case, specify:
+- в основном шаблоне есть поле `контрагент`;
+- в выбранном шаблоне есть поле `исполнитель`;
+- значение поля `контрагент` должно передаваться в поле `исполнитель`.
 
-**Parameter name** — the field identifier in the external template:
+Для этого в настройках метки укажите:
+
+**«Имя параметра»** — идентификатор поля, которое нужно заполнить в выбранном шаблоне:
 
 ```text
-contractor
+исполнитель
 ```
 
-**Parameter expression** — the field or expression from the main template whose value should be passed:
+**«Выражение параметра»** — поле основного шаблона, из которого нужно взять значение:
 
 ```text
-counterparty
+контрагент
 ```
 
-As a result, the `contractor` field in the external template will receive the value of the `counterparty` field from the main template.
+В результате значение поля `контрагент` будет передано в поле `исполнитель`.
 
-## Fields used in the external template
+## Поля выбранного шаблона
 
-If the external template uses fields that are not included in **Fields** of the main template and their values are not passed through parameters, add those fields to **Fields** in the main template.
+Если в выбранном шаблоне есть поля, значения для которых не передаются через параметры, эти поля должны быть доступны и в анкете основного шаблона.
+
+Например, в выбранном шаблоне используется поле `номерСчета`, а в основном шаблоне такого поля нет. Чтобы пользователь мог заполнить его при работе с основным шаблоном, поле `номерСчета` необходимо добавить в анкету основного шаблона.

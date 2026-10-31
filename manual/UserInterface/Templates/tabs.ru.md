@@ -1,238 +1,246 @@
-# Toolbar
+# Панель инструментов
 
-The toolbar contains commands for editing and formatting a template. You can use it to format text, add tables, images, and Kombinator directives, and configure page settings.
+Панель инструментов содержит команды для редактирования и оформления шаблона. С её помощью можно форматировать текст, добавлять таблицы, изображения и метки Комбинатора, а также настраивать параметры страниц.
 
-> Some tabs appear only when working with specific elements. For example, **«Design»** and **«Layout»** are available when the cursor is placed inside a table.
+> Некоторые вкладки появляются только при работе с определёнными элементами. Например, вкладки **«Конструктор»** и **«Макет»** доступны, когда курсор установлен внутри таблицы.
 
-## «File» tab
+## Вкладка «Файл»
 
-![«File» tab](../img/Templates/7.png)
+![Вкладка «Файл»](../img/Templates/7.png)
 
-The following commands are available:
+На вкладке доступны следующие команды:
 
-1. **Export text to docx** — exports the template content, including directives, conditions, loops, and functions, to a `.DOCX` file.
+1. **Экспорт текста в docx** — экспортирует текстовое содержимое шаблона вместе с метками, условиями, циклами и функциями в файл формата `.DOCX`.
 
-      The exported document can be opened in another template using **«File» → «Open»**. Kombinator constructions are preserved.
+      Полученный документ можно открыть в другом шаблоне через **«Файл» → «Открыть»**. Все конструкции Комбинатора сохранятся.
 
-      > Fields are not transferred. If the directives use fields, add the same fields to the new template.
+      > Поля анкеты не переносятся. Если метки связаны с полями анкеты, добавьте такие же поля в новый шаблон.
 
-2. **Open** — loads a `.DOCX` document into the editor.
+2. **Открыть** — загружает документ формата `.DOCX` в редактор.
 
-      The document content is used as the text basis of the template. After opening it, you can add directives, functions, and other automation elements.
+      Содержимое файла используется как текстовая основа шаблона. После загрузки в него можно добавлять метки, функции и другие элементы автоматизации.
 
-3. **Save** — saves changes made to the template.
+3. **Сохранить** — сохраняет изменения, внесённые в шаблон.
 
-4. **Save as** — saves a copy of the template under a new name.
+4. **Сохранить как** — сохраняет копию шаблона под новым именем.
 
-5. **Template statistics** — shows the number of fields, directives, and functions used in the template.
+5. **Статистика шаблона** — показывает количество используемых полей, меток и функций.
 
-6. **Metadata** — opens the template metadata, where you can configure the file name mask.
+6. **Доп. свойства** — открывает дополнительные свойства шаблона, в которых можно настроить маску имени файла.
 
-      For more information, see [«File name mask»](file-name-mask.md).
+     Подробнее см. в статье [«Маска имени файла»](file-name-mask.md).
 
-## «Home» tab
+## Вкладка «Главная»
 
-![«Home» tab](../img/Templates/17.png)
+![Вкладка «Главная»](../img/Templates/17.png)
 
-The main tab for editing and formatting text.
+Основная вкладка для редактирования и форматирования текста.
 
-1. **Undo** — undoes the last action.
+1. **Отменить** — отменяет последнее действие.
 
-2. **Redo** — repeats the last undone action.
+2. **Повторить** — повторяет последнее действие
 
-3. **Paste** — opens the standard clipboard menu:
+3. **Вставить** — открывает стандартное меню работы с буфером обмена:
 
-      - `Paste` — inserts text or an object from the clipboard, such as copied text or a directive;
-      - `Copy` — copies the selected text or directive to the clipboard;
-      - `Cut` — removes the selected content and places it on the clipboard.
+     - `Вставить` — вставляет в шаблон текст или объект из буфера обмена, например скопированный фрагмент текста или метку.
+     - `Копировать` — копирует выделенный фрагмент текста или метку в буфер обмена.
+     - `Вырезать` — удаляет выделенный фрагмент из шаблона и помещает его в буфер обмена.
 
-      You can also use the standard keyboard shortcuts:
+      Этим командам соответствуют привычные сочетания клавиш:
 
-      - `Ctrl + V` — paste;
-      - `Ctrl + C` — copy;
-      - `Ctrl + X` — cut.
+      - `Ctrl + V` — вставить;
+      - `Ctrl + C` — копировать;
+      - `Ctrl + X` — вырезать.
 
-4. **Font** — selects the font, for example Calibri or Times New Roman.
+4. **Шрифт** — позволяет выбрать шрифт, например Calibri или Times New Roman.
 
-5. **Font size** — sets the font size, for example 11, 12, or 14.
+5. **Размер шрифта** — задаёт размер шрифта, например 11, 12 или 14.
 
-6. **Bold** — applies bold formatting to the selected text (`Ctrl + B`).
+6. **Полужирный** — применяет к выделенному тексту полужирное начертание (`Ctrl + B`).
 
-7. **Italic** — applies italic formatting to the selected text (`Ctrl + I`).
+7. **Курсив** — применяет к выделенному тексту курсивное начертание (`Ctrl + I`).
 
-8. **Underline** — underlines the selected text (`Ctrl + U`).
+8. **Подчёркнутый** — подчёркивает выделенный текст (`Ctrl + U`).
 
-9. **Font color** — changes the color of the selected text.
+9. **Цвет шрифта** — изменяет цвет выделенного текста.
 
-10. **Text highlight color** — highlights the selected text with a background color.
+10. **Цвет выделения текста** — выделяет текст цветом, как маркером.
 
-11. **Clear Formatting** — removes applied text formatting, including font, color, and size.
+11. **Очистить форматирование** — сбрасывает применённое форматирование, включая шрифт, цвет и размер текста.
 
-12. **Strikethrough** — applies strikethrough formatting to the selected text.
+12. **Зачёркнутый** — зачёркивает выделенный текст.
 
-13. **Superscript and Subscript** — converts selected text to superscript or subscript.
+13. **Надстрочный и подстрочный текст** — преобразует выделенный текст в надстрочные или подстрочные знаки.
 
-14. **Change Case** — changes the capitalization of the selected text.
+14. **Регистр** — изменяет регистр выделенного текста:
 
-15. **Numbering** — creates bulleted, numbered, and multilevel lists.
+      - `Как в предложениях` — первый символ каждого предложения становится прописным, остальные — строчными.
 
-16. **Increase Indent** — changes the paragraph indentation level.
+      - `ВСЕ ПРОПИСНЫЕ` — весь выделенный текст переводится в верхний регистр.
 
-17. **Align Paragraph** — changes paragraph alignment.
+      - `все строчные` — весь выделенный текст переводится в нижний регистр.
 
-18. **Line Spacing** — sets the line spacing, for example 1.0, 1.5, or 2.0.
+      - `Начинать С Прописных` — каждое слово начинается с прописной буквы.
 
-19. **Shading** — changes the background color of the selected paragraph.
+      - `иЗМЕНИТЬ РЕГИСТР` — строчные буквы становятся прописными, а прописные — строчными.
 
-20. **Show/Hide formatting marks** — shows or hides non-printing characters such as spaces, paragraph marks, tabs, and line breaks.
+15. **Нумерация** — создаёт маркированные, нумерованные и многоуровневые списки.
 
-21. **Text style** — applies a selected style to the text, for example **Normal** or a heading style.
+16. **Увеличить отступ** — увеличивает или уменьшает абзацные отступы.
 
-22. **Find** — searches for text in the document.
+17. **Выравнивание абзаца** — изменяет выравнивание текста в абзаце.
 
-23. **Replace** — finds and replaces text in the document.
+18. **Межстрочный интервал** — задаёт межстрочный интервал, например 1,0; 1,5 или 2,0.
 
-## «Insert» tab
+19. **Заливка** — изменяет цвет фона выделенного абзаца.
 
-![«Insert» tab](../img/Templates/80.png)
+20. **Непечатаемые символы** — показывает или скрывает непечатаемые символы: пробелы, знаки абзаца, табуляцию и разрывы строк.
 
-Contains commands for adding tables, images, links, and other objects to the document.
+21. **Стили текста** — применяет к тексту выбранный стиль, например обычный текст или заголовок.
 
-1. **Table** — inserts a table into the editing area. You can specify the required number of rows and columns.
+22. **Найти** — выполняет поиск текста в документе.
 
-2. **Inline Picture** — inserts an image into the document.
+23. **Заменить** — находит и заменяет текст в документе.
 
-3. **Bookmark** — creates a bookmark inside the document. Bookmarks can be used for navigation and internal links.
+## Вкладка «Вставка»
 
-4. **Hyperlink** — adds a link to a website, email address, or bookmarked location inside the document.
+![Вкладка «Вставка»](../img/Templates/80.png)
 
-5. **Header** — adds content that is repeated at the top of document pages.
+Содержит команды для добавления в документ таблиц, изображений, ссылок и других объектов.
 
-6. **Footer** — adds content that is repeated at the bottom of document pages.
+1. **Таблица** — вставляет таблицу в область редактирования. Перед вставкой можно указать количество строк и столбцов.
 
-7. **Page Number** — inserts automatic page numbering.
+2. **Встроенная картинка** — добавляет изображение в документ.
 
-8. **Page Count** — inserts the total number of pages in the document.
+3. **Закладка** — создаёт закладку внутри документа. Закладки можно использовать для быстрой навигации и перехода по внутренним ссылкам.
 
-9. **Text Box** — inserts a separate text block that can be positioned on the page.
+4. **Гиперссылка** — добавляет ссылку на сайт, адрес электронной почты или место внутри документа, отмеченное закладкой.
 
-## «Page Layout» tab
+5. **Верхний колонтитул** — добавляет содержимое, которое будет повторяться в верхней части страниц документа.
 
-![«Page Layout» tab](../img/Templates/81.png)
+6. **Нижний колонтитул** — добавляет содержимое, которое будет повторяться в нижней части страниц документа.
 
-Contains commands for configuring page settings.
+7. **Номер страницы** — добавляет автоматическую нумерацию страниц.
 
-1. **«Margins»** — configures the top, bottom, left, and right page margins.
+8. **Число страниц** — добавляет общее количество страниц в документе.
 
-      You can select a predefined option or specify custom values.
+9. **Текстовое поле** — добавляет отдельный текстовый блок, который можно перемещать и размещать в нужной части страницы.
 
-2. **«Orientation»** — changes the page orientation:
+## Вкладка «Разметка страницы»
 
-      - Portrait — vertical orientation;
-      - Landscape — horizontal orientation.
+![Вкладка «Разметка страницы»](../img/Templates/81.png)
 
-3. **«Size»** — sets the paper size.
+Содержит команды для настройки параметров страниц документа.
 
-4. **«Columns»** — divides text into multiple columns.
+1. **Поля** — настраивает отступы от краёв страницы: слева, справа, сверху и снизу.
 
-5. **«Breaks»** — inserts page, section, or column breaks.
+     Можно выбрать стандартный вариант или задать собственные значения.
 
-6. **Page color** — changes the background color of document pages.
+2. **Ориентация** — изменяет ориентацию страницы:
 
-## «References» tab
+    - `Книжная` — вертикальная;
+    - `Альбомная` — горизонтальная.
 
-![«References» tab](../img/Templates/82.png)
+3. **Размер** — задаёт формат бумаги.
 
-Contains commands for creating a table of contents, captions, and lists of document elements.
+4. **Колонки** — разбивает текст на несколько колонок.
 
-1. **«Table of Contents»** — inserts an automatic table of contents.
+5. **Разрывы** — добавляет разрыв страницы, раздела или колонки.
 
-2. **«Add Text»** — adds the selected text to the table of contents structure.
+6. **Цвет страницы** — изменяет цвет фона страниц документа.
 
-3. **«Insert Caption»** — adds a caption to an image, table, chart, or another object.
+## Вкладка «Ссылки»
 
-4. **«Insert Table of Elements»** — creates a list of objects that have captions, such as a list of figures or tables.
+![Вкладка «Ссылки»](../img/Templates/82.png)
 
-5. **«Update Table of Contents»** — updates the structure and page numbers in the table of contents.
+Содержит команды для создания оглавления, подписей и списков объектов.
 
-## «View» tab
+1. **Оглавление** — добавляет автоматическое оглавление.
 
-![«View» tab](../img/Templates/83.png)
+2. **Добавить текст** — позволяет включить выделенный фрагмент в структуру оглавления.
 
-Contains commands for changing how the editing area is displayed.
+3. **Вставить название** — добавляет подпись к рисунку, таблице, диаграмме или другому объекту.
 
-1. **«Horizontal Ruler»** — shows or hides the horizontal ruler.
+4. **Список иллюстраций** — создаёт список объектов, для которых были добавлены подписи, например список рисунков или таблиц.
 
-2. **«Collapse / Expand»** — collapses or expands directives. When collapsed, directives take up less space, making it easier to review the document layout and formatting.
+5. **Обновление оглавления** — обновляет структуру и номера страниц в оглавлении.
 
-3. **Zoom** — increases or decreases the document zoom level in the editing area.
+## Вкладка «Вид»
 
-## «Directives» tab
+![Вкладка «Вид»](../img/Templates/83.png)
 
-The tab contains Kombinator directives used to automatically populate and generate documents.
+Содержит команды для настройки отображения области редактирования.
 
-![«Directives» tab](../img/Templates/88.png)
+1. **Линейка** — включает или отключает горизонтальную и вертикальную линейки.
 
-1. **«Expression»** — inserts a field value or the result of an expression into the document. [Learn more](../../ReferenceGuide/directives/expression.md)
+2. **Свернуть / Развернуть** — сворачивает или разворачивает метки. В свёрнутом виде метки занимают меньше места, поэтому проще оценить расположение и оформление текста.
 
-2. **«External»** — inserts content from another template located at the specified path. [Learn more](../../ReferenceGuide/directives/external.md)
+3. **Изменить масштаб** — увеличивает или уменьшает масштаб отображения документа в области редактирования.
 
-3. **«Picture»** — inserts an image from a Bitrix24 file field. [Learn more](../../ReferenceGuide/directives/picture.md)
+## Вкладка «Метки»
 
-4. **«Condition expression»** — adds conditional logic that displays or hides part of the document depending on the specified condition. [Learn more](../../ReferenceGuide/directives/if.md)
+Вкладка содержит метки и конструкции Комбинатора, которые используются для автоматического заполнения и формирования документов.
 
-5. **«Switch»** — displays one of several content options depending on the selected field value. [Learn more](../../ReferenceGuide/directives/switch.md)
+![Вкладка «Метки» в Битрикс24](../img/Templates/88.png)
 
-6. **«For»** — repeats a document fragment for each item in a list. [Learn more](../../ReferenceGuide/directives/for.md)
+1. **Значение** — вставляет в документ значение выбранного поля. [Подробнее](../../ReferenceGuide/directives/value.md)
 
-7. **«Table»** — repeats table rows according to the number of items in a list. [Learn more](../../ReferenceGuide/directives/table.md)
+2. **Фрагмент** — вставляет содержимое другого шаблона, расположенного по указанному пути. [Подробнее](../../ReferenceGuide/directives/fragment.md)
 
-> The toolbar also contains **«Separate document»**. Its behavior is not described in the source article, so it is not included in the list above.
+3. **Картинка** — вставляет в документ изображение из файлового поля Битрикс24. [Подробнее](../../ReferenceGuide/directives/picture.md)
 
-## «Design» tab
+4. **Условие** — добавляет конструкцию «если/иначе», которая позволяет выводить или скрывать часть документа в зависимости от заданного условия. [Подробнее](../../ReferenceGuide/directives/if.md)
 
-![«Design» tab](../img/Templates/85.png)
+5. **Выбор** — выводит один из вариантов текста в зависимости от значения выбранного поля. [Подробнее](../../ReferenceGuide/directives/switch.md)
 
-The tab appears when the cursor is placed inside a table. It contains tools for formatting the selected table.
+6. **Цикл** — повторяет фрагмент документа для каждого элемента списка. [Подробнее](../../ReferenceGuide/directives/for.md)
 
-1. **«Table Style Options»** — allows you to select which table elements should use specific formatting.
+7. **Таблица** — повторяет строки таблицы в зависимости от количества элементов в списке. [Подробнее](../../ReferenceGuide/directives/table.md)
 
-2. **Table style** — applies a predefined style to the table.
+## Вкладка «Конструктор»
 
-3. **Line style** — sets the border line style, for example **Single**.
+![Вкладка «Конструктор»](../img/Templates/85.png)
 
-4. **Line width** — sets the border thickness, for example `0.75 pt`.
+Вкладка появляется, когда курсор установлен внутри таблицы. Она предназначена для оформления выбранной таблицы.
 
-5. **Line color** — changes the color of table borders.
+1. **Параметры стилей таблиц** — позволяет выбрать элементы таблицы, к которым будет применяться отдельное оформление.
 
-6. **«Borders»** — adds or removes selected borders from the table or selected cells.
+2. **Стиль таблицы** — применяет к таблице готовый вариант оформления.
 
-7. **Shading** — changes the background color of the table or selected cells.
+3. **Стиль линии** — задаёт вид линий границ, например одинарную линию.
 
-> Before applying formatting, select the required cells or place the cursor inside the table.
+4. **Толщина линии** — задаёт толщину границ таблицы.
 
-## «Layout» tab
+5. **Цвет линии** — позволяет выбрать цвет границ таблицы.
 
-![«Layout» tab](../img/Templates/86.png)
+6. **Границы** — добавляет или удаляет выбранные границы у таблицы или выделенных ячеек.
 
-The tab appears when the cursor is placed inside a table. It contains tools for changing the table structure and positioning content inside cells.
+7. **Заливка** — изменяет цвет фона таблицы или выделенных ячеек.
 
-1. **«Select»** — selects a cell, row, column, or the entire table.
+> Перед применением оформления выделите нужные ячейки или установите курсор внутри таблицы.
 
-2. **Gridlines** — shows or hides cell boundaries that do not have visible borders.
+## Вкладка «Макет»
 
-      > Gridlines are displayed only in the editor and are not added to the generated document.
+![Вкладка «Макет»](../img/Templates/86.png)
 
-3. **«Delete»** — deletes selected cells, rows, columns, or the entire table.
+Вкладка появляется, когда курсор установлен внутри таблицы. Содержит инструменты для изменения структуры таблицы и расположения содержимого в ячейках.
 
-4. **«Insert»** — adds new rows or columns relative to the selected cell.
+1. **Выделить** — позволяет выделить ячейку, строку, столбец или всю таблицу.
 
-5. **«Merge Cells»** — merges multiple selected cells into one.
+2. **Линии сетки** — показывает или скрывает границы ячеек, у которых не настроены видимые линии.
 
-      > The command becomes available after selecting multiple adjacent cells.
+    > Линии сетки отображаются только в редакторе и не добавляются в готовый документ.
 
-6. **«Split Cells»** — splits the selected cell into multiple rows and columns.
+3. **Удалить** — удаляет выбранные ячейки, строки, столбцы или всю таблицу.
 
-7. **«AutoFit»** — automatically adjusts column width to the table content or the available page width.
+4. **Вставить** — добавляет новые строки или столбцы относительно выбранной ячейки.
 
-8. **«Cell Alignment»** — sets the horizontal and vertical alignment of content inside selected cells.
+5. **Объединить ячейки** — объединяет несколько выделенных ячеек в одну.
+
+    > Команда становится доступна после выделения нескольких соседних ячеек.
+
+6. **Разбить ячейки** — разделяет выбранную ячейку на несколько строк и столбцов.
+
+7. **Автоподбор** — автоматически изменяет ширину столбцов в соответствии с содержимым таблицы или доступной шириной страницы.
+
+8. **Выравнивание содержимого ячейки** — задаёт горизонтальное и вертикальное расположение текста внутри выбранных ячеек.

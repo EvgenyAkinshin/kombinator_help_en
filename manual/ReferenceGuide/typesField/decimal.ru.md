@@ -1,85 +1,85 @@
-# «Decimal» field
+# Поле «Десятичное число»
 
-The **«Decimal Number»** field is used to store numeric values with a fractional part and perform calculations with them.
+Поле **«Десятичное число»** используется для хранения числовых значений с дробной частью и выполнения расчётов с ними.
 
-It is suitable for prices, weight, area, percentages, coefficients, and other numeric values that may contain a fractional part.
+Подходит, например, для стоимости, веса, площади, процентов, коэффициентов и других числовых значений, которые могут содержать дробную часть.
 
-## Creating and adding a field
+## Создание и добавление поля
 
-For instructions on creating and adding fields, see [Creating a template](../Bitrix/creat.md).
+Создание и добавление полей: [ИНСТРУКЦИЯ](../Bitrix/creat.md)
 
-## Field value
+## Значение поля
 
-The field contains a numeric value that may include a fractional part.
+Поле содержит числовое значение, которое может иметь дробную часть.
 
-For example:
+Например:
 
-- `12.5`;
-- `1500.75`;
-- `0.25`.
+- `12,5`;
+- `1500,75`;
+- `0,25`.
 
-The field can be used not only to insert a value into a document but also in mathematical expressions and functions.
+Поле можно использовать не только для вывода значения в документ, но и в математических выражениях и функциях.
 
-## Inserting a field through the «Directives» tab
+## Вставка поля через вкладку «Метки»
 
-The field value can be inserted into the template using the [«Expression»](../directives/expression.md) directive.
+Значение поля можно вставить в шаблон через метку [«Значение»](../directives/value.md).
 
-1. Place the cursor at the required position in the template.
+1. Установите курсор в нужное место шаблона.
+2. Перейдите на вкладку **«Метки»** и выберите **«Значение»**.
+3. В поле **«Выражение»** укажите поле, значение которого необходимо вывести.
+4. Нажмите **«ОК»**.
 
-2. Open the **«Directives»** tab and select **«Expression»**.
-
-3. In the **«Expression»** field, specify the field whose value should be inserted.
-
-4. Click **«OK»**.
-
-For example, if the field identifier is:
+Например, если идентификатор поля:
 
 ```text
-deals.price
+сделки.стоимость
 ```
 
-where:
+Здесь:
 
-- `deals` — the Bitrix24 entity from which the data is retrieved;
-- `price` — the field within that entity.
+- `сделки` — сущность Битрикс24, из которой берутся данные;
+- `стоимость` — поле этой сущности.
 
-If the field contains `1250.50`, this value will be inserted into the generated document.
+Если в поле сделки указано значение `1250,50`, при формировании документа вместо метки будет выведено значение этого поля.
 
-The **«Expression»** field can contain not only a field identifier but also a mathematical expression using its value.
+В поле **«Выражение»** можно использовать не только само поле, но и математическое выражение с его значением.
 
-For example, the total price can be calculated directly in the expression:
+Например, стоимость с учётом количества можно рассчитать непосредственно в выражении.
 
 ```text
-deals.price * deals.quantity
+сделки.цена * сделки.количество
 ```
 
-When the document is generated, Kombinator calculates the expression and inserts the result.
+При формировании документа Комбинатор выполнит расчёт и выведет его результат.
 
-## Functions and operations for working with the field
+## Функции и операции для работы с полем
 
-### Mathematical operations
+### Математические операции
 
-You can perform arithmetic operations with decimal numbers:
+С десятичными числами можно выполнять арифметические действия:
 
-- `+` — addition;
-- `-` — subtraction;
-- `*` — multiplication;
-- `/` — division;
-- `^` — exponentiation.
+- `+` — сложение;
+- `-` — вычитание;
+- `*` — умножение;
+- `/` — деление;
+- `^` — возведение в степень.
 
-### Mathematical functions
+### Математические функции
 
-The following functions can be used with decimal values:
+Для значений поля можно использовать:
 
-- [round](../functions/Math/round.md) — rounds a number to the specified number of digits;
-- [roundup](../functions/Math/roundup.md) — rounds a number away from zero;
-- [rounddown](../functions/Math/rounddown.md) — rounds a number toward zero;
-- [exp](../functions/Math/exp.md) — calculates the exponential function;
-- [ln](../functions/Math/ln.md) — calculates the natural logarithm;
-- [log10](../functions/Math/log10.md) — calculates the base-10 logarithm.
+- [округлить](../functions/Math/округлить.md) — округляет число до указанного разряда;
+- [округлитьвверх](../functions/Math/округлитьвверх.md) — округляет число в сторону большего значения по модулю;
+- [округлитьвниз](../functions/Math/округлитьвниз.md) — округляет число в сторону меньшего значения по модулю;
+- [exp](../functions/Math/exp.md) — вычисляет экспоненту;
+- [ln](../functions/Math/ln.md) — вычисляет натуральный логарифм;
+- [log10](../functions/Math/log10.md) — вычисляет десятичный логарифм.
 
-### Formatting functions
+### Форматирование числа
 
-- [formatNumber](../functions/Morph/formatNumber.md) — changes how a numeric value is displayed;
-- [форматВалюты](../functions/Morph/форматВалюты.md) — formats a numeric value as a monetary amount;
-- [числоСТекстом](../functions/Morph/числоСТекстом.md) — displays a numeric value together with a matching word form in the specified format.
+- [форматЧисла](../functions/Morph/форматЧисла.md) — изменяет формат отображения числового значения;
+- [форматВалюты](../functions/Morph/форматВалюты.md) — позволяет вывести числовое значение в формате денежной суммы.
+
+### Преобразование числа в текст
+
+- [числоСТекстом](../functions/Morph/числоСТекстом.md) — позволяет вывести числовое значение вместе с согласованным с ним словом в заданном формате.

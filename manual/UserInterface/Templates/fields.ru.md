@@ -1,144 +1,142 @@
-# Fields
+# Анкета
 
-**Fields** is the panel on the left side of the editor that displays Bitrix24 fields available for use in the template.
+**Анкета** — это панель в левой части редактора, в которой отображаются поля Битрикс24, доступные для использования в шаблоне.
 
 ![29](../../ReferenceGuide/img/bitrix/29.png)
 
-When a document is generated, Kombinator retrieves the values of these fields from the CRM item and inserts them into the template.
+При формировании документа Комбинатор получает значения этих полей из карточки CRM и подставляет их в шаблон.
 
-## How fields is used to generate a document
+## Как анкета участвует в формировании документа
 
-Fields connects Bitrix24 data with the document template.
+Анкета связывает поля Битрикс24 с шаблоном документа.
 
-For example:
+Например:
 
-1. In a deal, the **«Deal name»** field contains **«Equipment Supply»**.
+1. В карточке сделки поле **«Название сделки»** содержит значение **«Поставка оборудования»**.
 
-2. The **«Deal name»** field is added to fields.
+2. Поле **«Название сделки»** добавлено в анкету.
 
-3. The field is inserted into the template using expression.
+3. Из анкеты оно вставлено в шаблон как значение.
 
-4. When the document is generated, **«Equipment Supply»** appears in place of the directive.
+4. При формировании документа вместо метки появится текст **«Поставка оборудования»**.
 
-If the field is empty in Bitrix24, Kombinator has no value to insert into the document.
+Если поле в карточке Битрикс24 не заполнено, Комбинатору нечего будет подставить в документ.
 
-## Adding fields
+## Добавление полей в анкету
 
-All fields are located inside the main block, whose name corresponds to the CRM entity.
+Все поля анкеты находятся внутри основного блока, название которого соответствует сущности CRM.
 
-For example, if the template is created from a deal, the main block will be **«Deals»**.
+Например, если шаблон создаётся из карточки сделки, основной блок будет называться **«Сделки»**.
 
-To add fields:
+Чтобы добавить поля в анкету:
 
-1. Open the document template.
+1. Откройте шаблон документа.
 
-2. Click the three-dot menu next to the main block, for example **«Deals»**.
+2. Нажмите на три точки напротив основного блока анкеты. Например, напротив блока **«Сделки»**.
 
       ![13](../../ReferenceGuide/img/bitrix/13.png)
 
-3. Select **«Edit fields»**.
+3. Выберите **«Редактирование поля»**.
 
-4. In the window that opens, find the required fields. You can use the search bar or scroll through the list.
+4. В открывшемся окне найдите нужные поля. Для поиска можно использовать строку поиска или прокрутить список.
 
       ![30](../../ReferenceGuide/img/bitrix/30.png)
 
-5. Select the fields you want to add.
+5. Установите флажки напротив полей, которые необходимо добавить.
 
-6. Click **«OK»**.
+6. Нажмите кнопку **«ОК»**.
 
       ![31](../../ReferenceGuide/img/bitrix/31.png)
 
-The selected fields will appear inside the main block in **Fields**.
+Выбранные поля появятся внутри основного блока анкеты.
 
-> You can add only fields that already exist in the corresponding CRM entity.
+> В анкету можно добавить только те поля, которые уже существуют в соответствующей сущности CRM.
 
-## Changing the set of fields
+## Изменение набора полей
 
-To add new fields or remove fields you no longer need:
+Чтобы добавить новые или убрать ненужные поля:
 
-1. Click the three-dot menu next to the main block.
+1. Нажмите на три точки напротив основного блока анкеты.
 
-2. Select **«Edit fields»**.
+2. Выберите **«Редактирование поля»**.
 
       ![44](../../ReferenceGuide/img/bitrix/44.png)
 
-3. Select the new fields or clear the fields you no longer need.
+3. Установите флажки напротив новых полей или снимите их с полей, которые больше не нужны.
 
-4. Click **«OK»**.
+4. Нажмите кнопку **«ОК»**.
 
-Removing a field from **Fields** does not delete it from Bitrix24.
+Удаление поля из анкеты не удаляет его из Битрикс24.
 
-> Before removing a field from Fields, make sure it is not used in the template.
+> Перед удалением поля из анкеты убедитесь, что оно не используется в тексте шаблона.
 
-## Field name, type, and identifier
+## Название, тип и идентификатор
 
-Each field in **Fields** displays:
+Для каждого поля в анкете отображаются:
 
-- its name;
-- its type;
-- its identifier.
+- название;
+- тип;
+- идентификатор.
 
-The field type and identifier are displayed below the field name.
+Тип и идентификатор указаны под названием поля.
 
 ![79](../img/Templates/79.png)
 
-> Identifiers help distinguish fields with identical or similar names. They are also used in Kombinator directives and functions.
+> Идентификаторы позволяют различать поля с одинаковыми или похожими названиями. Они также используется внутри меток и функций Комбинатора.
 
-## Adding fields to the document
+## Добавление полей в документ
 
-To insert a field into the document:
+Общий порядок вставки:
 
-1. Place the cursor at the required position in the document.
+1. Установите курсор в нужное место документа.
 
       ![33](../../ReferenceGuide/img/bitrix/33.png)
 
-2. Find the field in **Fields**.
+2. Найдите поле в анкете.
 
-3. Click the three-dot menu next to the field.
+3. Нажмите на три точки напротив поля.
 
-4. Select the required insertion method.
+4. Выберите способ вставки.
 
       ![16](../../ReferenceGuide/img/bitrix/16.png)
 
-**Example:**
+**Пример:**
 
 <video controls preload="metadata" style="width: 100%; max-width: 900px;">
   <source src="../../../ReferenceGuide/img/bitrix/34.mp4" type="video/mp4">
-  Your browser does not support video playback.
+  Ваш браузер не поддерживает воспроизведение видео.
 </video>
 
-Fields can be inserted into the document using **Expression**, **Condition expression**, **Switch**, **For**, or **Table**.
+Поля из анкеты можно вставить в документ как **значение**, **условие**, **выбор**, **цикл** или **табличный цикл**.
 
-Before inserting a field, check its type and whether it is nested inside a list.
+Перед добавлением поля определите его тип и проверьте, не находится ли оно внутри списка.
 
-## Why fields can depend on each other
+## Почему поля зависят друг от друга
 
-A field's behavior depends not only on its type but also on its position in **Fields**.
+Зависимость поля определяется не только его типом, но и расположением в анкете.
 
-For example, **«Product name»** has the **«Text»** type but is located inside the **«Products»** list. Since a deal can contain multiple products, each product can have its own name.
+Поле **«Название товара»** имеет тип **«Текст»**, но находится внутри списка **«Товары»**. Поскольку в сделке может быть несколько товаров, у каждого из них будет своё название.
 
-If you insert **«Product name»** into the document using **Expression** outside the **«Products»** list, Kombinator cannot determine which product name should be inserted and returns an [error](fields.md#marker-must-be-inside-error).
+Если добавить **«Название товара»** в документ как обычное значение, Комбинатор не сможет определить, название какого товара необходимо подставить, и выдаст [ошибку](fields.md#_14).
 
-First, insert **«Products»** using **For** or **Table**, then place **«Product name»** inside the inserted structure.
+Сначала нужно добавить список **«Товары»** как цикл, а затем разместить поле **«Название товара»** внутри него.
 
-## «Marker must be inside…» error
+## Ошибка «Маркер должен быть внутри…»
 
-The **«Marker must be inside…»** message appears when a field is nested inside a list but is inserted into the document outside that list.
+Сообщение **«Маркер должен быть внутри…»** появляется, если поле находится внутри списка, но добавляется в документ за его пределами.
 
-For example, if you try to insert **«Product name»** outside the **«Products»** list, the following message will appear:
+Например, при попытке вставить поле **«Название товара»** вне цикла появится сообщение:
 
-> Marker must be inside Products.
+> Маркер должен быть внутри Товары.
 
-This means that **«Product name»** is nested inside the **«Products»** list.
+Это означает, что поле **«Название товара»** находится внутри списка **«Товары»**.
 
-In this case:
+В этом случае:
 
-1. Insert **«Products»** using **For** or **Table**.
+1. Добавьте поле **«Товары»** как цикл или табличный цикл.
 
-2. Place the cursor inside the inserted structure.
+2. Установите курсор внутрь добавленной конструкции.
 
-3. Insert **«Product name»** using **Expression**.
+3. Добавьте поле **«Название товара»** как значение.
 
-> If a similar message then appears with the name of another list, the field is nested inside multiple lists. Add a separate **For** or **Table** directive for each list, starting with the outermost list and moving inward.
-
-
+> Если после этого появляется аналогичное сообщение с названием другого списка, значит поле находится внутри нескольких вложенных списков. Добавьте отдельный цикл для каждого списка, двигаясь от внешнего списка к внутреннему.

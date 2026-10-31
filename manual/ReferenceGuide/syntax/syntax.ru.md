@@ -1,161 +1,156 @@
-# Basic rules
+# Основные правила
 
-Kombinator uses **expressions** to work with data. Expressions allow you to retrieve field values, perform calculations, compare data, use functions, and define conditions.
+В Комбинаторе для работы с данными используются **выражения**. Они позволяют получать значения полей, выполнять расчёты, сравнивать данные, использовать функции и задавать условия.
 
-The same expression syntax is used wherever expressions are supported. For more information, see [«Where to use»](syntax-usage.md).
+Правила записи выражений одинаковы независимо от места их использования. Подробнее: [«Места использования»](syntax-usage.md).
 
-## Writing expressions
+## Как записываются выражения
 
-An expression can consist of a single element:
+Выражение может состоять из одного элемента:
 
-- a field — `amount`;
+- поле — `сумма`;
+- значение — `"Договор"`;
+- функция — `длина(название)`.
 
-- a value — `"Contract"`;
+Элементы можно объединять с помощью операторов:
 
-- a function — `length(name)`.
+- `количество * цена`;
+- `сумма > 100000`.
 
-Elements can be combined using operators:
-
-- `quantity * price`;
-
-- `amount > 100000`.
-
-A single expression can combine values, fields, functions, and operators:
+В одном выражении можно сочетать значения, поля, функции и операторы:
 
 ```text
-if(amount > 100000, "Approval required", "Approval not required")
+если(сумма > 100000, "Требуется согласование", "Согласование не требуется")
 ```
 
-## Values in expressions
+## Значения в выражениях
 
-**Integers** are written without quotation marks:
+**Целые числа** указываются без кавычек:
 
 - `10`
 - `-5`
 - `0`
 
-**Decimal numbers** are also written without quotation marks. Use a period as the decimal separator:
+**Десятичные числа** также указываются без кавычек. Для отделения дробной части используется точка:
 
 - `10.1`
 - `3.14`
 - `0.01`
 
-**Text** is enclosed in single or double quotation marks:
+**Текст** заключается в одинарные или двойные кавычки:
 
-- `"Contract"`
-- `'Contract'`
+- `"Договор"`
+- `'Договор'`
 
-**Boolean values**:
+**Логические значения**:
 
-- `true`
-- `false`
+- `истина`
+- `ложь`
 
-Use `null` to represent an empty value.
+Для обозначения отсутствующего значения используется `пусто`.
 
-## Referencing fields
+## Обращение к полям
 
-To retrieve a field value in an expression, enter its identifier:
-
-```text
-amount
-```
-
-To reference a field inside a composite field, specify the path using a period (`.`):
+Чтобы получить значение поля в выражении, укажите его идентификатор:
 
 ```text
-counterparty.taxId
+сумма
 ```
 
-Here, `counterparty` is a composite field and `taxId` is a field inside it.
-
-If a field has multiple nesting levels, specify the full path:
+Если нужно обратиться к полю внутри составного поля, указывается путь через точку (`.`):
 
 ```text
-deals.counterparty.taxId
+контрагент.инн
 ```
 
-## Functions
+Здесь `контрагент` — составное поле, а `инн` — поле внутри него.
 
-Functions process the data passed to them and return a result.
-
-**Function syntax**
-
-Enter the function name followed by parentheses containing its arguments:
+Если поле имеет несколько уровней вложенности, указывается полный путь:
 
 ```text
-function(argument1, argument2)
+сделки.контрагент.инн
 ```
 
-Arguments are separated by commas. The number and order of arguments depend on the specific function.
+## Функции
 
-An argument can be a value, a field, or another expression.
+Функции обрабатывают переданные им данные и возвращают результат.
 
-For example:
+**Запись функции**
+
+Название функции указывается перед круглыми скобками, внутри которых перечисляются аргументы:
 
 ```text
-length(name)
+функция(аргумент1, аргумент2)
 ```
 
-- `length` — the function;
+Аргументы разделяются запятыми. Их количество и порядок зависят от конкретной функции.
 
-- `name` — the field whose value is passed to the function.
+В качестве аргумента можно передать значение, поле или другое выражение.
 
-**Nested functions**
-
-The result of one function can be passed to another function:
-
+Например:
 
 ```text
-upper(mid(text, 1, 1))
+длина(название)
 ```
 
-First, `mid` is evaluated. Its result is then passed to `upper`.
+- `длина` — функция
 
-## Operators
+- `название` — поле, значение которого передаётся в функцию.
 
-Operators perform actions on values within an expression.
+**Вложенные функции**
 
-**Mathematical operators**
-
-- `+` — addition;
-- `-` — subtraction;
-- `*` — multiplication;
-- `/` — division;
-- `mod` — remainder after division;
-- `^` — exponentiation.
-
-**Comparison operators**
-
-- `<` — less than;
-- `<=` — less than or equal to;
-- `>` — greater than;
-- `>=` — greater than or equal to;
-- `=` — equal to;
-- `!=` — not equal to.
-
-**Logical operators**
-
-- `and` — returns true when both conditions are true;
-- `or` — returns true when at least one condition is true;
-- `not` — reverses the Boolean value.
-
-**Combining values**
-
-The `&` operator combines multiple values into a single string:
+Результат одной функции можно передать в другую функцию:
 
 ```text
-"Contract № " & contractNumber
+прописн(пстр(текст, 1, 1))
 ```
 
-If the `contractNumber` field contains `125`, the result will be:
+Сначала выполняется `пстр`, затем её результат передаётся в `прописн`.
+
+## Операторы
+
+Операторы используются для выполнения действий над значениями внутри выражения.
+
+**Математические операторы**
+
+- `+` — сложение;
+- `-` — вычитание;
+- `*` — умножение;
+- `/` — деление;
+- `остаток` — остаток от деления;
+- `^` — возведение в степень.
+
+**Операторы сравнения**
+
+- `<` — меньше;
+- `<=` — меньше или равно;
+- `>` — больше;
+- `>=` — больше или равно;
+- `=` — равно;
+- `!=` — не равно.
+
+**Логические операторы**
+
+- `и` — выражение истинно, если истинны оба условия;
+- `или` — выражение истинно, если истинно хотя бы одно условие;
+- `не` — меняет логическое значение на противоположное.
+
+**Объединение значений**
+
+- `&` объединяет несколько значений в одну строку.
 
 ```text
-Contract № 125
+"Договор № " & номерДоговора
 ```
 
-You can combine text, field values, and function results:
+Если поле `номерДоговора` содержит `125`, результатом будет:
 
 ```text
-"Contract № " & contractNumber & " dated " & formatDate(contractDate,"dd.MM.yyyy")
+Договор № 125
 ```
 
+Объединять можно не только текст, но и значения полей и результаты функций:
+
+```text
+"Договор № " & номерДоговора & " от " & форматДаты(датаДоговора, ФорматДаты.ДатаКратко)
+```

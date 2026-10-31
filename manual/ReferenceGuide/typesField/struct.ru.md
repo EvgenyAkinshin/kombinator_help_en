@@ -1,102 +1,89 @@
-# «Struct» field
+# Поле «Составное поле»
 
-The **«Struct»** field contains other fields and is used to store a set of related data about a single object.
+**Составное поле** содержит внутри себя другие поля и используется для хранения набора связанных данных об одном объекте.
 
-For example, a **«Counterparty»** Struct field may contain the **name**, **tax ID**, **registration code**, and **address**.
+Например, в составном поле **«Контрагент»** могут храниться **наименование**, **ИНН**, **КПП** и **адрес**.
 
-## Creating and adding a field
+## Создание и добавление поля
 
-For instructions on creating and adding fields, see [Creating a template](../Bitrix/creat.md).
+Создание и добавление полей: [ИНСТРУКЦИЯ](../Bitrix/creat.md)
 
-## Field value
+## Значение поля
 
-When working with a Struct field, you use the values of its nested fields.
+При работе с составным полем используются значения его вложенных полей.
 
-In Bitrix24, a Struct field can contain fields of the entity from which the document is generated.
+В Битрикс24 составное поле может содержать поля сущности, из которой формируется документ.
 
-For example, when working with a deal, the structure may look like this:
+Например, при работе со сделкой структура может выглядеть так:
 
 ```text
-deals
-
-├── name
-
+сделки
+├── название
 └── id
 ```
 
-Here, `deals` is a Struct field containing the deal fields.
+Здесь `сделки` — составное поле, внутри которого находятся поля сделки.
 
-Struct fields can also be nested inside other field types. For example, a **List** field may contain a Struct field that represents each item in the list:
-
-```text
-deals
-
-└── products
-
-    └── product
-
-        ├── name
-
-        ├── quantity
-
-        └── price
-```
-
-Where:
-
-- `deals` — the Struct field representing the deal entity;
-- `products` — a **List** field containing multiple products;
-- `product` — a Struct field representing one item in the list;
-- `name`, `quantity`, and `price` — the fields that make up each product.
-
-## Working with nested fields
-
-To reference a nested field, specify its full path using a period (`.`).
-
-For example:
+Составные поля могут находиться и внутри других типов полей. Например, **«Список»** может содержать составное поле с набором полей каждого элемента:
 
 ```text
-deals.name
+сделки
+└── товары
+    └── товар
+        ├── название
+        ├── количество
+        └── цена
 ```
 
-Where:
+Где:
 
-- `deals` — the Struct field containing the deal fields;
-- `name` — the nested field.
+- `сделки` — составное поле, представляющее сущность сделки;
+- `товары` — поле **«Список»**, содержащее несколько товаров;
+- `товар` — составное поле, которое описывает один элемент списка;
+- `название`, `количество`, `цена` — поля, из которых состоит каждый товар.
 
-If a field is located deeper in the structure, specify the full path to it in the expression.
+## Работа с вложенными полями
 
-Nested fields can be used in the same way as regular fields of the corresponding type:
+Для обращения к вложенному полю необходимо указать путь до него через точку.
 
-- insert their values into the document;
-- use them in conditions;
-- pass them to functions;
-- use them in expressions.
+Например:
 
-## Inserting fields through the «Directives» tab
+```text
+сделки.название
+```
 
-A Struct field itself is not inserted into the document as a separate value. Instead, you use the fields nested inside it.
+Здесь:
 
-The directive you use depends on the nested field type and how the field should be used in the template.
+- `сделки` — составное поле, содержащее поля сделки;
+- `название` — вложенное поле.
 
-For example:
+Если поле находится глубже в структуре, в выражении указывается полный путь до него.
 
-- a **Text**, **Integer**, **Decimal Number**, or **Date** field can be inserted using the [«Expression»](../directives/expression.md) directive;
-- a **Boolean** field can be used with the [«Condition expression»](../directives/if.md) directive;
-- a **List** field can be used with the [«For»](../directives/for.md) or [«Table»](../directives/table.md) directive.
+Вложенные поля можно использовать так же, как обычные поля соответствующего типа:
 
-## Functions for working with the field
+- выводить их значения в документ;
+- использовать в условиях;
+- передавать в функции;
+- использовать в выражениях.
 
-The **«Struct»** field itself does not have dedicated functions.
+## Вставка поля через вкладку «Метки»
 
-Functions are applied to its nested fields depending on their type.
+Само составное поле не вставляется в документ как отдельное значение. Через вкладку **«Метки»** используются поля, которые находятся внутри него.
 
-For example:
+Выбор метки зависит от типа вложенного поля и от того, как его необходимо использовать в шаблоне.
 
-- **Text** fields support text functions;
-- **Integer** and **Decimal Number** fields support mathematical functions;
-- **Date** fields support date functions.
+Например:
 
-## Features
+- текстовое, числовое поле или дату можно вывести через метку [«Значение»](../directives/value.md);
+- поле **«Да/Нет»** можно использовать с меткой [«Условие»](../directives/if.md);
+- поле **«Список»** можно использовать с метками [«Цикл»](../directives/for.md) или [«Таблица»](../directives/table.md).
 
-A Struct field can contain multiple levels of nesting. To reference a specific value, specify the full path to the corresponding field.
+## Функции для работы с полем
+
+Для самого составного поля отдельных функций нет.
+
+Функции применяются к вложенным полям в зависимости от их типа. Например:
+
+- к полю **«Текст»** применяются функции для работы с текстом;
+- к полям **«Целое число»** и **«Десятичное число»** — математические функции;
+- к полю **«Дата»** — функции для работы с датами.

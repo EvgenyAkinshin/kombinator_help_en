@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#external" class="md-skip">
+        <a href="#_1" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -626,7 +626,7 @@
   
   
   <span class="md-ellipsis">
-    Текстовые
+    Текст
     
   </span>
   
@@ -2694,27 +2694,51 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#adding-an-external-template" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Adding an external template
+      Добавление метки
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#passing-values-to-an-external-template" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Passing values to an external template
+      Передача значений
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Передача значений">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Поля с одинаковыми идентификаторами
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Поля с разными идентификаторами
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#fields-used-in-the-external-template" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      Fields used in the external template
+      Поля выбранного шаблона
     </span>
   </a>
   
@@ -2922,27 +2946,51 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#adding-an-external-template" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Adding an external template
+      Добавление метки
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#passing-values-to-an-external-template" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Passing values to an external template
+      Передача значений
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Передача значений">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Поля с одинаковыми идентификаторами
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Поля с разными идентификаторами
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#fields-used-in-the-external-template" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      Fields used in the external template
+      Поля выбранного шаблона
     </span>
   </a>
   
@@ -2964,46 +3012,43 @@
 
 
 
-<h1 id="external">External</h1>
-<p>The <strong>«External»</strong> directive is used to insert content from one template into another.</p>
-<p>This allows you to reuse the same document sections without copying them. If the external template is updated, the changes will be applied wherever that template is used.</p>
-<p><img alt="«External» directive" src="../img/directives/76.png" /></p>
-<h2 id="adding-an-external-template">Adding an external template</h2>
-<p>To add content from another template:</p>
+<h1 id="_1">Метка «Фрагмент»</h1>
+<p>Метка <strong>«Фрагмент»</strong> вставляет в формируемый документ содержимое другого шаблона.</p>
+<p>В качестве фрагмента можно использовать любой шаблон. Например, в шаблон договора можно вставить шаблон акта, счёта или другого документа.</p>
+<p><img alt="Метка «Фрагмент»" src="../../img/directives/76.png" /></p>
+<h2 id="_2">Добавление метки</h2>
 <ol>
-<li>
-<p>Place the cursor where you want to insert the content.</p>
-</li>
-<li>
-<p>On the <strong>«Directives»</strong> tab, select <strong>«External»</strong>.</p>
-</li>
-<li>
-<p>Select the template whose content you want to insert.</p>
-</li>
+<li>Установите курсор в место шаблона, куда необходимо вставить содержимое другого шаблона.</li>
+<li>На вкладке <strong>«Метки»</strong> выберите <strong>«Фрагмент»</strong>.</li>
+<li>Укажите путь к фрагменту и при необходимости добавьте параметры.</li>
 </ol>
-<p>When the document is generated, the content of the selected template will be inserted at the position of the directive.</p>
-<h2 id="passing-values-to-an-external-template">Passing values to an external template</h2>
-<p>If the main template and the external template use fields with the same identifiers, no additional configuration is required.</p>
-<p>For example, if both templates use the field:</p>
-<pre><code class="language-text">counterparty
+<h2 id="_3">Передача значений</h2>
+<p>Поля выбранного шаблона заполняются данными из основного шаблона.</p>
+<h3 id="_4">Поля с одинаковыми идентификаторами</h3>
+<p>Если в основном и выбранном шаблонах используются поля с одинаковыми идентификаторами, добавлять параметры при настройке метки не нужно.</p>
+<p>Например, если в обоих шаблонах есть поле:</p>
+<pre><code class="language-text">контрагент
 </code></pre>
-<p>the field value will also be available in the external template.</p>
-<p>If the field identifiers are different, configure a parameter to pass the required value.</p>
-<p>For example:</p>
+<p>поле <code>контрагент</code> в выбранном шаблоне будет заполнено значением из основного шаблона.</p>
+<h3 id="_5">Поля с разными идентификаторами</h3>
+<p>Если нужные поля в основном и выбранном шаблонах имеют разные идентификаторы, настройте передачу значения через параметр.</p>
+<p>Например:</p>
 <ul>
-<li>the field in the external template has the identifier <code>contractor</code>;</li>
-<li>the required value in the main template is stored in the <code>counterparty</code> field.</li>
+<li>в основном шаблоне есть поле <code>контрагент</code>;</li>
+<li>в выбранном шаблоне есть поле <code>исполнитель</code>;</li>
+<li>значение поля <code>контрагент</code> должно передаваться в поле <code>исполнитель</code>.</li>
 </ul>
-<p>In this case, specify:</p>
-<p><strong>Parameter name</strong> — the field identifier in the external template:</p>
-<pre><code class="language-text">contractor
+<p>Для этого в настройках метки укажите:</p>
+<p><strong>«Имя параметра»</strong> — идентификатор поля, которое нужно заполнить в выбранном шаблоне:</p>
+<pre><code class="language-text">исполнитель
 </code></pre>
-<p><strong>Parameter expression</strong> — the field or expression from the main template whose value should be passed:</p>
-<pre><code class="language-text">counterparty
+<p><strong>«Выражение параметра»</strong> — поле основного шаблона, из которого нужно взять значение:</p>
+<pre><code class="language-text">контрагент
 </code></pre>
-<p>As a result, the <code>contractor</code> field in the external template will receive the value of the <code>counterparty</code> field from the main template.</p>
-<h2 id="fields-used-in-the-external-template">Fields used in the external template</h2>
-<p>If the external template uses fields that are not included in <strong>Fields</strong> of the main template and their values are not passed through parameters, add those fields to <strong>Fields</strong> in the main template.</p>
+<p>В результате значение поля <code>контрагент</code> будет передано в поле <code>исполнитель</code>.</p>
+<h2 id="_6">Поля выбранного шаблона</h2>
+<p>Если в выбранном шаблоне есть поля, значения для которых не передаются через параметры, эти поля должны быть доступны и в анкете основного шаблона.</p>
+<p>Например, в выбранном шаблоне используется поле <code>номерСчета</code>, а в основном шаблоне такого поля нет. Чтобы пользователь мог заполнить его при работе с основным шаблоном, поле <code>номерСчета</code> необходимо добавить в анкету основного шаблона.</p>
 
 
 

@@ -1,70 +1,51 @@
-# Keyboard shortcuts
+***
+#### Работа с текстом
+* **Ctrl + C** — Копировать выделенный текст.
+* **Ctrl + X** — Вырезать выделенный текст.
+* **Ctrl + V** — Вставить скопированный или вырезанный текст.
+* **Ctrl + Z** — Отменить последнее действие.
+* **Ctrl + Y** — Повторить отменённое действие.
+* **Ctrl + S** — Сохранить шаблон.
+***
 
----
+#### Форматирование текста
+* **Ctrl + B** — Сделать текст жирным.
+* **Ctrl + I** — Сделать текст курсивом.
+* **Ctrl + U** — Подчеркнуть текст.
+* **Ctrl + E** — Выравнивание по центру.
+* **Ctrl + L** — Выравнивание по левому краю.
+* **Ctrl + R** — Выравнивание по правому краю.
+* **Ctrl + J** — Выравнивание по ширине.
+***
 
-#### Working with text
+#### Абзацы и стиль
+* **Ctrl + 1** — Одинарный межстрочный интервал.
+* **Ctrl + 2** — Двойной межстрочный интервал.
+* **Ctrl + 5** — Полуторный межстрочный интервал.
+* **Ctrl + A** — Выделить весь текст в документе.
+* **Ctrl + M** — Отступ слева.
+* **Ctrl + Shift  + M** — Убрать отступ слева.
+***
 
-- **Ctrl + C** — Copy the selected text.
-- **Ctrl + X** — Cut the selected text.
-- **Ctrl + V** — Paste copied or cut text.
-- **Ctrl + Z** — Undo the last action.
-- **Ctrl + Y** — Redo the last undone action.
-- **Ctrl + S** — Save the template.
+#### Поиск и замена
+* **Ctrl + F** — Найти слово или фразу в документе.
+* **Ctrl + H** — Найти и заменить.
+***
 
----
+#### Гиперссылки
+* **Ctrl + K** — Вставить гиперссылку.
+***
 
-#### Text formatting
+#### Таблицы
+* **Tab** — Перейти в следующую ячейку таблицы.
+* **Shift + Tab** — Перейти в предыдущую ячейку таблицы.
+***
 
-- **Ctrl + B** — Make the selected text bold.
-- **Ctrl + I** — Make the selected text italic.
-- **Ctrl + U** — Underline the selected text.
-- **Ctrl + E** — Center-align the text.
-- **Ctrl + L** — Align the text to the left.
-- **Ctrl + R** — Align the text to the right.
-- **Ctrl + J** — Justify the text.
+#### Разрыв раздела и страницы
+* **Ctrl + Enter** — Вставить разрыв страницы.
+***
 
----
-
-#### Paragraphs and styles
-
-- **Ctrl + 1** — Set single line spacing.
-- **Ctrl + 2** — Set double line spacing.
-- **Ctrl + 5** — Set 1.5 line spacing.
-- **Ctrl + A** — Select all text in the document.
-- **Ctrl + M** — Increase the left indent.
-- **Ctrl + Shift + M** — Decrease the left indent.
-
----
-
-#### Find and replace
-
-- **Ctrl + F** — Find a word or phrase in the document.
-- **Ctrl + H** — Find and replace text.
-
----
-
-#### Hyperlinks
-
-- **Ctrl + K** — Insert a hyperlink.
-
----
-
-#### Tables
-
-- **Tab** — Move to the next table cell.
-- **Shift + Tab** — Move to the previous table cell.
-
----
-
-#### Page breaks
-
-- **Ctrl + Enter** — Insert a page break.
-
----
-
-#### Numbered lists
-
-- **Tab** — Move the list item one level down.
-- **Shift + Tab** — Move the list item one level up.
-
----
+#### Нумерация
+* **Tab** — Перемещает элемент на уровень ниже (Пример: из 3 в 2.1.)
+* **Shift + Tab** — Уменьшает уровень списка, перемещая элемент на уровень выше (Пример: из 2.1 в 3).
+***

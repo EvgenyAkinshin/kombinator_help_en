@@ -1,67 +1,73 @@
-# «Date/Time» field
+# Поле «Дата/Время»
 
-The **«Date/Time»** field is used to store values that contain both a date and a time. The field value can be displayed in different formats and processed using functions.
+Поле **«Дата/Время»** используется для хранения значений, содержащих одновременно дату и время. Значение поля можно выводить в разных форматах и обрабатывать с помощью функций.
 
-It is suitable, for example, for meeting dates and times, order dates, document creation dates, and event start or end times.
+Подходит, например, для даты и времени встречи, оформления заказа, создания документа, начала или окончания события.
 
-## Creating and adding a field
+## Создание и добавление поля
 
-For instructions on creating and adding fields, see [Creating a template](../Bitrix/creat.md).
+Создание и добавление полей: [ИНСТРУКЦИЯ](../Bitrix/creat.md)
 
-## Field value
+## Значение поля
 
-The field contains both a date and a time.
+Поле содержит одновременно дату и время.
 
-When adding the field to the template through **Fields**, you can select the format in which its value should be displayed in the generated document. The same field value can therefore be displayed in different formats.
+При добавлении поля в шаблон через анкету можно выбрать формат, в котором его значение должно отображаться в сформированном документе. Поэтому одно и то же значение поля может быть выведено в разных форматах.
 
-If needed, you can extract individual parts of the value using the corresponding functions: [year](../functions/Date/year.md), [month](../functions/Date/month.md), [day](../functions/Date/day.md), [hour](../functions/Date/hour.md), [minute](../functions/Date/minute.md), or [second](../functions/Date/second.md).
+При необходимости из значения можно отдельно получить [год](../functions/Date/год.md), [месяц](../functions/Date/месяц.md), [день](../functions/Date/день.md), [часы](../functions/Date/час.md), [минуты](../functions/Date/минуты.md) или [секунды](../functions/Date/секунды.md) с помощью соответствующих функций.
 
-## Inserting a field through the «Directives» tab
+## Вставка поля через вкладку «Метки»
 
-The **«Date/Time»** field value can be inserted into the template using the [«Expression»](../directives/expression.md) directive.
+Значение поля **«Дата/Время»** можно вставить в шаблон через метку [«Значение»](../directives/value.md).
 
-In the **«Expression»** field, specify the field whose value should be inserted.
+В свойстве **«Выражение»** указывается поле, значение которого необходимо вывести.
 
-For example:
+Например:
 
 ```text
-deals.meetingDate
+сделки.датаВстречи
 ```
 
-Where:
+Здесь:
 
-- `deals` — the Bitrix24 entity from which the data is retrieved;
-- `meetingDate` — the field containing the date and time.
+- `сделки` — сущность Битрикс24, из которой берутся данные;
+- `датаВстречи` — поле, содержащее дату и время.
 
-When the document is generated, the directive is replaced with the value of this field.
+При формировании документа метка будет заменена значением этого поля.
 
-You can also use functions in the **«Expression»** directive to process or format the date and time.
+В метке **«Значение»** можно использовать функции для обработки и форматирования даты и времени.
 
-For example, the [formatDate](../functions/Morph/formatDate.md) function can be used to display only the date in the required format.
+Например:
 
-## Functions for working with the field
+```text
+форматДаты(сделки.датаВстречи, ФорматДаты.ДатаКратко)
+```
 
-The **«Date/Time»** field supports functions for extracting individual parts of the value, changing the date, and formatting the result.
+В этом случае в документ будет выведена только дата в формате, заданном функцией.
 
-### Extracting date and time parts
+## Функции для работы с полем
 
-- [year](../functions/Date/year.md) — returns the year;
-- [month](../functions/Date/month.md) — returns the month number;
-- [day](../functions/Date/day.md) — returns the day of the month;
-- [hour](../functions/Date/hour.md) — returns the hour;
-- [minute](../functions/Date/minute.md) — returns the minutes;
-- [second](../functions/Date/second.md) — returns the seconds;
-- [weekday](../functions/Date/weekday.md) — returns the day-of-week number;
-- [weeknum](../functions/Date/weeknum.md) — returns the week number.
+Для поля **«Дата/Время»** доступны функции для получения отдельных частей значения, изменения даты и форматирования результата.
 
-### Changing the date
+### Получение частей даты и времени
 
-- [edate](../functions/Date/edate.md) — shifts the date by the specified number of months;
-- [dateshift](../functions/Date/dateshift.md) — shifts the date by the specified number of days;
-- [bomonth](../functions/Date/bomonth.md) — returns the first day of the month;
-- [eomonth](../functions/Date/eomonth.md) — returns the last day of the month;
-- [datediff](../functions/Date/datediff.md) — calculates the difference between dates.
+- [год](../functions/Date/год.md) — возвращает год;
+- [месяц](../functions/Date/месяц.md) — возвращает номер месяца;
+- [день](../functions/Date/день.md) — возвращает день месяца;
+- [час](../functions/Date/час.md) — возвращает часы;
+- [минуты](../functions/Date/минуты.md) — возвращает минуты;
+- [секунды](../functions/Date/секунды.md) — возвращает секунды;
+- [деньнед](../functions/Date/деньнед.md) — возвращает номер дня недели;
+- [номнедели](../functions/Date/номнедели.md) — возвращает номер недели.
 
-### Formatting functions
+### Изменение даты
 
-- [formatDate](../functions/Morph/formatDate.md) — changes how the date is displayed.
+- [датамес](../functions/Date/датамес.md) — смещает дату на указанное количество месяцев;
+- [смещдат](../functions/Date/смещдат.md) — смещает дату на указанное количество дней;
+- [начмесяца](../functions/Date/начмесяца.md) — возвращает дату первого дня месяца;
+- [конмесяца](../functions/Date/конмесяца.md) — возвращает дату последнего дня месяца;
+- [разндат](../functions/Date/разндат.md) — вычисляет разницу между датами.
+
+### Форматирование
+
+- [форматДаты](../functions/Morph/форматДаты.md) — изменяет формат отображения даты и времени.

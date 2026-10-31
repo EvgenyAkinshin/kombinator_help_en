@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#expression" class="md-skip">
+        <a href="#_1" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -626,7 +626,7 @@
   
   
   <span class="md-ellipsis">
-    Текстовые
+    Текст
     
   </span>
   
@@ -2671,18 +2671,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#expression_1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Expression
+      Выражение
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#limitations" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Limitations
+      Ограничения
     </span>
   </a>
   
@@ -2913,18 +2913,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#expression_1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Expression
+      Выражение
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#limitations" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Limitations
+      Ограничения
     </span>
   </a>
   
@@ -2946,28 +2946,28 @@
 
 
 
-<h1 id="expression">Expression</h1>
-<p>The <strong>«Expression»</strong> directive is used to insert a field value or the result of an expression into the document. It can insert text, numbers, dates, calculation results, or function results.</p>
-<p><img alt="27" src="../img/directives/27.png" /></p>
-<h2 id="expression_1">Expression</h2>
-<p>When adding the directive, specify the expression whose result should be inserted into the document.</p>
-<p>For a regular field, enter its identifier:</p>
-<pre><code class="language-text">customerName
+<h1 id="_1">Метка «Значение»</h1>
+<p>Метка <strong>«Значение»</strong> используется для вывода в документ значения поля или результата выражения: текста, числа, даты, результата вычисления или функции.</p>
+<p><img alt="27" src="../../img/directives/27.png" /></p>
+<h2 id="_2">Выражение</h2>
+<p>При добавлении метки указывается выражение, результат которого необходимо вывести в документ.</p>
+<p>Для обычного поля указывается его идентификатор:</p>
+<pre><code class="language-text">имяКлиента
 </code></pre>
-<p>For a nested field, specify the full path using a period (<code>.</code>):</p>
-<pre><code class="language-text">deals.fullName
+<p>Для вложенного поля указывается полный путь через точку (<code>.</code>):</p>
+<pre><code class="language-text">сделки.фио
 </code></pre>
-<p>You can also use more complex expressions, for example:</p>
+<p>В метке также можно использовать более сложные выражения, например:</p>
 <ul>
-<li>a calculation — <code>quantity * price</code>;</li>
-<li>a function — <code>formatDate(contractDate, "dd.MM.yyyy")</code>;</li>
-<li>concatenation — <code>"Contract № " &amp; contractNumber</code>;</li>
-<li>a conditional function — <code>if(...)</code>.</li>
+<li>вычисление — <code>количество * цена</code>;</li>
+<li>функцию — <code>форматДаты(датаДоговора, ФорматДаты.ДатаКратко)</code>;</li>
+<li>объединение значений — <code>"Договор № " &amp; номерДоговора</code>;</li>
+<li>условную функцию — <code>если(...)</code>.</li>
 </ul>
-<p>Expression syntax is described in <a href="../../syntax/syntax/">«Basic rules»</a>.</p>
-<h2 id="limitations">Limitations</h2>
-<p>The <strong>«Expression»</strong> directive is not intended for repeating list items. Use the <a href="../for/">«For»</a> or <a href="../table/">«Table»</a> directive for lists.</p>
-<p>To show or hide part of the document depending on a condition, use the <a href="../if/">«Condition expression»</a> directive.</p>
+<p>Правила записи выражений описаны в разделе <a href="../../syntax/syntax/">«Основные правила»</a>.</p>
+<h2 id="_3">Ограничения</h2>
+<p>Метка <strong>«Значение»</strong> не предназначена для повторяющегося вывода элементов списка. Для этого используются метки <a href="../for/">«Цикл»</a> и <a href="../table/">«Таблица»</a>.</p>
+<p>Чтобы показывать или скрывать часть документа в зависимости от условия, используйте метку <a href="../if/">«Условие»</a>.</p>
 
 
 

@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#for" class="md-skip">
+        <a href="#_1" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -626,7 +626,7 @@
   
   
   <span class="md-ellipsis">
-    Текстовые
+    Текст
     
   </span>
   
@@ -2763,36 +2763,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-the-for-directive-is-used-for" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      What the For directive is used for
+      Для чего используется цикл
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#adding-and-structuring-the-directive" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Adding and structuring the directive
+      Добавление и структура метки
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#current-list-item" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      Current list item
+      Текущий элемент списка
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#for-and-table" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      «For» and «Table»
+      «Цикл» и «Таблица»
     </span>
   </a>
   
@@ -2931,36 +2931,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-the-for-directive-is-used-for" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      What the For directive is used for
+      Для чего используется цикл
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#adding-and-structuring-the-directive" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Adding and structuring the directive
+      Добавление и структура метки
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#current-list-item" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      Current list item
+      Текущий элемент списка
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#for-and-table" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      «For» and «Table»
+      «Цикл» и «Таблица»
     </span>
   </a>
   
@@ -2982,86 +2982,80 @@
 
 
 
-<h1 id="for">For</h1>
-<p>The <strong>«For»</strong> directive is used to repeat part of a document for each item in a list.</p>
-<p>For example, it can be used to display products, services, employees, or other data from a <strong>List</strong> field.</p>
-<p><img alt="«For» directive" src="../img/directives/30.png" /></p>
-<h2 id="what-the-for-directive-is-used-for">What the For directive is used for</h2>
-<p>A <strong>List</strong> field can contain multiple items. For example:</p>
-<pre><code class="language-text">Product 1
+<h1 id="_1">Метка «Цикл»</h1>
+<p>Метка <strong>«Цикл»</strong> используется для повторения части документа для каждого элемента списка.</p>
+<p>Например, с её помощью можно последовательно вывести товары, услуги, сотрудников или другие данные из поля типа <strong>«Список»</strong>.</p>
+<p><img alt="Метка «Цикл»" src="../../img/directives/30.png" /></p>
+<h2 id="_2">Для чего используется цикл</h2>
+<p>Поле типа <strong>«Список»</strong> может содержать несколько элементов. Например:</p>
+<pre><code class="language-text">Товар 1
+Наименование: Ноутбук
+Количество: 2
+Цена: 80 000
 
-Name: Laptop
-Quantity: 2
-Price: 80,000
+Товар 2
+Наименование: Монитор
+Количество: 3
+Цена: 25 000
 
-Product 2
-
-Name: Monitor
-Quantity: 3
-Price: 25,000
-
-Product 3
-
-Name: Keyboard
-Quantity: 5
-Price: 4,000
+Товар 3
+Наименование: Клавиатура
+Количество: 5
+Цена: 4 000
 </code></pre>
-<p>You do not need to create a separate block for each product.</p>
-<p>Configure the <strong>For</strong> directive once, and Kombinator will process each item in the list and repeat the content for it.</p>
-<p>The number of repetitions depends on the number of items in the list. If the list contains 10 products, the content inside the directive is repeated 10 times. If the list is empty, the content inside the directive is not included in the document.</p>
-<h2 id="adding-and-structuring-the-directive">Adding and structuring the directive</h2>
+<p>Чтобы вывести эти данные в документ, не нужно создавать отдельный блок для каждого товара.</p>
+<p>Достаточно один раз настроить цикл, а Комбинатор последовательно подставит в него данные каждого элемента списка.</p>
+<p>Количество повторений определяется количеством элементов в списке. Если в списке 10 товаров, цикл будет выполнен 10 раз. Если список пуст, содержимое цикла не выводится.</p>
+<h2 id="_3">Добавление и структура метки</h2>
 <ol>
 <li>
-<p>Place the cursor where the repeating block should begin and select <strong>«Directives» → «For» → «For»</strong>.</p>
-<p>In the directive settings, specify:</p>
+<p>Установите курсор в месте, где должен начинаться повторяющийся блок, и выберите <strong>«Метки» → «Цикл» → «Цикл»</strong>.</p>
+<p>В настройках метки укажите:</p>
 <ul>
-<li><strong>Row variable</strong> — the name used to reference the current list item;</li>
-<li><strong>Source</strong> — the <strong>List</strong> field whose items should be processed;</li>
-<li><strong>Separator</strong> — optional text or a character inserted between repeated blocks.</li>
+<li><strong>Переменная ряда</strong> — имя текущего элемента списка;</li>
+<li><strong>Список</strong> — поле типа <strong>«Список»</strong>, элементы которого нужно перебрать;</li>
+<li><strong>Разделитель</strong> — при необходимости текст или символ между результатами повторений.</li>
 </ul>
-<p>After the directive is added, the opening part is inserted:</p>
-<p><code>text
-  {for(productData in productList)}</code></p>
+<p><img alt="Настройки метки «Цикл»" src="../../img/directives/58.png" /></p>
+<p>После добавления метки формируется открывающая часть цикла:</p>
+<p><code>{цикл(данныеТовара из списокТоваров)}</code></p>
 </li>
 <li>
-<p>After the opening part, add the text and other directives that should be repeated for each list item.</p>
+<p>После открывающей части разместите текст и другие метки, которые должны повторяться для каждого элемента списка.</p>
 </li>
 <li>
-<p>Close the construction with <code>{/for}</code>.</p>
+<p>Обязательно завершите цикл закрывающей меткой <code>{/цикл}</code>.</p>
 </li>
 </ol>
-<p>The complete construction may look like this:</p>
-<pre><code class="language-text">{for(productData in productList)}
+<p>В результате конструкция может выглядеть так:</p>
+<pre><code class="language-text">{цикл(данныеТовара из списокТоваров)}
 
-Product: productData.name
+Товар: данныеТовара.наименование
+Количество: данныеТовара.количество
+Цена за единицу: данныеТовара.цена
 
-Quantity: productData.quantity
-
-Unit price: productData.price
-
-{/for}
+{/цикл}
 </code></pre>
-<h2 id="current-list-item">Current list item</h2>
-<p>Inside the <strong>For</strong> directive, a variable is used to reference the current item in the list.</p>
-<p>By default, this name is the identifier of the composite field that represents a list item.</p>
-<p>For example, if the composite field identifier is <code>productData</code>, its nested fields can be referenced as:</p>
-<pre><code class="language-text">productData.name
-productData.quantity
-productData.price
+<h2 id="_4">Текущий элемент списка</h2>
+<p>В цикле используется имя, через которое выполняется обращение к текущему элементу списка.</p>
+<p>По умолчанию в качестве этого имени указывается идентификатор составного поля, которое является элементом списка.</p>
+<p>Например, если составное поле имеет идентификатор <code>данныеТовара</code>, обращения к его вложенным полям будут выглядеть так:</p>
+<pre><code class="language-text">данныеТовара.наименование
+данныеТовара.количество
+данныеТовара.цена
 </code></pre>
-<p>You can change the current item variable and use another valid name.</p>
-<p>For example:</p>
-<pre><code class="language-text">{for(product in productList)}
+<p>Имя текущего элемента можно изменить и указать другое допустимое имя. Например:</p>
+<pre><code class="language-text">{цикл(товар из списокТоваров)}
 </code></pre>
-<p>In this case, the nested fields must also be referenced using the new variable:</p>
-<pre><code class="language-text">product.name
-product.quantity
-product.price
+<p>Тогда обращения к вложенным полям также нужно записывать с новым именем:</p>
+<pre><code class="language-text">товар.наименование
+товар.количество
+товар.цена
 </code></pre>
-<h2 id="for-and-table">«For» and «Table»</h2>
-<p>Both directives are used to work with data from a <strong>List</strong> field, but they are intended for different output formats.</p>
-<p>Use <strong>«For»</strong> when you need to repeat any document fragment for each list item, such as text, several lines, a paragraph, or a block containing other directives.</p>
-<p>Use the <strong>«Table»</strong> directive when list items should be displayed as table rows.</p>
+<h2 id="_5">«Цикл» и «Таблица»</h2>
+<p>Обе метки используются для работы с данными из поля типа <strong>«Список»</strong>, но предназначены для разных способов их вывода.</p>
+<p><strong>«Цикл»</strong> используется, когда для каждого элемента нужно повторить произвольный фрагмент документа: текст, несколько строк, абзац или блок с другими метками.</p>
+<p>Если элементы списка нужно вывести в виде строк таблицы, используется метка <strong>«Таблица»</strong>.</p>
 
 
 
