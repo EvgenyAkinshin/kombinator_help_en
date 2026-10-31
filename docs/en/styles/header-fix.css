@@ -1,0 +1,1274 @@
+/* =========================================================
+   Header fix for MkDocs Material + custom view-toggle
+   Подключать ПОСЛЕ styles/view-toggle.css
+   ========================================================= */
+
+@media (max-width: 1219px) {
+  .md-header {
+    padding: 8px 10px !important;
+  }
+
+  .md-header__inner.md-grid {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    flex-wrap: nowrap !important;
+    gap: 10px !important;
+
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 64px !important;
+
+    margin: 0 !important;
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Кнопка открытия левого меню */
+  .md-header__button[for="__drawer"] {
+    order: 1;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    flex: 0 0 40px !important;
+    width: 40px !important;
+    height: 40px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: #4a4a4a !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .md-header__button[for="__drawer"] svg {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  /* На узких экранах заголовок не держим как отдельную колонку */
+  .md-header__title,
+  .md-header__topic,
+  .md-header__ellipsis {
+    display: none !important;
+  }
+
+  /* Логотип в стандартном месте тоже убираем, чтобы не ломал строку */
+  .md-header__button.md-logo {
+    display: none !important;
+  }
+
+  /* Поиск остаётся в той же строке */
+  .md-header .md-search {
+    order: 2;
+    flex: 0 1 clamp(170px, 28vw, 260px) !important;
+    width: auto !important;
+    min-width: 160px !important;
+    max-width: 260px !important;
+    height: 34px !important;
+
+    margin: 0 !important;
+    position: relative !important;
+    top: auto !important;
+  }
+
+  .md-header .md-search__inner,
+  .md-header .md-search__form {
+    width: 100% !important;
+    height: 34px !important;
+  }
+
+  .md-header .md-search__input {
+    width: 100% !important;
+    height: 34px !important;
+    line-height: 34px !important;
+  }
+
+  /* Кнопки API / Битрикс24 */
+  .view-toggle {
+    order: 3;
+    flex: 0 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+
+    margin: 0 0 0 auto !important;
+  }
+
+  .view-toggle .vt-btn {
+    width: clamp(112px, 15vw, 138px) !important;
+    height: 32px !important;
+    font-size: 0.78rem !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .md-header {
+    padding: 6px 8px !important;
+  }
+
+  .md-header__inner.md-grid {
+    min-height: 56px !important;
+    border-radius: 18px !important;
+    gap: 8px !important;
+    padding: 0 12px !important;
+  }
+
+  .md-header__button[for="__drawer"] {
+    flex-basis: 36px !important;
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .md-header__button[for="__drawer"] svg {
+    width: 22px !important;
+    height: 22px !important;
+  }
+
+  /* На телефоне поиск превращаем в компактную кнопку-иконку */
+  .md-header .md-search {
+    flex: 0 0 38px !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    max-width: 38px !important;
+    height: 38px !important;
+  }
+
+  .md-header .md-search__inner,
+  .md-header .md-search__form {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 999px !important;
+  }
+
+  .md-header .md-search__input {
+    width: 38px !important;
+    height: 38px !important;
+    padding: 0 !important;
+    color: transparent !important;
+    caret-color: transparent !important;
+  }
+
+  .md-header .md-search__input::placeholder {
+    color: transparent !important;
+  }
+
+  .md-header .md-search__icon {
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+  }
+
+  .view-toggle {
+    gap: 6px !important;
+    margin-left: auto !important;
+  }
+
+  .view-toggle .vt-btn {
+    width: clamp(78px, 26vw, 104px) !important;
+    height: 30px !important;
+    font-size: 0.68rem !important;
+  }
+}
+
+@media (min-width: 1220px) {
+  .md-header__button[for="__drawer"] {
+    display: none !important;
+  }
+}
+
+
+/* =========================================================
+   На средних и маленьких экранах убираем строку поиска.
+   Остаются: бургер слева + кнопки API / Битрикс24 справа.
+   ========================================================= */
+
+@media (max-width: 1080px) {
+  .md-header .md-search,
+  .md-header [data-md-component="search"] {
+    display: none !important;
+  }
+
+  .md-header__inner.md-grid {
+    gap: 8px !important;
+  }
+
+  .view-toggle {
+    margin-left: auto !important;
+  }
+}
+
+
+/* =========================================================
+   Поиск скрывается на том же брейкпоинте, где пропадает левое меню.
+   Для текущей верстки это 1220px и меньше.
+   Этот блок должен идти самым последним.
+   ========================================================= */
+
+@media (max-width: 1220px) {
+  header.md-header .md-search,
+  header.md-header [data-md-component="search"],
+  header.md-header .md-header__option .md-search {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+  }
+
+  header.md-header .md-header__inner.md-grid {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+  }
+
+  header.md-header .md-header__button[for="__drawer"] {
+    display: inline-flex !important;
+    flex: 0 0 40px !important;
+    width: 40px !important;
+    height: 40px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-right: 8px !important;
+    color: #4a4a4a !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  header.md-header .md-header__title {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+
+  header.md-header .view-toggle {
+    flex: 0 0 auto !important;
+    margin-left: auto !important;
+  }
+}
+
+/* На главной оставляем прежнее поведение: бургер не нужен, потому что меню там скрыто специально. */
+@media (max-width: 1220px) {
+  body.home-page header.md-header .md-header__button[for="__drawer"] {
+    display: none !important;
+  }
+}
+
+/* На широких экранах поиск возвращается, а бургер скрывается. */
+@media (min-width: 1221px) {
+  header.md-header .md-search,
+  header.md-header [data-md-component="search"] {
+    display: block !important;
+    visibility: visible !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    pointer-events: auto !important;
+  }
+
+  header.md-header .md-header__button[for="__drawer"] {
+    display: none !important;
+  }
+}
+
+/* =========================================================
+   Когда появляется бургер, он должен стоять у левого края
+   ========================================================= */
+
+@media (max-width: 1220px) {
+  /* Убираем лишний логотип/пустое место слева */
+  header.md-header .md-header__button.md-logo {
+    display: none !important;
+  }
+
+  /* Шапка — в одну линию */
+  header.md-header .md-header__inner.md-grid {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  /* Бургер строго первым и у левого края */
+  header.md-header .md-header__button[for="__drawer"] {
+    order: 1 !important;
+    margin: 0 !important;
+    margin-right: 12px !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    flex: 0 0 auto !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  /* Заголовок занимает середину */
+  header.md-header .md-header__title {
+    order: 2 !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Переключатель уходит вправо */
+  header.md-header .view-toggle {
+    order: 3 !important;
+    margin-left: auto !important;
+    flex: 0 0 auto !important;
+  }
+}
+
+/* =========================================================
+   FIX: бургер строго у левого края, когда левое меню скрыто
+   ========================================================= */
+
+@media (max-width: 1220px) {
+  /* Сам контейнер шапки растягиваем на всю ширину */
+  header.md-header .md-header__inner.md-grid {
+    width: 100% !important;
+    max-width: none !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    padding-left: 10 !important;
+    padding-right: 12px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+  }
+
+  /* Убираем логотип, если он занимает место слева */
+  header.md-header .md-header__button.md-logo {
+    display: none !important;
+  }
+
+  /* Бургер — самый левый элемент */
+  header.md-header .md-header__button[for="__drawer"] {
+    display: inline-flex !important;
+
+    order: -100 !important;
+
+    width: 48px !important;
+    min-width: 48px !important;
+    max-width: 48px !important;
+    height: 48px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    position: static !important;
+    transform: none !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  /* Заголовок/пустая зона между бургером и кнопками */
+  header.md-header .md-header__title {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Поиск скрыт вместе с левым меню */
+  header.md-header .md-search,
+  header.md-header [data-md-component="search"] {
+    display: none !important;
+  }
+
+  /* Переключатель API / Битрикс24 справа */
+  header.md-header .view-toggle {
+    margin-left: auto !important;
+    flex: 0 0 auto !important;
+  }
+}
+
+/* =========================================================
+   MOBILE DRAWER — как десктопное левое меню
+   Меню открывается по бургеру, но внутри выглядит как на большом экране
+   ========================================================= */
+
+@media (max-width: 1220px) {
+  /* Сам drawer скрыт по умолчанию */
+  .md-sidebar--primary {
+    position: fixed !important;
+    top: 72px !important;
+    left: 0 !important;
+    z-index: 20 !important;
+
+    width: min(320px, calc(100vw - 24px)) !important;
+    height: calc(100dvh - 88px) !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: transparent !important;
+
+    transform: translateX(calc(-100% - 24px)) !important;
+    transition: transform 0.25s ease !important;
+
+    pointer-events: none !important;
+    overflow: visible !important;
+  }
+
+  /* Открытое состояние */
+  #__drawer:checked ~ .md-container .md-sidebar--primary {
+    transform: translateX(12px) !important;
+    pointer-events: auto !important;
+  }
+
+  /* Карточка меню */
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    position: static !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100% !important;
+    max-height: 100% !important;
+
+    margin: 0 !important;
+    padding: 24px 22px !important;
+
+    background: #ffffff !important;
+    border-radius: 28px !important;
+    box-sizing: border-box !important;
+
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18) !important;
+  }
+
+  .md-sidebar--primary .md-sidebar__inner {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  /* Затемнение фона */
+  .md-overlay {
+    background: rgba(0, 0, 0, 0.38) !important;
+  }
+
+  #__drawer:not(:checked) ~ .md-overlay {
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  #__drawer:checked ~ .md-overlay {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  /* Сбрасываем мобильную механику MkDocs */
+  .md-sidebar--primary .md-nav,
+  .md-sidebar--primary .md-nav__list,
+  .md-sidebar--primary .md-nav__item {
+    position: static !important;
+    transform: none !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    height: auto !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: transparent !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    overflow: visible !important;
+    pointer-events: auto !important;
+  }
+
+  .md-sidebar--primary .md-nav {
+    display: block !important;
+  }
+
+  .md-sidebar--primary .md-nav__list {
+    display: block !important;
+  }
+
+  /* Убираем служебные заголовки MkDocs */
+  .md-sidebar--primary .md-nav__title {
+    display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .md-sidebar--primary .md-nav__toggle {
+    display: none !important;
+  }
+
+  /* Убираем дубль текущей статьи и встроенное оглавление */
+  .md-sidebar--primary input.md-nav__toggle#__toc,
+  .md-sidebar--primary input.md-nav__toggle#__toc + label.md-nav__link,
+  .md-sidebar--primary .md-nav--secondary {
+    display: none !important;
+  }
+
+  /* =========================================================
+     Вид как у десктопного левого меню
+     ========================================================= */
+
+  /* Верхние разделы */
+  .md-sidebar--primary
+  .md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link {
+    display: flex !important;
+    align-items: center !important;
+
+    min-height: auto !important;
+
+    padding: 0.22rem 1.4rem 0.22rem 0.4rem !important;
+
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    line-height: 1.35 !important;
+
+    color: #222222 !important;
+    background: transparent !important;
+    border-radius: 6px !important;
+  }
+
+  /* Вложенные пункты — как на десктопе, без большого мобильного отступа */
+  .md-sidebar--primary
+  .md-nav--primary > .md-nav__list > .md-nav__item > nav .md-nav__link,
+  .md-sidebar--primary
+  .md-nav[data-md-level="1"] .md-nav__link,
+  .md-sidebar--primary
+  .md-nav[data-md-level="2"] .md-nav__link {
+    display: flex !important;
+    align-items: center !important;
+
+    min-height: auto !important;
+
+    padding: 0.22rem 1.4rem 0.22rem 0.4rem !important;
+
+    font-size: 0.7rem !important;
+    font-weight: 400 !important;
+    line-height: 1.35 !important;
+
+    color: #666666 !important;
+    background: transparent !important;
+    border-radius: 6px !important;
+  }
+
+  /* Разделители между крупными разделами */
+  .md-sidebar--primary
+  .md-nav--primary > .md-nav__list > .md-nav__item + .md-nav__item {
+    width: 100% !important;
+    margin-top: 0.7rem !important;
+    padding-top: 0.7rem !important;
+    border-top: 1px solid #e0e0e0 !important;
+  }
+
+  /* Hover — мягкий, как в левом меню */
+  .md-sidebar--primary .md-nav__link:hover {
+    background: transparent !important;
+    color: #7e0072 !important;
+  }
+
+  /* Текст не обрезается */
+  .md-sidebar--primary .md-nav__link,
+  .md-sidebar--primary .md-ellipsis {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Стрелки оставляем, но делаем аккуратными */
+  .md-sidebar--primary .md-nav__link {
+    position: relative !important;
+    cursor: pointer !important;
+  }
+
+  .md-sidebar--primary .md-nav__icon {
+    position: absolute !important;
+    right: 0.25rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 1rem !important;
+    height: 1rem !important;
+
+    color: #333333 !important;
+
+    transform: rotate(90deg) !important;
+  }
+
+  /* Активная статья — фиолетовая полоска как на десктопе */
+  .md-sidebar--primary
+  .md-nav__item--active:not(:has(.md-nav__item--active)) > .md-nav__link {
+    position: relative !important;
+    color: #666666 !important;
+    font-weight: 400 !important;
+  }
+
+  .md-sidebar--primary
+  .md-nav__item--active:not(:has(.md-nav__item--active)) > .md-nav__link::before {
+    content: "" !important;
+
+    position: absolute !important;
+    left: 0 !important;
+    top: 0.15rem !important;
+    bottom: 0.15rem !important;
+
+    width: 2px !important;
+
+    background: #7e0072 !important;
+    border-radius: 999px !important;
+  }
+
+  /* Контент страницы не должен сдвигаться */
+  .md-main,
+  .md-main__inner.md-grid,
+  .md-content,
+  .md-content__inner {
+    overflow: visible !important;
+  }
+}
+
+/* На совсем маленьких экранах */
+@media (max-width: 520px) {
+  .md-sidebar--primary {
+    top: 68px !important;
+    width: calc(100vw - 20px) !important;
+    height: calc(100dvh - 82px) !important;
+  }
+
+  #__drawer:checked ~ .md-container .md-sidebar--primary {
+    transform: translateX(10px) !important;
+  }
+
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    border-radius: 24px !important;
+    padding: 22px 20px !important;
+  }
+}
+
+/* =========================================================
+   FIX: убираем лишние полоски под каждым пунктом меню
+   Оставляем разделители только между крупными разделами
+   ========================================================= */
+
+@media (max-width: 1220px) {
+  /* Убираем линии у всех пунктов */
+  .md-sidebar--primary .md-nav__item,
+  .md-sidebar--primary .md-nav__link {
+    border: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Убираем линии у вложенных списков */
+  .md-sidebar--primary .md-nav,
+  .md-sidebar--primary .md-nav__list {
+    border: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Возвращаем только разделители между крупными разделами */
+  .md-sidebar--primary
+  .md-nav--primary > .md-nav__list > .md-nav__item + .md-nav__item {
+    border-top: 1px solid #e0e0e0 !important;
+    margin-top: 0.7rem !important;
+    padding-top: 0.7rem !important;
+  }
+
+  /* Убираем нижнюю линию у самих заголовков разделов */
+  .md-sidebar--primary
+  .md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link {
+    border-bottom: none !important;
+  }
+}
+
+/* =========================================================
+   FIX: убираем лишний фон/углы за мобильным drawer
+   ========================================================= */
+
+@media (max-width: 1220px) {
+  /* Внешний контейнер меню не должен рисовать фон, рамку или тень */
+  .md-sidebar--primary {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  .md-sidebar--primary::before,
+  .md-sidebar--primary::after,
+  .md-sidebar--primary .md-sidebar__scrollwrap::before,
+  .md-sidebar--primary .md-sidebar__scrollwrap::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  /* Карточка меню — единственный видимый блок */
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    background: #ffffff !important;
+    border-radius: 28px !important;
+
+    /* важно: обрезает всё, что вылезает за скругления */
+    overflow: hidden !important;
+
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18) !important;
+  }
+
+  /* Скролл переносим внутрь карточки, чтобы он не ломал скругления */
+  .md-sidebar--primary .md-sidebar__inner {
+    height: 100% !important;
+    max-height: 100% !important;
+
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    padding-right: 4px !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* =========================================================
+   MOBILE DRAWER: явная кнопка закрытия меню
+   ========================================================= */
+
+@media (max-width: 1220px) {
+  /* Карточка меню должна быть контейнером для кнопки закрытия */
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    position: relative !important;
+    padding-top: 42px !important;
+  }
+
+  /* Показываем служебный label MkDocs как кнопку закрытия */
+  .md-sidebar--primary 
+  .md-nav--primary > .md-nav__title[for="__drawer"] {
+    display: flex !important;
+
+    position: absolute !important;
+    top: 12px !important;
+    right: 14px !important;
+    z-index: 5 !important;
+
+    width: 30px !important;
+    height: 30px !important;
+    min-height: 30px !important;
+    max-height: 30px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: #f3f3f3 !important;
+    border-radius: 50% !important;
+
+    color: transparent !important;
+    font-size: 0 !important;
+
+    cursor: pointer !important;
+    overflow: visible !important;
+  }
+
+  /* Сам крестик */
+  .md-sidebar--primary 
+  .md-nav--primary > .md-nav__title[for="__drawer"]::before {
+    content: "×" !important;
+
+    display: block !important;
+
+    font-size: 22px !important;
+    line-height: 1 !important;
+    font-weight: 400 !important;
+
+    color: #555555 !important;
+  }
+
+  .md-sidebar--primary 
+  .md-nav--primary > .md-nav__title[for="__drawer"]:hover {
+    background: #ececec !important;
+  }
+
+  .md-sidebar--primary 
+  .md-nav--primary > .md-nav__title[for="__drawer"]:hover::before {
+    color: #7e0072 !important;
+  }
+
+  /* Убираем из этой кнопки логотип и лишние элементы */
+  .md-sidebar--primary 
+  .md-nav--primary > .md-nav__title[for="__drawer"] .md-logo,
+  .md-sidebar--primary 
+  .md-nav--primary > .md-nav__title[for="__drawer"] img,
+  .md-sidebar--primary 
+  .md-nav--primary > .md-nav__title[for="__drawer"] svg {
+    display: none !important;
+  }
+
+  /* Затемнённая область тоже выглядит как зона закрытия */
+  #__drawer:checked ~ .md-overlay {
+    cursor: pointer !important;
+  }
+}
+
+/* =========================================================
+   FIX: крестик поиска строго по центру строки
+   ========================================================= */
+
+/* Форма поиска — базовый контейнер */
+.md-search__form {
+  position: relative !important;
+}
+
+/* Контейнер, внутри которого лежит крестик */
+.md-search__form .md-search__options {
+  position: absolute !important;
+
+  top: 0 !important;
+  right: 0.35rem !important;
+  bottom: 0 !important;
+
+  height: 100% !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  pointer-events: none !important;
+}
+
+/* Сам крестик */
+.md-search__form .md-search__options > button.md-search__icon {
+  position: static !important;
+
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px !important;
+  min-height: 34px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  line-height: 1 !important;
+
+  transform: scale(1) !important;
+  pointer-events: auto !important;
+}
+
+/* SVG внутри крестика */
+.md-search__form .md-search__options > button.md-search__icon svg {
+  display: block !important;
+
+  width: 22px !important;
+  height: 22px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  transform: none !important;
+}
+
+/* Убираем влияние старого общего правила для .md-search__icon */
+.md-search__form .md-search__options > button.md-search__icon,
+.md-search__form .md-search__options > button.md-search__icon.md-icon {
+  top: auto !important;
+  bottom: auto !important;
+}
+
+/* =========================================================
+   SEARCH: скрываем выпадающий блок, пока в поиске нет текста
+   ========================================================= */
+
+.md-search:not(.search-has-value) .md-search__output {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.md-search.search-has-value .md-search__output {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+/* =========================================================
+   RIGHT TOC: активная фиолетовая палка у нужного пункта
+   ========================================================= */
+
+.md-sidebar--secondary nav.md-nav--secondary .md-nav__link {
+  position: relative !important;
+}
+
+.md-sidebar--secondary nav.md-nav--secondary .md-nav__link::before {
+  content: none !important;
+}
+
+.md-sidebar--secondary nav.md-nav--secondary .md-nav__link--active::before {
+  content: "" !important;
+
+  position: absolute !important;
+
+  left: -8px !important;
+  top: 2px !important;
+  bottom: 2px !important;
+
+  width: 2px !important;
+
+  background: #7e0072 !important;
+  border-radius: 999px !important;
+}
+
+/* =========================================================
+   RIGHT TOC: чуть больше расстояние между пунктами
+   ========================================================= */
+
+.md-sidebar--secondary nav.md-nav--secondary .md-nav__item {
+  margin: 0.6rem 0 !important;
+}
+
+.md-sidebar--secondary nav.md-nav--secondary .md-nav__link {
+  line-height: 1.35 !important;
+}
+
+/* =========================================================
+   CONTENT: немного расширяем текстовый блок вправо
+   чтобы скролл был ближе к правому меню
+   ========================================================= */
+
+@media (min-width: 1440px) {
+  .md-content {
+    margin-right: -22px !important;
+  }
+
+  .md-content__inner {
+    padding-right: 22px !important;
+  }
+}
+
+/* =========================================================
+   CONTENT LINKS: цвет ссылок зависит от активного режима
+   API / Битрикс24
+   ========================================================= */
+
+/* Значения по умолчанию */
+:root {
+  --content-link-color: #9a008f;
+  --content-link-hover: #7e0072;
+}
+
+/* Режим API */
+html[data-view="standalone"] {
+  --content-link-color: #9a008f;
+  --content-link-hover: #7e0072;
+}
+
+/* Режим Битрикс24 */
+html[data-view="bitrix"] {
+  --content-link-color: #27a0f2;
+  --content-link-hover: #168bd8;
+}
+
+/* Ссылки внутри основного текста */
+.md-content .md-typeset a:not(.md-button):not(.headerlink) {
+  color: var(--content-link-color) !important;
+  text-decoration: none;
+}
+
+/* Наведение на ссылки */
+.md-content .md-typeset a:not(.md-button):not(.headerlink):hover {
+  color: var(--content-link-hover) !important;
+  text-decoration: underline;
+}
+
+/* Ссылки внутри списков тоже наследуют цвет режима */
+.md-content .md-typeset li a:not(.md-button):not(.headerlink) {
+  color: var(--content-link-color) !important;
+}
+
+/* =========================================================
+   LAPTOP 14": нормальная раскладка для средних экранов
+   ========================================================= */
+
+@media (min-width: 1221px) and (max-width: 1679px) {
+  html,
+  body {
+    height: 100% !important;
+    overflow: hidden !important;
+    background: #f3f3f3 !important;
+  }
+
+  .md-main {
+    height: calc(100dvh - 96px) !important;
+    padding: 18px !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .md-main__inner.md-grid {
+    display: grid !important;
+    grid-template-columns: 320px minmax(0, 1fr) !important;
+    gap: 22px !important;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    height: 100% !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Левое меню */
+  .md-sidebar--primary {
+    grid-column: 1 / 2 !important;
+
+    display: block !important;
+
+    width: 320px !important;
+    max-width: 320px !important;
+
+    height: 100% !important;
+
+    margin: 0 !important;
+    padding: 24px 18px !important;
+
+    background: #ffffff !important;
+    border-radius: 32px !important;
+
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    position: static !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    height: 100% !important;
+    max-height: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: transparent !important;
+    border-radius: 0 !important;
+
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Контент */
+  .md-content {
+    grid-column: 2 / 3 !important;
+
+    display: block !important;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    height: 100% !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 32px 42px !important;
+
+    background: #ffffff !important;
+    border-radius: 32px !important;
+
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .md-content__inner {
+    width: 100% !important;
+    max-width: none !important;
+
+    height: 100% !important;
+    max-height: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 0 48px 0 !important;
+
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    box-sizing: border-box !important;
+  }
+
+  /* Правое меню на 14-дюймовых экранах скрываем */
+  .md-sidebar--secondary {
+    display: none !important;
+  }
+}
+
+/* Обучение: убираем верхнюю линию только перед "Вводная часть" */
+
+html[data-view="training"]
+.md-nav--primary > .md-nav__list > .md-nav__item.training-first-visible {
+  border-top: none !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* ===== Контент и правое меню по ширине шапки ===== */
+
+@media (min-width: 1440px) {
+
+    .md-main__inner.md-grid {
+        --content-sidebar-gap: clamp(14px, 1.6vw, 24px);
+    }
+
+    .md-sidebar--secondary {
+        margin-left: calc(-1 * var(--content-sidebar-gap)) !important;
+
+        width: calc(100% + var(--content-sidebar-gap)) !important;
+        max-width: calc(100% + var(--content-sidebar-gap)) !important;
+
+        box-sizing: border-box !important;
+    }
+}
+
+/* ===== Одинаковые края шапки и основного блока ===== */
+
+/* Планшеты и небольшие окна */
+@media (min-width: 761px) and (max-width: 1219px) {
+
+    body:not(.home-page) .md-header {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    body:not(.home-page) .md-main {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    body:not(.home-page) .md-main__inner.md-grid,
+    body:not(.home-page) .md-content {
+        width: 100% !important;
+        max-width: none !important;
+        box-sizing: border-box !important;
+    }
+}
+
+/* Телефоны */
+@media (max-width: 760px) {
+
+    body:not(.home-page) .md-header {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+
+    body:not(.home-page) .md-main {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+}
+
+/* =========================================================
+   СТРАНИЦА ТЕХНИЧЕСКОЙ ПОДДЕРЖКИ
+   Исправление раскладки и скругления на широких экранах
+   ========================================================= */
+
+@media (min-width: 1440px) {
+
+  /* Для страницы поддержки используем только две колонки */
+  html body .md-main__inner.md-grid:has(.support-page) {
+    grid-template-columns:
+      clamp(280px, 21vw, 320px)
+      minmax(0, 1fr) !important;
+
+    column-gap: clamp(14px, 1.6vw, 24px) !important;
+  }
+
+  /* Полностью скрываем правую колонку */
+  html body:has(.support-page) .md-sidebar--secondary {
+    display: none !important;
+  }
+
+  /* Контент занимает вторую колонку без отрицательного отступа */
+  html body .md-content:has(.support-page) {
+    grid-column: 2 / 3 !important;
+
+    width: auto !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    margin-right: 0 !important;
+
+    background: #ffffff !important;
+
+    border-top-left-radius: 32px !important;
+    border-top-right-radius: 32px !important;
+    border-bottom-right-radius: 32px !important;
+    border-bottom-left-radius: 32px !important;
+
+    overflow: hidden !important;
+    clip-path: none !important;
+  }
+
+  html body .md-content__inner:has(.support-page) {
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    padding-right: 0 !important;
+
+    border-radius: 0 !important;
+  }
+
+  html body .support-page {
+    width: 100% !important;
+
+    background: transparent !important;
+    border-radius: 0 !important;
+
+    box-sizing: border-box !important;
+  }
+}
+

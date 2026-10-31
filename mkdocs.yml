@@ -123,6 +123,64 @@ plugins:
 - blog
 - search
 - include-markdown
+- i18n:
+      docs_structure: suffix
+      fallback_to_default: false
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: ru
+          name: Русский
+          build: true
+          nav_translations:
+            Getting started: Начало работы
+            App installation: Установка приложения
+            App setup: Настройка приложения
+            Creating a template: Создание шаблона
+            Template automation: Автоматизация шаблона
+            Generating a document: Формирование документа
+            Application interface: Интерфейс приложения
+            Fields: Анкета
+            Editing area: Область редактирования
+            Toolbar: Панель инструментов
+            File name mask: Маска имени
+            Preview: Режим предпросмотра
+            Keyboard shortcuts: Горячие клавиши
+            Text: Текстовые
+            Integer: Целое число
+            Decimal: Десятичное число
+            Boolean: Да/Нет
+            Date/Time: Дата/Время
+            Date: Дата
+            Time: Время
+            Struct: Составное поле
+            List: Списки
+            Picture: Картинка
+            Function: Функции
+            Date and time: Дата и время
+            Formatting: Форматирование
+            Math: Математические
+            Logic: Логические
+            Syntax: Синтаксис
+            Basic rules: Основные правила
+            Where to use: Места использования
+            Directives: Метки
+            Expression: Значение
+            External: Фрагмент
+            Condition expression: Условие
+            Switch: Выбор
+            For: Цикл
+            Table: Таблица
+            FAQ: Часто задаваемые вопросы
+            Support: Помощь и поддержка
+        - locale: de
+          name: Deutsch
+          build: true
+
 markdown_extensions:
 - attr_list
 - md_in_html

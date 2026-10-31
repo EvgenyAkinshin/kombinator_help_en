@@ -137,5 +137,5 @@ In this case:
 
 After creating the template:
 
-- if the document should be generated automatically using Bitrix24 automation rules or business processes, proceed to [template automation](../../UserInterface/Documents/template-automation.md);
+- if the document should be generated automatically using Bitrix24 automation rules or business processes, proceed to [template automation](template-automation.md);
 - if automation is not required, proceed to [generating a document](../../UserInterface/Documents/add-document.md).
