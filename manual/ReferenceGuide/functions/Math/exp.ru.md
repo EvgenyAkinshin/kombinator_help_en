@@ -1,145 +1,145 @@
 # exp
 
-The `exp` function raises the number `e` to the specified power.
+Функция `exp` возводит число `e` в указанную степень.
 
-The function is useful for calculations that use exponential values.
+Функция пригодится для вычислений, в которых используется экспонента.
 
-## Syntax
+## Синтаксис
 
 ```text
-exp(value)
+exp(число)
 ```
 
-**Parameters:**
+**Параметры:**
 
-- `value` — the exponent. Required.
+- `число` — показатель степени. Обязательный параметр.
 
-You can use:
+В качестве параметра можно использовать:
 
-- a number;
-- a numeric field value;
-- a text value containing a number;
-- the result of another function;
-- an expression.
+- число;
+- значение числового поля;
+- текстовое значение, содержащее число;
+- результат другой функции;
+- выражение.
 
-## Return value
+## Возвращаемое значение
 
-The function returns the result of raising `e` to the specified power.
+Функция возвращает результат возведения числа `e` в указанную степень.
 
-For example:
+Например:
 
 ```text
 exp(2)
 ```
 
-Result:
+Результат:
 
 ```text
-7.38905609893065
+7,38905609893065
 ```
 
-If the value is `0`:
+При значении `0` функция возвращает:
 
 ```text
 exp(0)
 ```
 
-Result:
+Результат:
 
 ```text
 1
 ```
 
-## Examples
+## Примеры
 
-**Using a negative value**
+**Отрицательное значение**
 
 ```text
 exp(-1)
 ```
 
-Result:
+Результат:
 
 ```text
-0.36787944117144233
+0,36787944117144233
 ```
 
 ---
 
-**Using a decimal value**
+**Дробное значение**
 
 ```text
 exp(1.5)
 ```
 
-Result:
+Результат:
 
 ```text
-4.4816890703380645
+4,4816890703380645
 ```
 
 ---
 
-**Using a field value and an expression**
+**Использование значения поля и выражения**
 
-If the `value` field contains:
+Если поле `число` содержит:
 
 ```text
 2
 ```
 
-the expression:
+то выражение:
 
 ```text
-exp(value + 1)
+exp(число + 1)
 ```
 
-returns:
+вернёт:
 
 ```text
-20.085536923187668
-```
-
----
-
-**Using the result of another function**
-
-```text
-exp(round(1.6, 0))
-```
-
-Result:
-
-```text
-7.38905609893065
+20,085536923187668
 ```
 
 ---
 
-**Using a text representation of a number**
+**Использование результата другой функции**
+
+```text
+exp(округлить(1.6, 0))
+```
+
+Результат:
+
+```text
+7,38905609893065
+```
+
+---
+
+**Использование текстового представления числа**
 
 ```text
 exp("2")
 ```
 
-Result:
+Результат:
 
 ```text
-7.38905609893065
+7,38905609893065
 ```
 
-The text value must contain a number that the function can use in the calculation.
+Текстовое значение должно содержать число, которое функция может использовать в вычислении.
 
-## Errors
+## Ошибки
 
-The `value` parameter is required.
+Параметр `число` является обязательным.
 
-For example:
+Например:
 
 ```text
 exp()
 ```
 
-returns an error.
+вернёт ошибку.
 
-An error also occurs if a field passed to the function is empty.
+Ошибка также возникает, если в функцию передано поле без значения.

@@ -1,98 +1,98 @@
-# sortDescending
+# сортироватьПоУбыванию
 
-The `sortDescending` function returns a copy of a list with its items arranged in descending order.
+Функция `сортироватьПоУбыванию` возвращает копию списка, элементы которой расположены по убыванию.
 
-## Syntax
-
-```text
-sortDescending(item in list, expression)
-```
-
-**Parameters:**
-
-- `item` — the name of the current list item. It is defined directly in the function and used in the sorting expression;
-- `list` — the identifier of the list field whose items should be sorted;
-- `expression` — the value used to determine the order of the items.
-
-You can choose the name of the current item yourself. It is used only inside the function.
-
-### List with simple items
-
-If the list contains simple values, sorting is performed by the value of the current item.
-
-For example:
+## Синтаксис
 
 ```text
-sortDescending(number in numberList, number)
+сортироватьПоУбыванию(элемент из список, выражение)
 ```
 
-Here:
+**Параметры:**
 
-- `numberList` — the list field identifier;
-- `number` — the name of the current list item;
-- the second `number` — the value used for sorting.
+- `элемент` — имя текущего элемента списка. Задаётся непосредственно в функции и используется в выражении сортировки;
+- `список` — идентификатор спискового поля, элементы которого необходимо отсортировать;
+- `выражение` — значение, по которому определяется порядок элементов.
 
-### List with Struct items
+Имя текущего элемента можно выбрать самостоятельно. Оно используется только внутри функции.
 
-If the list contains Struct items, specify the nested field to sort by.
+### Список с простыми элементами
 
-For example:
+Если список содержит простые значения, сортировка выполняется по значению текущего элемента.
+
+Например:
 
 ```text
-sortDescending(product in products, product.price)
+сортироватьПоУбыванию(число из списокЧисел, число)
 ```
 
-Here:
+Здесь:
 
-- `products` — the list field identifier;
-- `product` — the name of the current list item;
-- `price` — the nested field identifier;
-- `product.price` — the value used for sorting.
+- `списокЧисел` — идентификатор спискового поля;
+- `число` — имя текущего элемента списка;
+- второе `число` — значение, по которому выполняется сортировка.
 
-## Return value
+### Список с составными элементами
 
-The function returns a sorted copy of the original list.
+Если элементы списка являются составными полями, в выражении указывается вложенное поле, по которому необходимо выполнить сортировку.
 
-The original list is not changed.
-
-To output the sorted items in a document, use the result of `sortDescending` inside a `for` block.
-
-## Examples
-
-### Sorting a list of numbers
-
-Suppose the template contains a list field with the following identifier:
+Например:
 
 ```text
-numberList
+сортироватьПоУбыванию(товар из товары, товар.стоимость)
 ```
 
-It contains:
+Здесь:
 
-| Position | Value |
+- `товары` — идентификатор спискового поля;
+- `товар` — имя текущего элемента списка;
+- `стоимость` — идентификатор вложенного поля;
+- `товар.стоимость` — значение, по которому выполняется сортировка.
+
+## Возвращаемое значение
+
+Функция возвращает отсортированную копию исходного списка.
+
+Исходный список при этом не изменяется.
+
+Чтобы вывести элементы отсортированного списка в документе, используйте результат функции `сортироватьПоУбыванию` внутри конструкции `цикл`.
+
+## Примеры
+
+### Сортировка списка чисел
+
+Допустим, в шаблоне есть списковое поле с идентификатором:
+
+```text
+списокЧисел
+```
+
+Оно содержит:
+
+| Позиция | Значение |
 | ---: | ---: |
 | 1 | 8 |
 | 2 | 3 |
 | 3 | 12 |
 | 4 | 5 |
 
-To output the values in descending order, use `sortDescending` inside a `for` block:
+Чтобы вывести значения по убыванию, используйте функцию `сортироватьПоУбыванию` внутри конструкции `цикл`:
 
 ```text
-{for(number in sortDescending(item in numberList, item))}
-{number}
-{/for}
+{цикл(число из сортироватьПоУбыванию(элемент из списокЧисел, элемент))}
+{число}
+{/цикл}
 ```
 
-Here:
+Здесь:
 
-- `numberList` — the identifier of the source list field;
-- `item` — the name of the current item inside the `sortDescending` function;
-- the second `item` — the value used for sorting;
-- `sortDescending(...)` — returns a sorted copy of the list;
-- `number` — the name of the current item in the sorted list inside the `for` block.
+- `списокЧисел` — идентификатор исходного спискового поля;
+- `элемент` — имя текущего элемента внутри функции `сортироватьПоУбыванию`;
+- второе `элемент` — значение, по которому выполняется сортировка;
+- `сортироватьПоУбыванию(...)` — возвращает отсортированную копию списка;
+- `число` — имя текущего элемента отсортированного списка внутри конструкции `цикл`.
 
-Result:
+Результат:
 
 ```text
 12
@@ -101,112 +101,112 @@ Result:
 3
 ```
 
-The original `numberList` remains unchanged.
+Исходный список `списокЧисел` при этом не изменяется.
 
-### Sorting products by price in a table loop
+### Сортировка товаров по стоимости в табличном цикле
 
-Suppose the template contains a list field with the following identifier:
+Допустим, в шаблоне есть списковое поле с идентификатором:
 
 ```text
-products
+товары
 ```
 
-Each item is a Struct field containing:
+Каждый элемент списка является составным полем и содержит:
 
-- `name` — the product name field identifier;
-- `price` — the product price field identifier.
+- `наименование` — идентификатор поля с названием товара;
+- `стоимость` — идентификатор поля со стоимостью товара.
 
-Source list:
+Исходный список:
 
-| Position | `name` | `price` |
+| Позиция | `наименование` | `стоимость` |
 | ---: | --- | ---: |
-| 1 | Monitor | 15000 |
-| 2 | Keyboard | 800 |
-| 3 | Printer | 12000 |
-| 4 | Mouse | 600 |
+| 1 | Монитор | 15000 |
+| 2 | Клавиатура | 800 |
+| 3 | Принтер | 12000 |
+| 4 | Мышь | 600 |
 
-To output the products in a table from the highest price to the lowest, use `sortDescending` inside a `t_for` block:
+Чтобы вывести товары в таблице от самой высокой стоимости к самой низкой, используйте функцию `сортироватьПоУбыванию` внутри табличного цикла:
 
 ```text
-{t_for(item in sortDescending(product in products, product.price))}
-{item.name} | {item.price}
-{/t_for}
+{t_цикл(позиция из сортироватьПоУбыванию(товар из товары, товар.стоимость))}
+{позиция.наименование} | {позиция.стоимость}
+{/t_цикл}
 ```
 
-Here:
+Здесь:
 
-- `products` — the identifier of the source list field;
-- `product` — the name of the current item inside the `sortDescending` function;
-- `product.price` — the value used for sorting;
-- `sortDescending(...)` — returns a copy of the list with its items arranged by price in descending order;
-- `item` — the name of the current item in the sorted list inside the `t_for` block;
-- `item.name` and `item.price` — the fields whose values are output in the cells of the repeated row.
+- `товары` — идентификатор исходного спискового поля;
+- `товар` — имя текущего элемента внутри функции `сортироватьПоУбыванию`;
+- `товар.стоимость` — значение, по которому выполняется сортировка;
+- `сортироватьПоУбыванию(...)` — возвращает копию списка с элементами, расположенными по убыванию стоимости;
+- `позиция` — имя текущего элемента отсортированного списка внутри табличного цикла;
+- `позиция.наименование` и `позиция.стоимость` — поля, значения которых выводятся в ячейках повторяемой строки.
 
-The table rows will be arranged as follows:
+В результате строки таблицы будут расположены так:
 
-| Name | Price |
+| Наименование | Стоимость |
 | --- | ---: |
-| Monitor | 15000 |
-| Printer | 12000 |
-| Keyboard | 800 |
-| Mouse | 600 |
+| Монитор | 15000 |
+| Принтер | 12000 |
+| Клавиатура | 800 |
+| Мышь | 600 |
 
-The original `products` list keeps its original item order.
+Исходный список `товары` при этом сохраняет первоначальный порядок элементов.
 
-### Sorting by the result of an expression
+### Сортировка по результату выражения
 
-An expression can also be used as the sorting criterion.
+В качестве критерия сортировки можно использовать не только значение поля, но и результат выражения.
 
-Suppose the `products` list also contains the following field:
+Допустим, список `товары` дополнительно содержит поле:
 
 ```text
-quantity
+количество
 ```
 
-Source data:
+Исходные данные:
 
-| `name` | `price` | `quantity` |
+| `наименование` | `стоимость` | `количество` |
 | --- | ---: | ---: |
-| Chair | 3500 | 4 |
-| Desk | 7500 | 1 |
-| Cabinet | 12000 | 2 |
+| Стул | 3500 | 4 |
+| Стол | 7500 | 1 |
+| Шкаф | 12000 | 2 |
 
-The products need to be sorted by the total cost of each line in descending order:
-
-```text
-price × quantity
-```
-
-Expression:
+Нужно вывести товары по убыванию общей стоимости позиции:
 
 ```text
-{for(item in sortDescending(product in products, product.price * product.quantity))}
-{item.name}
-{/for}
+стоимость × количество
 ```
 
-Here:
+Выражение:
 
-- `products` — the list field identifier;
-- `product` — the name of the current item inside the `sortDescending` function;
-- `price` and `quantity` — nested field identifiers;
-- `product.price * product.quantity` — the expression whose result is used for sorting;
-- `item` — the name of the current item in the sorted list inside the `for` block.
+```text
+{цикл(позиция из сортироватьПоУбыванию(товар из товары, товар.стоимость * товар.количество))}
+{позиция.наименование}
+{/цикл}
+```
 
-For each item, the function calculates:
+Здесь:
 
-| `name` | Calculation | Sorting value |
+- `товары` — идентификатор спискового поля;
+- `товар` — имя текущего элемента внутри функции `сортироватьПоУбыванию`;
+- `стоимость` и `количество` — идентификаторы вложенных полей;
+- `товар.стоимость * товар.количество` — выражение, результат которого используется для сортировки;
+- `позиция` — имя текущего элемента отсортированного списка внутри цикла.
+
+Для каждого элемента будет вычислено значение:
+
+| `наименование` | Расчёт | Значение для сортировки |
 | --- | --- | ---: |
-| Chair | `3500 × 4` | 14000 |
-| Desk | `7500 × 1` | 7500 |
-| Cabinet | `12000 × 2` | 24000 |
+| Стул | `3500 × 4` | 14000 |
+| Стол | `7500 × 1` | 7500 |
+| Шкаф | `12000 × 2` | 24000 |
 
-Result:
+Результат:
 
 ```text
-Cabinet
-Chair
-Desk
+Шкаф
+Стул
+Стол
 ```
 
-The calculated value is used only to determine the item order and does not change the data in the original list.
+Вычисленное значение используется только для определения порядка элементов и не изменяет данные исходного списка.

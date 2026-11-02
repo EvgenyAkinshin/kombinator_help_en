@@ -1,157 +1,151 @@
-# filter
+# фильтровать
 
-The `filter` function selects list items that match a specified condition.
+Функция `фильтровать` отбирает из списка элементы, которые соответствуют заданному условию.
 
-## Syntax
-
-```text
-filter(item in list, condition)
-```
-
-**Parameters:**
-
-- `item` — the name of the current list item. It is defined directly in the function and used in the condition;
-- `list` — the identifier of the list field;
-- `condition` — a Boolean expression that determines whether the current item should be included in the result.
-
-You can choose the name of the current item yourself. It is used only inside the function.
-
-For example:
+## Синтаксис
 
 ```text
-filter(product in products, product.price > 5000)
+фильтровать(элемент из список, условие)
 ```
 
-Here:
+**Параметры:**
 
-- `products` — the list field identifier;
-- `product` — the name of the current item defined inside the function;
-- `price` — the nested field identifier;
-- `product.price > 5000` — the filtering condition.
+- `элемент` — имя текущего элемента списка. Задаётся непосредственно в функции и используется в условии;
+- `список` — идентификатор спискового поля;
+- `условие` — логическое выражение, по которому определяется, должен ли элемент попасть в результат.
 
-Only products with a price greater than `5000` are included in the result.
+Имя текущего элемента можно выбрать самостоятельно. Оно используется только внутри функции.
 
-## Return value
-
-The function returns a new list containing only the items for which the condition returns `true`.
-
-The original list is not changed.
-
-The result of `filter(...)` can be used instead of the original list:
-
-- in a `for` or `t_for` block;
-- in other list functions;
-- in aggregate functions such as `count`, `sum`, `avg`, `min`, and `max`.
-
-This allows you to filter the required items first and then perform calculations only on those items.
-
-## Examples
-
-### Outputting only matching list items
-
-Suppose the template contains a list field:
+Например:
 
 ```text
-products
+фильтровать(товар из товары, товар.стоимость > 5000)
 ```
 
-Each item contains:
+Здесь:
 
-- `name` — product name;
-- `price` — product price.
+- `товары` — идентификатор спискового поля;
+- `товар` — имя текущего элемента, заданное внутри функции;
+- `стоимость` — идентификатор вложенного поля;
+- `товар.стоимость > 5000` — условие отбора.
 
-Source list:
+В результат попадут только товары стоимостью больше `5000`.
 
-| `name` | `price` |
+## Возвращаемое значение
+
+Функция возвращает новый список, содержащий только элементы, для которых условие выполняется.
+
+Исходный список при этом не изменяется.
+
+Результат `фильтровать(...)` можно использовать вместо исходного списка:
+
+- в конструкции `цикл` или табличном цикле;
+- в других списковых функциях;
+- в агрегатных функциях `счет`, `сумм`, `срзнач`, `мин` и `макс`.
+
+Это позволяет сначала отобрать нужные элементы, а затем выполнить расчёт только по ним.
+
+## Примеры
+
+### Вывод только подходящих элементов списка
+
+Допустим, в шаблоне есть списковое поле:
+
+```text
+товары
+```
+
+Каждый элемент содержит:
+
+- `наименование` — название товара;
+- `стоимость` — стоимость товара.
+
+Исходный список:
+
+| `наименование` | `стоимость` |
 | --- | ---: |
-| Monitor | 15000 |
-| Keyboard | 800 |
-| Printer | 12000 |
-| Mouse | 600 |
+| Монитор | 15000 |
+| Клавиатура | 800 |
+| Принтер | 12000 |
+| Мышь | 600 |
 
-You need to output only products with a price greater than `5000`.
-
-```text
-{for(item in filter(product in products, product.price > 5000))}
-{item.name} — {item.price}
-{/for}
-```
-
-Here:
-
-- `products` — the identifier of the source list field;
-- `product` — the name of the current item inside the `filter` function;
-- `product.price > 5000` — the filtering condition;
-- `filter(...)` — returns a new list containing only matching products;
-- `item` — the name of the current item in the filtered list inside the `for` block.
-
-Result:
+Нужно вывести только товары стоимостью больше `5000`.
 
 ```text
-Monitor — 15000
-Printer — 12000
+{цикл(позиция из фильтровать(товар из товары, товар.стоимость > 5000))}
+{позиция.наименование} — {позиция.стоимость}
+{/цикл}
 ```
 
-The original `products` list remains unchanged.
+Здесь:
 
-### Calculating a sum for a filtered list
+- `товары` — идентификатор исходного спискового поля;
+- `товар` — имя текущего элемента внутри функции `фильтровать`;
+- `товар.стоимость > 5000` — условие отбора;
+- `фильтровать(...)` — возвращает новый список только с подходящими товарами;
+- `позиция` — имя текущего элемента отфильтрованного списка внутри цикла.
 
-The result of `filter` can be passed directly to an aggregate function.
+Результат:
 
-Suppose the `products` list contains:
+```text
+Монитор — 15000
+Принтер — 12000
+```
 
-| `name` | `price` | `quantity` |
+Исходный список `товары` остаётся без изменений.
+
+### Расчёт суммы по отфильтрованному списку
+
+Результат функции `фильтровать` можно передать непосредственно в агрегатную функцию.
+
+Допустим, список `товары` содержит:
+
+| `наименование` | `стоимость` | `количество` |
 | --- | ---: | ---: |
-| Monitor | 15000 | 2 |
-| Keyboard | 800 | 5 |
-| Printer | 12000 | 1 |
-| Mouse | 600 | 10 |
+| Монитор | 15000 | 2 |
+| Клавиатура | 800 | 5 |
+| Принтер | 12000 | 1 |
+| Мышь | 600 | 10 |
 
-You need to calculate the total cost only for products whose unit price is greater than `5000`.
+Нужно рассчитать общую стоимость только тех товаров, стоимость одной единицы которых больше `5000`.
 
-First, `filter` selects the matching items:
+Сначала функция `фильтровать` отбирает подходящие элементы:
 
 ```text
-filter(product in products, product.price > 5000)
+фильтровать(товар из товары, товар.стоимость > 5000)
 ```
 
-The resulting list contains:
+В результате остаются:
 
-| `name` | `price` | `quantity` |
+| `наименование` | `стоимость` | `количество` |
 | --- | ---: | ---: |
-| Monitor | 15000 | 2 |
-| Printer | 12000 | 1 |
+| Монитор | 15000 | 2 |
+| Принтер | 12000 | 1 |
 
-The filtered list can then be passed directly to `sum`:
+Полученный список можно сразу передать в функцию `сумм`:
 
 ```text
-sum(
-    item in filter(
-        product in products,
-        product.price > 5000
-    ),
-    item.price * item.quantity
-)
+сумм(позиция из фильтровать(товар из товары, товар.стоимость > 5000), позиция.стоимость * позиция.количество)
 ```
 
-Here:
+Здесь:
 
-- `product` — the name of the source list item inside `filter`;
-- `filter(...)` — returns a list of products with a price greater than `5000`;
-- `item` — the name of the filtered list item inside `sum`;
-- `item.price * item.quantity` — the value calculated for each item and included in the sum.
+- `товар` — имя элемента исходного списка внутри функции `фильтровать`;
+- `фильтровать(...)` — возвращает список товаров стоимостью больше `5000`;
+- `позиция` — имя элемента уже отфильтрованного списка внутри функции `сумм`;
+- `позиция.стоимость * позиция.количество` — стоимость каждой позиции, которая участвует в суммировании.
 
-The calculation uses:
+Для расчёта используются:
 
 ```text
 15000 × 2 = 30000
 12000 × 1 = 12000
 ```
 
-The function returns:
+Функция вернёт:
 
 ```text
 42000
 ```
 
-In the same way, a filtered list can be passed to `count`, `avg`, `min`, or `max` when a calculation needs to be performed only for items that match a specified condition.
+Таким же способом отфильтрованный список можно передать в `счет`, `срзнач`, `мин` или `макс`, если расчёт нужно выполнить только по элементам, соответствующим условию.

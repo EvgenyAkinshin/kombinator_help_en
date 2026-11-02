@@ -1,73 +1,73 @@
-# trim
+# обрезатьпробелы
 
-The `trim` function removes spaces at the beginning and end of a value. Spaces inside the text are preserved.
+Функция `обрезатьпробелы` удаляет пробелы в начале и конце значения. Пробелы внутри текста сохраняются.
 
-## Syntax
+## Синтаксис
 
 ```text
-trim(value)
+обрезатьпробелы(значение)
 ```
 
-**Parameters:**
+**Параметры:**
 
-- `value` — the value to process. Required.
+- `значение` — значение, которое необходимо обработать. Обязательный параметр.
 
-You can use text, a field value, the result of another function, or an expression.
+В качестве параметра можно использовать текст, значение поля, результат другой функции или выражение.
 
-## Return value
+## Возвращаемое значение
 
-The function returns the value without leading or trailing spaces.
+Функция возвращает значение без пробелов в начале и конце.
 
-For example:
+Например:
 
 ```text
-trim("  New contract  ")
+обрезатьпробелы("  Новый договор  ")
 ```
 
-Result:
+Результат:
 
 ```text
-New contract
+Новый договор
 ```
 
-Spaces between words are preserved.
+Пробелы между словами при этом не удаляются.
 
-If you pass an empty string or a field with no value, the function returns an empty value.
+Если передать пустую строку или поле без значения, функция вернёт пустое значение.
 
-## Examples
+## Примеры
 
-**Using a field value**
+**Использование значения поля**
 
-If the `name` field contains:
+Если поле `название` содержит:
 
 ```text
-  Commercial proposal  
+  Коммерческое предложение  
 ```
 
-the expression:
+то выражение:
 
 ```text
-trim(name)
+обрезатьпробелы(название)
 ```
 
-returns:
+вернёт:
 
 ```text
-Commercial proposal
+Коммерческое предложение
 ```
 
 ---
 
-**Using with another function**
+**Использование с другой функцией**
 
-You can pass the result directly to another text function:
+Результат можно сразу передать в другую текстовую функцию:
 
 ```text
-upper(trim("  New contract  "))
+прописн(обрезатьпробелы("  Новый договор  "))
 ```
 
-Result:
+Результат:
 
 ```text
-NEW CONTRACT
+НОВЫЙ ДОГОВОР
 ```

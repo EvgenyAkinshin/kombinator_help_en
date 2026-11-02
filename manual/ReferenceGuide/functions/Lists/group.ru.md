@@ -1,140 +1,140 @@
-# group
+# группировать
 
-The `group` function combines list items into groups based on the same value of a specified property or expression.
+Функция `группировать` объединяет элементы списка в группы по одинаковому значению выбранного поля.
 
-## Syntax
-
-```text
-group(item in list, expression)
-```
-
-**Parameters:**
-
-- `item` — the name of the current list item. In the function settings, this parameter is **Item list name**;
-- `list` — the identifier of the list field. In the function settings, this parameter is **List**;
-- `expression` — the property or expression used to group the items. In the function settings, this parameter is **Grouping property**.
-
-The item name can be chosen freely and is used only inside the function.
-
-For example:
+## Синтаксис
 
 ```text
-group(product in products, product.category)
+группировать(элемент из список, выражение)
 ```
 
-Here:
+**Параметры:**
 
-- `product` — the current item name specified in **Item list name**;
-- `products` — the list field identifier specified in **List**;
-- `category` — the nested field identifier;
-- `product.category` — the value specified in **Grouping property**.
+- `элемент` — имя текущего элемента списка. Задаётся непосредственно в функции и используется в выражении;
+- `список` — идентификатор спискового поля;
+- `выражение` — значение, по которому элементы объединяются в группы.
 
-Items with the same `category` value are placed in the same group.
-
-## Return value
-
-The function returns a list of groups.
-
-Each group automatically provides two properties:
-
-- `.Key` — the value used to create the group;
-- `.List` — the list of source items included in the group.
-
-For example, if the current group is named `groupItem`:
+Например:
 
 ```text
-groupItem.Key
-groupItem.List
+группировать(товар из товары, товар.категория)
 ```
 
-You can choose the name `groupItem` yourself.
+Здесь:
 
-The `.Key` and `.List` properties are created by the `group` function and must be specified exactly as shown. They are not field identifiers from the form.
+- `товары` — идентификатор спискового поля;
+- `товар` — имя текущего элемента, заданное внутри функции;
+- `категория` — идентификатор вложенного поля;
+- `товар.категория` — значение, по которому выполняется группировка.
 
-The resulting `groupItem.List` can be used like any other list. For example, you can iterate through it in a `for` block or pass it to `sum`, `count`, `avg`, `min`, or `max`.
+Элементы с одинаковым значением `категория` попадут в одну группу.
 
-## Example
+## Возвращаемое значение
 
-### Grouping products and calculating a subtotal for each group
+Функция возвращает список сформированных групп.
 
-Suppose the template contains a list field with the following identifier:
+Для каждой группы автоматически доступны два свойства:
+
+- `.Признак` — значение, по которому сформирована группа;
+- `.Список` — список элементов исходного списка, вошедших в группу.
+
+Например, если текущей группе задано имя `группа`:
 
 ```text
-products
+группа.Признак
+группа.Список
 ```
 
-Each list item contains:
+Имя `группа` можно выбрать самостоятельно.
 
-- `name` — product name;
-- `category` — product category;
-- `price` — unit price;
-- `quantity` — product quantity.
+`.Признак` и `.Список` создаются функцией `группировать` и всегда указываются именно в таком виде. Это не идентификаторы полей анкеты.
 
-Source list:
+Полученный `группа.Список` можно использовать как обычный список — например, перебрать его в цикле или передать в `сумм`, `счет`, `срзнач`, `мин` и `макс`.
 
-| `name` | `category` | `price` | `quantity` |
+## Пример
+
+### Группировка товаров с подытогом по каждой группе
+
+Допустим, в шаблоне есть списковое поле с идентификатором:
+
+```text
+товары
+```
+
+Каждый элемент списка содержит:
+
+- `наименование` — название товара;
+- `категория` — категория товара;
+- `цена` — цена за единицу;
+- `количество` — количество товара.
+
+Исходный список:
+
+| `наименование` | `категория` | `цена` | `количество` |
 | --- | --- | ---: | ---: |
-| Monitor | Electronics | 15000 | 2 |
-| Printer | Electronics | 12000 | 1 |
-| Desk | Furniture | 20000 | 1 |
-| Chair | Furniture | 5000 | 4 |
+| Монитор | Техника | 15000 | 2 |
+| Принтер | Техника | 12000 | 1 |
+| Стол | Мебель | 20000 | 1 |
+| Стул | Мебель | 5000 | 4 |
 
-The products need to be grouped by category. For each category, the products should be displayed and their total cost calculated.
+Нужно сгруппировать товары по категории, вывести товары каждой категории и рассчитать их общую стоимость.
 
-Use an outer `for` block to iterate through the result of `group` and an inner `for` block to iterate through the items in each group:
+Для этого используется внешний цикл по результату `группировать` и внутренний цикл по элементам каждой группы:
 
 ```text
-{for(groupItem in group(product in products, product.category))}
-{groupItem.Key}
+{цикл(группа из группировать(товар из товары, товар.категория))}
+{группа.Признак}
 
-{for(item in groupItem.List)}
-{item.name} — {item.quantity} × {item.price}
-{/for}
+{цикл(позиция из группа.Список)}
+{позиция.наименование} — {позиция.количество} × {позиция.цена}
+{/цикл}
 
-Total: {sum(totalItem in groupItem.List, totalItem.price * totalItem.quantity)}
+Итого: {сумм(позицияИтога из группа.Список, позицияИтога.цена * позицияИтога.количество)}
 
-{/for}
+{/цикл}
 ```
 
-Here:
+Здесь:
 
-- `products` — the identifier of the source list field;
-- `product` — the current item name specified in **Item list name**;
-- `product.category` — the value specified in **Grouping property**;
-- `groupItem` — the name of the current group in the outer `for` block;
-- `groupItem.Key` — the current category;
-- `groupItem.List` — the products included in the current category;
-- `item` — the name of the current product in the inner `for` block;
-- `totalItem` — the name of the current product inside the `sum` function;
-- `totalItem.price * totalItem.quantity` — the product line total used to calculate the subtotal.
+- `товары` — идентификатор исходного спискового поля;
+- `товар` — имя текущего элемента внутри функции `группировать`;
+- `товар.категория` — значение, по которому формируются группы;
+- `группа` — имя текущей группы во внешнем цикле;
+- `группа.Признак` — название текущей категории;
+- `группа.Список` — товары, относящиеся к текущей категории;
+- `позиция` — имя текущего товара во внутреннем цикле;
+- `позицияИтога` — имя текущего товара внутри функции `сумм`;
+- `позицияИтога.цена * позицияИтога.количество` — стоимость одной позиции, которая участвует в расчёте подытога.
 
-For the `Electronics` group, `sum` calculates:
+Для группы `Техника` функция `сумм` рассчитает:
 
 ```text
 15000 × 2 + 12000 × 1 = 42000
 ```
 
-For the `Furniture` group:
+Для группы `Мебель`:
 
 ```text
 20000 × 1 + 5000 × 4 = 40000
 ```
 
-The result is:
+В результате:
 
 ```text
-Electronics
+Техника
 
-Monitor — 2 × 15000
-Printer — 1 × 12000
+Монитор — 2 × 15000
+Принтер — 1 × 12000
 
-Total: 42000
+Итого: 42000
 
 
-Furniture
+Мебель
 
-Desk — 1 × 20000
-Chair — 4 × 5000
+Стол — 1 × 20000
+Стул — 4 × 5000
 
-Total: 40000
+Итого: 40000
 ```
+
+Таким образом, `группировать` позволяет не только разделить элементы списка по признаку, но и отдельно обрабатывать элементы каждой сформированной группы, в том числе выполнять по ним расчёты.

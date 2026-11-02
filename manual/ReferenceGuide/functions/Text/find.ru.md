@@ -1,110 +1,98 @@
-# find
+# поиск
 
-The `find` function searches for a specified fragment in a string and returns the position where it begins.
+Функция `поиск` находит указанный фрагмент в тексте и возвращает позицию, с которой он начинается.
 
-The function is useful when the position of the required text is not known in advance. The returned position can be used in other functions, such as `mid`, to extract a specific part of a string.
+Функция пригодится, когда положение нужного текста заранее неизвестно. Полученную позицию можно использовать в других функциях, например `пстр`, чтобы извлечь нужную часть строки.
 
-## Syntax
-
-```text
-find(string, substring, [startPosition], [matchCase])
-```
-
-**Parameters:**
-
-- `string` — the value in which to search. Required;
-- `substring` — the text or character to find. Required;
-- `startPosition` — the position from which to start the search. Optional. By default, the search starts from the first character;
-- `matchCase` — determines whether the search is case-sensitive. Optional. By default, the search is case-insensitive.
-
-You can use text, field values, results of other functions, and expressions as parameters.
-
-## Return value
-
-If the specified fragment is found, the function returns the position of its first character. Counting starts from `1`.
-
-For example:
+## Синтаксис
 
 ```text
-find("Acme Company", "Com", 1, false)
+поиск(строка, подстрока, [начальнаяПозиция], [учитыватьРегистр])
 ```
 
-Result:
+**Параметры:**
+
+- `строка` — значение, в котором необходимо выполнить поиск. Обязательный параметр;
+- `подстрока` — текст или символ, который необходимо найти. Обязательный параметр;
+- `начальнаяПозиция` — позиция, с которой необходимо начать поиск. Необязательный параметр. По умолчанию поиск начинается с первого символа;
+- `учитыватьРегистр` — определяет, нужно ли учитывать регистр букв при поиске. Необязательный параметр. По умолчанию регистр не учитывается.
+
+В качестве параметров можно использовать текст, значения полей, результаты других функций и выражения.
+
+## Возвращаемое значение
+
+Если указанный фрагмент найден, функция возвращает номер символа, с которого он начинается. Отсчёт начинается с `1`.
+
+Например:
 
 ```text
-6
+поиск("ООО Ромашка", "Ром", 1, ложь)
 ```
 
-If the specified text is not found, the function returns `null`.
-
-## Examples
-
-**Finding a character in a field value**
-
-If the `documentNumber` field contains:
+Результат:
 
 ```text
-Contract No.125/2026
+5
 ```
 
-the expression:
+Если указанный текст не найден, функция возвращает пустое значение.
+
+## Примеры
+
+**Поиск символа в значении поля**
+
+Если поле `номерДокумента` содержит:
 
 ```text
-find(documentNumber, "No.")
+Договор №125/2026
 ```
 
-returns the position where `No.` begins.
+то выражение:
+
+```text
+поиск(номерДокумента, "№")
+```
+
+вернёт позицию символа `№`.
 
 ---
 
-**Extracting text after a found fragment**
+**Получение текста после найденного фрагмента**
 
-You can pass the result of `find` to `mid` when you need to extract a part of text whose position is not known in advance.
+Результат `поиск` можно передать в функцию `пстр`, если необходимо получить часть текста, положение которой заранее неизвестно.
 
-For example:
+Например:
 
 ```text
-mid(
-    documentNumber,
-    find(documentNumber, "No.") + length("No."),
-    length(documentNumber)
+пстр(
+    номерДокумента,
+    поиск(номерДокумента, "№") + 1,
+    длина(номерДокумента)
 )
 ```
 
-If `documentNumber` contains:
+Если `номерДокумента` содержит:
 
 ```text
-Contract No.125/2026
+Договор №125/2026
 ```
 
-the result is:
+результат:
 
 ```text
 125/2026
 ```
 
-Here, `find` determines the position of `No.`, while `length("No.")` moves the starting position to the first character after it. The `length` function allows the remaining text to be extracted through the end of the string.
+Здесь `поиск` определяет положение символа `№`, а `+ 1` переносит начало на следующий символ. Функция `длина` позволяет получить оставшийся текст до конца строки.
 
 ---
 
-**Searching from a specific position**
+**Поиск с определённой позиции**
 
-If the same fragment appears more than once, you can start the search from a specified position instead of the first character:
-
-```text
-find(text, "/", 10)
-```
-
-In this case, the function searches for `/` starting from the tenth character of the string.
-
----
-
-**Case-sensitive search**
-
-Set `matchCase` to `true` when the letter case must match:
+Если один и тот же фрагмент встречается в тексте несколько раз, поиск можно начать не с первого символа, а с указанной позиции:
 
 ```text
-find("Contract CONTRACT", "CONTRACT", 1, true)
+поиск(текст, "/", 10)
 ```
 
-The function searches for the substring using the exact letter case.
+В этом случае функция будет искать символ `/`, начиная с десятого символа строки.

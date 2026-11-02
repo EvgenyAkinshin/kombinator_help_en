@@ -93,6 +93,7 @@ if (typeof document$ !== "undefined") {
    SEARCH: меняем текст в строке поиска
    ========================================================= */
 
+
 function initSearchPlaceholder() {
   const input = document.querySelector(".md-search__input");
 
@@ -100,9 +101,21 @@ function initSearchPlaceholder() {
     return;
   }
 
-  input.setAttribute("placeholder", "Search articles, markers, or functions");
-  input.setAttribute("aria-label", "Search articles, markers, or functions");
+  // Определяем язык по адресу страницы
+  const language = window.location.pathname.split("/")[1];
+
+  const placeholders = {
+    en: "Search articles, markers, or functions",
+    ru: "Поиск по статьям, меткам и функциям",
+    de: "Artikel, Marker oder Funktionen suchen"
+  };
+
+  const placeholder = placeholders[language] || placeholders.en;
+
+  input.setAttribute("placeholder", placeholder);
+  input.setAttribute("aria-label", placeholder);
 }
+
 
 document.addEventListener("DOMContentLoaded", initSearchPlaceholder);
 

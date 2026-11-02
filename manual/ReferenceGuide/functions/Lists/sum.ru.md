@@ -1,148 +1,148 @@
-# sum
+# сумм
 
-The `sum` function calculates the sum of numeric values from list items.
+Функция `сумм` вычисляет сумму числовых значений элементов списка.
 
-## Syntax
-
-```text
-sum(item in list, expression)
-```
-
-**Parameters:**
-
-- `item` — the name of the current list item. It is defined directly in the function and used in the expression;
-- `list` — the identifier of the list field;
-- `expression` — a numeric value or expression whose results should be added together.
-
-You can choose the name of the current item yourself. It is used only inside the function.
-
-### List with simple items
-
-If the list contains numeric values, use the current item in the expression.
-
-For example:
+## Синтаксис
 
 ```text
-sum(number in numberList, number)
+сумм(элемент из список, выражение)
 ```
 
-Here:
+**Параметры:**
 
-- `numberList` — the list field identifier;
-- `number` — the name of the current list item;
-- the second `number` — the value included in the sum.
+- `элемент` — имя текущего элемента списка. Задаётся непосредственно в функции и используется в выражении;
+- `список` — идентификатор спискового поля;
+- `выражение` — числовое значение или выражение, результаты которого необходимо сложить.
 
-### List with Struct items
+Имя текущего элемента можно выбрать самостоятельно. Оно используется только внутри функции.
 
-If the list contains Struct items, specify the required numeric field in the expression.
+### Список с простыми элементами
 
-For example:
+Если список содержит числовые значения, в выражении используется текущий элемент.
+
+Например:
 
 ```text
-sum(product in products, product.quantity)
+сумм(число из списокЧисел, число)
 ```
 
-Here:
+Здесь:
 
-- `products` — the list field identifier;
-- `product` — the name of the current item;
-- `quantity` — the nested numeric field identifier;
-- `product.quantity` — the value included in the sum.
+- `списокЧисел` — идентификатор спискового поля;
+- `число` — имя текущего элемента списка;
+- второе `число` — значение, которое участвует в расчёте суммы.
 
-## Return value
+### Список с составными элементами
 
-The function returns the sum of the expression results for all items in the list.
+Если элементы списка являются составными полями, в выражении указывается нужное числовое поле.
 
-## Examples
-
-### Calculating the total quantity of products
-
-Suppose the template contains a list field:
+Например:
 
 ```text
-products
+сумм(товар из товары, товар.количество)
 ```
 
-Each item is a Struct field containing:
+Здесь:
 
-- `name` — product name;
-- `quantity` — product quantity.
+- `товары` — идентификатор спискового поля;
+- `товар` — имя текущего элемента;
+- `количество` — идентификатор вложенного числового поля;
+- `товар.количество` — значение, которое участвует в расчёте суммы.
 
-Source data:
+## Возвращаемое значение
 
-| `name` | `quantity` |
+Функция возвращает сумму результатов выражения для всех элементов списка.
+
+## Примеры
+
+### Общее количество товаров
+
+Допустим, в шаблоне есть списковое поле:
+
+```text
+товары
+```
+
+Каждый элемент списка является составным полем и содержит:
+
+- `наименование` — название товара;
+- `количество` — количество товара.
+
+Исходные данные:
+
+| `наименование` | `количество` |
 | --- | ---: |
-| Monitor | 2 |
-| Keyboard | 5 |
-| Printer | 1 |
-| Mouse | 10 |
+| Монитор | 2 |
+| Клавиатура | 5 |
+| Принтер | 1 |
+| Мышь | 10 |
 
-To calculate the total quantity of products, use:
+Чтобы определить общее количество товаров, используйте:
 
 ```text
-sum(product in products, product.quantity)
+сумм(товар из товары, товар.количество)
 ```
 
-Here:
+Здесь:
 
-- `products` — the list field identifier;
-- `product` — the name of the current item inside the `sum` function;
-- `quantity` — the nested field identifier;
-- `product.quantity` — the value added to the total.
+- `товары` — идентификатор спискового поля;
+- `товар` — имя текущего элемента внутри функции `сумм`;
+- `количество` — идентификатор вложенного поля;
+- `товар.количество` — значение, которое прибавляется к общей сумме.
 
-The function adds:
+Функция сложит значения:
 
 ```text
 2 + 5 + 1 + 10
 ```
 
-and returns:
+и вернёт:
 
 ```text
 18
 ```
 
-### Calculating the total cost of products
+### Расчёт общей стоимости товаров
 
-The second parameter can also contain an expression.
+В качестве второго параметра можно использовать вычисляемое выражение.
 
-Suppose the `products` list contains:
+Допустим, список `товары` содержит поля:
 
-- `name` — product name;
-- `price` — unit price;
-- `quantity` — product quantity.
+- `наименование` — название товара;
+- `стоимость` — стоимость одной единицы;
+- `количество` — количество товара.
 
-Source data:
+Исходные данные:
 
-| `name` | `price` | `quantity` |
+| `наименование` | `стоимость` | `количество` |
 | --- | ---: | ---: |
-| Monitor | 15000 | 2 |
-| Keyboard | 800 | 5 |
-| Printer | 12000 | 1 |
-| Mouse | 600 | 10 |
+| Монитор | 15000 | 2 |
+| Клавиатура | 800 | 5 |
+| Принтер | 12000 | 1 |
+| Мышь | 600 | 10 |
 
-To calculate the total cost of all products:
+Чтобы рассчитать общую стоимость всех товаров:
 
 ```text
-sum(product in products, product.price * product.quantity)
+сумм(товар из товары, товар.стоимость * товар.количество)
 ```
 
-For each item, the function first calculates the line total:
+Для каждого элемента сначала вычисляется стоимость позиции:
 
-| `name` | Calculation | Result |
+| `наименование` | Расчёт | Результат |
 | --- | --- | ---: |
-| Monitor | `15000 × 2` | 30000 |
-| Keyboard | `800 × 5` | 4000 |
-| Printer | `12000 × 1` | 12000 |
-| Mouse | `600 × 10` | 6000 |
+| Монитор | `15000 × 2` | 30000 |
+| Клавиатура | `800 × 5` | 4000 |
+| Принтер | `12000 × 1` | 12000 |
+| Мышь | `600 × 10` | 6000 |
 
-The function then adds the calculated values:
+После этого функция складывает полученные значения:
 
 ```text
 30000 + 4000 + 12000 + 6000
 ```
 
-Result:
+Результат:
 
 ```text
 52000

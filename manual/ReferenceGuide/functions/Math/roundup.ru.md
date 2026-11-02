@@ -1,93 +1,93 @@
-# roundup
+# округлитьвверх
 
-The `roundup` function rounds a number to the specified number of decimal places, increasing the last digit of the result.
+Функция `округлитьвверх` округляет число до указанного количества знаков, увеличивая последнюю цифру результата.
 
-## Syntax
-
-```text
-roundup(value, decimalPlaces)
-```
-
-**Parameters:**
-
-- `value` — the numeric value to round. Required;
-- `decimalPlaces` — the number of decimal places to round to. Required.
-
-You can use:
-
-- numbers;
-- values from numeric fields;
-- results of other functions;
-- expressions.
-
-## Return value
-
-The function returns a number rounded away from zero.
-
-For example:
+## Синтаксис
 
 ```text
-roundup(125.671, 2)
+округлитьвверх(число, количествоЗнаков)
 ```
 
-Result:
+**Параметры:**
+
+- `число` — число, которое необходимо округлить. Обязательный числовой параметр;
+- `количествоЗнаков` — количество знаков, до которого необходимо выполнить округление. Обязательный числовой параметр.
+
+В качестве параметров можно использовать:
+
+- числа;
+- значения числовых полей;
+- результаты других функций;
+- выражения.
+
+## Возвращаемое значение
+
+Функция возвращает число, округлённое в сторону от нуля.
+
+Например:
 
 ```text
-125.68
+округлитьвверх(125.671, 2)
 ```
 
-## Decimal places
-
-The `decimalPlaces` parameter determines the position to which the value is rounded:
-
-- a positive value — rounds to the specified number of decimal places;
-- `0` — rounds to an integer;
-- a negative value — rounds to tens, hundreds, thousands, and other positions.
-
-For example:
+Результат:
 
 ```text
-roundup(1891, -2)
+125,68
 ```
 
-Result:
+## Количество знаков
+
+Значение параметра `количествоЗнаков` определяет разряд, до которого выполняется округление:
+
+- положительное значение — количество знаков после запятой;
+- `0` — округление до целого числа;
+- отрицательное значение — округление до десятков, сотен, тысяч и других разрядов.
+
+Например:
+
+```text
+округлитьвверх(1891, -2)
+```
+
+Результат:
 
 ```text
 1900
 ```
 
-## Features
+## Особенности
 
-For positive numbers, the result is rounded up to the nearest value with the specified number of decimal places.
+Для положительных чисел результат увеличивается до ближайшего значения с указанным количеством знаков.
 
-For negative numbers, rounding is also performed away from zero:
-
-```text
-roundup(-125.671, 2)
-```
-
-Result:
+Для отрицательных чисел округление также выполняется в сторону от нуля:
 
 ```text
--125.68
+округлитьвверх(-125.671, 2)
 ```
 
-## Examples
-
-**Using a field value and an expression**
-
-If the `value` field contains `125.671`, the expression:
+Результат:
 
 ```text
-roundup(value + 10, 2)
+-125,68
 ```
 
-returns the result rounded away from zero to two decimal places.
+## Примеры
 
-## Related functions
+**Использование значения поля и выражения**
 
-Different rounding methods are available:
+Если поле `число` содержит `125.671`, то выражение:
 
-- `round` — rounds a number to the nearest value;
-- `roundup` — rounds a number away from zero;
-- `rounddown` — rounds a number toward zero.
+```text
+округлитьвверх(число + 10, 2)
+```
+
+вернёт значение, округлённое вверх до двух знаков после запятой.
+
+## Связь с другими функциями
+
+Для разных способов округления можно использовать:
+
+- `округлить` — округляет число до ближайшего значения;
+- `округлитьвверх` — округляет число в сторону от нуля;
+- `округлитьвниз` — округляет число в сторону к нулю.

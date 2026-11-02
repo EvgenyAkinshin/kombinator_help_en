@@ -66,15 +66,18 @@ A text field value can be used in functions to modify, search, and process text.
 - [mid](../functions/Text/mid.md) — returns part of a string;
 - [find](../functions/Text/find.md) — finds a specified fragment in a string;
 - [substitute](../functions/Text/substitute.md) — replaces specified text or characters;
-- [repeat](../functions/Text/repeat.md) — repeats a string a specified number of times.
+- [repeat](../functions/Text/repeat.md) — repeats a string a specified number of times;
+- [contains](../functions/Text/contains.md) — ;
+- [endsWith](../functions/Text/endsWith.md) — ;
+- [startsWith](../functions/Text/startsWith.md) — .
 
 ### Formatting functions
 
 Some text values can also be processed using formatting functions:
 
-- [инициалы](../functions/Morph/инициалы.md) — changes the format and grammatical case of a full name;
-- [окончание](../functions/Morph/окончание.md) — selects an ending depending on gender and number;
-- [склонение](../functions/Morph/склонение.md) — changes the grammatical form of a word or phrase by case and number;
-- [транслит](../functions/Morph/транслит.md) — converts Cyrillic text to Latin characters.
+- [formatFullName_RU](../functions/Formatting/formatFullName_RU.md) — changes the format and grammatical case of a full name;
+- [wordEnding_RU](../functions/Formatting/wordEnding_RU.md) — selects an ending depending on gender and number;
+- [decline_RU](../functions/Formatting/decline_RU.md) — changes the grammatical form of a word or phrase by case and number;
+- [transliterate_RU](../functions/Formatting/transliterate_RU.md) — converts Cyrillic text to Latin characters.
 
-> Some formatting functions are intended for specific types of text. For example, `инициалы` is used for text containing a person's full name.
+> Some formatting functions are intended for specific types of text. For example, `formatFullName_RU` is used for text containing a person's full name.

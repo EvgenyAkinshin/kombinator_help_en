@@ -1,114 +1,114 @@
-# avg
+# срзнач
 
-The `avg` function calculates the arithmetic mean of numeric values from list items.
+Функция `срзнач` вычисляет среднее арифметическое числовых значений элементов списка.
 
-A numeric field or an expression can be used as the value for the calculation.
+В качестве значения для расчёта можно использовать числовое поле элемента или выражение.
 
-## Syntax
-
-```text
-avg(item in list, expression)
-```
-
-**Parameters:**
-
-- `item` — the current list item;
-- `list` — the identifier of the list field;
-- `expression` — a numeric value or expression whose result is included in the arithmetic mean calculation.
-
-### List with Struct items
-
-If each list item is a Struct field, you can assign any valid name to the current item and use it to access nested fields.
-
-For example:
+## Синтаксис
 
 ```text
-avg(product in products, product.price)
+срзнач(элемент из список, выражение)
 ```
 
-Here:
+**Параметры:**
 
-- `products` — the list field identifier;
-- `product` — the name of the current item defined directly in the function;
-- `price` — the nested numeric field identifier;
-- `product.price` — the value used to calculate the arithmetic mean.
+- `элемент` — текущий элемент списка;
+- `список` — идентификатор спискового поля;
+- `выражение` — числовое значение или выражение, результат которого участвует в расчёте среднего арифметического.
 
-You can choose the name of the current item yourself. For example, instead of `product`, you can use `item`:
+### Список с составными элементами
+
+Если каждый элемент списка является составным полем, для текущего элемента можно задать произвольное допустимое имя и через него обращаться к вложенным полям.
+
+Например:
 
 ```text
-avg(item in products, item.price)
+срзнач(товар из товары, товар.стоимость)
 ```
 
-### List with simple items
+Здесь:
 
-If the list contains simple numeric values, the current item itself is used in the expression.
+- `товары` — идентификатор спискового поля;
+- `товар` — имя текущего элемента, заданное непосредственно в функции;
+- `стоимость` — идентификатор вложенного числового поля;
+- `товар.стоимость` — значение, которое используется для расчёта среднего арифметического.
 
-Suppose the `ratings` list contains numeric values.
-
-Expression:
+Имя текущего элемента можно выбрать самостоятельно. Например, вместо `товар` можно использовать `позиция`:
 
 ```text
-avg(rating in ratings, rating)
+срзнач(позиция из товары, позиция.стоимость)
 ```
 
-In this case, each value in the list is used directly in the calculation.
+### Список с простыми элементами
 
-## Return value
+Если список содержит простые числовые элементы, в параметре `элемент` указывается идентификатор элемента списка.
 
-The function returns a number — the arithmetic mean of the expression results for all items in the list.
+Допустим, списковое поле `оценки` содержит числовые элементы с идентификатором `оценка`.
 
-## Examples
-
-### Calculating the average product price
-
-Suppose the template contains a list field with the following identifier:
+Выражение:
 
 ```text
-products
+срзнач(оценка из оценки, оценка)
 ```
 
-Each item is a Struct field containing:
+В этом случае значение каждого элемента списка непосредственно участвует в расчёте.
 
-- `name` — product name;
-- `price` — product price.
+## Возвращаемое значение
 
-The list contains:
+Функция возвращает число — среднее арифметическое результатов выражения всех элементов списка.
 
-| `name` | `price` |
+## Примеры
+
+### Средняя стоимость товаров
+
+Допустим, в шаблоне есть списковое поле с идентификатором:
+
+```text
+товары
+```
+
+Каждый элемент списка является составным полем и содержит:
+
+- `наименование` — название товара;
+- `стоимость` — стоимость товара.
+
+Список содержит:
+
+| `наименование` | `стоимость` |
 | --- | ---: |
-| Monitor | 15000 |
-| Keyboard | 800 |
-| Printer | 12000 |
-| Mouse | 600 |
+| Монитор | 15000 |
+| Клавиатура | 800 |
+| Принтер | 12000 |
+| Мышь | 600 |
 
-To calculate the average product price, use:
+Чтобы рассчитать среднюю стоимость товаров, используйте:
 
 ```text
-avg(product in products, product.price)
+срзнач(товар из товары, товар.стоимость)
 ```
 
-Here:
+Здесь:
 
-- `products` — the list field identifier;
-- `product` — the name of the current item defined inside the `avg` function;
-- `price` — the numeric field identifier inside the item;
-- `product.price` — the value retrieved from each list item.
+- `товары` — идентификатор спискового поля;
+- `товар` — имя текущего элемента, заданное внутри функции `срзнач`;
+- `стоимость` — идентификатор числового поля внутри элемента;
+- `товар.стоимость` — значение, которое функция получает из каждого элемента списка.
 
-Result:
+Результат:
 
 ```text
 7100
 ```
 
-### Calculating the average of a simple numeric list
+### Среднее значение простого числового списка
 
-Suppose the template contains a list field:
+Допустим, в шаблоне есть списковое поле `оценки`, элементом которого является числовое поле с идентификатором:
 
 ```text
-ratings
+оценка
 ```
 
-The list contains:
+Список содержит:
 
 ```text
 4
@@ -117,57 +117,57 @@ The list contains:
 5
 ```
 
-Expression:
+Выражение:
 
 ```text
-avg(rating in ratings, rating)
+срзнач(оценка из оценки, оценка)
 ```
 
-returns:
+вернёт:
 
 ```text
-4.25
+4,25
 ```
 
-### Calculating the average result of an expression
+### Среднее значение по результату выражения
 
-The second parameter can also contain an expression.
+В качестве второго параметра можно использовать вычисляемое выражение.
 
-Suppose the `products` list contains:
+Допустим, список `товары` содержит поля:
 
-- `name` — product name;
-- `price` — unit price;
-- `quantity` — product quantity.
+- `наименование` — название товара;
+- `стоимость` — стоимость одной единицы;
+- `количество` — количество товара.
 
-Source data:
+Исходные данные:
 
-| `name` | `price` | `quantity` |
+| `наименование` | `стоимость` | `количество` |
 | --- | ---: | ---: |
-| Monitor | 15000 | 2 |
-| Keyboard | 800 | 5 |
-| Printer | 12000 | 1 |
-| Mouse | 600 | 10 |
+| Монитор | 15000 | 2 |
+| Клавиатура | 800 | 5 |
+| Принтер | 12000 | 1 |
+| Мышь | 600 | 10 |
 
-You need to calculate the average total cost of a product line based on its quantity.
+Нужно определить среднюю стоимость товарной позиции с учётом количества.
 
-Expression:
+Выражение:
 
 ```text
-avg(product in products, product.price * product.quantity)
+срзнач(товар из товары, товар.стоимость * товар.количество)
 ```
 
-For each item, the function first calculates the line total:
+Для каждого элемента сначала вычисляется стоимость позиции:
 
-| `name` | Calculation | Value |
+| `наименование` | Расчёт | Значение |
 | --- | --- | ---: |
-| Monitor | `15000 × 2` | 30000 |
-| Keyboard | `800 × 5` | 4000 |
-| Printer | `12000 × 1` | 12000 |
-| Mouse | `600 × 10` | 6000 |
+| Монитор | `15000 × 2` | 30000 |
+| Клавиатура | `800 × 5` | 4000 |
+| Принтер | `12000 × 1` | 12000 |
+| Мышь | `600 × 10` | 6000 |
 
-The function then calculates the arithmetic mean of these values.
+После этого функция вычисляет среднее арифметическое полученных значений.
 
-Result:
+Результат:
 
 ```text
 13000

@@ -1,137 +1,147 @@
-# match
+# поискпоз
 
-The `match` function finds the first list item that satisfies a specified condition and returns its position.
+Функция `поискпоз` находит первый элемент списка, который соответствует заданному условию, и возвращает его позицию.
 
-## Syntax
+## Синтаксис
 
 ```text
-match(item in list, condition)
+поискпоз(элемент из список, условие)
 ```
 
-**Parameters:**
+**Параметры:**
 
-- `item` — the current list item used in the condition;
-- `list` — the list in which the search is performed;
-- `condition` — a Boolean expression that determines whether the current item matches. The condition must return `true` or `false`.
+- `элемент` — текущий элемент списка, который используется в условии;
+- `список` — список, в котором выполняется поиск;
+- `условие` — логическое выражение, определяющее, подходит ли текущий элемент. Условие должно возвращать `да` или `нет`.
 
-### List with a Struct item
+### Список с составным элементом
 
-If the list contains Struct items, you can assign any valid name to the current item and use it to access nested fields.
+Если элементом списка является составное поле, для текущего элемента можно задать произвольное допустимое имя и через него обращаться к вложенным полям.
 
-For example:
+Например:
 
 ```text
-match(
-    product in products,
-    product.price > 5000
+поискпоз(
+    товар из товары,
+    товар.стоимость > 5000
 )
 ```
 
-Here:
+Здесь:
 
-- `product` — the name of the current list item;
-- `products` — the list field identifier;
-- `product.price` — the `price` field of the current Struct item.
+- `товар` — имя текущего элемента списка;
+- `товары` — идентификатор списка;
+- `товар.стоимость` — поле `стоимость` внутри составного элемента.
 
-The current item name is used only inside the function expression. For example, instead of `product`, you can use `item`, `position`, `_1`, or another valid name:
+Имя текущего элемента используется только внутри выражения функции. Например, вместо `товар` можно указать `элемент`, `позиция`, `_1` или другое допустимое имя:
 
 ```text
-match(
-    position in products,
-    position.price > 5000
+поискпоз(
+    позиция из товары,
+    позиция.стоимость > 5000
 )
 ```
 
-### List with a simple item
+### Список с простым элементом
 
-If the list contains simple values, such as text or numbers, the condition is applied directly to the current item.
+Если список содержит простые значения — например, текст или числа, — условие применяется непосредственно к текущему элементу.
 
-For example, for a list of numbers:
+Например, для списка чисел:
 
 ```text
-match(
-    number in numbers,
-    number >= 5
+поискпоз(
+    число из числа,
+    число >= 5
 )
 ```
 
-The function finds the position of the first value greater than or equal to `5`.
+функция найдёт позицию первого значения, которое больше или равно `5`.
 
-## Return value
+## Возвращаемое значение
 
-The function returns an integer — the position of the first list item for which the condition returns `true`.
+Функция возвращает целое число — позицию первого элемента списка, для которого выполняется условие.
 
-List positions start at `1`.
+Нумерация элементов начинается с `1`.
 
-If no item matches the condition, the function does not return a position.
+Если подходящих элементов нет, функция не возвращает позицию.
 
-## Features
+## Особенности
 
-The search starts from the beginning of the list. If several items match the condition, only the position of the first matching item is returned.
+Поиск выполняется с начала списка. Если условию соответствуют несколько элементов, возвращается позиция только первого из них.
 
-The function returns the item position, not the item itself or the value of one of its fields.
+Функция возвращает именно позицию элемента, а не сам элемент или значение его поля.
 
-## Examples
+## Примеры
 
-### Finding the first product with a price greater than 5,000
+### Поиск первого товара дороже 5 000 рублей
 
-Suppose the template contains a list field with the following identifier:
+Допустим, в шаблоне есть списковое поле с идентификатором:
 
 ```text
-products
+товары
 ```
 
-Each item in `products` is a Struct field containing:
+Каждый элемент списка `товары` является составным полем и содержит вложенные поля:
 
-- `name` — product name;
-- `price` — product price.
+- `наименование` — название товара;
+- `стоимость` — стоимость товара.
 
-For example:
+Например, список содержит:
 
-| Position | `name` | `price` |
+| Позиция | `наименование` | `стоимость` |
 | ---: | --- | ---: |
-| 1 | Chair | 3500 |
-| 2 | Desk | 7500 |
-| 3 | Cabinet | 12000 |
+| 1 | Стул | 3500 |
+| 2 | Стол | 7500 |
+| 3 | Шкаф | 12000 |
 
-To find the position of the first product with a price greater than `5000`, use:
+Нужно найти позицию первого товара, стоимость которого больше `5000`.
+
+Для обращения к текущему элементу списка в функции зададим имя:
 
 ```text
-match(
-    product in products,
-    product.price > 5000
+товар
+```
+
+Это имя не является идентификатором поля шаблона. Оно задаётся непосредственно в выражении и используется только внутри функции `поискпоз`.
+
+Выражение:
+
+```text
+поискпоз(
+    товар из товары,
+    товар.стоимость > 5000
 )
 ```
 
-Here:
+Здесь:
 
-- `products` — the list field identifier in the template;
-- `product` — the name assigned to the current list item;
-- `price` — the nested field identifier;
-- `product.price` — the `price` value of the current item.
+- `товары` — идентификатор спискового поля в шаблоне;
+- `товар` — произвольное имя текущего элемента списка;
+- `стоимость` — идентификатор вложенного поля внутри элемента списка;
+- `товар.стоимость` — обращение к полю `стоимость` текущего элемента.
 
-The function checks the items in order:
+Функция последовательно проверит элементы списка:
 
 ```text
-3500 > 5000 → false
-7500 > 5000 → true
+3500 > 5000 → нет
+7500 > 5000 → да
 ```
 
-The second item is the first one that matches the condition, so the function returns:
+Первым условию соответствует второй элемент списка, поэтому функция вернёт:
 
 ```text
 2
 ```
 
-### Finding a value in a list of numbers
+### Поиск значения в списке чисел
 
-Suppose the template contains a list field with the following identifier:
+Допустим, в шаблоне есть списковое поле с идентификатором:
 
 ```text
-numbers
+числа
 ```
 
-The list contains:
+Список содержит значения:
 
 ```text
 2
@@ -140,63 +150,81 @@ The list contains:
 9
 ```
 
-To find the position of the first value greater than or equal to `5`, use:
+Нужно найти позицию первого значения, которое больше или равно `5`.
+
+Для текущего элемента списка зададим имя:
 
 ```text
-match(
-    number in numbers,
-    number >= 5
+число
+```
+
+Выражение:
+
+```text
+поискпоз(
+    число из числа,
+    число >= 5
 )
 ```
 
-Here:
+Здесь:
 
-- `number` — the name assigned to the current list item;
-- `numbers` — the list field identifier;
-- `number >= 5` — the condition checked for each item.
+- первое `число` — произвольное имя текущего элемента списка;
+- `числа` — идентификатор спискового поля в шаблоне;
+- `число >= 5` — условие, которое проверяется для каждого элемента.
 
-The function checks the values in order:
+Функция проверит значения по порядку:
 
 ```text
-2 >= 5 → false
-4 >= 5 → false
-7 >= 5 → true
+2 >= 5 → нет
+4 >= 5 → нет
+7 >= 5 → да
 ```
 
-The first matching value is in the third position, so the function returns:
+Первое подходящее значение находится на третьей позиции, поэтому функция вернёт:
 
 ```text
 3
 ```
 
-## Using with other functions
+## Ошибки
 
-The result of `match` can be passed to the `index` function to retrieve the matching list item or one of its fields.
+Параметр `условие` должен содержать логическое выражение, результатом которого является `да` или `нет`.
 
-For example, to get the name of the first product with a price greater than `5000`:
+Для составного элемента к вложенным полям необходимо обращаться через имя текущего элемента:
 
 ```text
-index(
-    products,
-    match(
-        product in products,
-        product.price > 5000
+товар.стоимость
+```
+
+## Связь с другими функциями
+
+Результат `поискпоз` можно передать в функцию `индекс`, чтобы получить найденный элемент списка или значение его поля.
+
+Например, если нужно вывести наименование первого товара дороже `5 000` рублей:
+
+```text
+индекс(
+    товары,
+    поискпоз(
+        товар из товары,
+        товар.стоимость > 5000
     )
-).name
+).наименование
 ```
 
-For the following list:
+Для списка:
 
-| Position | `name` | `price` |
+| Позиция | Наименование | Стоимость |
 | ---: | --- | ---: |
-| 1 | Chair | 3500 |
-| 2 | Desk | 7500 |
-| 3 | Cabinet | 12000 |
+| 1 | Стул | 3 500 |
+| 2 | Стол | 7 500 |
+| 3 | Шкаф | 12 000 |
 
-the expression returns:
+выражение вернёт:
 
 ```text
-Desk
+Стол
 ```
 
-First, `match` finds the position of the first matching item. Then `index` retrieves the `name` field from that item.
+Сначала `поискпоз` определяет позицию первого подходящего элемента, после чего `индекс` получает значение поля `наименование` из найденной строки.

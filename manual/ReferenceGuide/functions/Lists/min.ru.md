@@ -1,96 +1,96 @@
-# min
+# мин
 
-The `min` function determines the minimum numeric value in a list.
+Функция `мин` определяет минимальное числовое значение в списке.
 
-## Syntax
-
-```text
-min(item in list, expression)
-```
-
-**Parameters:**
-
-- `item` — the name of the current list item. It is defined directly in the function and used in the expression;
-- `list` — the identifier of the list field;
-- `expression` — a numeric value or expression whose minimum result should be determined.
-
-You can choose the name of the current item yourself. It is used only inside the function.
-
-### List with simple items
-
-If the list contains numeric values, use the current item in the expression.
-
-For example:
+## Синтаксис
 
 ```text
-min(number in numberList, number)
+мин(элемент из список, выражение)
 ```
 
-Here:
+**Параметры:**
 
-- `numberList` — the list field identifier;
-- `number` — the name of the current list item;
-- the second `number` — the value used to determine the minimum.
+- `элемент` — имя текущего элемента списка. Задаётся непосредственно в функции и используется в выражении;
+- `список` — идентификатор спискового поля;
+- `выражение` — числовое значение или выражение, среди результатов которого необходимо определить минимальное.
 
-### List with Struct items
+Имя текущего элемента можно выбрать самостоятельно. Оно используется только внутри функции.
 
-If the list contains Struct items, specify the required numeric field in the expression.
+### Список с простыми элементами
 
-For example:
+Если список содержит числовые значения, в выражении используется текущий элемент.
+
+Например:
 
 ```text
-min(product in products, product.price)
+мин(число из списокЧисел, число)
 ```
 
-Here:
+Здесь:
 
-- `products` — the list field identifier;
-- `product` — the name of the current item;
-- `price` — the nested numeric field identifier;
-- `product.price` — the value used to determine the minimum.
+- `списокЧисел` — идентификатор спискового поля;
+- `число` — имя текущего элемента списка;
+- второе `число` — значение, которое участвует в поиске минимума.
 
-## Return value
+### Список с составными элементами
 
-The function returns the minimum result of the expression across all items in the list.
+Если элементы списка являются составными полями, в выражении указывается нужное числовое поле.
 
-## Examples
-
-### Finding the minimum product price
-
-Suppose the template contains a list field:
+Например:
 
 ```text
-products
+мин(товар из товары, товар.стоимость)
 ```
 
-Each item is a Struct field containing:
+Здесь:
 
-- `name` — product name;
-- `price` — product price.
+- `товары` — идентификатор спискового поля;
+- `товар` — имя текущего элемента;
+- `стоимость` — идентификатор вложенного числового поля;
+- `товар.стоимость` — значение, среди которого определяется минимальное.
 
-Source data:
+## Возвращаемое значение
 
-| `name` | `price` |
+Функция возвращает минимальный результат выражения среди всех элементов списка.
+
+## Примеры
+
+### Минимальная стоимость товара
+
+Допустим, в шаблоне есть списковое поле:
+
+```text
+товары
+```
+
+Каждый элемент списка является составным полем и содержит:
+
+- `наименование` — название товара;
+- `стоимость` — стоимость товара.
+
+Исходные данные:
+
+| `наименование` | `стоимость` |
 | --- | ---: |
-| Monitor | 15000 |
-| Keyboard | 800 |
-| Printer | 12000 |
-| Mouse | 600 |
+| Монитор | 15000 |
+| Клавиатура | 800 |
+| Принтер | 12000 |
+| Мышь | 600 |
 
-Expression:
+Выражение:
 
 ```text
-min(product in products, product.price)
+мин(товар из товары, товар.стоимость)
 ```
 
-Here:
+Здесь:
 
-- `products` — the list field identifier;
-- `product` — the name of the current item inside the `min` function;
-- `price` — the nested field identifier;
-- `product.price` — the value used in the comparison.
+- `товары` — идентификатор спискового поля;
+- `товар` — имя текущего элемента внутри функции `мин`;
+- `стоимость` — идентификатор вложенного поля;
+- `товар.стоимость` — значение, которое участвует в сравнении.
 
-The function compares:
+Функция сравнит:
 
 ```text
 15000
@@ -99,49 +99,49 @@ The function compares:
 600
 ```
 
-and returns:
+и вернёт:
 
 ```text
 600
 ```
 
-The function returns the minimum price value, not the `Mouse` list item itself.
+Функция возвращает именно минимальное значение стоимости, а не элемент списка `Мышь`.
 
-### Finding the minimum result of an expression
+### Минимальное значение по результату выражения
 
-The second parameter can also contain an expression.
+В качестве второго параметра можно использовать вычисляемое выражение.
 
-Suppose the `products` list also contains the following field:
+Допустим, список `товары` дополнительно содержит поле:
 
 ```text
-quantity
+количество
 ```
 
-Source data:
+Исходные данные:
 
-| `name` | `price` | `quantity` |
+| `наименование` | `стоимость` | `количество` |
 | --- | ---: | ---: |
-| Chair | 3500 | 4 |
-| Desk | 7500 | 1 |
-| Cabinet | 12000 | 2 |
+| Стул | 3500 | 4 |
+| Стол | 7500 | 1 |
+| Шкаф | 12000 | 2 |
 
-You need to determine the minimum total cost of a product line based on its quantity.
+Нужно определить минимальную стоимость товарной позиции с учётом количества.
 
-Expression:
+Выражение:
 
 ```text
-min(product in products, product.price * product.quantity)
+мин(товар из товары, товар.стоимость * товар.количество)
 ```
 
-For each item, the function first calculates:
+Для каждого элемента сначала вычисляется:
 
-| `name` | Calculation | Result |
+| `наименование` | Расчёт | Результат |
 | --- | --- | ---: |
-| Chair | `3500 × 4` | 14000 |
-| Desk | `7500 × 1` | 7500 |
-| Cabinet | `12000 × 2` | 24000 |
+| Стул | `3500 × 4` | 14000 |
+| Стол | `7500 × 1` | 7500 |
+| Шкаф | `12000 × 2` | 24000 |
 
-The function returns:
+Функция вернёт:
 
 ```text
 7500

@@ -1,160 +1,152 @@
-# mid
+# пстр
 
-The `mid` function extracts part of a text value starting from a specified position.
+Функция `пстр` извлекает нужную часть текста, начиная с указанной позиции.
 
-The function is useful when a single value contains several parts and you need to extract a specific fragment, such as a document number, code, detail, or text that follows a particular word.
+Она пригодится, когда в одном значении содержится несколько частей и из него нужно получить только определённый фрагмент: например, номер документа, код, реквизит или текст после определённого слова.
 
-## Syntax
-
-```text
-mid(text, position, length)
-```
-
-**Parameters:**
-
-- `text` — the source value from which part of the text should be extracted. Required;
-- `position` — the character position where the required fragment starts. Required. Counting starts from `1`;
-- `length` — the number of characters to extract. Required.
-
-You can use text, a field value, the result of another function, or an expression.
-
-The position and length do not have to be specified as fixed numbers. You can calculate them using other functions, such as `find` and `length`.
-
-## Return value
-
-The function returns the specified part of the source text.
-
-For example:
+## Синтаксис
 
 ```text
-mid("AGR-2026-125", 5, 4)
+пстр(текст, позиция, длина)
 ```
 
-Result:
+**Параметры:**
+
+- `текст` — исходное значение, из которого необходимо получить часть текста. Обязательный параметр;
+- `позиция` — номер символа, с которого начинается нужный фрагмент. Обязательный параметр. Отсчёт начинается с `1`;
+- `длина` — количество символов, которое необходимо получить. Обязательный параметр.
+
+В качестве параметра можно использовать текст, значение поля, результат другой функции или выражение.
+
+Позицию и длину необязательно указывать готовыми числами. Их можно вычислить с помощью других функций, например `поиск` и `длина`.
+
+## Возвращаемое значение
+
+Функция возвращает указанную часть исходного текста.
+
+Например:
+
+```text
+пстр("ДОГ-2026-125", 5, 4)
+```
+
+Результат:
 
 ```text
 2026
 ```
 
-In this expression, `5` specifies the starting character, and `4` specifies how many characters to extract.
+В этом выражении `5` указывает, с какого символа начать, а `4` — сколько символов получить.
 
-## Examples
+## Примеры
 
-**Extracting text from a known position to the end of the string**
+**Получение текста от известной позиции до конца строки**
 
-If you know where the required part starts but its length may vary, you can use `length` as the last parameter.
+Если известно, с какого символа начинается нужная часть, но её длина может меняться, в качестве последнего параметра удобно использовать функцию `длина`.
 
-For example, the `documentNumber` field contains:
-
-```text
-AGR-125/2026
-```
-
-The expression:
+Например, поле `номерДокумента` содержит:
 
 ```text
-mid(documentNumber, 5, length(documentNumber))
+ДОГ-125/2026
 ```
 
-returns:
+Выражение:
+
+```text
+пстр(номерДокумента, 5, длина(номерДокумента))
+```
+
+вернёт:
 
 ```text
 125/2026
 ```
 
-This approach also works with values of different lengths:
+Такой вариант подходит и для значений разной длины:
 
 ```text
-AGR-15/2026
-AGR-125/2026
-AGR-12548/2026
+ДОГ-15/2026
+ДОГ-125/2026
+ДОГ-12548/2026
 ```
 
-The starting position remains the same — the fifth character — while `length` allows the function to extract the remaining part of the value through the end of the string.
+Начало остаётся одинаковым — пятый символ, а `длина` позволяет получить оставшуюся часть значения до конца.
 
 ---
 
-**Extracting text after a specific fragment**
+**Получение текста от найденного фрагмента**
 
-If the required part may appear at different positions in the string, you can determine its starting position using `find`.
+Если нужная часть может находиться в разных местах строки, её начальную позицию можно определить с помощью функции `поиск`.
 
-For example, the `details` field contains:
-
-```text
-Tax ID: 7701234567; Reg. No.: 770101001
-```
-
-To extract only the registration number:
+Например, поле `реквизиты` содержит:
 
 ```text
-mid(
-    details,
-    find(details, "Reg. No.: ") + length("Reg. No.: "),
-    length(details)
-)
+ИНН: 7701234567; КПП: 770101001
 ```
 
-Result:
+Нужно получить только значение КПП.
+
+```text
+пстр(реквизиты, поиск(реквизиты, "КПП: ") + длина("КПП: "), длина(реквизиты))
+```
+
+Результат:
 
 ```text
 770101001
 ```
 
-Here:
+Здесь:
 
-- `find` determines where `Reg. No.: ` begins;
-- `length("Reg. No.: ")` skips the label and the space after it;
-- `length(details)` allows the remaining text to be extracted through the end of the string;
-- `mid` returns the required part of the value.
+- `поиск` находит, где начинается `КПП: `;
+- `длина("КПП: ")` позволяет пропустить название реквизита и пробел после него;
+- `длина(реквизиты)` позволяет получить оставшийся текст до конца;
+- `пстр` возвращает нужную часть значения.
 
-This approach is useful when the text before the required fragment may vary and its exact position cannot be known in advance.
+Такой способ удобен, когда текст перед нужным фрагментом может меняться и заранее определить его позицию невозможно.
 
-> If `find` does not find the specified fragment, it returns `null`. In this case, `mid` cannot evaluate the expression and returns an error because all of its parameters are required.
+> Если функция `поиск` не найдёт указанный фрагмент, она вернёт пустое значение. В этом случае `пстр` не сможет выполнить выражение и вернёт ошибку, поскольку все её параметры обязательны.
 
 ---
 
-**Extracting text between two fragments**
+**Получение текста между двумя фрагментами**
 
-You can use `find` to calculate both the starting position and the length of the required part.
+С помощью `поиск` можно вычислить не только начало, но и длину нужной части.
 
-For example, the `basis` field contains:
+Например, поле `основание` содержит:
 
 ```text
-Supply Agreement No.125/2026 dated 14/09/2026
+Договор поставки №125/2026 от 14.09.2026
 ```
 
-To extract only the agreement number:
+Нужно получить только номер договора:
 
 ```text
 125/2026
 ```
 
-use:
+Выражение:
 
 ```text
-mid(
-    basis,
-    find(basis, "No.") + length("No."),
-    find(basis, " dated ") - find(basis, "No.") - length("No.")
-)
+пстр(основание, поиск(основание, "№") + 1, поиск(основание, " от ") - поиск(основание, "№") - 1)
 ```
 
-Result:
+Результат:
 
 ```text
 125/2026
 ```
 
-In this case:
+В этом случае:
 
-- the start is determined by `No.`;
-- the end is determined by ` dated `;
-- the number of characters between them is calculated directly in the expression.
+- начало определяется по символу `№`;
+- конец — по тексту ` от `;
+- количество символов между ними рассчитывается непосредственно в выражении.
 
-The expression therefore also works with document numbers of different lengths, for example:
+Поэтому выражение будет работать и с номерами разной длины, например:
 
 ```text
-No.15/2026
-No.125/2026
-No.12548/2026
+№15/2026
+№125/2026
+№12548/2026
 ```

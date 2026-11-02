@@ -1,168 +1,168 @@
-# if
+# если
 
-The `if` function returns one of two values depending on whether a specified condition is met.
+Функция `если` возвращает одно из двух значений в зависимости от выполнения заданного условия.
 
-The function is useful when the result should change depending on a field value, comparison, or logical condition.
+Функция пригодится, когда результат должен меняться в зависимости от значения поля, сравнения или логического условия.
 
-## Syntax
-
-```text
-if(condition, valueIfTrue, valueIfFalse)
-```
-
-**Parameters:**
-
-- `condition` — the condition that determines the function result. Required;
-- `valueIfTrue` — the value returned if the condition is true. Required;
-- `valueIfFalse` — the value returned if the condition is false. Required.
-
-The return values can be:
-
-- text;
-- numbers;
-- field values;
-- results of other functions;
-- expressions;
-- `null`.
-
-## Return value
-
-If the condition is true, the function returns `valueIfTrue`. If the condition is false, it returns `valueIfFalse`.
-
-For example:
+## Синтаксис
 
 ```text
-if(quantity > 10, 100, 50)
+если(условие, значение_если_истина, значение_если_ложь)
 ```
 
-If `quantity` is greater than `10`, the result is:
+**Параметры:**
+
+- `условие` — условие, которое определяет результат функции. Обязательный параметр;
+- `значение_если_истина` — значение, которое функция вернёт, если условие выполняется. Обязательный параметр;
+- `значение_если_ложь` — значение, которое функция вернёт, если условие не выполняется. Обязательный параметр.
+
+В качестве возвращаемых значений можно использовать:
+
+- текст;
+- числа;
+- значения полей;
+- результаты других функций;
+- выражения;
+- `пусто`.
+
+## Возвращаемое значение
+
+Если условие выполняется, функция возвращает `значение_если_истина`. Если условие не выполняется — `значение_если_ложь`.
+
+Например:
+
+```text
+если(количество > 10, 100, 50)
+```
+
+Если `количество` больше `10`, результат:
 
 ```text
 100
 ```
 
-Otherwise:
+В противном случае:
 
 ```text
 50
 ```
 
-## Conditions
+## Условия
 
-You can use a **Boolean** field as the condition:
+В качестве условия можно использовать поле **«Да/Нет»**:
 
 ```text
-if(delivery, "Delivery required", "Delivery not required")
+если(доставка, "Доставка требуется", "Доставка не требуется")
 ```
 
-If `delivery` = `true`, the function returns `Delivery required`. If `delivery` = `false`, it returns `Delivery not required`.
+Если `доставка` = **Да**, функция вернёт `Доставка требуется`, если **Нет** — `Доставка не требуется`.
 
 ---
 
-You can also build a condition using comparisons and logical operations.
+Условие также можно сформировать с помощью сравнений и логических операций.
 
-For example:
+Например:
 
 ```text
-if(
-    amount >= 50000 и amount <= 100000,
-    "Medium deal",
-    "Other range"
+если(
+    сумма >= 50000 и сумма <= 100000,
+    "Средняя сделка",
+    "Другой диапазон"
 )
 ```
 
-For more information about comparisons, logical operations, and expressions, see [Syntax](/../ReferenceGuide/syntax/syntax/).
+Подробнее о записи сравнений, логических операциях и построении выражений см. в разделе [«Синтаксиса»](/../ReferenceGuide/syntax/syntax/).
 
 ---
 
-The numeric value `1` can also be used as a true condition:
+Числовое значение `1` также может использоваться как истинное условие:
 
 ```text
-if(1, "Yes", "No")
+если(1, "Да", "Нет")
 ```
 
-Result:
+Результат:
 
 ```text
-Yes
+Да
 ```
 
-## Examples
+## Примеры
 
-**Returning field values**
+**Возврат значений полей**
 
 ```text
-if(
-    delivery,
-    priceWithDelivery,
-    priceWithoutDelivery
+если(
+    доставка,
+    стоимостьСДоставкой,
+    стоимостьБезДоставки
 )
 ```
 
-The function returns one of the two field values depending on the value of `delivery`.
+Функция вернёт значение одного из двух полей в зависимости от значения `доставка`.
 
 ---
 
-**Using another function**
+**Использование другой функции**
 
 ```text
-if(
-    delivery,
-    upper(deliveryMethod),
-    "Pickup"
+если(
+    доставка,
+    прописн(способДоставки),
+    "Самовывоз"
 )
 ```
 
-If delivery is required, the function returns the result of `upper`. Otherwise, it returns `Pickup`.
+Если доставка требуется, функция вернёт результат функции `прописн`. В противном случае — `Самовывоз`.
 
 ---
 
-**Returning an empty value**
+**Возврат пустого значения**
 
 ```text
-if(delivery, "Delivery", null)
+если(доставка, "Доставка", пусто)
 ```
 
-If the condition is false, the function returns `null`.
+Если условие не выполняется, функция вернёт пустое значение.
 
 ---
 
-**Nested conditions**
+**Вложенные условия**
 
-You can use `if` inside another `if` function:
+Функцию `если` можно использовать внутри другой функции `если`:
 
 ```text
-if(
-    amount > 100000,
-    "Large",
-    if(
-        amount > 50000,
-        "Medium",
-        "Standard"
+если(
+    сумма > 100000,
+    "Крупная",
+    если(
+        сумма > 50000,
+        "Средняя",
+        "Обычная"
     )
 )
 ```
 
-Depending on the value of `amount`, the function returns `Large`, `Medium`, or `Standard`.
+В зависимости от значения `сумма` функция вернёт `Крупная`, `Средняя` или `Обычная`.
 
-## Errors
+## Ошибки
 
-All three parameters are required.
+Все три параметра функции обязательны.
 
-For example:
-
-```text
-if(delivery, "Yes")
-```
-
-returns an error because the third parameter is missing.
-
-An error also occurs if the supplied condition cannot be processed by the function.
-
-For example:
+Например:
 
 ```text
-if("text", "Yes", "No")
+если(доставка, "Да")
 ```
 
-returns an error.
+вернёт ошибку из-за отсутствия третьего параметра.
+
+Ошибка также возникает, если переданное условие не может быть обработано функцией.
+
+Например:
+
+```text
+если("текст", "Да", "Нет")
+```
+
+вернёт ошибку.

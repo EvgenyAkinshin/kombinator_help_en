@@ -80,6 +80,6 @@ The following functions can be used with decimal values:
 
 ### Formatting functions
 
-- [formatNumber](../functions/Morph/formatNumber.md) — changes how a numeric value is displayed;
-- [форматВалюты](../functions/Morph/форматВалюты.md) — formats a numeric value as a monetary amount;
-- [числоСТекстом](../functions/Morph/числоСТекстом.md) — displays a numeric value together with a matching word form in the specified format.
+- [formatNumber](../functions/Formatting/formatNumber.md) — changes how a numeric value is displayed;
+- [formatCurrency_RU](../functions/Formatting/formatCurrency_RU.md) — formats a numeric value as a monetary amount;
+- [numberToText_RU](../functions/Formatting/numberToText_RU.md) — displays a numeric value together with a matching word form in the specified format.

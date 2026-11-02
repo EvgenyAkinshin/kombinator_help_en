@@ -1,79 +1,79 @@
-# upper
+# прописн
 
-The `upper` function converts all letters to uppercase.
+Функция `прописн` переводит все буквы в верхний регистр.
 
-## Syntax
+## Синтаксис
 
 ```text
-upper(value)
+прописн(значение)
 ```
 
-**Parameters:**
+**Параметры:**
 
-- `value` — the value in which the letter case should be changed. Required.
+- `значение` — значение, в котором необходимо изменить регистр букв. Обязательный параметр.
 
-You can use text, a field value, the result of another function, or an expression.
+В качестве параметра можно использовать текст, значение поля, результат другой функции или выражение.
 
-## Return value
+## Возвращаемое значение
 
-The function returns the value with all letters converted to uppercase.
+Функция возвращает значение, в котором все буквы записаны в верхнем регистре.
 
-For example:
+Например:
 
 ```text
-upper("New contract No. 15")
+прописн("Новый договор № 15")
 ```
 
-Result:
+Результат:
 
 ```text
-NEW CONTRACT NO. 15
+НОВЫЙ ДОГОВОР № 15
 ```
 
-Numbers and other characters are not changed.
+Цифры и другие символы при этом не изменяются.
 
-If you pass an empty string or a field with no value, the function returns an empty value.
+Если передать пустую строку или поле без значения, функция вернёт пустое значение.
 
-## Examples
+## Примеры
 
-**Using a field value**
+**Использование значения поля**
 
-If the `name` field contains:
+Если поле `название` содержит:
 
 ```text
-Commercial proposal
+Коммерческое предложение
 ```
 
-the expression:
+то выражение:
 
 ```text
-upper(name)
+прописн(название)
 ```
 
-returns:
+вернёт:
 
 ```text
-COMMERCIAL PROPOSAL
+КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ
 ```
 
 ---
 
-**Changing the case of part of a text value**
+**Изменение регистра части текста**
 
-You can use `upper` together with `mid` when only part of a value should be converted to uppercase:
+Функцию `прописн` можно использовать вместе с `пстр`, если изменить регистр необходимо только у части значения:
 
 ```text
-upper(mid(text, 1, 1))
+прописн(пстр(текст, 1, 1))
 ```
 
-If the `text` field contains:
+Если поле `текст` содержит:
 
 ```text
-kombinator
+комбинатор
 ```
 
-the result is:
+результат:
 
 ```text
-K
+К
 ```

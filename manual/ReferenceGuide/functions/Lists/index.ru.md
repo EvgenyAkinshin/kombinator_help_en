@@ -1,197 +1,197 @@
-# index
+# индекс
 
-The `index` function returns a list item by its position.
+Функция `индекс` получает элемент списка по его позиции.
 
-List positions start at `1`: the first item has position `1`, the second has position `2`, and so on.
+Нумерация элементов начинается с `1`: первый элемент имеет позицию `1`, второй — `2` и т. д.
 
-## Syntax
+## Синтаксис
 
-For a list with simple items:
-
-```text
-index(list, position)
-```
-
-**Parameters:**
-
-- `list` — the identifier of the list field from which the item should be retrieved;
-- `position` — the position of the item. You can specify a number or an expression that returns a position.
-
-For example:
+Для списка с простыми элементами:
 
 ```text
-index(stages, 2)
+индекс(список, позиция)
 ```
 
-returns the second item from the `stages` list.
+**Параметры:**
 
-### List with Struct items
+- `список` — идентификатор спискового поля, из которого необходимо получить элемент;
+- `позиция` — порядковый номер элемента. Можно указать число или выражение, возвращающее позицию.
 
-If the list contains Struct items, specify the identifier of the required nested field after the function using dot notation:
+Например:
 
 ```text
-index(list, position).field
+индекс(этапы, 2)
 ```
 
-For example:
+получит второй элемент списка `этапы`.
+
+### Список с составными элементами
+
+Если элемент списка является составным полем, после функции через точку указывается идентификатор нужного вложенного поля:
 
 ```text
-index(products, 2).name
+индекс(список, позиция).поле
 ```
 
-Here:
-
-- `products` — the list field identifier;
-- `2` — the item position;
-- `name` — the nested field identifier.
-
-## Examples
-
-### Getting an item by position
-
-Suppose the template contains a list field with the following identifier:
+Например:
 
 ```text
-stages
+индекс(товары, 2).наименование
 ```
 
-The list contains:
+Здесь:
 
-| Position | Value |
+- `товары` — идентификатор спискового поля;
+- `2` — позиция элемента;
+- `наименование` — идентификатор вложенного поля.
+
+## Примеры
+
+### Получение элемента по позиции
+
+Допустим, в шаблоне есть списковое поле с идентификатором:
+
+```text
+этапы
+```
+
+Список содержит:
+
+| Позиция | Значение |
 | ---: | --- |
-| 1 | Preparation |
-| 2 | Approval |
-| 3 | Signing |
+| 1 | Подготовка |
+| 2 | Согласование |
+| 3 | Подписание |
 
-The expression:
-
-```text
-index(stages, 2)
-```
-
-returns:
+Выражение:
 
 ```text
-Approval
+индекс(этапы, 2)
 ```
 
-Here:
-
-- `stages` — the list field identifier;
-- `2` — the item position in the list.
-
-### Getting a field from the first item that matches a condition
-
-Suppose the template contains a list field:
+вернёт:
 
 ```text
-products
+Согласование
 ```
 
-Each list item is a Struct field containing:
+Здесь:
 
-- `name` — the identifier of the product name field;
-- `price` — the identifier of the product price field.
+- `этапы` — идентификатор спискового поля;
+- `2` — позиция элемента в списке.
 
-The list contains:
+### Получение поля первого элемента, соответствующего условию
 
-| Position | `name` | `price` |
+Допустим, в шаблоне есть списковое поле:
+
+```text
+товары
+```
+
+Каждый элемент списка является составным полем и содержит:
+
+- `наименование` — идентификатор поля с названием товара;
+- `стоимость` — идентификатор поля со стоимостью товара.
+
+Список содержит:
+
+| Позиция | `наименование` | `стоимость` |
 | ---: | --- | ---: |
-| 1 | Chair | 3500 |
-| 2 | Desk | 7500 |
-| 3 | Cabinet | 12000 |
+| 1 | Стул | 3500 |
+| 2 | Стол | 7500 |
+| 3 | Шкаф | 12000 |
 
-You need to get the name of the first product with a price greater than `5000`.
+Нужно получить наименование первого товара стоимостью больше `5000`.
 
-Expression:
+Выражение:
 
 ```text
-index(
-    products,
-    match(
-        product in products,
-        product.price > 5000
+индекс(
+    товары,
+    поискпоз(
+        товар из товары,
+        товар.стоимость > 5000
     )
-).name
+).наименование
 ```
 
-Here:
+Здесь:
 
-- `products` — the list field identifier in the template;
-- `product` — the name of the current item defined inside the `match` function;
-- `price` — the nested field identifier;
-- `match(...)` — returns the position of the first matching item;
-- `index(...)` — returns the item at that position;
-- `name` — the field of the matching item whose value should be returned.
+- `товары` — идентификатор спискового поля в шаблоне;
+- `товар` — имя текущего элемента, заданное внутри функции `поискпоз`;
+- `стоимость` — идентификатор вложенного поля;
+- `поискпоз(...)` — возвращает позицию первого подходящего элемента;
+- `индекс(...)` — получает элемент на найденной позиции;
+- `наименование` — идентификатор поля найденного элемента, значение которого необходимо получить.
 
-The `match` function checks the items in order:
+Функция `поискпоз` проверит элементы списка по порядку:
 
 ```text
-3500 > 5000 → false
-7500 > 5000 → true
+3500 > 5000 → нет
+7500 > 5000 → да
 ```
 
-The second item is the first one that matches the condition, so the expression effectively becomes:
+Первым условию соответствует второй элемент, поэтому выражение фактически будет соответствовать:
 
 ```text
-index(products, 2).name
+индекс(товары, 2).наименование
 ```
 
-Result:
+Результат:
 
 ```text
-Desk
+Стол
 ```
 
-### Getting a value from the last item in a list
+### Получение значения из последнего элемента списка
 
-Suppose the template contains a list field:
+Допустим, в шаблоне есть списковое поле:
 
 ```text
-payments
+платежи
 ```
 
-Each list item is a Struct field containing:
+Каждый элемент списка является составным полем и содержит поле:
 
 ```text
-balance
+остаток
 ```
 
-You need to get the `balance` value from the last item in the list, while the number of items is not known in advance.
+Нужно получить остаток из последнего элемента списка, при этом количество элементов заранее неизвестно.
 
-Expression:
+Выражение:
 
 ```text
-index(
-    payments,
-    count(payment in payments)
-).balance
+индекс(
+    платежи,
+    счет(платеж из платежи)
+).остаток
 ```
 
-Here:
+Здесь:
 
-- `payments` — the list field identifier;
-- `payment` — the name of the current item defined inside the `count` function;
-- `count(...)` — returns the number of items in the list;
-- the returned value is used as the position of the last item;
-- `balance` — the nested field identifier whose value should be returned.
+- `платежи` — идентификатор спискового поля;
+- `платеж` — имя текущего элемента, заданное внутри функции `счет`;
+- `счет(...)` — возвращает количество элементов списка;
+- полученное значение используется как позиция последнего элемента;
+- `остаток` — идентификатор вложенного поля, значение которого необходимо получить.
 
-If the list contains four items:
+Если список содержит четыре элемента:
 
 ```text
-count(payment in payments)
+счет(платеж из платежи)
 ```
 
-returns:
+вернёт:
 
 ```text
 4
 ```
 
-The expression then effectively becomes:
+После этого выражение фактически будет соответствовать:
 
 ```text
-index(payments, 4).balance
+индекс(платежи, 4).остаток
 ```
 
-and returns the `balance` value from the last item in the list.
+и вернёт значение поля `остаток` из последнего элемента списка.

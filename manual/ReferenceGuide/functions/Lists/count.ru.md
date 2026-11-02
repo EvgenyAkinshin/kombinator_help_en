@@ -1,169 +1,161 @@
-# count
+# счет
 
-The `count` function determines the number of items in a list.
+Функция `счет` определяет количество элементов в списке.
 
-## Syntax
-
-```text
-count(item in list)
-```
-
-**Parameters:**
-
-- `item` — the name of the current list item. It is defined directly in the function;
-- `list` — the identifier of the list field whose items should be counted.
-
-For example:
+## Синтаксис
 
 ```text
-count(product in products)
+счет(элемент из список)
 ```
 
-Here:
+**Параметры:**
 
-- `products` — the list field identifier in the template;
-- `product` — the name of the list item defined directly in the function.
+- `элемент` — имя текущего элемента списка. Задаётся непосредственно в функции;
+- `список` — идентификатор спискового поля, количество элементов которого необходимо определить.
 
-You can choose the item name yourself. It is used only inside the function expression.
-
-## Return value
-
-The function returns an integer — the number of items in the list.
-
-## Examples
-
-### Counting list items
-
-Suppose the template contains a list field with the following identifier:
+Например:
 
 ```text
-products
+счет(товар из товары)
 ```
 
-The list contains:
+Здесь:
 
-| Position | Name |
+- `товары` — идентификатор спискового поля в шаблоне;
+- `товар` — имя элемента списка, заданное непосредственно в функции.
+
+Имя элемента можно выбрать самостоятельно. Оно используется только внутри выражения функции.
+
+## Возвращаемое значение
+
+Функция возвращает целое число — количество элементов в списке.
+
+## Примеры
+
+### Подсчёт количества элементов списка
+
+Допустим, в шаблоне есть списковое поле с идентификатором:
+
+```text
+товары
+```
+
+Список содержит:
+
+| Позиция | Наименование |
 | ---: | --- |
-| 1 | Monitor |
-| 2 | Keyboard |
-| 3 | Printer |
-| 4 | Mouse |
+| 1 | Монитор |
+| 2 | Клавиатура |
+| 3 | Принтер |
+| 4 | Мышь |
 
-Expression:
+Выражение:
 
 ```text
-count(product in products)
+счет(товар из товары)
 ```
 
-returns:
+вернёт:
 
 ```text
 4
 ```
 
-Here:
+Здесь:
 
-- `products` — the list field identifier;
-- `product` — the name of the list item defined inside the `count` function.
+- `товары` — идентификатор спискового поля;
+- `товар` — имя элемента списка, заданное внутри функции `счет`.
 
-### Counting items that match a condition
+### Подсчёт элементов, соответствующих условию
 
-The `count` function can be applied to a list returned by `filter`.
+Функцию `счет` можно применить к списку, полученному с помощью функции `фильтровать`.
 
-Suppose the `products` list contains:
+Допустим, список `товары` содержит:
 
-| `name` | `price` |
+| `наименование` | `стоимость` |
 | --- | ---: |
-| Monitor | 15000 |
-| Keyboard | 800 |
-| Printer | 12000 |
-| Mouse | 600 |
+| Монитор | 15000 |
+| Клавиатура | 800 |
+| Принтер | 12000 |
+| Мышь | 600 |
 
-You need to determine how many products have a price greater than `5000`.
+Нужно определить количество товаров стоимостью больше `5000`.
 
-Expression:
-
-```text
-count(
-    product in filter(
-        item in products,
-        item.price > 5000
-    )
-)
-```
-
-Here:
-
-- `products` — the identifier of the source list field;
-- `item` — the name of the current item inside the `filter` function;
-- `item.price > 5000` — the filtering condition;
-- `filter(...)` — returns a new list containing only matching products;
-- `product` — the name of an item in the filtered list inside the `count` function.
-
-After filtering, the list contains:
+Выражение:
 
 ```text
-Monitor — 15000
-Printer — 12000
+счет(товар из фильтровать(позиция из товары, позиция.стоимость > 5000))
 ```
 
-Therefore, `count` returns:
+Здесь:
+
+- `товары` — идентификатор исходного спискового поля;
+- `позиция` — имя текущего элемента внутри функции `фильтровать`;
+- `позиция.стоимость > 5000` — условие отбора элементов;
+- `фильтровать(...)` — возвращает новый список только с подходящими товарами;
+- `товар` — имя элемента отфильтрованного списка внутри функции `счет`.
+
+После фильтрации останутся:
+
+```text
+Монитор — 15000
+Принтер — 12000
+```
+
+Поэтому функция `счет` вернёт:
 
 ```text
 2
 ```
 
-### Getting the last item in a list
+### Получение последнего элемента списка
 
-The result of `count` can be used as an item position in the `index` function.
+Результат функции `счет` можно использовать как позицию элемента в функции `индекс`.
 
-Suppose the template contains a list field:
-
-```text
-payments
-```
-
-Each list item contains the following field:
+Допустим, в шаблоне есть списковое поле:
 
 ```text
-balance
+платежи
 ```
 
-You need to get the `balance` value from the last item in the list, while the number of items is not known in advance.
-
-Expression:
+Каждый элемент списка содержит поле:
 
 ```text
-index(
-    payments,
-    count(payment in payments)
-).balance
+остаток
 ```
 
-Here:
+Нужно получить значение `остаток` из последнего элемента списка, при этом количество элементов заранее неизвестно.
 
-- `payments` — the list field identifier;
-- `payment` — the name of the list item inside the `count` function;
-- `count(...)` — returns the number of items in the list;
-- the returned number is used by `index` as the position of the last item;
-- `balance` — the nested field identifier whose value should be returned.
-
-For example, if the list contains four items:
+Выражение:
 
 ```text
-count(payment in payments)
+индекс(платежи, счет(платеж из платежи)).остаток
 ```
 
-returns:
+Здесь:
+
+- `платежи` — идентификатор спискового поля;
+- `платеж` — имя элемента списка внутри функции `счет`;
+- `счет(...)` — возвращает количество элементов списка;
+- полученное число используется функцией `индекс` как позиция последнего элемента;
+- `остаток` — идентификатор вложенного поля, значение которого необходимо получить.
+
+Например, если список содержит четыре элемента:
+
+```text
+счет(платеж из платежи)
+```
+
+вернёт:
 
 ```text
 4
 ```
 
-The expression then effectively becomes:
+После этого выражение фактически будет соответствовать:
 
 ```text
-index(payments, 4).balance
+индекс(платежи, 4).остаток
 ```
 
-and returns the `balance` value from the last item in the list.
+и вернёт значение поля `остаток` из последнего элемента списка.

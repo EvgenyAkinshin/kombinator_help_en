@@ -14,7 +14,7 @@ The field contains a time value without a calendar date.
 
 When adding the field to the template through **Fields**, you can select the format in which its value should be displayed in the generated document. The same field value can therefore be displayed in different formats.
 
-If needed, you can extract individual parts of the value using the corresponding functions: [hour](../functions/Date/hour.md), [minute](../functions/Date/minute.md), or [second](../functions/Date/second.md).
+If needed, you can extract individual parts of the value using the corresponding functions: [hour](../functions/Date and time/hour.md), [minute](../functions/Date and time/minute.md), or [second](../functions/Date and time/second.md).
 
 ## Inserting a field through the «Directives» tab
 
@@ -37,7 +37,7 @@ When the document is generated, the directive is replaced with the value of this
 
 You can also use functions in the **«Expression»** directive to process or format the time.
 
-For example, the [formatDate](../functions/Morph/formatDate.md) function can be used to display the time in the required format.
+For example, the [formatDate](../functions/Formatting/formatDate.md) function can be used to display the time in the required format.
 
 ## Functions for working with the field
 
@@ -45,10 +45,10 @@ The **«Time»** field supports functions for extracting individual parts of the
 
 ### Extracting time parts
 
-- [hour](../functions/Date/hour.md) — returns the hour;
-- [minute](../functions/Date/minute.md) — returns the minutes;
-- [second](../functions/Date/second.md) — returns the seconds.
+- [hour](../functions/Date and time/hour.md) — returns the hour;
+- [minute](../functions/Date and time/minute.md) — returns the minutes;
+- [second](../functions/Date and time/second.md) — returns the seconds.
 
 ### Formatting functions
 
-- [formatDate](../functions/Morph/formatDate.md) — changes how the time is displayed.
+- [formatDate](../functions/Formatting/formatDate.md) — changes how the time is displayed.

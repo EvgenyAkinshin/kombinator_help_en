@@ -1,57 +1,57 @@
-# capFirst
+# сЗаглавной
 
-The `capFirst` function makes the first letter of a string uppercase and converts all remaining letters to lowercase.
+Функция `сЗаглавной` делает первую букву строки заглавной, а остальные буквы — строчными.
 
-## Syntax
-
-```text
-capFirst(expression)
-```
-
-**Parameters:**
-
-- `expression` — a text value or expression that returns a string. In the function settings, this parameter is **Expression**.
-
-## Return value
-
-The function returns a string value with the letter case changed.
-
-## Examples
-
-### Formatting text
-
-Expression:
+## Синтаксис
 
 ```text
-capFirst("GENERAL MANAGER")
+сЗаглавной(значение)
 ```
 
-returns:
+**Параметры:**
+
+- `значение` — текстовое значение или выражение, возвращающее строку.
+
+## Возвращаемое значение
+
+Функция возвращает строковое значение с изменённым регистром букв.
+
+## Примеры
+
+### Преобразование текста
+
+Выражение:
 
 ```text
-General manager
+сЗаглавной("ГЕНЕРАЛЬНЫЙ ДИРЕКТОР")
 ```
 
-### Formatting a field value
-
-Suppose the `position` field contains:
+вернёт:
 
 ```text
-HEAD OF LEGAL DEPARTMENT
+Генеральный директор
 ```
 
-Expression:
+### Преобразование значения поля
+
+Допустим, поле `должность` содержит:
 
 ```text
-capFirst(position)
+НАЧАЛЬНИК ЮРИДИЧЕСКОГО ОТДЕЛА
 ```
 
-returns:
+Выражение:
 
 ```text
-Head of legal department
+сЗаглавной(должность)
 ```
 
-## Errors
+вернёт:
 
-If `expression` returns a value of another type, the function returns an error.
+```text
+Начальник юридического отдела
+```
+
+## Ошибки
+
+Если параметр `значение` возвращает значение другого типа, функция возвращает ошибку.

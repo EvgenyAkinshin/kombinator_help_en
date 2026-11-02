@@ -1,85 +1,85 @@
-# repeat
+# повтор
 
-The `repeat` function repeats a specified value a given number of times.
+Функция `повтор` повторяет указанное значение заданное количество раз.
 
-## Syntax
+## Синтаксис
 
 ```text
-repeat(value, count)
+повтор(значение, количество)
 ```
 
-**Parameters:**
+**Параметры:**
 
-- `value` — the value to repeat. Required;
-- `count` — the number of repetitions. Required.
+- `значение` — значение, которое необходимо повторить. Обязательный параметр;
+- `количество` — количество повторений. Обязательный параметр.
 
-The number of repetitions must be a non-negative integer.
+Количество повторений должно быть целым неотрицательным числом.
 
-You can use field values, results of other functions, and expressions as parameters.
+В качестве параметров можно использовать значения полей, результаты других функций и выражения.
 
-## Return value
+## Возвращаемое значение
 
-The function returns a string containing the specified number of repetitions of the source value.
+Функция возвращает строку, состоящую из указанного количества повторений исходного значения.
 
-For example:
+Например:
 
 ```text
-repeat("A", 4)
+повтор("А", 4)
 ```
 
-Result:
+Результат:
 
 ```text
-AAAA
+АААА
 ```
 
-The function does not add spaces or other separators between repetitions. If you need a separator, include it in the value itself:
+Функция не добавляет пробелы или другие разделители между повторениями. Если они необходимы, их нужно добавить в само значение:
 
 ```text
-repeat("A ", 4)
+повтор("А ", 4)
 ```
 
-Result:
+Результат:
 
 ```text
-A A A A 
+А А А А 
 ```
 
-If `count` is `0`, the function returns an empty value.
+Если количество повторений равно `0`, функция возвращает пустое значение.
 
-## Examples
+## Примеры
 
-**Using a field value**
+**Использование значения поля**
 
-If the `name` field contains:
+Если поле `название` содержит:
 
 ```text
-Kombinator
+Комбинатор
 ```
 
-the expression:
+то выражение:
 
 ```text
-repeat(name, 2)
+повтор(название, 2)
 ```
 
-returns:
+вернёт:
 
 ```text
-KombinatorKombinator
+КомбинаторКомбинатор
 ```
 
 ---
 
-**Getting the number of repetitions from a field**
+**Количество повторений из поля**
 
-The number of repetitions can come from another field or expression:
+Количество повторений можно получить из другого поля или выражения:
 
 ```text
-repeat("-", count)
+повтор("-", количество)
 ```
 
-If `count` = `5`, the result is:
+Если `количество` = `5`, результат:
 
 ```text
 -----

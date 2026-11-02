@@ -72,11 +72,11 @@ The following functions can be used with numeric values:
 
 ### Formatting functions
 
-- [formatNumber](../functions/Morph/formatNumber.md) — formats a number, for example by adding thousands separators;
-- [форматВалюты](../functions/Morph/форматВалюты.md) — formats a numeric value as a monetary amount.
+- [formatNumber](../functions/Formatting/formatNumber.md) — formats a number, for example by adding thousands separators;
+- [formatCurrency_RU](../functions/Formatting/formatCurrency_RU.md) — formats a numeric value as a monetary amount.
 
 ### Number-to-text functions
 
-- [целоеСТекстом](../functions/Morph/целоеСТекстом.md) — displays an integer as digits or words and can use the appropriate word form;
-- [числоСТекстом](../functions/Morph/числоСТекстом.md) — displays a number together with a matching word form in the specified format.
+- [integerToText_RU](../functions/Formatting/integerToText_RU.md) — displays an integer as digits or words and can use the appropriate word form;
+- [numberToText_RU](../functions/Formatting/numberToText_RU.md) — displays a number together with a matching word form in the specified format.
 

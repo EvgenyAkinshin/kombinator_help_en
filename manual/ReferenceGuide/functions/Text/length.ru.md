@@ -1,54 +1,54 @@
-# length
+# длина
 
-The `length` function counts the number of characters in text, a number, or a field value.
+Функция `длина` считает количество символов в тексте, числе или значении поля.
 
-## Syntax
-
-```text
-length(value)
-```
-
-**Parameters:**
-
-- `value` — the value for which the number of characters should be determined. Required.
-
-You can use text, a field value, the result of another function, or an expression.
-
-## Return value
-
-The function returns the number of characters as a number. Letters, digits, spaces, and other characters are all included in the count.
-
-For example:
+## Синтаксис
 
 ```text
-length("New contract")
+длина(значение)
 ```
 
-Result:
+**Параметры:**
+
+- `значение` — значение, для которого необходимо определить количество символов. Обязательный параметр.
+
+В качестве параметра можно использовать текст, значение поля, результат другой функции или выражение.
+
+## Возвращаемое значение
+
+Функция возвращает количество символов в виде числа. При подсчёте учитываются буквы, цифры, пробелы и другие символы.
+
+Например:
 
 ```text
-12
+длина("Новый договор")
 ```
 
-If you pass an empty string or a field with no value, the function returns `0`.
-
-## Examples
-
-**Using a field value**
-
-If the `name` field contains:
+Результат:
 
 ```text
-Kombinator
+13
 ```
 
-the expression:
+Если передать пустую строку или поле без значения, функция вернёт `0`.
+
+## Примеры
+
+**Использование значения поля**
+
+Если поле `название` содержит:
 
 ```text
-length(name)
+Комбинатор
 ```
 
-returns:
+то выражение:
+
+```text
+длина(название)
+```
+
+вернёт:
 
 ```text
 10
@@ -56,21 +56,21 @@ returns:
 
 ---
 
-**Using with another function**
+**Использование с другой функцией**
 
-`length` is often used together with `mid` when you need to extract part of a text value through the end of the string:
-
-```text
-mid(documentNumber, 5, length(documentNumber))
-```
-
-If `documentNumber` contains:
+`длина` часто используется вместе с `пстр`, когда необходимо получить часть текста до конца строки:
 
 ```text
-DOC-125/2026
+пстр(номерДокумента, 5, длина(номерДокумента))
 ```
 
-the result is:
+Если `номерДокумента` содержит:
+
+```text
+ДОГ-125/2026
+```
+
+результат:
 
 ```text
 125/2026

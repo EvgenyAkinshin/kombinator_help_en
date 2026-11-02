@@ -27,36 +27,36 @@ nav:
   - Picture: ReferenceGuide/typesField/picture.md
 - Function:
   - Date and time:
-    - date: ReferenceGuide/functions/Date/date.md
-    - edate: ReferenceGuide/functions/Date/edate.md
-    - eomonth: ReferenceGuide/functions/Date/eomonth.md
-    - bomonth: ReferenceGuide/functions/Date/bomonth.md
-    - datediff: ReferenceGuide/functions/Date/datediff.md
-    - Today: ReferenceGuide/functions/Date/Today.md
-    - dateshift: ReferenceGuide/functions/Date/dateshift.md
-    - now: ReferenceGuide/functions/Date/now.md
-    - time: ReferenceGuide/functions/Date/time.md
-    - year: ReferenceGuide/functions/Date/year.md
-    - datetime: ReferenceGuide/functions/Date/datetime.md
-    - month: ReferenceGuide/functions/Date/month.md
-    - day: ReferenceGuide/functions/Date/day.md
-    - hour: ReferenceGuide/functions/Date/hour.md
-    - minute: ReferenceGuide/functions/Date/minute.md
-    - second: ReferenceGuide/functions/Date/second.md
-    - weekday: ReferenceGuide/functions/Date/weekday.md
-    - weeknum: ReferenceGuide/functions/Date/weeknum.md
+    - date: ReferenceGuide/functions/Date and time/date.md
+    - edate: ReferenceGuide/functions/Date and time/edate.md
+    - eomonth: ReferenceGuide/functions/Date and time/eomonth.md
+    - bomonth: ReferenceGuide/functions/Date and time/bomonth.md
+    - datediff: ReferenceGuide/functions/Date and time/datediff.md
+    - Today: ReferenceGuide/functions/Date and time/Today.md
+    - dateshift: ReferenceGuide/functions/Date and time/dateshift.md
+    - now: ReferenceGuide/functions/Date and time/now.md
+    - time: ReferenceGuide/functions/Date and time/time.md
+    - year: ReferenceGuide/functions/Date and time/year.md
+    - datetime: ReferenceGuide/functions/Date and time/datetime.md
+    - month: ReferenceGuide/functions/Date and time/month.md
+    - day: ReferenceGuide/functions/Date and time/day.md
+    - hour: ReferenceGuide/functions/Date and time/hour.md
+    - minute: ReferenceGuide/functions/Date and time/minute.md
+    - second: ReferenceGuide/functions/Date and time/second.md
+    - weekday: ReferenceGuide/functions/Date and time/weekday.md
+    - weeknum: ReferenceGuide/functions/Date and time/weeknum.md
   - Formatting:
-    - formatDate: ReferenceGuide/functions/Morph/formatDate.md
-    - formatNumber: ReferenceGuide/functions/Morph/formatNumber.md
-    - integerToText: ReferenceGuide/functions/Morph/integerToText.md
-    - инициалы: ReferenceGuide/functions/Morph/инициалы.md
-    - окончание: ReferenceGuide/functions/Morph/окончание.md
-    - склонение: ReferenceGuide/functions/Morph/склонение.md
-    - транслит: ReferenceGuide/functions/Morph/транслит.md
-    - форматВалюты: ReferenceGuide/functions/Morph/форматВалюты.md
-    - форматДаты: ReferenceGuide/functions/Morph/форматДаты.md    
-    - целоеСТекстом: ReferenceGuide/functions/Morph/целоеСТекстом.md
-    - числоСТекстом: ReferenceGuide/functions/Morph/числоСТекстом.md    
+    - formatDate: ReferenceGuide/functions/Formatting/formatDate.md
+    - formatNumber: ReferenceGuide/functions/Formatting/formatNumber.md
+    - integerToText: ReferenceGuide/functions/Formatting/integerToText.md
+    - formatFullName_RU: ReferenceGuide/functions/Formatting/formatFullName_RU.md
+    - wordEnding_RU: ReferenceGuide/functions/Formatting/wordEnding_RU.md
+    - decline_RU: ReferenceGuide/functions/Formatting/decline_RU.md
+    - transliterate_RU: ReferenceGuide/functions/Formatting/transliterate_RU.md
+    - formatCurrency_RU: ReferenceGuide/functions/Formatting/formatCurrency_RU.md
+    - formatDate_RU: ReferenceGuide/functions/Formatting/formatDate_RU.md    
+    - integerToText_RU: ReferenceGuide/functions/Formatting/integerToText_RU.md
+    - numberToText_RU: ReferenceGuide/functions/Formatting/numberToText_RU.md    
   - Math:
     - round: ReferenceGuide/functions/Math/round.md
     - roundup: ReferenceGuide/functions/Math/roundup.md
@@ -80,6 +80,8 @@ nav:
     - if: ReferenceGuide/functions/Logic/if.md
   - Text functions:
     - capFirst: ReferenceGuide/functions/Text/capFirst.md
+    - contains: ReferenceGuide/functions/Text/contains.md
+    - endsWith: ReferenceGuide/functions/Text/endsWith.md
     - length: ReferenceGuide/functions/Text/length.md
     - trim: ReferenceGuide/functions/Text/trim.md
     - upper: ReferenceGuide/functions/Text/upper.md
@@ -87,6 +89,7 @@ nav:
     - mid: ReferenceGuide/functions/Text/mid.md
     - lower: ReferenceGuide/functions/Text/lower.md
     - find: ReferenceGuide/functions/Text/find.md
+    - startsWith: ReferenceGuide/functions/Text/startsWith.md
     - substitute: ReferenceGuide/functions/Text/substitute.md
     - repeat: ReferenceGuide/functions/Text/repeat.md
 - Syntax:
@@ -136,6 +139,8 @@ plugins:
         - locale: ru
           name: Русский
           build: true
+          theme:
+            language: ru
           nav_translations:
             Getting started: Начало работы
             App installation: Установка приложения
@@ -151,7 +156,6 @@ plugins:
             Preview: Режим предпросмотра
             Keyboard shortcuts: Горячие клавиши
             Text: Текст
-            Text functions: Текстовые
             Integer: Целое число
             Decimal: Десятичное число
             Boolean: Да/Нет
@@ -163,9 +167,81 @@ plugins:
             Picture: Картинка
             Function: Функции
             Date and time: Дата и время
+            
+            bomonth: начмесяца
+            date: дата
+            datediff: разндат
+            dateshift: смещдат
+            datetime: датавремя
+            day: день
+            edate: датамес
+            eomonth: конмесяца
+            hour: час
+            minute: минуты
+            month: месяц
+            now: тдата
+            second: секунды
+            time: время
+            Today: сегодня
+            weekday: деньнед
+            weeknum: номнедели
+            year: год 
+
             Formatting: Форматирование
+
+            formatDate: форматДатыПоМаске
+            formatNumber: форматЧисла
+            integerToText: integerToText
+            formatFullName_RU: форматФИО
+            wordEnding_RU: окончание
+            decline_RU: склонение
+            transliterate_RU: транслит
+            formatCurrency_RU: форматВалюты
+            formatDate_RU: форматДаты  
+            integerToText_RU: целоеСТекстом
+            numberToText_RU: числоСТекстом
+
             Math: Математические
+
+            round: округлить
+            roundup: округлитьвверх
+            rounddown: округлитьвниз
+            exp: exp
+            ln: ln
+            log10: log10
+
             Logic: Логические
+
+            if: если
+
+            Text functions: Текстовые
+
+            capFirst: сЗаглавной
+            contains: содержит
+            endsWith: заканчиваетсяНа
+            length: длина
+            trim: обрезатьпробелы
+            upper: прописн
+            proper: пропнач
+            mid: пстр
+            lower: строчн
+            find: поиск
+            startsWith: начинаетсяС
+            substitute: подставить
+            repeat: повтор
+
+            match: поискпоз
+            index: индекс
+            sort: сортировать
+            sortDescending: сортироватьПоУбыванию
+            filter: фильтровать
+            group: группировать
+            sum: сумм
+            max: макс
+            min: мин
+            avg: срзнач
+            count: счет
+
             Syntax: Синтаксис
             Basic rules: Основные правила
             Where to use: Места использования

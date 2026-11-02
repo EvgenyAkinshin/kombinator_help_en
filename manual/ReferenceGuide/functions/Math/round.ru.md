@@ -1,58 +1,58 @@
-# round
+# округлить
 
-The `round` function rounds a number to the specified number of decimal places.
+Функция `округлить` округляет число до указанного количества знаков.
 
-## Syntax
-
-```text
-round(value, decimalPlaces)
-```
-
-**Parameters:**
-
-- `value` — the numeric value to round. Required;
-- `decimalPlaces` — the number of decimal places to round to. Required.
-
-You can use:
-
-- numbers;
-- values from numeric fields;
-- results of other functions;
-- expressions.
-
-The function does not process text values or values from text fields as numbers.
-
-## Return value
-
-The function returns a rounded numeric value.
-
-For example:
+## Синтаксис
 
 ```text
-round(125.678, 2)
+округлить(число, количествоЗнаков)
 ```
 
-Result:
+**Параметры:**
+
+- `число` — число, которое необходимо округлить. Обязательный числовой параметр;
+- `количествоЗнаков` — количество знаков, до которого необходимо выполнить округление. Обязательный числовой параметр.
+
+В качестве параметров можно использовать:
+
+- числа;
+- значения числовых полей;
+- результаты других функций;
+- выражения.
+
+Текстовые значения и значения текстовых полей функция не обрабатывает как числа.
+
+## Возвращаемое значение
+
+Функция возвращает округлённое числовое значение.
+
+Например:
 
 ```text
-125.68
+округлить(125.678, 2)
 ```
 
-## Decimal places
-
-The `decimalPlaces` parameter determines the position to which the value is rounded:
-
-- a positive value — rounds to the specified number of decimal places;
-- `0` — rounds to the nearest integer;
-- a negative value — rounds to tens, hundreds, thousands, and other positions.
-
-For example:
+Результат:
 
 ```text
-round(125.678, 0)
+125,68
 ```
 
-Result:
+## Количество знаков
+
+Значение параметра `количествоЗнаков` определяет разряд, до которого выполняется округление:
+
+- положительное значение — количество знаков после запятой;
+- `0` — округление до целого числа;
+- отрицательное значение — округление до десятков, сотен, тысяч и других разрядов.
+
+Например:
+
+```text
+округлить(125.678, 0)
+```
+
+Результат:
 
 ```text
 126
@@ -61,63 +61,63 @@ Result:
 ---
 
 ```text
-round(1896, -2)
+округлить(1896, -2)
 ```
 
-Result:
+Результат:
 
 ```text
 1900
 ```
 
-It is recommended to use integers for `decimalPlaces`. A fractional value may be converted when the result is calculated.
+Для параметра `количествоЗнаков` рекомендуется использовать целые числа. Дробное значение может быть преобразовано при вычислении результата.
 
-## Examples
+## Примеры
 
-**Using a field value and an expression**
+**Использование значения поля и выражения**
 
-If the `value` field contains `2`, the expression:
+Если поле `число` содержит `2`, то выражение:
 
 ```text
-round(value + 10, 2)
+округлить(число + 10, 2)
 ```
 
-returns:
+вернёт:
 
 ```text
 12
 ```
 
-## Errors
+## Ошибки
 
-Both parameters are required.
+Оба параметра функции являются обязательными.
 
-For example:
-
-```text
-round(125.678)
-```
-
-returns an error.
-
-An error also occurs if one of the parameters is empty:
+Например:
 
 ```text
-round(emptyField, 2)
+округлить(125.678)
 ```
 
-A text value cannot be used instead of a numeric value, even if the text contains a number:
+вернёт ошибку.
+
+Ошибка также возникает, если один из параметров не содержит значения:
 
 ```text
-round("125.678", 2)
+округлить(пустоеПоле, 2)
 ```
 
-also returns an error.
+Текстовое значение нельзя использовать вместо числового, даже если оно содержит число:
 
-## Related functions
+```text
+округлить("125.678", 2)
+```
 
-Use `roundup` or `rounddown` when you need to round a value up or down.
+также вернёт ошибку.
 
-- `round` — rounds a number to the nearest value;
-- `roundup` — rounds a value up;
-- `rounddown` — rounds a value down.
+## Связь с другими функциями
+
+Для округления вверх или вниз используйте функции `округлитьвверх` и `округлитьвниз`.
+
+- `округлить` — округляет число до ближайшего значения;
+- `округлитьвверх` — округляет значение вверх;
+- `округлитьвниз` — округляет значение вниз.

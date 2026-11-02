@@ -1,83 +1,83 @@
-# rounddown
+# округлитьвниз
 
-The `rounddown` function rounds a number to the specified number of decimal places without increasing the last retained digit.
+Функция `округлитьвниз` округляет число до указанного количества знаков, не увеличивая последнюю сохраняемую цифру.
 
-## Syntax
-
-```text
-rounddown(value, decimalPlaces)
-```
-
-**Parameters:**
-
-- `value` — the numeric value to round. Required;
-- `decimalPlaces` — the number of decimal places to round to. Required.
-
-You can use:
-
-- numbers;
-- values from numeric fields;
-- results of other functions;
-- expressions.
-
-## Return value
-
-The function returns a rounded numeric value.
-
-For example:
+## Синтаксис
 
 ```text
-rounddown(125.678, 2)
+округлитьвниз(число, количествоЗнаков)
 ```
 
-Result:
+**Параметры:**
+
+- `число` — число, которое необходимо округлить. Обязательный числовой параметр;
+- `количествоЗнаков` — количество знаков, до которого необходимо выполнить округление. Обязательный числовой параметр.
+
+В качестве параметров можно использовать:
+
+- числа;
+- значения числовых полей;
+- результаты других функций;
+- выражения.
+
+## Возвращаемое значение
+
+Функция возвращает округлённое числовое значение.
+
+Например:
 
 ```text
-125.67
+округлитьвниз(125.678, 2)
 ```
 
-When rounding to two decimal places, the retained digits `67` remain unchanged.
-
-## Decimal places
-
-The `decimalPlaces` parameter determines the position to which the value is rounded:
-
-- a positive value — rounds to the specified number of decimal places;
-- `0` — rounds to an integer;
-- a negative value — rounds to tens, hundreds, thousands, and other positions.
-
-For example:
+Результат:
 
 ```text
-rounddown(1896, -2)
+125,67
 ```
 
-Result:
+При округлении до двух знаков после запятой значение `67` остаётся без изменений.
+
+## Количество знаков
+
+Значение параметра `количествоЗнаков` определяет разряд, до которого выполняется округление:
+
+- положительное значение — количество знаков после запятой;
+- `0` — округление до целого числа;
+- отрицательное значение — округление до десятков, сотен, тысяч и других разрядов.
+
+Например:
+
+```text
+округлитьвниз(1896, -2)
+```
+
+Результат:
 
 ```text
 1800
 ```
 
-## Examples
+## Примеры
 
-**Using a field value and an expression**
+**Использование значения поля и выражения**
 
-If the `value` field contains `125.678`, the expression:
-
-```text
-rounddown(value + 10, 2)
-```
-
-returns:
+Если поле `число` содержит `125.678`, то выражение:
 
 ```text
-135.67
+округлитьвниз(число + 10, 2)
 ```
 
-## Related functions
+вернёт:
 
-Different rounding methods are available:
+```text
+135,67
+```
 
-- `round` — rounds a number to the nearest value;
-- `roundup` — increases the last retained digit when rounding;
-- `rounddown` — keeps the last retained digit unchanged.
+## Связь с другими функциями
+
+Для разных способов округления можно использовать:
+
+- `округлить` — округляет число до ближайшего значения;
+- `округлитьвверх` — при округлении увеличивает последнюю сохраняемую цифру;
+- `округлитьвниз` — оставляет последнюю сохраняемую цифру без увеличения.

@@ -1,57 +1,57 @@
 # log10
 
-The `log10` function calculates the base-10 logarithm of a specified number.
+Функция `log10` вычисляет десятичный логарифм указанного числа.
 
-## Syntax
+## Синтаксис
 
 ```text
-log10(value)
+log10(число)
 ```
 
-**Parameters:**
+**Параметры:**
 
-- `value` — the value for which the base-10 logarithm should be calculated. Required.
+- `число` — значение, для которого необходимо вычислить десятичный логарифм. Обязательный параметр.
 
-You can use:
+В качестве параметра можно использовать:
 
-- a number;
-- a numeric field value;
-- the result of another function;
-- an expression.
+- число;
+- значение числового поля;
+- результат другой функции;
+- выражение.
 
-## Return value
+## Возвращаемое значение
 
-The function returns the base-10 logarithm of the specified number.
+Функция возвращает десятичный логарифм указанного числа.
 
-For example:
+Например:
 
 ```text
 log10(100)
 ```
 
-Result:
+Результат:
 
 ```text
 2
 ```
 
-## Examples
+## Примеры
 
-**Using a field value**
+**Использование значения поля**
 
-If the `value` field contains:
+Если поле `число` содержит:
 
 ```text
 1000
 ```
 
-the expression:
+то выражение:
 
 ```text
-log10(value)
+log10(число)
 ```
 
-returns:
+вернёт:
 
 ```text
 3
@@ -59,35 +59,35 @@ returns:
 
 ---
 
-**Using an expression**
+**Использование выражения**
 
 ```text
 log10(10 * 10)
 ```
 
-Result:
+Результат:
 
 ```text
 2
 ```
 
-## Related functions
+## Связь с другими функциями
 
-The `log10` function calculates a logarithm with base `10`, while `ln` calculates the natural logarithm.
+Функция `log10` используется для вычисления логарифма по основанию `10`, в отличие от функции `ln`, которая вычисляет натуральный логарифм.
 
-For example:
+Например:
 
 ```text
 log10(100)
 ```
 
-returns:
+возвращает:
 
 ```text
 2
 ```
 
-because:
+поскольку:
 
 ```text
 10² = 100

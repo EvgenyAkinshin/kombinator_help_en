@@ -1,95 +1,95 @@
-# lower
+# строчн
 
-The `lower` function converts all letters to lowercase.
+Функция `строчн` переводит все буквы в нижний регистр.
 
-## Syntax
+## Синтаксис
 
 ```text
-lower(value)
+строчн(значение)
 ```
 
-**Parameters:**
+**Параметры:**
 
-- `value` — the value in which the letter case should be changed. Required.
+- `значение` — значение, в котором необходимо изменить регистр букв. Обязательный параметр.
 
-You can use text, a field value, the result of another function, or an expression.
+В качестве параметра можно использовать текст, значение поля, результат другой функции или выражение.
 
-## Return value
+## Возвращаемое значение
 
-The function returns text with all letters converted to lowercase. Numbers, spaces, and other characters are not changed.
+Функция возвращает текст, в котором все буквы записаны в нижнем регистре. Цифры, пробелы и другие символы не изменяются.
 
-For example:
+Например:
 
 ```text
-lower("NEW CONTRACT NO. 15")
+строчн("НОВЫЙ ДОГОВОР № 15")
 ```
 
-Result:
+Результат:
 
 ```text
-new contract no. 15
+новый договор № 15
 ```
 
-## Examples
+## Примеры
 
-**Using a field value**
+**Использование значения поля**
 
-If the `name` field contains:
+Если поле `название` содержит:
 
 ```text
-COMMERCIAL PROPOSAL
+КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ
 ```
 
-the expression:
+то выражение:
 
 ```text
-lower(name)
+строчн(название)
 ```
 
-returns:
+вернёт:
 
 ```text
-commercial proposal
+коммерческое предложение
 ```
 
 ---
 
-**Changing the case of part of a text value**
+**Изменение регистра части текста**
 
-You can use `lower` together with `mid` when only part of a value should be converted to lowercase.
+Функцию `строчн` можно использовать вместе с `пстр`, если изменить регистр нужно только у части значения.
 
-For example:
+Например:
 
 ```text
-lower(mid(text, 2, length(text)))
+строчн(пстр(текст, 2, длина(текст)))
 ```
 
-If the `text` field contains:
+Если поле `текст` содержит:
 
 ```text
-KOMBINATOR
+КОМБИНАТОР
 ```
 
-the result is:
+результат:
 
 ```text
-ombinator
+омбинатор
 ```
 
-Together with `upper`, you can process the first letter and the remaining part of the text separately:
+В сочетании с `прописн` можно отдельно обработать первую букву и оставшуюся часть текста:
 
 ```text
-upper(mid(text, 1, 1)) & lower(mid(text, 2, length(text)))
+прописн(пстр(текст, 1, 1)) & строчн(пстр(текст, 2, длина(текст)))
 ```
 
-If `text` contains:
+Если `текст` содержит:
 
 ```text
-kOMBINATOR
+кОМБИНАТОР
 ```
 
-the result is:
+результат:
 
 ```text
-Kombinator
+Комбинатор
 ```

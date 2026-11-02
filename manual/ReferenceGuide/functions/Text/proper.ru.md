@@ -1,71 +1,71 @@
-# proper
+# пропнач
 
-The `proper` function capitalizes the first letter of each word and converts the remaining letters to lowercase.
+Функция `пропнач` делает первую букву каждого слова заглавной, а остальные буквы — строчными.
 
-## Syntax
+## Синтаксис
 
 ```text
-proper(value)
+пропнач(значение)
 ```
 
-**Parameters:**
+**Параметры:**
 
-- `value` — the value in which the letter case should be changed. Required.
+- `значение` — значение, в котором необходимо изменить регистр букв. Обязательный параметр.
 
-You can use text, a field value, the result of another function, or an expression.
+В качестве параметра можно использовать текст, значение поля, результат другой функции или выражение.
 
-## Return value
+## Возвращаемое значение
 
-The function returns a value in which each word begins with an uppercase letter.
+Функция возвращает значение, в котором каждое слово начинается с заглавной буквы.
 
-For example:
+Например:
 
 ```text
-proper("john SMITH")
+пропнач("иванов иВАН иванович")
 ```
 
-Result:
+Результат:
 
 ```text
-John Smith
+Иванов Иван Иванович
 ```
 
-Numbers and other characters are not changed.
+Цифры и другие символы при этом не изменяются.
 
-## Examples
+## Примеры
 
-**Using a field value**
+**Использование значения поля**
 
-If the `fullName` field contains:
+Если поле `фио` содержит:
 
 ```text
-john smith
+иванов иван иванович
 ```
 
-the expression:
+то выражение:
 
 ```text
-proper(fullName)
+пропнач(фио)
 ```
 
-returns:
+вернёт:
 
 ```text
-John Smith
+Иванов Иван Иванович
 ```
 
 ---
 
-**Using with another function**
+**Использование с другой функцией**
 
-You can remove leading and trailing spaces before changing the letter case:
+Перед изменением регистра можно удалить лишние пробелы в начале и конце значения:
 
 ```text
-proper(trim("  john smith  "))
+пропнач(обрезатьпробелы("  иванов иван иванович  "))
 ```
 
-Result:
+Результат:
 
 ```text
-John Smith
+Иванов Иван Иванович
 ```

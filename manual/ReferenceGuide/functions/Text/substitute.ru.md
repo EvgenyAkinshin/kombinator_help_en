@@ -1,57 +1,57 @@
-# substitute
+# подставить
 
-The `substitute` function finds a specified text fragment and replaces all of its occurrences with another value.
+Функция `подставить` находит указанный фрагмент текста и заменяет все его вхождения на другое значение.
 
-## Syntax
+## Синтаксис
 
 ```text
-substitute(sourceString, searchString, replacementString)
+подставить(текст, чтоЗаменить, наЧтоЗаменить)
 ```
 
-**Parameters:**
+**Параметры:**
 
-- `sourceString` — the source text in which the replacement should be performed. Required;
-- `searchString` — the text or character to find. Required;
-- `replacementString` — the text that replaces each occurrence of the specified fragment. Required.
+- `текст` — значение, в котором необходимо выполнить замену. Обязательный параметр;
+- `чтоЗаменить` — текст или символ, который необходимо найти. Обязательный параметр;
+- `наЧтоЗаменить` — значение, которым необходимо заменить найденный фрагмент. Обязательный параметр.
 
-You can use text, field values, results of other functions, and expressions as parameters.
+В качестве параметров можно использовать текст, значения полей, результаты других функций и выражения.
 
-## Return value
+## Возвращаемое значение
 
-The function returns the modified text with all occurrences of `searchString` replaced by `replacementString`.
+Функция возвращает изменённый текст, в котором все найденные вхождения заменены указанным значением.
 
-For example:
+Например:
 
 ```text
-substitute("Contract-125-2026", "-", "/")
+подставить("Договор-125-2026", "-", "/")
 ```
 
-Result:
+Результат:
 
 ```text
-Contract/125/2026
+Договор/125/2026
 ```
 
-## Examples
+## Примеры
 
-**Preparing a value for a path mask**
+**Подготовка значения для маски пути**
 
-In a path mask, the `/` character is used to create nested folders. If `/` is part of a field value and should remain within a single folder name, you can replace it with another character.
+В маске пути символ `/` используется для создания вложенных папок. Если он содержится в значении поля и должен остаться частью названия одной папки, его можно заменить другим символом.
 
-For example:
+Например:
 
 ```text
-substitute(name, "/", ". ")
+подставить(название, "/", ". ")
 ```
 
-If the `name` field contains:
+Если поле `название` содержит:
 
 ```text
-Sales Department/Amsterdam
+Отдел продаж/Москва
 ```
 
-the result is:
+результат:
 
 ```text
-Sales Department. Amsterdam
+Отдел продаж. Москва
 ```
