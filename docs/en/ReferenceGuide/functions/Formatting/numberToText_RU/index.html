@@ -77,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#numbertotext_ru" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1629,6 +1634,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    numberToText_RU
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1641,6 +1661,94 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#return-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return Value
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#number-in-digits-and-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      Number in Digits and Words
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#short-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Short Format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#number-written-out-in-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      Number Written Out in Words
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2917,6 +3025,85 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#return-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return Value
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#number-in-digits-and-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      Number in Digits and Words
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#short-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Short Format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#number-written-out-in-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      Number Written Out in Words
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2932,9 +3119,137 @@
 
 
 
-  <h1>numberToText_RU</h1>
-
-
+<h1 id="numbertotext_ru">numberToText_RU</h1>
+<p>The <strong><code>numberToText_RU</code></strong> function displays a number together with a word in the appropriate grammatical form.</p>
+<h2 id="syntax">Syntax</h2>
+<pre><code class="language-text">numberToText_RU(Number expression, Expression of the word, Format, Numeral type, Grammatical case)
+</code></pre>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><strong><code>Number expression</code></strong> — an integer or decimal numeric value.</li>
+<li><strong><code>Expression of the word</code></strong> — the word that must agree with the number.</li>
+<li><strong><code>Format</code></strong> — specifies how the number is displayed.</li>
+<li><strong><code>Numeral type</code></strong> — specifies the type of numeral.</li>
+<li><strong><code>Grammatical case</code></strong> — specifies the grammatical case in which the numeral and word are returned.</li>
+</ul>
+<p>The following options are available for the <strong><code>Format</code></strong> parameter:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Long</code></td>
+<td><code>5 (пять) комнат</code></td>
+</tr>
+<tr>
+<td><code>Short</code></td>
+<td><code>5 комнат</code></td>
+</tr>
+<tr>
+<td><code>InWords</code></td>
+<td><code>пять комнат</code></td>
+</tr>
+</tbody>
+</table>
+<p>The following options are available for the <strong><code>Numeral type</code></strong> parameter:</p>
+<ul>
+<li><strong><code>Cardinal</code></strong> — a cardinal numeral indicating quantity.</li>
+<li><strong><code>Ordinal</code></strong> — an ordinal numeral indicating position or order.</li>
+</ul>
+<p>The following values are available for the <strong><code>Grammatical case</code></strong> parameter:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Russian case questions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GrammaticalCase_RU.Nominative</code></td>
+<td>кто? что?</td>
+</tr>
+<tr>
+<td><code>GrammaticalCase_RU.Genitive</code></td>
+<td>кого? чего?</td>
+</tr>
+<tr>
+<td><code>GrammaticalCase_RU.Dative</code></td>
+<td>кому? чему?</td>
+</tr>
+<tr>
+<td><code>GrammaticalCase_RU.Accusative</code></td>
+<td>кого? что?</td>
+</tr>
+<tr>
+<td><code>GrammaticalCase_RU.Instrumental</code></td>
+<td>кем? чем?</td>
+</tr>
+<tr>
+<td><code>GrammaticalCase_RU.Prepositional</code></td>
+<td>о ком? о чём?</td>
+</tr>
+</tbody>
+</table>
+<h2 id="return-value">Return Value</h2>
+<p>The function returns a text value in which the number and the specified word agree according to the selected parameters.</p>
+<h2 id="notes">Notes</h2>
+<p>The function supports both integer and decimal values.</p>
+<p>The grammatical form of the word is determined automatically based on the numeric value and the specified grammatical case.</p>
+<p>Unlike the <strong><code>integerToText_RU</code></strong> function, <strong><code>numberToText_RU</code></strong> allows you to select the output format from predefined options.</p>
+<h2 id="examples">Examples</h2>
+<h3 id="number-in-digits-and-words">Number in Digits and Words</h3>
+<p>Suppose the <code>Quantity</code> field contains:</p>
+<pre><code class="language-text">5
+</code></pre>
+<p>The expression:</p>
+<pre><code class="language-text">numberToText_RU(
+    Quantity,
+    &quot;комната&quot;,
+    Long,
+    Cardinal,
+    GrammaticalCase_RU.Nominative
+)
+</code></pre>
+<p>Returns:</p>
+<pre><code class="language-text">5 (пять) комнат
+</code></pre>
+<h3 id="short-format">Short Format</h3>
+<p>Suppose the <code>Quantity</code> field contains:</p>
+<pre><code class="language-text">2
+</code></pre>
+<p>The expression:</p>
+<pre><code class="language-text">numberToText_RU(
+    Quantity,
+    &quot;документ&quot;,
+    Short,
+    Cardinal,
+    GrammaticalCase_RU.Nominative
+)
+</code></pre>
+<p>Returns:</p>
+<pre><code class="language-text">2 документа
+</code></pre>
+<h3 id="number-written-out-in-words">Number Written Out in Words</h3>
+<p>Suppose the <code>Quantity</code> field contains:</p>
+<pre><code class="language-text">3
+</code></pre>
+<p>The expression:</p>
+<pre><code class="language-text">numberToText_RU(
+    Quantity,
+    &quot;этаж&quot;,
+    InWords,
+    Cardinal,
+    GrammaticalCase_RU.Nominative
+)
+</code></pre>
+<p>Returns:</p>
+<pre><code class="language-text">три этажа
+</code></pre>
 
 
 

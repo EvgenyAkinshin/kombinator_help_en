@@ -67,9 +67,9 @@ A text field value can be used in functions to modify, search, and process text.
 - [find](../functions/Text/find.md) — finds a specified fragment in a string;
 - [substitute](../functions/Text/substitute.md) — replaces specified text or characters;
 - [repeat](../functions/Text/repeat.md) — repeats a string a specified number of times;
-- [contains](../functions/Text/contains.md) — ;
-- [endsWith](../functions/Text/endsWith.md) — ;
-- [startsWith](../functions/Text/startsWith.md) — .
+- [contains](../functions/Text/contains.md) — checks whether a string contains a specified substring;
+- [endsWith](../functions/Text/endsWith.md) — checks whether a string ends with a specified substring;
+- [startsWith](../functions/Text/startsWith.md) — checks whether a string begins with a specified substring.
 
 ### Formatting functions
 

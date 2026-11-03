@@ -77,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -2296,6 +2301,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    заканчиваетсяНа
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -2308,6 +2328,61 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Синтаксис
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Возвращаемое значение
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Особенности
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Пример
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2917,6 +2992,52 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Синтаксис
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Возвращаемое значение
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Особенности
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Пример
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2932,9 +3053,35 @@
 
 
 
-  <h1>заканчиваетсяНа</h1>
-
-
+<h1 id="_1">заканчиваетсяНа</h1>
+<p>Функция <strong><code>заканчиваетсяНа</code></strong> проверяет, заканчивается ли строка указанной подстрокой. Она подходит для условий, когда дальнейшее формирование документа зависит от окончания текстового значения.</p>
+<h2 id="_2">Синтаксис</h2>
+<pre><code class="language-text">заканчиваетсяНа(Строка, Подстрока, Учитывать регистр)
+</code></pre>
+<ul>
+<li><strong><code>Строка</code></strong> — обязательный параметр. Исходная строка, окончание которой необходимо проверить.</li>
+<li><strong><code>Подстрока</code></strong> — обязательный параметр. Последовательность символов, с которой должно совпадать окончание строки.</li>
+<li><strong><code>Учитывать регистр</code></strong> — необязательный логический параметр. Определяет, учитывать ли различия между прописными и строчными буквами.</li>
+</ul>
+<p>Если параметр <strong><code>Учитывать регистр</code></strong> не указан, регистр учитывается.</p>
+<p>Чтобы выполнить проверку без учёта регистра, передайте в третьем параметре <code>ложь</code>.</p>
+<h2 id="_3">Возвращаемое значение</h2>
+<p>Функция возвращает логическое значение:</p>
+<ul>
+<li><code>True</code> — строка заканчивается указанной подстрокой;</li>
+<li><code>False</code> — строка не заканчивается указанной подстрокой.</li>
+</ul>
+<p>Полученное значение можно использовать в условиях и других выражениях.</p>
+<h2 id="_4">Особенности</h2>
+<p>Если <strong><code>Подстрока</code></strong> пустая, функция возвращает <code>True</code>.</p>
+<h2 id="_5">Пример</h2>
+<p>Необходимо проверить, заканчивается ли значение словом <code>ПОСТАВКИ</code>, не учитывая регистр:</p>
+<pre><code class="language-text">заканчиваетсяНа(&quot;Договор поставки&quot;, &quot;ПОСТАВКИ&quot;, ложь)
+</code></pre>
+<p>Результат:</p>
+<pre><code class="language-text">True
+</code></pre>
+<p>Поскольку в третьем параметре указано <code>ложь</code>, различие регистра не влияет на результат.</p>
 
 
 

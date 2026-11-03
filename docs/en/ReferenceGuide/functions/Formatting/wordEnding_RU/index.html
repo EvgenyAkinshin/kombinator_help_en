@@ -77,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#wordending_ru" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1491,6 +1496,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    wordEnding_RU
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1503,6 +1523,76 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#return-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return Value
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#salutation-by-full-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      Salutation by Full Name
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Errors
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2917,6 +3007,67 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#return-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return Value
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#salutation-by-full-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      Salutation by Full Name
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Errors
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2932,9 +3083,80 @@
 
 
 
-  <h1>wordEnding_RU</h1>
-
-
+<h1 id="wordending_ru">wordEnding_RU</h1>
+<p>The <strong><code>wordEnding_RU</code></strong> function inserts the appropriate word ending depending on the gender and number of the value in a text field.</p>
+<h2 id="syntax">Syntax</h2>
+<pre><code class="language-text">wordEnding_RU(Expression of the word, Masculine gender, Feminine gender, Neuter gender, Plural)
+</code></pre>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><strong><code>Expression of the word</code></strong> — the identifier of the text field whose value is used to determine gender and number.</li>
+<li><strong><code>Masculine gender</code></strong> — the ending for the masculine gender.</li>
+<li><strong><code>Feminine gender</code></strong> — the ending for the feminine gender.</li>
+<li><strong><code>Neuter gender</code></strong> — the ending for the neuter gender.</li>
+<li><strong><code>Plural</code></strong> — the ending for the plural form.</li>
+</ul>
+<p>Endings must be specified in double quotation marks.</p>
+<p>For example:</p>
+<pre><code class="language-text">wordEnding_RU(FullName, &quot;ый&quot;, &quot;ая&quot;, &quot;ое&quot;, &quot;ые&quot;)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Field value</th>
+<th>Returned ending</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Masculine gender</td>
+<td><code>ый</code></td>
+</tr>
+<tr>
+<td>Feminine gender</td>
+<td><code>ая</code></td>
+</tr>
+<tr>
+<td>Neuter gender</td>
+<td><code>ое</code></td>
+</tr>
+<tr>
+<td>Plural</td>
+<td><code>ые</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="return-value">Return Value</h2>
+<p>The function returns one of the specified text endings.</p>
+<p>For example, if the <code>FullName</code> field contains the full name of a man:</p>
+<pre><code class="language-text">Иванов Иван Иванович
+</code></pre>
+<p>The expression:</p>
+<pre><code class="language-text">wordEnding_RU(FullName, &quot;ый&quot;, &quot;ая&quot;, &quot;ое&quot;, &quot;ые&quot;)
+</code></pre>
+<p>Returns:</p>
+<pre><code class="language-text">ый
+</code></pre>
+<h2 id="examples">Examples</h2>
+<h3 id="salutation-by-full-name">Salutation by Full Name</h3>
+<p>Expression:</p>
+<pre><code class="language-text">&quot;Уважаем&quot; &amp; wordEnding_RU(FullName, &quot;ый&quot;, &quot;ая&quot;, &quot;ое&quot;, &quot;ые&quot;)
+</code></pre>
+<p>If the <code>FullName</code> field contains:</p>
+<pre><code class="language-text">Иванов Иван Иванович
+</code></pre>
+<p>The result is:</p>
+<pre><code class="language-text">Уважаемый
+</code></pre>
+<p>If the <code>FullName</code> field contains:</p>
+<pre><code class="language-text">Иванова Анна Сергеевна
+</code></pre>
+<p>The result is:</p>
+<pre><code class="language-text">Уважаемая
+</code></pre>
+<h2 id="errors">Errors</h2>
+<p>The value used to determine gender and number must contain text suitable for morphological analysis.</p>
+<p>If it contains digits, quotation marks, or punctuation marks, the function may fail to determine the correct form or may return an error.</p>
 
 
 

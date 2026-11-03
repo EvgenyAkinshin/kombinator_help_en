@@ -77,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#endswith" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -2296,6 +2301,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    endsWith
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -2308,6 +2328,61 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#return-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return Value
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2917,6 +2992,52 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#return-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return Value
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2932,9 +3053,35 @@
 
 
 
-  <h1>endsWith</h1>
-
-
+<h1 id="endswith">endsWith</h1>
+<p>The <strong><code>endsWith</code></strong> function checks whether a string ends with a specified substring. It can be used in conditions where document generation depends on the ending of a text value.</p>
+<h2 id="syntax">Syntax</h2>
+<pre><code class="language-text">endsWith(String, Substring, Match case)
+</code></pre>
+<ul>
+<li><strong><code>String</code></strong> — required. The source string whose ending is to be checked.</li>
+<li><strong><code>Substring</code></strong> — required. The sequence of characters that must match the end of the string.</li>
+<li><strong><code>Match case</code></strong> — optional Boolean parameter. Determines whether the comparison is case-sensitive.</li>
+</ul>
+<p>If <strong><code>Match case</code></strong> is omitted, the comparison is case-sensitive by default.</p>
+<p>To perform a case-insensitive comparison, pass <code>false</code> as the third argument.</p>
+<h2 id="return-value">Return Value</h2>
+<p>The function returns a Boolean value:</p>
+<ul>
+<li><code>True</code> — the string ends with the specified substring.</li>
+<li><code>False</code> — the string does not end with the specified substring.</li>
+</ul>
+<p>The returned value can be used in conditions and other expressions.</p>
+<h2 id="notes">Notes</h2>
+<p>If <strong><code>Substring</code></strong> is empty, the function returns <code>true</code>.</p>
+<h2 id="example">Example</h2>
+<p>Check whether the string ends with <code>AGREEMENT</code>, ignoring case:</p>
+<pre><code class="language-text">endsWith(&quot;Supply agreement&quot;, &quot;AGREEMENT&quot;, false)
+</code></pre>
+<p>Result:</p>
+<pre><code class="language-text">true
+</code></pre>
+<p>Since the third argument is set to <code>false</code>, differences in letter case do not affect the result.</p>
 
 
 

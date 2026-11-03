@@ -77,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#decline_ru" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1514,6 +1519,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    decline_RU
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1526,6 +1546,103 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#return-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return Value
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#declining-a-job-title" class="md-nav__link">
+    <span class="md-ellipsis">
+      Declining a Job Title
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#declining-a-phrase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Declining a Phrase
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-the-grammatical-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing the Grammatical Number
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Errors
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2917,6 +3034,94 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#return-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return Value
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#declining-a-job-title" class="md-nav__link">
+    <span class="md-ellipsis">
+      Declining a Job Title
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#declining-a-phrase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Declining a Phrase
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-the-grammatical-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing the Grammatical Number
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Errors
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2932,9 +3137,110 @@
 
 
 
-  <h1>decline_RU</h1>
-
-
+<h1 id="decline_ru">decline_RU</h1>
+<p>The <strong><code>decline_RU</code></strong> function changes the grammatical case and number of a word or phrase.</p>
+<h2 id="syntax">Syntax</h2>
+<pre><code class="language-text">decline_RU(Expression of the word, Grammatical case, Number)
+</code></pre>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><strong><code>Expression of the word</code></strong> — required. The text value to be declined.</li>
+<li><strong><code>Grammatical case</code></strong> — required. Specifies the grammatical case in which the text should be returned.</li>
+<li><strong><code>Number</code></strong> — required. Specifies whether the text should be returned in singular or plural form.</li>
+</ul>
+<p>The following values are available for the <strong><code>Grammatical case</code></strong> parameter:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Russian case questions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GrammaticalCase_RU.Nominative</code></td>
+<td>кто? что?</td>
+</tr>
+<tr>
+<td><code>GrammaticalCase_RU.Genitive</code></td>
+<td>кого? чего?</td>
+</tr>
+<tr>
+<td><code>GrammaticalCase_RU.Dative</code></td>
+<td>кому? чему?</td>
+</tr>
+<tr>
+<td><code>GrammaticalCase_RU.Accusative</code></td>
+<td>кого? что?</td>
+</tr>
+<tr>
+<td><code>GrammaticalCase_RU.Instrumental</code></td>
+<td>кем? чем?</td>
+</tr>
+<tr>
+<td><code>GrammaticalCase_RU.Prepositional</code></td>
+<td>о ком? о чём?</td>
+</tr>
+</tbody>
+</table>
+<p>The following values are available for the <strong><code>Number</code></strong> parameter:</p>
+<ul>
+<li><code>GrammaticalNumber_RU.Singular</code> — singular form.</li>
+<li><code>GrammaticalNumber_RU.Plural</code> — plural form.</li>
+</ul>
+<h2 id="return-value">Return Value</h2>
+<p>The function returns a text value in the specified grammatical case and number.</p>
+<h2 id="notes">Notes</h2>
+<p>The <strong><code>decline_RU</code></strong> function is not intended for declining full names. To decline full names, use the dedicated function for processing personal names.</p>
+<h2 id="examples">Examples</h2>
+<h3 id="declining-a-job-title">Declining a Job Title</h3>
+<p>Suppose the <code>Position</code> field contains:</p>
+<pre><code class="language-text">Генеральный директор
+</code></pre>
+<p>The expression:</p>
+<pre><code class="language-text">decline_RU(
+    Position,
+    GrammaticalCase_RU.Genitive,
+    GrammaticalNumber_RU.Singular
+)
+</code></pre>
+<p>Returns:</p>
+<pre><code class="language-text">Генерального директора
+</code></pre>
+<h3 id="declining-a-phrase">Declining a Phrase</h3>
+<p>Suppose the <code>Name</code> field contains:</p>
+<pre><code class="language-text">договор поставки
+</code></pre>
+<p>The expression:</p>
+<pre><code class="language-text">decline_RU(
+    Name,
+    GrammaticalCase_RU.Instrumental,
+    GrammaticalNumber_RU.Singular
+)
+</code></pre>
+<p>Returns:</p>
+<pre><code class="language-text">договором поставки
+</code></pre>
+<h3 id="changing-the-grammatical-number">Changing the Grammatical Number</h3>
+<p>Suppose the <code>Name</code> field contains:</p>
+<pre><code class="language-text">ответственное лицо
+</code></pre>
+<p>The expression:</p>
+<pre><code class="language-text">decline_RU(
+    Name,
+    GrammaticalCase_RU.Nominative,
+    GrammaticalNumber_RU.Plural
+)
+</code></pre>
+<p>Returns:</p>
+<pre><code class="language-text">ответственные лица
+</code></pre>
+<h2 id="errors">Errors</h2>
+<p>If the source text contains numbers, special characters, or punctuation marks, the function may fail to process the value and return an error.</p>
+<p>For example:</p>
+<pre><code class="language-text">2 юриста, 1 бухгалтер
+</code></pre>
+<p>It is recommended to store numeric quantities and the text to be declined in separate fields.</p>
 
 
 

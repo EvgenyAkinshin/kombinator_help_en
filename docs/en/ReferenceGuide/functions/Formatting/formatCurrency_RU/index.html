@@ -77,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#formatcurrency_ru" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1560,6 +1565,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    formatCurrency_RU
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1572,6 +1592,103 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#return-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return Value
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#amount-in-numbers-and-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amount in Numbers and Words
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amount-written-out-in-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amount Written Out in Words
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amount-without-currency-symbol" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amount Without Currency Symbol
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-with-other-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using with Other Functions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2917,6 +3034,94 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#return-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return Value
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#amount-in-numbers-and-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amount in Numbers and Words
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amount-written-out-in-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amount Written Out in Words
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amount-without-currency-symbol" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amount Without Currency Symbol
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-with-other-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using with Other Functions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2932,9 +3137,187 @@
 
 
 
-  <h1>formatCurrency_RU</h1>
-
-
+<h1 id="formatcurrency_ru">formatCurrency_RU</h1>
+<p>The <strong><code>formatCurrency_RU</code></strong> function converts a numeric value into a monetary amount in the specified format.</p>
+<p>The function allows you to display an amount numerically, with a written-out explanation, or entirely in words. It can also add ruble and kopeck denominations, change the grammatical case of currency names, and control the display of thousands separators.</p>
+<h2 id="syntax">Syntax</h2>
+<pre><code class="language-text">formatCurrency_RU(Expression, Format, Grammatical case, Thousands separator)
+</code></pre>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><strong><code>Expression</code></strong> — required. The numeric value to be formatted.</li>
+<li><strong><code>Format</code></strong> — required. Specifies how the monetary amount is displayed.</li>
+<li><strong><code>Grammatical case</code></strong> — required. Specifies the grammatical case used for ruble and kopeck denominations.</li>
+<li><strong><code>Thousands separator</code></strong> — required. Determines whether digit groups are separated by spaces.</li>
+</ul>
+<p>The following values are available for the <strong><code>Format</code></strong> parameter:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CurrencyFormat_RU.NoKopecks</code></td>
+<td><code>1 234 (одна тысяча двести тридцать четыре) рубля</code></td>
+</tr>
+<tr>
+<td><code>CurrencyFormat_RU.Long</code></td>
+<td><code>1 234 (одна тысяча двести тридцать четыре) рубля 57 копеек</code></td>
+</tr>
+<tr>
+<td><code>CurrencyFormat_RU.LongShortKopecks</code></td>
+<td><code>1 234 (одна тысяча двести тридцать четыре) рубля 57 коп.</code></td>
+</tr>
+<tr>
+<td><code>CurrencyFormat_RU.Short</code></td>
+<td><code>1 234 руб. 57 коп.</code></td>
+</tr>
+<tr>
+<td><code>CurrencyFormat_RU.RublesInWords</code></td>
+<td><code>одна тысяча двести тридцать четыре рубля 57 копеек</code></td>
+</tr>
+<tr>
+<td><code>CurrencyFormat_RU.Numeric</code></td>
+<td><code>1 234,57 ₽</code></td>
+</tr>
+<tr>
+<td><code>CurrencyFormat_RU.NumericNoCurrency</code></td>
+<td><code>1 234,57</code></td>
+</tr>
+</tbody>
+</table>
+<p>The <strong><code>Grammatical case</code></strong> parameter supports the following grammatical cases:</p>
+<table>
+<thead>
+<tr>
+<th>Grammatical case</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nominative</td>
+<td>The basic form of a noun</td>
+</tr>
+<tr>
+<td>Genitive</td>
+<td>Indicates possession, quantity, or other grammatical relationships</td>
+</tr>
+<tr>
+<td>Dative</td>
+<td>Indicates the indirect object or recipient</td>
+</tr>
+<tr>
+<td>Accusative</td>
+<td>Indicates the direct object</td>
+</tr>
+<tr>
+<td>Instrumental</td>
+<td>Indicates the means or instrument of an action</td>
+</tr>
+<tr>
+<td>Prepositional</td>
+<td>Used with prepositions to indicate location, subject, or other relationships</td>
+</tr>
+</tbody>
+</table>
+<p>The following values are available for the <strong><code>Thousands separator</code></strong> parameter:</p>
+<ul>
+<li><code>ThousandsSeparator_RU.Show</code> — separates digit groups with spaces.</li>
+<li><code>ThousandsSeparator_RU.Hide</code> — displays the number without thousands separators.</li>
+</ul>
+<h2 id="return-value">Return Value</h2>
+<p>The function returns a text value representing the monetary amount in the selected format.</p>
+<p>For example, suppose the <code>Amount</code> field contains:</p>
+<pre><code class="language-text">1234.57
+</code></pre>
+<p>The expression:</p>
+<pre><code class="language-text">formatCurrency_RU(
+    Amount,
+    CurrencyFormat_RU.Short,
+    GrammaticalCase_RU.Nominative,
+    ThousandsSeparator_RU.Show
+)
+</code></pre>
+<p>Returns:</p>
+<pre><code class="language-text">1 234 руб. 57 коп.
+</code></pre>
+<h2 id="notes">Notes</h2>
+<p>The <strong><code>Grammatical case</code></strong> parameter changes the grammatical form of ruble and kopeck denominations. The numeric value of the amount remains unchanged.</p>
+<p>The <strong><code>Thousands separator</code></strong> parameter controls how digit groups are displayed in the numeric part of the amount.</p>
+<p>For example, when using:</p>
+<pre><code class="language-text">ThousandsSeparator_RU.Show
+</code></pre>
+<p>The number is displayed as:</p>
+<pre><code class="language-text">1 234,57
+</code></pre>
+<p>When using:</p>
+<pre><code class="language-text">ThousandsSeparator_RU.Hide
+</code></pre>
+<p>The number is displayed without spaces between digit groups:</p>
+<pre><code class="language-text">1234,57
+</code></pre>
+<p>The function formats amounts in Russian rubles. Currency names and amounts written out in words are therefore returned in Russian, regardless of the interface language.</p>
+<h2 id="examples">Examples</h2>
+<h3 id="amount-in-numbers-and-words">Amount in Numbers and Words</h3>
+<p>Suppose the <code>Amount</code> field contains:</p>
+<pre><code class="language-text">1234.57
+</code></pre>
+<p>The expression:</p>
+<pre><code class="language-text">formatCurrency_RU(
+    Amount,
+    CurrencyFormat_RU.Long,
+    GrammaticalCase_RU.Nominative,
+    ThousandsSeparator_RU.Show
+)
+</code></pre>
+<p>Returns:</p>
+<pre><code class="language-text">1 234 (одна тысяча двести тридцать четыре) рубля 57 копеек
+</code></pre>
+<h3 id="amount-written-out-in-words">Amount Written Out in Words</h3>
+<p>Suppose the <code>Amount</code> field contains:</p>
+<pre><code class="language-text">1234.57
+</code></pre>
+<p>The expression:</p>
+<pre><code class="language-text">formatCurrency_RU(
+    Amount,
+    CurrencyFormat_RU.RublesInWords,
+    GrammaticalCase_RU.Nominative,
+    ThousandsSeparator_RU.Show
+)
+</code></pre>
+<p>Returns:</p>
+<pre><code class="language-text">одна тысяча двести тридцать четыре рубля 57 копеек
+</code></pre>
+<h3 id="amount-without-currency-symbol">Amount Without Currency Symbol</h3>
+<p>Suppose the <code>Amount</code> field contains:</p>
+<pre><code class="language-text">1234.57
+</code></pre>
+<p>The expression:</p>
+<pre><code class="language-text">formatCurrency_RU(
+    Amount,
+    CurrencyFormat_RU.NumericNoCurrency,
+    GrammaticalCase_RU.Nominative,
+    ThousandsSeparator_RU.Show
+)
+</code></pre>
+<p>Returns:</p>
+<pre><code class="language-text">1 234,57
+</code></pre>
+<h2 id="using-with-other-functions">Using with Other Functions</h2>
+<p>The <strong><code>Expression</code></strong> parameter can accept the result of another function, provided that it returns a numeric value.</p>
+<p>For example, you can round an amount before formatting it:</p>
+<pre><code class="language-text">formatCurrency_RU(
+    round(Amount, 2),
+    CurrencyFormat_RU.Short,
+    GrammaticalCase_RU.Nominative,
+    ThousandsSeparator_RU.Show
+)
+</code></pre>
+<p>First, the <strong><code>round</code></strong> function returns the rounded value. The <strong><code>formatCurrency_RU</code></strong> function then formats the result as a monetary amount.</p>
 
 
 
