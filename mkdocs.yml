@@ -27,24 +27,24 @@ nav:
   - Picture: ReferenceGuide/typesField/picture.md
 - Function:
   - Date and time:
-    - date: ReferenceGuide/functions/Date and time/date.md
-    - edate: ReferenceGuide/functions/Date and time/edate.md
-    - eomonth: ReferenceGuide/functions/Date and time/eomonth.md
-    - bomonth: ReferenceGuide/functions/Date and time/bomonth.md
-    - datediff: ReferenceGuide/functions/Date and time/datediff.md
-    - Today: ReferenceGuide/functions/Date and time/Today.md
-    - dateshift: ReferenceGuide/functions/Date and time/dateshift.md
-    - now: ReferenceGuide/functions/Date and time/now.md
-    - time: ReferenceGuide/functions/Date and time/time.md
-    - year: ReferenceGuide/functions/Date and time/year.md
-    - datetime: ReferenceGuide/functions/Date and time/datetime.md
-    - month: ReferenceGuide/functions/Date and time/month.md
-    - day: ReferenceGuide/functions/Date and time/day.md
-    - hour: ReferenceGuide/functions/Date and time/hour.md
-    - minute: ReferenceGuide/functions/Date and time/minute.md
-    - second: ReferenceGuide/functions/Date and time/second.md
-    - weekday: ReferenceGuide/functions/Date and time/weekday.md
-    - weeknum: ReferenceGuide/functions/Date and time/weeknum.md
+    - date: ReferenceGuide/functions/DateAndTime/date.md
+    - edate: ReferenceGuide/functions/DateAndTime/edate.md
+    - eomonth: ReferenceGuide/functions/DateAndTime/eomonth.md
+    - bomonth: ReferenceGuide/functions/DateAndTime/bomonth.md
+    - datediff: ReferenceGuide/functions/DateAndTime/datediff.md
+    - Today: ReferenceGuide/functions/DateAndTime/Today.md
+    - dateshift: ReferenceGuide/functions/DateAndTime/dateshift.md
+    - now: ReferenceGuide/functions/DateAndTime/now.md
+    - time: ReferenceGuide/functions/DateAndTime/time.md
+    - year: ReferenceGuide/functions/DateAndTime/year.md
+    - datetime: ReferenceGuide/functions/DateAndTime/datetime.md
+    - month: ReferenceGuide/functions/DateAndTime/month.md
+    - day: ReferenceGuide/functions/DateAndTime/day.md
+    - hour: ReferenceGuide/functions/DateAndTime/hour.md
+    - minute: ReferenceGuide/functions/DateAndTime/minute.md
+    - second: ReferenceGuide/functions/DateAndTime/second.md
+    - weekday: ReferenceGuide/functions/DateAndTime/weekday.md
+    - weeknum: ReferenceGuide/functions/DateAndTime/weeknum.md
   - Formatting:
     - formatDate: ReferenceGuide/functions/Formatting/formatDate.md
     - formatNumber: ReferenceGuide/functions/Formatting/formatNumber.md
@@ -166,7 +166,7 @@ plugins:
             List: Списки
             Picture: Картинка
             Function: Функции
-            Date and time: Дата и время
+            DateAndTime: Дата и время
             
             bomonth: начмесяца
             date: дата

@@ -14,7 +14,7 @@ The field contains a calendar date without a time.
 
 When adding the field to the template through **Fields**, you can select the format in which its value should be displayed in the generated document. The same field value can therefore be displayed in different formats.
 
-If needed, you can extract individual parts of the date using the corresponding functions: [year](../functions/Date and time/year.md), [month](../functions/Date and time/month.md), [day](../functions/Date and time/day.md), [weekday](../functions/Date and time/weekday.md), or [weeknum](../functions/Date and time/weeknum.md).
+If needed, you can extract individual parts of the date using the corresponding functions: [year](../functions/DateAndTime/year.md), [month](../functions/DateAndTime/month.md), [day](../functions/DateAndTime/day.md), [weekday](../functions/DateAndTime/weekday.md), or [weeknum](../functions/DateAndTime/weeknum.md).
 
 ## Inserting a field through the «Directives» tab
 
@@ -45,19 +45,19 @@ The **«Date»** field supports functions for extracting individual parts of the
 
 ### Extracting date parts
 
-- [year](../functions/Date and time/year.md) — returns the year;
-- [month](../functions/Date and time/month.md) — returns the month number;
-- [day](../functions/Date and time/day.md) — returns the day of the month;
-- [weekday](../functions/Date and time/weekday.md) — returns the day-of-week number;
-- [weeknum](../functions/Date and time/weeknum.md) — returns the week number.
+- [year](../functions/DateAndTime/year.md) — returns the year;
+- [month](../functions/DateAndTime/month.md) — returns the month number;
+- [day](../functions/DateAndTime/day.md) — returns the day of the month;
+- [weekday](../functions/DateAndTime/weekday.md) — returns the day-of-week number;
+- [weeknum](../functions/DateAndTime/weeknum.md) — returns the week number.
 
 ### Changing the date
 
-- [edate](../functions/Date and time/edate.md) — shifts the date by the specified number of months;
-- [dateshift](../functions/Date and time/dateshift.md) — shifts the date by the specified number of days;
-- [bomonth](../functions/Date and time/bomonth.md) — returns the first day of the month;
-- [eomonth](../functions/Date and time/eomonth.md) — returns the last day of the month;
-- [datediff](../functions/Date and time/datediff.md) — calculates the difference between dates.
+- [edate](../functions/DateAndTime/edate.md) — shifts the date by the specified number of months;
+- [dateshift](../functions/DateAndTime/dateshift.md) — shifts the date by the specified number of days;
+- [bomonth](../functions/DateAndTime/bomonth.md) — returns the first day of the month;
+- [eomonth](../functions/DateAndTime/eomonth.md) — returns the last day of the month;
+- [datediff](../functions/DateAndTime/datediff.md) — calculates the difference between dates.
 
 ### Formatting functions
 

@@ -14,7 +14,7 @@ The field contains a time value without a calendar date.
 
 When adding the field to the template through **Fields**, you can select the format in which its value should be displayed in the generated document. The same field value can therefore be displayed in different formats.
 
-If needed, you can extract individual parts of the value using the corresponding functions: [hour](../functions/Date and time/hour.md), [minute](../functions/Date and time/minute.md), or [second](../functions/Date and time/second.md).
+If needed, you can extract individual parts of the value using the corresponding functions: [hour](../functions/DateAndTime/hour.md), [minute](../functions/DateAndTime/minute.md), or [second](../functions/DateAndTime/second.md).
 
 ## Inserting a field through the «Directives» tab
 
@@ -45,9 +45,9 @@ The **«Time»** field supports functions for extracting individual parts of the
 
 ### Extracting time parts
 
-- [hour](../functions/Date and time/hour.md) — returns the hour;
-- [minute](../functions/Date and time/minute.md) — returns the minutes;
-- [second](../functions/Date and time/second.md) — returns the seconds.
+- [hour](../functions/DateAndTime/hour.md) — returns the hour;
+- [minute](../functions/DateAndTime/minute.md) — returns the minutes;
+- [second](../functions/DateAndTime/second.md) — returns the seconds.
 
 ### Formatting functions
 

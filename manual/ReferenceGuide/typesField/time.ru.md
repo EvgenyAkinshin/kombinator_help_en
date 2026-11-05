@@ -14,7 +14,7 @@
 
 При добавлении поля в шаблон через анкету можно выбрать формат, в котором его значение должно отображаться в сформированном документе. Поэтому одно и то же значение поля может быть выведено в разных форматах.
 
-При необходимости из значения можно отдельно получить [часы](../functions/Date and time/hour.md), [минуты](../functions/Date and time/minute.md) или [секунды](../functions/Date and time/second.md) с помощью соответствующих функций.
+При необходимости из значения можно отдельно получить [часы](../functions/DateAndTime/hour.md), [минуты](../functions/DateAndTime/minute.md) или [секунды](../functions/DateAndTime/second.md) с помощью соответствующих функций.
 
 ## Вставка поля через вкладку «Метки»
 
@@ -51,9 +51,9 @@
 
 ### Получение частей времени
 
-- [час](../functions/Date and time/hour.md) — возвращает часы;
-- [минуты](../functions/Date and time/minute.md) — возвращает минуты;
-- [секунды](../functions/Date and time/second.md) — возвращает секунды.
+- [час](../functions/DateAndTime/hour.md) — возвращает часы;
+- [минуты](../functions/DateAndTime/minute.md) — возвращает минуты;
+- [секунды](../functions/DateAndTime/second.md) — возвращает секунды.
 
 ### Форматирование
 

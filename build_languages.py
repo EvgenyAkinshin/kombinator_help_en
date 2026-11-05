@@ -121,3 +121,8 @@ for english_page in english.rglob("index.html"):
     )
 
 print("Old English URLs redirect to /en/")
+
+# Создание русских адресов функций
+from localize_function_urls import localize
+
+localize(Path("docs"), Path("mkdocs.yml"))

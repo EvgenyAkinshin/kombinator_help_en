@@ -14,7 +14,7 @@
 
 При добавлении поля в шаблон через анкету можно выбрать формат, в котором его значение должно отображаться в сформированном документе. Поэтому одно и то же значение поля может быть выведено в разных форматах.
 
-При необходимости из значения можно отдельно получить [год](../functions/Date and time/year.md), [месяц](../functions/Date and time/month.md), [день](../functions/Date and time/day.md), [часы](../functions/Date and time/hour.md), [минуты](../functions/Date and time/minute.md) или [секунды](../functions/Date and time/second.md) с помощью соответствующих функций.
+При необходимости из значения можно отдельно получить [год](../functions/DateAndTime/year.md), [месяц](../functions/DateAndTime/month.md), [день](../functions/DateAndTime/day.md), [часы](../functions/DateAndTime/hour.md), [минуты](../functions/DateAndTime/minute.md) или [секунды](../functions/DateAndTime/second.md) с помощью соответствующих функций.
 
 
 ## Вставка поля через вкладку «Метки»
@@ -52,22 +52,22 @@
 
 ### Получение частей даты и времени
 
-- [год](../functions/Date and time/year.md) — возвращает год;
-- [месяц](../functions/Date and time/month.md) — возвращает номер месяца;
-- [день](../functions/Date and time/day.md) — возвращает день месяца;
-- [час](../functions/Date and time/hour.md) — возвращает часы;
-- [минуты](../functions/Date and time/minute.md) — возвращает минуты;
-- [секунды](../functions/Date and time/second.md) — возвращает секунды;
-- [деньнед](../functions/Date and time/weekday.md) — возвращает номер дня недели;
-- [номнедели](../functions/Date and time/weeknum.md) — возвращает номер недели.
+- [год](../functions/DateAndTime/year.md) — возвращает год;
+- [месяц](../functions/DateAndTime/month.md) — возвращает номер месяца;
+- [день](../functions/DateAndTime/day.md) — возвращает день месяца;
+- [час](../functions/DateAndTime/hour.md) — возвращает часы;
+- [минуты](../functions/DateAndTime/minute.md) — возвращает минуты;
+- [секунды](../functions/DateAndTime/second.md) — возвращает секунды;
+- [деньнед](../functions/DateAndTime/weekday.md) — возвращает номер дня недели;
+- [номнедели](../functions/DateAndTime/weeknum.md) — возвращает номер недели.
 
 ### Изменение даты
 
-- [датамес](../functions/Date and time/edate.md) — смещает дату на указанное количество месяцев;
-- [смещдат](../functions/Date and time/dateshift.md) — смещает дату на указанное количество дней;
-- [начмесяца](../functions/Date and time/bomonth.md) — возвращает дату первого дня месяца;
-- [конмесяца](../functions/Date and time/eomonth.md) — возвращает дату последнего дня месяца;
-- [разндат](../functions/Date and time/datediff.md) — вычисляет разницу между датами.
+- [датамес](../functions/DateAndTime/edate.md) — смещает дату на указанное количество месяцев;
+- [смещдат](../functions/DateAndTime/dateshift.md) — смещает дату на указанное количество дней;
+- [начмесяца](../functions/DateAndTime/bomonth.md) — возвращает дату первого дня месяца;
+- [конмесяца](../functions/DateAndTime/eomonth.md) — возвращает дату последнего дня месяца;
+- [разндат](../functions/DateAndTime/datediff.md) — вычисляет разницу между датами.
 
 ### Форматирование
 
